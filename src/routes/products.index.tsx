@@ -6,7 +6,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { products, categoriesByDivision, type Division } from "@/data/products";
 import { cn } from "@/lib/utils";
 
-export const Route = createFileRoute("/products")({
+export const Route = createFileRoute("/products/")({
   head: () => ({
     meta: [
       { title: "Product Catalogue — Spices, Dairy & Leather Craft | SPECTRA" },
