@@ -16,6 +16,7 @@ import { Route as FpoRouteImport } from './routes/fpo'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as OfpoRouteImport } from './routes/ofpo'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ProductsIndexRouteImport } from './routes/products.index'
 import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
@@ -55,6 +56,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -79,6 +85,7 @@ export interface FileRoutesByFullPath {
   '/gallery': typeof GalleryRoute
   '/ofpo': typeof OfpoRoute
   '/privacy': typeof PrivacyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products/': typeof ProductsIndexRoute
@@ -91,6 +98,7 @@ export interface FileRoutesByTo {
   '/gallery': typeof GalleryRoute
   '/ofpo': typeof OfpoRoute
   '/privacy': typeof PrivacyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products': typeof ProductsIndexRoute
@@ -104,6 +112,7 @@ export interface FileRoutesById {
   '/gallery': typeof GalleryRoute
   '/ofpo': typeof OfpoRoute
   '/privacy': typeof PrivacyRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/products/$slug': typeof ProductsSlugRoute
   '/products/': typeof ProductsIndexRoute
@@ -118,6 +127,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/ofpo'
     | '/privacy'
+    | '/sitemap.xml'
     | '/terms'
     | '/products/$slug'
     | '/products/'
@@ -130,6 +140,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/ofpo'
     | '/privacy'
+    | '/sitemap.xml'
     | '/terms'
     | '/products/$slug'
     | '/products'
@@ -142,6 +153,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/ofpo'
     | '/privacy'
+    | '/sitemap.xml'
     | '/terms'
     | '/products/$slug'
     | '/products/'
@@ -155,6 +167,7 @@ export interface RootRouteChildren {
   GalleryRoute: typeof GalleryRoute
   OfpoRoute: typeof OfpoRoute
   PrivacyRoute: typeof PrivacyRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   ProductsSlugRoute: typeof ProductsSlugRoute
   ProductsIndexRoute: typeof ProductsIndexRoute
@@ -211,6 +224,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -243,6 +263,7 @@ const rootRouteChildren: RootRouteChildren = {
   GalleryRoute: GalleryRoute,
   OfpoRoute: OfpoRoute,
   PrivacyRoute: PrivacyRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   ProductsSlugRoute: ProductsSlugRoute,
   ProductsIndexRoute: ProductsIndexRoute,
@@ -250,3 +271,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
