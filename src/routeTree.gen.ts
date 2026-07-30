@@ -10,33 +10,63 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as FpoRouteImport } from './routes/fpo'
+import { Route as OfpoRouteImport } from './routes/ofpo'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FpoRoute = FpoRouteImport.update({
+  id: '/fpo',
+  path: '/fpo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfpoRoute = OfpoRouteImport.update({
+  id: '/ofpo',
+  path: '/ofpo',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/fpo': typeof FpoRoute
+  '/ofpo': typeof OfpoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/fpo': typeof FpoRoute
+  '/ofpo': typeof OfpoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/fpo': typeof FpoRoute
+  '/ofpo': typeof OfpoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/about' | '/fpo' | '/ofpo'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/about' | '/fpo' | '/ofpo'
+  id: '__root__' | '/' | '/about' | '/fpo' | '/ofpo'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  FpoRoute: typeof FpoRoute
+  OfpoRoute: typeof OfpoRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +78,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fpo': {
+      id: '/fpo'
+      path: '/fpo'
+      fullPath: '/fpo'
+      preLoaderRoute: typeof FpoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ofpo': {
+      id: '/ofpo'
+      path: '/ofpo'
+      fullPath: '/ofpo'
+      preLoaderRoute: typeof OfpoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  FpoRoute: FpoRoute,
+  OfpoRoute: OfpoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
