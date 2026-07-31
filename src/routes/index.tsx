@@ -3,6 +3,8 @@ import { ArrowRight, Leaf, Handshake, ShieldCheck, Sprout } from "lucide-react";
 import agriculture from "@/assets/hero-agriculture.jpg";
 import leather from "@/assets/hero-leather.jpg";
 import farmers from "@/assets/community-farmers.jpg";
+import womenShg from "@/assets/community-women-shg.jpg";
+
 import artisans from "@/assets/community-artisans.jpg";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -14,18 +16,20 @@ import { impact, site } from "@/data/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SPECTRA — Empowering Farmers & Artisans Together" },
+      { title: "SPECTRA — Every Product Carries a Story of Hope and Dignity" },
       {
         name: "description",
         content:
-          "SPECTRA brings sustainably grown spices, milk and dairy together with handcrafted leather juti, shoes and goods — supporting farmers and artisans across 48 villages.",
+          "Through Farmer Producer Organizations and Other Farmer Producer Organizations, SPECTRA empowers rural farmers and artisans in Rajasthan with sustainable livelihoods and preserved traditional skills.",
       },
-      { property: "og:title", content: "SPECTRA — Empowering Farmers & Artisans Together" },
+      { property: "og:title", content: "SPECTRA — Hope, Hard Work and Dignity" },
       {
         property: "og:description",
         content:
-          "Agricultural produce and traditional leather craftsmanship under one producer-owned identity.",
+          "Meet the farmers, women and artisans behind every spice, every litre of milk and every hand-stitched juti.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -36,25 +40,26 @@ export const Route = createFileRoute("/")({
 const reasons = [
   {
     icon: Sprout,
-    title: "Grown, not sourced",
-    body: "Every ingredient traces back to a named member farm — no anonymous middle layer between the field and you.",
+    title: "Who made this",
+    body: "Every lot traces back to a named household — a farming family, a dairy member, an artisan bench. Nothing arrives anonymously.",
   },
   {
     icon: Handshake,
-    title: "Fair by structure",
-    body: "Members own the organisation. Surplus returns to the households that produced the goods, not to shareholders.",
+    title: "Why it matters",
+    body: "Organised together, producers hold bargaining power they never had alone. The value of good work stays where the work happened.",
   },
   {
     icon: ShieldCheck,
-    title: "Quality held to record",
-    body: "Batch testing at collection, documented curing times, and traceable lots for every product we dispatch.",
+    title: "How a life changes",
+    body: "Assured procurement, savings groups and steady order books turn seasonal uncertainty into school fees, medicine and repairs that no longer wait.",
   },
   {
     icon: Leaf,
-    title: "Made to last",
-    body: "Vegetable tanning, natural drying, minimal processing. Slower methods, longer-lived goods.",
+    title: "What endures",
+    body: "Traditional knowledge, sustainable practice and inherited craft survive because they finally sustain the people who carry them.",
   },
 ];
+
 
 function Home() {
   const featured = products.filter((p) => p.featured).slice(0, 6);
@@ -83,28 +88,32 @@ function Home() {
         <div className="absolute inset-0 bg-ink/55" aria-hidden="true" />
 
         <div className="relative mx-auto flex min-h-[88vh] max-w-4xl flex-col items-center justify-center px-5 py-24 text-center sm:px-8">
-          <p className="eyebrow text-gold">FPO &nbsp;·&nbsp; OFPO</p>
-          <h1 className="mt-6 font-display text-6xl leading-none tracking-[0.18em] text-cream sm:text-7xl lg:text-8xl">
-            SPECTRA
+          <p className="eyebrow text-gold">SPECTRA &nbsp;·&nbsp; FPO &amp; OFPO</p>
+          <h1 className="mt-6 max-w-3xl font-display text-4xl leading-[1.08] text-cream sm:text-5xl lg:text-6xl">
+            Every product carries a story of hope, hard work and dignity.
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/85 sm:text-xl">
-            {site.tagline}
+          <p className="mt-7 max-w-2xl text-base leading-relaxed text-cream/85 sm:text-lg">
+            Through our Farmer Producer Organizations (FPO) and Other Farmer Producer
+            Organizations (OFPO), SPECTRA empowers rural farmers and skilled artisans by creating
+            sustainable livelihood opportunities while preserving traditional knowledge and
+            craftsmanship.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Link
-              to="/fpo"
+              to="/impact"
               className="eyebrow inline-flex items-center justify-center gap-2 bg-primary px-8 py-4 text-primary-foreground transition-colors hover:bg-primary/90"
             >
-              Explore FPO <ArrowRight className="h-4 w-4" />
+              Our journey <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              to="/ofpo"
+              to="/fpo"
               className="eyebrow inline-flex items-center justify-center gap-2 border border-cream/40 px-8 py-4 text-cream transition-colors hover:bg-cream hover:text-ink"
             >
-              Explore OFPO <ArrowRight className="h-4 w-4" />
+              Meet the makers <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
+
       </section>
 
       {/* About */}
@@ -114,28 +123,30 @@ function Home() {
             <div className="lg:col-span-5">
               <p className="eyebrow text-primary">About SPECTRA</p>
               <h2 className="mt-4 text-3xl leading-tight sm:text-4xl md:text-5xl">
-                Two crafts, one collective, one promise.
+                Behind every product is a person you would be glad to meet.
               </h2>
             </div>
             <div className="space-y-5 text-base leading-relaxed text-muted-foreground lg:col-span-7">
               <p>
-                SPECTRA was formed to answer a simple question: what happens when farmers and
-                artisans own the organisation that sells their work? The answer, over eight
-                years, has been better prices at the gate, patient quality standards, and
-                products that carry the name of the household that made them.
+                SPECTRA — the Society for Public Education Cultural Training and Rural Action — is
+                a voluntary, non-profit, non-government organisation that has worked since 1996 in
+                the rural and interior pockets of Rajasthan, alongside families struggling for a
+                life of justice and dignity.
               </p>
               <p>
-                Our FPO division works with cultivators of spices, milk and dairy. Our OFPO
-                division works with leather artisans whose families have shaped juti and shoes
-                for generations. Different materials, identical commitment.
+                Our FPO work stands with cultivators and dairy households. Our OFPO work stands
+                with leather artisans whose families have shaped juti and shoes for generations.
+                The spices, milk and handmade shoes you see here are simply what that partnership
+                produces — the real output is a household that can plan its own future.
               </p>
               <Link
                 to="/about"
                 className="eyebrow inline-flex items-center gap-2 text-primary transition-colors hover:text-leather"
               >
-                Read our story <ArrowRight className="h-4 w-4" />
+                Our journey <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
+
           </div>
         </Reveal>
       </section>
@@ -172,16 +183,17 @@ function Home() {
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
-              eyebrow="Featured"
-              title="From the field and the workshop"
-              intro="A small selection from our catalogue. Every product is available for enquiry, wholesale or bulk supply."
+              eyebrow="Outcomes, not merchandise"
+              title="What the work looks like when it reaches your hands"
+              intro="Each of these began as somebody's early morning. Open one to read who made it and why it matters to their household."
             />
             <Link
               to="/products"
               className="eyebrow inline-flex items-center gap-2 text-primary transition-colors hover:text-leather"
             >
-              View all products <ArrowRight className="h-4 w-4" />
+              View all stories <ArrowRight className="h-4 w-4" />
             </Link>
+
           </div>
         </Reveal>
         <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
@@ -199,17 +211,26 @@ function Home() {
           <Reveal>
             <p className="eyebrow text-gold">Our Impact</p>
             <h2 className="mt-4 max-w-2xl text-3xl leading-tight sm:text-4xl">
-              Numbers that belong to households, not to a report.
+              Change measured in households, not in units sold.
             </h2>
           </Reveal>
           <dl className="mt-14 grid grid-cols-2 gap-10 lg:grid-cols-4">
             {impact.map((stat, i) => (
               <Reveal key={stat.label} delay={i * 0.08}>
-                <dt className="font-display text-4xl text-gold sm:text-5xl">{stat.value}</dt>
+                <dt className="font-display text-3xl text-gold sm:text-4xl">{stat.value}</dt>
                 <dd className="eyebrow mt-3 text-cream/60">{stat.label}</dd>
               </Reveal>
             ))}
           </dl>
+          <Reveal delay={0.2}>
+            <Link
+              to="/impact"
+              className="eyebrow mt-12 inline-flex items-center gap-2 text-gold transition-colors hover:text-cream"
+            >
+              See our impact <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Reveal>
+
         </div>
       </section>
 
@@ -217,10 +238,11 @@ function Home() {
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
         <Reveal>
           <SectionHeading
-            eyebrow="Why SPECTRA"
-            title="Reasons buyers stay with us"
-            intro="Partners return for the same four reasons, year after year."
+            eyebrow="Why it matters"
+            title="Four questions we answer for every product"
+            intro="Who made this, why does it matter, how does it improve a life, and what stays behind when the season ends."
           />
+
         </Reveal>
         <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {reasons.map((reason, i) => (
@@ -239,31 +261,42 @@ function Home() {
           <Reveal>
             <SectionHeading
               eyebrow="Our Communities"
-              title="The people behind the produce"
+              title="Meet the people behind the work"
+              intro="Farmers, women's groups and artisan households — the three hands that hold everything SPECTRA does."
               tone="leather"
             />
           </Reveal>
-          <div className="mt-14 grid gap-10 md:grid-cols-2">
+          <div className="mt-14 grid gap-10 md:grid-cols-3">
             {[
               {
                 img: farmers,
-                alt: "SPECTRA farmer members standing together in a field at sunrise",
-                eyebrow: "FPO · Agriculture",
-                title: "2,400 farming families",
-                body: "Members across 48 villages cultivating spices, running dairy herds and supplying milk to shared collection centres — with input support, soil testing and assured procurement.",
+                alt: "Farmer members standing together in a field at sunrise",
+                eyebrow: "FPO · Farming families",
+                title: "Those who grow it",
+                body: "Cultivators and dairy households working together — sharing collection centres, grading discipline and a bargaining position no single smallholder can hold alone.",
                 to: "/fpo" as const,
-                cta: "Explore FPO",
+                cta: "Meet the farmers",
+              },
+              {
+                img: womenShg,
+                alt: "Women's self help group meeting with a savings ledger",
+                eyebrow: "Women's participation",
+                title: "Those who decide it",
+                body: "Self help groups where saving becomes confidence, and women take their place in planning, monitoring and every decision that shapes a household.",
+                to: "/impact" as const,
+                cta: "See our impact",
               },
               {
                 img: artisans,
                 alt: "Leather artisans cutting and stitching hides in a workshop",
-                eyebrow: "OFPO · Leather Craft",
-                title: "600 artisan hands",
-                body: "Cutters, embroiderers, lasters and finishers working in village clusters — with tool grants, design collaboration and steady order books that make the craft worth passing on.",
+                eyebrow: "OFPO · Artisan households",
+                title: "Those who make it",
+                body: "Cutters, embroiderers, lasters and finishers carrying a craft learned from their parents — now with tools, training and orders that make it worth passing on.",
                 to: "/ofpo" as const,
-                cta: "Explore OFPO",
+                cta: "Meet the artisans",
               },
             ].map((c, i) => (
+
               <Reveal key={c.title} delay={i * 0.1}>
                 <div className="group">
                   <div className="overflow-hidden">
@@ -328,12 +361,13 @@ function Home() {
         <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 px-5 py-20 sm:px-8 md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="max-w-xl text-3xl leading-tight sm:text-4xl">
-              Buying wholesale, stocking retail, or simply curious?
+              Want to know the family behind a product?
             </h2>
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-primary-foreground/80">
-              Tell us what you need and we will come back with availability, lot sizes and
-              pricing within two working days.
+              Write to us about a story, a visit, a partnership or an enquiry. Every message
+              reaches a person, and we reply within two working days.
             </p>
+
           </div>
           <Link
             to="/contact"

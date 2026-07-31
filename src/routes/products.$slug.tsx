@@ -23,6 +23,7 @@ export const Route = createFileRoute("/products/$slug")({
         { property: "og:title", content: `${loaderData.name} | SPECTRA` },
         { property: "og:description", content: loaderData.short },
         { property: "og:type", content: "product" },
+        { name: "twitter:card", content: "summary_large_image" },
         { property: "og:url", content: `/products/${params.slug}` },
       ],
       links: [{ rel: "canonical", href: `/products/${params.slug}` }],
@@ -111,13 +112,8 @@ function ProductDetail() {
                 <dd className="mt-2 text-sm">{product.sizes.join(" · ")}</dd>
               </div>
             ) : null}
-            {product.price ? (
-              <div className="bg-background p-5">
-                <dt className="eyebrow text-muted-foreground">Price</dt>
-                <dd className="mt-2 text-sm">{product.price}</dd>
-              </div>
-            ) : null}
           </dl>
+
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -138,9 +134,16 @@ function ProductDetail() {
           </div>
 
           <div className="mt-10 border-t border-border pt-8">
-            <h2 className="text-2xl">The story</h2>
+            <h2 className="text-2xl">Who made this</h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">{product.story}</p>
+            <Link
+              to={product.division === "fpo" ? "/fpo" : "/ofpo"}
+              className="eyebrow mt-6 inline-flex items-center gap-2 text-primary transition-colors hover:text-leather"
+            >
+              Meet the makers
+            </Link>
           </div>
+
         </div>
       </article>
 

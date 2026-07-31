@@ -8,17 +8,19 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — Farms, Workshops & Community | SPECTRA" },
+      { title: "Gallery — Farmers, Women, Artisans & Community | SPECTRA" },
       {
         name: "description",
         content:
-          "Photographs from SPECTRA's fields, dairy collection centres, leather workshops, training sessions and community programmes.",
+          "Documentary photographs of the farmers, women's self help groups, dairy and spice work, leather artisans, training sessions and community programmes behind SPECTRA.",
       },
       { property: "og:title", content: "Gallery | SPECTRA" },
       {
         property: "og:description",
-        content: "Inside the farms and workshops behind SPECTRA's products.",
+        content: "The people behind every product — in the fields, the courtyards and the workshops.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/gallery" },
     ],
     links: [{ rel: "canonical", href: "/gallery" }],
@@ -42,8 +44,8 @@ function Gallery() {
     <>
       <PageHero
         eyebrow="Gallery"
-        title="Fields, benches and the people between them."
-        intro="A working record of our farms, collection centres, workshops, training days and community events."
+        title="Faces, hands and the days that build a livelihood."
+        intro="A documentary record of the farmers, women's groups, artisans and communities SPECTRA works alongside — the people you are really looking at when you see a product."
       />
 
       <section className="mx-auto max-w-7xl px-5 pb-24 sm:px-8">

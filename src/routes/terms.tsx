@@ -12,6 +12,8 @@ export const Route = createFileRoute("/terms")({
       },
       { property: "og:title", content: "Terms of Use | SPECTRA" },
       { property: "og:description", content: "Terms for using the SPECTRA website and catalogue." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/terms" },
     ],
     links: [{ rel: "canonical", href: "/terms" }],
