@@ -111,13 +111,8 @@ function ProductDetail() {
                 <dd className="mt-2 text-sm">{product.sizes.join(" · ")}</dd>
               </div>
             ) : null}
-            {product.price ? (
-              <div className="bg-background p-5">
-                <dt className="eyebrow text-muted-foreground">Price</dt>
-                <dd className="mt-2 text-sm">{product.price}</dd>
-              </div>
-            ) : null}
           </dl>
+
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link

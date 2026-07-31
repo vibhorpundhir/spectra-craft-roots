@@ -25,9 +25,8 @@ export function ProductCard({ product }: { product: Product }) {
         <p className="eyebrow text-muted-foreground">{product.category}</p>
         <h3 className="mt-2 text-xl transition-colors group-hover:text-primary">{product.name}</h3>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{product.short}</p>
-        {product.price ? (
-          <p className="mt-3 text-sm text-foreground">{product.price}</p>
-        ) : null}
+        <p className="eyebrow mt-4 text-primary">View story</p>
+
       </div>
     </Link>
   );
