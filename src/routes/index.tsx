@@ -14,18 +14,20 @@ import { impact, site } from "@/data/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SPECTRA — Empowering Farmers & Artisans Together" },
+      { title: "SPECTRA — Every Product Carries a Story of Hope and Dignity" },
       {
         name: "description",
         content:
-          "SPECTRA brings sustainably grown spices, milk and dairy together with handcrafted leather juti, shoes and goods — supporting farmers and artisans across 48 villages.",
+          "Through Farmer Producer Organizations and Other Farmer Producer Organizations, SPECTRA empowers rural farmers and artisans in Rajasthan with sustainable livelihoods and preserved traditional skills.",
       },
-      { property: "og:title", content: "SPECTRA — Empowering Farmers & Artisans Together" },
+      { property: "og:title", content: "SPECTRA — Hope, Hard Work and Dignity" },
       {
         property: "og:description",
         content:
-          "Agricultural produce and traditional leather craftsmanship under one producer-owned identity.",
+          "Meet the farmers, women and artisans behind every spice, every litre of milk and every hand-stitched juti.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -36,25 +38,26 @@ export const Route = createFileRoute("/")({
 const reasons = [
   {
     icon: Sprout,
-    title: "Grown, not sourced",
-    body: "Every ingredient traces back to a named member farm — no anonymous middle layer between the field and you.",
+    title: "Who made this",
+    body: "Every lot traces back to a named household — a farming family, a dairy member, an artisan bench. Nothing arrives anonymously.",
   },
   {
     icon: Handshake,
-    title: "Fair by structure",
-    body: "Members own the organisation. Surplus returns to the households that produced the goods, not to shareholders.",
+    title: "Why it matters",
+    body: "Organised together, producers hold bargaining power they never had alone. The value of good work stays where the work happened.",
   },
   {
     icon: ShieldCheck,
-    title: "Quality held to record",
-    body: "Batch testing at collection, documented curing times, and traceable lots for every product we dispatch.",
+    title: "How a life changes",
+    body: "Assured procurement, savings groups and steady order books turn seasonal uncertainty into school fees, medicine and repairs that no longer wait.",
   },
   {
     icon: Leaf,
-    title: "Made to last",
-    body: "Vegetable tanning, natural drying, minimal processing. Slower methods, longer-lived goods.",
+    title: "What endures",
+    body: "Traditional knowledge, sustainable practice and inherited craft survive because they finally sustain the people who carry them.",
   },
 ];
+
 
 function Home() {
   const featured = products.filter((p) => p.featured).slice(0, 6);

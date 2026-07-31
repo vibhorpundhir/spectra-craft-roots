@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FpoRouteImport } from './routes/fpo'
 import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as ImpactRouteImport } from './routes/impact'
 import { Route as OfpoRouteImport } from './routes/ofpo'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -44,6 +45,11 @@ const FpoRoute = FpoRouteImport.update({
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpactRoute = ImpactRouteImport.update({
+  id: '/impact',
+  path: '/impact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OfpoRoute = OfpoRouteImport.update({
@@ -83,6 +89,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/fpo': typeof FpoRoute
   '/gallery': typeof GalleryRoute
+  '/impact': typeof ImpactRoute
   '/ofpo': typeof OfpoRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -96,6 +103,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/fpo': typeof FpoRoute
   '/gallery': typeof GalleryRoute
+  '/impact': typeof ImpactRoute
   '/ofpo': typeof OfpoRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -110,6 +118,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/fpo': typeof FpoRoute
   '/gallery': typeof GalleryRoute
+  '/impact': typeof ImpactRoute
   '/ofpo': typeof OfpoRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -125,6 +134,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/fpo'
     | '/gallery'
+    | '/impact'
     | '/ofpo'
     | '/privacy'
     | '/sitemap.xml'
@@ -138,6 +148,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/fpo'
     | '/gallery'
+    | '/impact'
     | '/ofpo'
     | '/privacy'
     | '/sitemap.xml'
@@ -151,6 +162,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/fpo'
     | '/gallery'
+    | '/impact'
     | '/ofpo'
     | '/privacy'
     | '/sitemap.xml'
@@ -165,6 +177,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FpoRoute: typeof FpoRoute
   GalleryRoute: typeof GalleryRoute
+  ImpactRoute: typeof ImpactRoute
   OfpoRoute: typeof OfpoRoute
   PrivacyRoute: typeof PrivacyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -208,6 +221,13 @@ declare module '@tanstack/react-router' {
       path: '/gallery'
       fullPath: '/gallery'
       preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/impact': {
+      id: '/impact'
+      path: '/impact'
+      fullPath: '/impact'
+      preLoaderRoute: typeof ImpactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ofpo': {
@@ -261,6 +281,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FpoRoute: FpoRoute,
   GalleryRoute: GalleryRoute,
+  ImpactRoute: ImpactRoute,
   OfpoRoute: OfpoRoute,
   PrivacyRoute: PrivacyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
