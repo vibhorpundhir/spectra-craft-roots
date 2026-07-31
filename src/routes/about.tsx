@@ -93,13 +93,13 @@ function About() {
           <Reveal className="bg-cream p-8 sm:p-12 lg:p-16">
             <p className="eyebrow text-primary">Mission</p>
             <h2 className="mt-4 text-2xl leading-snug sm:text-3xl">
-              Make honest production financially viable for the people who practise it.
+              To improve the lives of marginalised rural communities through education, livelihood, women's empowerment and community participation.
             </h2>
           </Reveal>
           <Reveal delay={0.1} className="bg-cream p-8 sm:p-12 lg:p-16">
             <p className="eyebrow text-leather">Vision</p>
             <h2 className="mt-4 text-2xl leading-snug sm:text-3xl">
-              A rural economy where traditional skill is a livelihood, not a memory.
+              A rural Rajasthan where every family lives with justice, dignity and the means to govern its own future.
             </h2>
           </Reveal>
         </div>
@@ -107,7 +107,7 @@ function About() {
 
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
         <Reveal>
-          <SectionHeading eyebrow="Our Values" title="Four commitments we are measured against" />
+          <SectionHeading eyebrow="Our Values" title="Four commitments that shape every programme" />
         </Reveal>
         <div className="mt-14 grid gap-10 sm:grid-cols-2">
           {values.map((v, i) => (

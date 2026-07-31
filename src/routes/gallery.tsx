@@ -42,8 +42,8 @@ function Gallery() {
     <>
       <PageHero
         eyebrow="Gallery"
-        title="Fields, benches and the people between them."
-        intro="A working record of our farms, collection centres, workshops, training days and community events."
+        title="Faces, hands and the days that build a livelihood."
+        intro="A documentary record of the farmers, women's groups, artisans and communities SPECTRA works alongside — the people you are really looking at when you see a product."
       />
 
       <section className="mx-auto max-w-7xl px-5 pb-24 sm:px-8">

@@ -8,8 +8,8 @@ export function Footer() {
         <div className="md:col-span-2">
           <p className="font-display text-2xl tracking-[0.3em]">SPECTRA</p>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/70">
-            A producer-owned collective bringing sustainably grown agricultural produce and
-            traditional leather craftsmanship under one identity.
+            Society for Public Education Cultural Training and Rural Action — a voluntary,
+            non-profit organisation working since 1996 with rural families across Rajasthan.
           </p>
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
             {site.social.map((s) => (
@@ -50,6 +50,11 @@ export function Footer() {
             <p>
               <a className="transition-colors hover:text-cream" href={site.phoneHref}>
                 {site.phone}
+              </a>
+            </p>
+            <p>
+              <a className="transition-colors hover:text-cream" href={site.landlineHref}>
+                {site.landline}
               </a>
             </p>
             <p>

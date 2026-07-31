@@ -66,8 +66,8 @@ function Contact() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Tell us what you need."
-        intro="Wholesale supply, retail stocking, institutional orders or a single curious question — we answer every enquiry within two working days."
+        title="Come and see the work for yourself."
+        intro="Questions about a product, a partnership, a village visit or volunteering — write, call or message us. Every enquiry reaches a person at our Alwar office."
       />
 
       <section className="mx-auto grid max-w-7xl gap-12 px-5 pb-24 sm:px-8 lg:grid-cols-2 lg:gap-16">
@@ -147,6 +147,12 @@ function Contact() {
               <Phone className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={1.5} />
               <a href={site.phoneHref} className="text-muted-foreground hover:text-foreground">
                 {site.phone}
+              </a>
+            </li>
+            <li className="flex gap-4">
+              <Phone className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={1.5} />
+              <a href={site.landlineHref} className="text-muted-foreground hover:text-foreground">
+                {site.landline}
               </a>
             </li>
             <li className="flex gap-4">
