@@ -54,10 +54,11 @@ function Products() {
   return (
     <>
       <PageHero
-        eyebrow="Catalogue"
-        title="Everything we make, in one place."
-        intro="A display catalogue — no cart, no checkout. Tell us what interests you and we will send availability, lot sizes and pricing."
+        eyebrow="Outcomes of a journey"
+        title="Not products. Proof of what rural hands can do."
+        intro="Each item here is the visible end of a long, patient effort by a farming family or an artisan household. There is no cart and no price list — only stories, and an open door if you would like to know more."
       />
+
 
       <section className="mx-auto max-w-7xl px-5 pb-24 sm:px-8">
         <div className="border-y border-border py-6">

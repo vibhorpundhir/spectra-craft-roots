@@ -133,9 +133,16 @@ function ProductDetail() {
           </div>
 
           <div className="mt-10 border-t border-border pt-8">
-            <h2 className="text-2xl">The story</h2>
+            <h2 className="text-2xl">Who made this</h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">{product.story}</p>
+            <Link
+              to={product.division === "fpo" ? "/fpo" : "/ofpo"}
+              className="eyebrow mt-6 inline-flex items-center gap-2 text-primary transition-colors hover:text-leather"
+            >
+              Meet the makers
+            </Link>
           </div>
+
         </div>
       </article>
 
