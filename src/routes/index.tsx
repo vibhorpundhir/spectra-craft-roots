@@ -181,16 +181,17 @@ function Home() {
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
-              eyebrow="Featured"
-              title="From the field and the workshop"
-              intro="A small selection from our catalogue. Every product is available for enquiry, wholesale or bulk supply."
+              eyebrow="Outcomes, not merchandise"
+              title="What the work looks like when it reaches your hands"
+              intro="Each of these began as somebody's early morning. Open one to read who made it and why it matters to their household."
             />
             <Link
               to="/products"
               className="eyebrow inline-flex items-center gap-2 text-primary transition-colors hover:text-leather"
             >
-              View all products <ArrowRight className="h-4 w-4" />
+              View all stories <ArrowRight className="h-4 w-4" />
             </Link>
+
           </div>
         </Reveal>
         <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
@@ -208,17 +209,26 @@ function Home() {
           <Reveal>
             <p className="eyebrow text-gold">Our Impact</p>
             <h2 className="mt-4 max-w-2xl text-3xl leading-tight sm:text-4xl">
-              Numbers that belong to households, not to a report.
+              Change measured in households, not in units sold.
             </h2>
           </Reveal>
           <dl className="mt-14 grid grid-cols-2 gap-10 lg:grid-cols-4">
             {impact.map((stat, i) => (
               <Reveal key={stat.label} delay={i * 0.08}>
-                <dt className="font-display text-4xl text-gold sm:text-5xl">{stat.value}</dt>
+                <dt className="font-display text-3xl text-gold sm:text-4xl">{stat.value}</dt>
                 <dd className="eyebrow mt-3 text-cream/60">{stat.label}</dd>
               </Reveal>
             ))}
           </dl>
+          <Reveal delay={0.2}>
+            <Link
+              to="/impact"
+              className="eyebrow mt-12 inline-flex items-center gap-2 text-gold transition-colors hover:text-cream"
+            >
+              See our impact <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Reveal>
+
         </div>
       </section>
 
@@ -226,10 +236,11 @@ function Home() {
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
         <Reveal>
           <SectionHeading
-            eyebrow="Why SPECTRA"
-            title="Reasons buyers stay with us"
-            intro="Partners return for the same four reasons, year after year."
+            eyebrow="Why it matters"
+            title="Four questions we answer for every product"
+            intro="Who made this, why does it matter, how does it improve a life, and what stays behind when the season ends."
           />
+
         </Reveal>
         <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {reasons.map((reason, i) => (
