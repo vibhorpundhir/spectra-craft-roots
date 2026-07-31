@@ -9,17 +9,19 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/products/")({
   head: () => ({
     meta: [
-      { title: "Product Catalogue — Spices, Dairy & Leather Craft | SPECTRA" },
+      { title: "Their Work, Made Visible — Spices, Dairy & Leather | SPECTRA" },
       {
         name: "description",
         content:
-          "Browse SPECTRA's catalogue: stone-ground spices, farm-fresh milk, bilona ghee, hand-embroidered juti, welted leather shoes and handmade leather goods.",
+          "Every spice, dairy product, juti and pair of shoes here is the outcome of a farming or artisan household's work. Read their stories and enquire — no prices, no cart.",
       },
-      { property: "og:title", content: "Product Catalogue | SPECTRA" },
+      { property: "og:title", content: "Their Work, Made Visible | SPECTRA" },
       {
         property: "og:description",
-        content: "Agricultural produce and handmade leather goods, available on enquiry.",
+        content: "Agricultural produce and handmade leather craft, presented as stories of rural livelihood.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/products" },
     ],
     links: [{ rel: "canonical", href: "/products" }],

@@ -20,17 +20,19 @@ export const Route = createFileRoute("/contact")({
   validateSearch: searchSchema,
   head: () => ({
     meta: [
-      { title: "Contact SPECTRA — Enquiries, Wholesale & Partnerships" },
+      { title: "Contact SPECTRA — Alwar, Rajasthan | Enquiries & Visits" },
       {
         name: "description",
         content:
-          "Reach SPECTRA in Alwar, Rajasthan for product enquiries, wholesale supply and partnership conversations. Phone, email, WhatsApp and office hours.",
+          "Reach SPECTRA at E-11 Patel Nagar, Mannaka Road, Alwar, Rajasthan. Phone, email, WhatsApp, working hours and map for enquiries, visits and partnerships.",
       },
       { property: "og:title", content: "Contact SPECTRA" },
       {
         property: "og:description",
-        content: "Enquiries, wholesale supply and partnerships — we reply within two working days.",
+        content: "Write, call or visit our Alwar office — every enquiry reaches a person.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
@@ -72,7 +74,7 @@ function Contact() {
 
       <section className="mx-auto grid max-w-7xl gap-12 px-5 pb-24 sm:px-8 lg:grid-cols-2 lg:gap-16">
         <form onSubmit={onSubmit} noValidate>
-          <h2 className="text-3xl">Send an enquiry</h2>
+          <h2 className="text-3xl">Write to us</h2>
           <div className="mt-8 space-y-6">
             <div>
               <label className={label} htmlFor="name">Name</label>

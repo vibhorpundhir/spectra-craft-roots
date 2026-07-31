@@ -23,7 +23,9 @@ export const Route = createFileRoute("/products/$slug")({
         { property: "og:title", content: `${loaderData.name} | SPECTRA` },
         { property: "og:description", content: loaderData.short },
         { property: "og:type", content: "product" },
-        { property: "og:url", content: `/products/${params.slug}` },
+        { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: `/products/${params.slug}` },
       ],
       links: [{ rel: "canonical", href: `/products/${params.slug}` }],
     };

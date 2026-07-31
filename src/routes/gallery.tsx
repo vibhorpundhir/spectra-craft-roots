@@ -8,17 +8,19 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — Farms, Workshops & Community | SPECTRA" },
+      { title: "Gallery — Farmers, Women, Artisans & Community | SPECTRA" },
       {
         name: "description",
         content:
-          "Photographs from SPECTRA's fields, dairy collection centres, leather workshops, training sessions and community programmes.",
+          "Documentary photographs of the farmers, women's self help groups, dairy and spice work, leather artisans, training sessions and community programmes behind SPECTRA.",
       },
       { property: "og:title", content: "Gallery | SPECTRA" },
       {
         property: "og:description",
-        content: "Inside the farms and workshops behind SPECTRA's products.",
+        content: "The people behind every product — in the fields, the courtyards and the workshops.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/gallery" },
     ],
     links: [{ rel: "canonical", href: "/gallery" }],

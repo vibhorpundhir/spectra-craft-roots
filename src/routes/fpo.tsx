@@ -25,6 +25,8 @@ export const Route = createFileRoute("/fpo")({
         content:
           "Sun-dried spices, morning-collected milk and bilona ghee from SPECTRA's farmer members.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/fpo" },
     ],
     links: [{ rel: "canonical", href: "/fpo" }],

@@ -27,6 +27,8 @@ export const Route = createFileRoute("/ofpo")({
         property: "og:description",
         content: "Vegetable-tanned, hand-stitched leather craft from village artisan clusters.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/ofpo" },
     ],
     links: [{ rel: "canonical", href: "/ofpo" }],
