@@ -259,31 +259,42 @@ function Home() {
           <Reveal>
             <SectionHeading
               eyebrow="Our Communities"
-              title="The people behind the produce"
+              title="Meet the people behind the work"
+              intro="Farmers, women's groups and artisan households — the three hands that hold everything SPECTRA does."
               tone="leather"
             />
           </Reveal>
-          <div className="mt-14 grid gap-10 md:grid-cols-2">
+          <div className="mt-14 grid gap-10 md:grid-cols-3">
             {[
               {
                 img: farmers,
-                alt: "SPECTRA farmer members standing together in a field at sunrise",
-                eyebrow: "FPO · Agriculture",
-                title: "2,400 farming families",
-                body: "Members across 48 villages cultivating spices, running dairy herds and supplying milk to shared collection centres — with input support, soil testing and assured procurement.",
+                alt: "Farmer members standing together in a field at sunrise",
+                eyebrow: "FPO · Farming families",
+                title: "Those who grow it",
+                body: "Cultivators and dairy households working together — sharing collection centres, grading discipline and a bargaining position no single smallholder can hold alone.",
                 to: "/fpo" as const,
-                cta: "Explore FPO",
+                cta: "Meet the farmers",
+              },
+              {
+                img: womenShg,
+                alt: "Women's self help group meeting with a savings ledger",
+                eyebrow: "Women's participation",
+                title: "Those who decide it",
+                body: "Self help groups where saving becomes confidence, and women take their place in planning, monitoring and every decision that shapes a household.",
+                to: "/impact" as const,
+                cta: "See our impact",
               },
               {
                 img: artisans,
                 alt: "Leather artisans cutting and stitching hides in a workshop",
-                eyebrow: "OFPO · Leather Craft",
-                title: "600 artisan hands",
-                body: "Cutters, embroiderers, lasters and finishers working in village clusters — with tool grants, design collaboration and steady order books that make the craft worth passing on.",
+                eyebrow: "OFPO · Artisan households",
+                title: "Those who make it",
+                body: "Cutters, embroiderers, lasters and finishers carrying a craft learned from their parents — now with tools, training and orders that make it worth passing on.",
                 to: "/ofpo" as const,
-                cta: "Explore OFPO",
+                cta: "Meet the artisans",
               },
             ].map((c, i) => (
+
               <Reveal key={c.title} delay={i * 0.1}>
                 <div className="group">
                   <div className="overflow-hidden">
