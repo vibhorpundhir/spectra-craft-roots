@@ -9,18 +9,20 @@ import { impact } from "@/data/site";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About SPECTRA — Our Story, Mission & Values" },
+      { title: "About SPECTRA — A Voluntary Rural Organisation Since 1996" },
       {
         name: "description",
         content:
-          "How SPECTRA grew from a village collection centre into a producer-owned collective supporting 2,400 farming families and 600 leather artisans.",
+          "SPECTRA is a voluntary, non-profit, non-government organisation working since 1996 in rural Rajasthan on education, livelihood, women's empowerment, natural resource management and youth development.",
       },
-      { property: "og:title", content: "About SPECTRA — Our Story, Mission & Values" },
+      { property: "og:title", content: "About SPECTRA — Working in Rural Rajasthan Since 1996" },
       {
         property: "og:description",
         content:
-          "Eight years of building fair markets for farmers and artisans across 48 villages.",
+          "A non-institutional, democratic organisation that puts women's participation at the centre of its planning.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/about" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
@@ -30,50 +32,52 @@ export const Route = createFileRoute("/about")({
 
 const values = [
   {
-    title: "Community Development",
-    body: "Training programmes, tool grants and shared infrastructure — collection centres, cold storage and finishing units owned by the members who use them.",
+    title: "Community Participation",
+    body: "A non-institutional approach that follows the principle of democracy — programmes are planned, monitored and evaluated with the community, not for it.",
   },
   {
-    title: "Sustainability",
-    body: "Rain-fed cultivation, natural drying, vegetable tanning and minimal packaging. We prefer methods that were sustainable long before the word existed.",
+    title: "Women at the Centre",
+    body: "Women's participation in decision making is written into how SPECTRA works. Development that leaves women out of the discussion is not development.",
   },
   {
-    title: "Quality Commitment",
-    body: "Documented curing times, batch testing at intake, and traceable lots. A product carries its origin because the household behind it stands behind it.",
+    title: "Justice and Dignity",
+    body: "The primary focus is on the problems of the poor in their struggle to obtain a life of justice and dignity — child rights, gender justice and awareness generation included.",
   },
   {
-    title: "Social Impact",
-    body: "Assured procurement, transparent pricing and surplus distribution — so a good season is felt in the household, not only on a balance sheet.",
+    title: "Livelihood Security",
+    body: "Environment stabilisation, food security, sanitation and rural industries for income generation, so that families can stay, work and thrive where they are.",
   },
 ];
 
 const timeline = [
-  { year: "2017", body: "A single milk collection centre opens with 46 founding member families." },
-  { year: "2019", body: "Spice grading and stone-milling unit commissioned; first branded turmeric lot dispatched." },
-  { year: "2021", body: "OFPO division formed with three leather artisan clusters and a shared finishing unit." },
-  { year: "2023", body: "Bilona ghee and cultured dairy line launched; membership crosses two thousand households." },
-  { year: "2025", body: "Design collaboration programme begins, taking artisan-made juti and satchels to city retailers." },
+  { year: "1996", body: "SPECTRA begins work in the rural and interior pockets of Rajasthan, registered under the Rajasthan Societies Act, 1958." },
+  { year: "Education", body: "Programmes address the educational and social needs of the deprived rural population, especially children and girls." },
+  { year: "Women", body: "Self help groups and awareness generation place women's participation at the heart of programme planning." },
+  { year: "Livelihoods", body: "Food security, sanitation and rural industries create income within the village rather than away from it." },
+  { year: "Today", body: "FPO and OFPO collectives carry the same mission into agriculture, dairy and traditional leather craft." },
 ];
+
 
 function About() {
   return (
     <>
       <PageHero
         eyebrow="About SPECTRA"
-        title="Built by the people whose work it sells."
-        intro="SPECTRA is a producer-owned collective operating two divisions — agriculture and leather craft — with a single operating principle: the value of good work should stay with the person who did it."
+        title="Society for Public Education Cultural Training and Rural Action"
+        intro="SPECTRA is a voluntary, non-profit and non-government organisation, registered under the Rajasthan Societies Act 1958, working since 1996 in the rural and interior pockets of Rajasthan to meet the educational and social needs of the deprived rural population."
         image={farmers}
-        alt="SPECTRA member farmers standing together in a field"
+        alt="Farming families standing together in a field in rural Rajasthan"
       />
 
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
         <Reveal>
           <SectionHeading
-            eyebrow="Our History"
-            title="Eight years, one collection centre at a time"
-            intro="We did not begin with a brand. We began with a weighing scale, a chilling unit and forty-six families who were tired of accepting whatever price arrived at the gate."
+            eyebrow="Our Story"
+            title="Three decades of standing with rural families"
+            intro="Child rights, women's development and awareness generation, environment stabilisation, food security, sanitation, education, rural industries for income generation, and empowerment of the community for self-governance — these are the components of our mission."
           />
         </Reveal>
+
         <ol className="mt-14 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-5">
           {timeline.map((t, i) => (
             <Reveal key={t.year} delay={i * 0.06} className="bg-background p-8">
