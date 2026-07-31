@@ -3,6 +3,8 @@ import { ArrowRight, Leaf, Handshake, ShieldCheck, Sprout } from "lucide-react";
 import agriculture from "@/assets/hero-agriculture.jpg";
 import leather from "@/assets/hero-leather.jpg";
 import farmers from "@/assets/community-farmers.jpg";
+import womenShg from "@/assets/community-women-shg.jpg";
+
 import artisans from "@/assets/community-artisans.jpg";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -359,12 +361,13 @@ function Home() {
         <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 px-5 py-20 sm:px-8 md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="max-w-xl text-3xl leading-tight sm:text-4xl">
-              Buying wholesale, stocking retail, or simply curious?
+              Want to know the family behind a product?
             </h2>
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-primary-foreground/80">
-              Tell us what you need and we will come back with availability, lot sizes and
-              pricing within two working days.
+              Write to us about a story, a visit, a partnership or an enquiry. Every message
+              reaches a person, and we reply within two working days.
             </p>
+
           </div>
           <Link
             to="/contact"
