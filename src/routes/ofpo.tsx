@@ -145,8 +145,9 @@ function Ofpo() {
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
           <Reveal>
             <SectionHeading
-              eyebrow="OFPO Products"
-              title="Juti, shoes and leather goods"
+              eyebrow="What the craft produces"
+              title="Juti, shoes and leather goods — made, not manufactured"
+              intro="Every pair is signed by the hours behind it. Open one to meet the bench it came from."
               tone="leather"
             />
           </Reveal>
@@ -198,13 +199,13 @@ function Ofpo() {
       <section className="bg-leather text-leather-foreground">
         <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 px-5 py-16 sm:px-8 md:flex-row md:items-center md:justify-between">
           <h2 className="max-w-xl text-3xl leading-tight sm:text-4xl">
-            Stocking handmade leather? Let's talk sizes and lead times.
+            Want to meet the artisans behind a pair?
           </h2>
           <Link
             to="/contact"
             className="eyebrow inline-flex shrink-0 items-center gap-2 bg-cream px-8 py-4 text-ink transition-colors hover:bg-gold"
           >
-            Send an enquiry <ArrowRight className="h-4 w-4" />
+            Meet the makers <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>

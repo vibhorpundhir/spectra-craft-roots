@@ -47,8 +47,8 @@ function Fpo() {
     <>
       <PageHero
         eyebrow="FPO · Agriculture"
-        title="Spices, milk and dairy grown by people we know by name."
-        intro="Our Farmer Producer Organisation brings together 2,400 member families across 48 villages, aggregating their produce, holding it to a shared quality standard, and taking it to market as one."
+        title="Farming families who decided to stand together."
+        intro="Our Farmer Producer Organisation is not a supply chain. It is a group of small farming and dairy households who pooled their land, labour and courage so that a season of work would finally be worth what it costs them."
         image={agriculture}
         alt="Member farmer walking between rows of crops at sunrise"
       />
@@ -87,8 +87,8 @@ function Fpo() {
           <Reveal>
             <SectionHeading
               eyebrow="Agricultural Process"
-              title="From seed to sealed jar"
-              intro="Five stages, each documented, each owned by a member cluster."
+              title="From a family's field to a sealed jar"
+              intro="Five stages, each carried out by member households in their own villages — the work stays where the people are."
             />
           </Reveal>
           <ol className="mt-14 grid gap-px bg-border md:grid-cols-3 lg:grid-cols-5">
@@ -138,7 +138,11 @@ function Fpo() {
       <section className="bg-cream">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
           <Reveal>
-            <SectionHeading eyebrow="FPO Products" title="Spices, milk and dairy" />
+            <SectionHeading
+              eyebrow="What the journey produces"
+              title="Spices, milk and dairy — the outcome, not the point"
+              intro="Each of these carries the labour of a household you could visit. Open one to read its story."
+            />
           </Reveal>
           <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
             {fpoProducts.map((product, i) => (
@@ -188,13 +192,13 @@ function Fpo() {
       <section className="bg-primary text-primary-foreground">
         <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 px-5 py-16 sm:px-8 md:flex-row md:items-center md:justify-between">
           <h2 className="max-w-xl text-3xl leading-tight sm:text-4xl">
-            Looking for bulk spices, milk or ghee?
+            Want to hear a farming family's story first hand?
           </h2>
           <Link
             to="/contact"
             className="eyebrow inline-flex shrink-0 items-center gap-2 bg-cream px-8 py-4 text-ink transition-colors hover:bg-gold"
           >
-            Talk to our team <ArrowRight className="h-4 w-4" />
+            Contact us <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
