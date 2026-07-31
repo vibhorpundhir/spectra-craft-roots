@@ -86,28 +86,32 @@ function Home() {
         <div className="absolute inset-0 bg-ink/55" aria-hidden="true" />
 
         <div className="relative mx-auto flex min-h-[88vh] max-w-4xl flex-col items-center justify-center px-5 py-24 text-center sm:px-8">
-          <p className="eyebrow text-gold">FPO &nbsp;·&nbsp; OFPO</p>
-          <h1 className="mt-6 font-display text-6xl leading-none tracking-[0.18em] text-cream sm:text-7xl lg:text-8xl">
-            SPECTRA
+          <p className="eyebrow text-gold">SPECTRA &nbsp;·&nbsp; FPO &amp; OFPO</p>
+          <h1 className="mt-6 max-w-3xl font-display text-4xl leading-[1.08] text-cream sm:text-5xl lg:text-6xl">
+            Every product carries a story of hope, hard work and dignity.
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/85 sm:text-xl">
-            {site.tagline}
+          <p className="mt-7 max-w-2xl text-base leading-relaxed text-cream/85 sm:text-lg">
+            Through our Farmer Producer Organizations (FPO) and Other Farmer Producer
+            Organizations (OFPO), SPECTRA empowers rural farmers and skilled artisans by creating
+            sustainable livelihood opportunities while preserving traditional knowledge and
+            craftsmanship.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Link
-              to="/fpo"
+              to="/impact"
               className="eyebrow inline-flex items-center justify-center gap-2 bg-primary px-8 py-4 text-primary-foreground transition-colors hover:bg-primary/90"
             >
-              Explore FPO <ArrowRight className="h-4 w-4" />
+              Our journey <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              to="/ofpo"
+              to="/fpo"
               className="eyebrow inline-flex items-center justify-center gap-2 border border-cream/40 px-8 py-4 text-cream transition-colors hover:bg-cream hover:text-ink"
             >
-              Explore OFPO <ArrowRight className="h-4 w-4" />
+              Meet the makers <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
+
       </section>
 
       {/* About */}
@@ -117,28 +121,30 @@ function Home() {
             <div className="lg:col-span-5">
               <p className="eyebrow text-primary">About SPECTRA</p>
               <h2 className="mt-4 text-3xl leading-tight sm:text-4xl md:text-5xl">
-                Two crafts, one collective, one promise.
+                Behind every product is a person you would be glad to meet.
               </h2>
             </div>
             <div className="space-y-5 text-base leading-relaxed text-muted-foreground lg:col-span-7">
               <p>
-                SPECTRA was formed to answer a simple question: what happens when farmers and
-                artisans own the organisation that sells their work? The answer, over eight
-                years, has been better prices at the gate, patient quality standards, and
-                products that carry the name of the household that made them.
+                SPECTRA — the Society for Public Education Cultural Training and Rural Action — is
+                a voluntary, non-profit, non-government organisation that has worked since 1996 in
+                the rural and interior pockets of Rajasthan, alongside families struggling for a
+                life of justice and dignity.
               </p>
               <p>
-                Our FPO division works with cultivators of spices, milk and dairy. Our OFPO
-                division works with leather artisans whose families have shaped juti and shoes
-                for generations. Different materials, identical commitment.
+                Our FPO work stands with cultivators and dairy households. Our OFPO work stands
+                with leather artisans whose families have shaped juti and shoes for generations.
+                The spices, milk and handmade shoes you see here are simply what that partnership
+                produces — the real output is a household that can plan its own future.
               </p>
               <Link
                 to="/about"
                 className="eyebrow inline-flex items-center gap-2 text-primary transition-colors hover:text-leather"
               >
-                Read our story <ArrowRight className="h-4 w-4" />
+                Our journey <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
+
           </div>
         </Reveal>
       </section>
