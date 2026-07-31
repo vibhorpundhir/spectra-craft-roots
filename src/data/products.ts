@@ -16,7 +16,6 @@ export interface Product {
   story: string;
   material: string;
   sizes?: string[];
-  price?: string;
   availability: "In Stock" | "Made to Order" | "Seasonal";
   image: string;
   gallery: string[];
@@ -42,7 +41,6 @@ export const products: Product[] = [
       "Grown on rain-fed plots by eighteen member families, our turmeric is lifted by hand, boiled the traditional way, then sun-dried on open terraces for eleven days. Stone grinding keeps the rhizome cool so the colour and aroma survive the mill. Nothing is added, nothing is polished.",
     material: "Whole rhizome, stone-ground",
     sizes: ["250 g", "500 g", "1 kg"],
-    price: "From ₹240",
     availability: "In Stock",
     image: spices,
     gallery: [spices, dairy, milk],
@@ -58,7 +56,6 @@ export const products: Product[] = [
       "Selected for colour rather than sheer heat, these chillies are shade-cured over three weeks before being pounded in small batches. The result is a warm, rounded pungency that carries a deep red across a dish.",
     material: "Whole dried chilli",
     sizes: ["200 g", "500 g"],
-    price: "From ₹190",
     availability: "Seasonal",
     image: spices,
     gallery: [spices, milk],
@@ -73,7 +70,6 @@ export const products: Product[] = [
       "Collected before sunrise at village level and chilled within ninety minutes, our milk travels a short distance from udder to bottle. Every batch is tested at the collection centre, and every rupee above cost returns to the member household that produced it.",
     material: "Whole cow milk, 4.2% fat",
     sizes: ["500 ml", "1 L"],
-    price: "₹62 / litre",
     availability: "In Stock",
     image: milk,
     gallery: [milk, dairy],
@@ -89,7 +85,6 @@ export const products: Product[] = [
       "We set the curd overnight, churn it at dawn with a wooden bilona, and simmer the butter gently until it turns amber and grainy. It takes close to thirty litres of milk to fill a single litre jar — which is exactly why it tastes the way it does.",
     material: "Cultured cow butter",
     sizes: ["250 ml", "500 ml", "1 L"],
-    price: "From ₹690",
     availability: "In Stock",
     image: dairy,
     gallery: [dairy, milk],
@@ -119,7 +114,6 @@ export const products: Product[] = [
       "Each pair passes through four sets of hands: the cutter, the embroiderer, the laster and the finisher. The tilla motif on the vamp takes a full day alone. Wear them a week and the leather remembers the shape of your foot.",
     material: "Vegetable-tanned goat leather, tilla thread",
     sizes: ["UK 5", "UK 6", "UK 7", "UK 8", "UK 9", "UK 10"],
-    price: "From ₹2,450",
     availability: "Made to Order",
     image: juti,
     gallery: [juti, shoes, goods],
@@ -135,7 +129,6 @@ export const products: Product[] = [
       "Built on a wooden last over five days, welted with waxed linen thread and burnished with beeswax. A resoleable shoe in a disposable market — made by artisans who learned the craft from their fathers.",
     material: "Full-grain buffalo leather, leather sole",
     sizes: ["UK 6", "UK 7", "UK 8", "UK 9", "UK 10", "UK 11"],
-    price: "From ₹5,900",
     availability: "Made to Order",
     image: shoes,
     gallery: [shoes, juti, goods],
@@ -150,7 +143,6 @@ export const products: Product[] = [
     story:
       "Cut from a single hide, saddle-stitched by hand so a broken thread never unravels the seam, and finished with solid brass hardware. It leaves us pale tan and turns deep honey within a year of daily use.",
     material: "Vegetable-tanned buffalo hide, brass fittings",
-    price: "From ₹7,200",
     availability: "In Stock",
     image: goods,
     gallery: [goods, shoes, juti],
@@ -166,7 +158,6 @@ export const products: Product[] = [
       "No bonded layers, no filler. One strip of thick vegetable-tanned hide, bevelled, burnished and buckled — the sort of belt that outlasts the trousers it holds up.",
     material: "Vegetable-tanned hide, brass buckle",
     sizes: ['30"', '32"', '34"', '36"', '38"', '40"'],
-    price: "From ₹1,850",
     availability: "In Stock",
     image: goods,
     gallery: [goods, juti],
