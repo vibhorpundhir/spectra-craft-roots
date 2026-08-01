@@ -1,12 +1,22 @@
 import { Link } from "@tanstack/react-router";
 import { navigation, site } from "@/data/site";
+import mark from "@/assets/spectra-mark.png.asset.json";
 
 export function Footer() {
   return (
     <footer className="mt-24 bg-ink text-cream">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 md:grid-cols-4">
         <div className="md:col-span-2">
-          <p className="font-display text-2xl tracking-[0.3em]">SPECTRA</p>
+          <div className="flex items-center gap-3">
+            <img
+              src={mark.url}
+              alt="SPECTRA logo"
+              width={44}
+              height={44}
+              className="h-10 w-auto shrink-0"
+            />
+            <p className="font-display text-2xl tracking-[0.3em]">SPECTRA</p>
+          </div>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/70">
             Society for Public Education Cultural Training and Rural Action — a voluntary,
             non-profit organisation working since 1996 with rural families across Rajasthan.
