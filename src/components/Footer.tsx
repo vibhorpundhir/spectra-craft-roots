@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { navigation, site } from "@/data/site";
+import mark from "@/assets/spectra-mark.png.asset.json";
 
 export function Footer() {
   return (
