@@ -210,21 +210,41 @@
   h4 {
     font-family: var(--font-display);
     font-weight: 400;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.018em;
+    line-height: 1.06;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 
   ::selection {
     background: var(--color-gold);
     color: var(--color-gold-foreground);
   }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 3px;
+  }
 }
 
 @utility eyebrow {
   font-family: var(--font-sans);
   font-size: 0.6875rem;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
   font-weight: 600;
+  line-height: 1.4;
+}
+
+@utility wordmark {
+  font-family: var(--font-wordmark);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  line-height: 1;
 }
 
 @utility rule-gold {
@@ -237,3 +257,194 @@
     background: var(--color-gold);
   }
 }
+
+/* Thin gold divider used above headings */
+@utility gold-rule {
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  background: var(--color-gold);
+}
+
+/* Alternating full-width story bands */
+@utility band-cream {
+  background-color: var(--color-cream);
+}
+
+@utility band-sand {
+  background-color: var(--color-sand);
+}
+
+@utility band-ink {
+  background-color: var(--color-ink);
+  color: var(--color-cream);
+}
+
+/* Section vertical rhythm */
+@utility section-y {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+  @media (min-width: 768px) {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+@utility shell {
+  margin-inline: auto;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+  @media (min-width: 640px) {
+    padding-inline: 2rem;
+  }
+}
+
+/* Documentary image frame with warm overlay + gentle zoom on hover */
+@utility frame {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-sand);
+  isolation: isolate;
+
+  & img {
+    transition:
+      transform 1200ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 700ms ease;
+    will-change: transform;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+      to top,
+      color-mix(in oklab, var(--color-ink) 55%, transparent),
+      transparent 55%
+    );
+    opacity: 0.55;
+    transition: opacity 700ms ease;
+  }
+}
+
+@utility frame-hover {
+  &:hover img,
+  .group:hover & img {
+    transform: scale(1.05);
+  }
+  &:hover::after,
+  .group:hover &::after {
+    opacity: 0.75;
+  }
+}
+
+/* Premium card surface — hairline border, subtle lift, no boxy shadow */
+@utility surface-card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  transition:
+    transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 500ms ease,
+    box-shadow 500ms ease;
+
+  &:hover,
+  .group:hover & {
+    transform: translateY(-4px);
+    border-color: color-mix(in oklab, var(--color-gold) 60%, transparent);
+    box-shadow: 0 24px 48px -32px color-mix(in oklab, var(--color-ink) 45%, transparent);
+  }
+}
+
+/* Oversized editorial section numeral */
+@utility numeral {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  line-height: 1;
+  color: color-mix(in oklab, var(--color-gold) 75%, transparent);
+}
+
+/* Animated underline for nav links */
+@utility link-underline {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 1px;
+    background: var(--color-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &:hover::after,
+  &[data-status="active"]::after {
+    transform: scaleX(1);
+  }
+}
+
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+  padding: 0.9rem 1.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  transition:
+    background-color 400ms ease,
+    transform 400ms ease;
+
+  &:hover {
+    background-color: color-mix(in oklab, var(--color-primary) 88%, var(--color-ink));
+    transform: translateY(-2px);
+  }
+}
+
+@utility btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid color-mix(in oklab, var(--color-foreground) 22%, transparent);
+  color: var(--color-foreground);
+  padding: 0.9rem 1.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  transition:
+    background-color 400ms ease,
+    color 400ms ease,
+    border-color 400ms ease;
+
+  &:hover {
+    background-color: var(--color-foreground);
+    color: var(--color-background);
+    border-color: var(--color-foreground);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
