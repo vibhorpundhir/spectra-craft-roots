@@ -119,7 +119,7 @@ function ProductDetail() {
             <Link
               to="/contact"
               search={{ product: product.name }}
-              className="eyebrow inline-flex items-center gap-2 bg-primary px-8 py-4 text-primary-foreground transition-colors hover:bg-primary/90"
+              className="btn-primary"
             >
               Enquire about this
             </Link>
@@ -127,7 +127,7 @@ function ProductDetail() {
               href={whatsappLink(`Hello SPECTRA, I would like to enquire about ${product.name}.`)}
               target="_blank"
               rel="noreferrer noopener"
-              className="eyebrow inline-flex items-center gap-2 border border-leather px-8 py-4 text-leather transition-colors hover:bg-leather hover:text-leather-foreground"
+              className="btn-ghost border-leather/40 text-leather hover:border-leather hover:bg-leather hover:text-leather-foreground"
             >
               <MessageCircle className="h-4 w-4" /> WhatsApp
             </a>

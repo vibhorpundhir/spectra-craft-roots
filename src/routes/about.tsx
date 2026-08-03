@@ -155,13 +155,13 @@ function About() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   to="/fpo"
-                  className="eyebrow border border-primary px-6 py-3.5 text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                  className="btn-ghost border-primary/40 text-primary hover:border-primary hover:bg-primary hover:text-primary-foreground"
                 >
                   FPO · Agriculture
                 </Link>
                 <Link
                   to="/ofpo"
-                  className="eyebrow border border-leather px-6 py-3.5 text-leather transition-colors hover:bg-leather hover:text-leather-foreground"
+                  className="btn-ghost border-leather/40 text-leather hover:border-leather hover:bg-leather hover:text-leather-foreground"
                 >
                   OFPO · Leather
                 </Link>
