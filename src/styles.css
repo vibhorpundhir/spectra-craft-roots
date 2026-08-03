@@ -111,17 +111,21 @@
   --ring: oklch(0.415 0.078 148);
 
   /* Brand */
-  --leather: oklch(0.395 0.062 48);
+  --leather: oklch(0.372 0.068 46);
   --leather-foreground: oklch(0.982 0.008 90);
-  --leather-soft: oklch(0.62 0.089 55);
-  --field: oklch(0.415 0.078 148);
-  --field-soft: oklch(0.585 0.089 145);
-  --gold: oklch(0.746 0.113 82);
-  --gold-foreground: oklch(0.238 0.021 60);
-  --ember: oklch(0.635 0.152 45);
-  --cream: oklch(0.968 0.017 88);
-  --sand: oklch(0.923 0.024 86);
-  --ink: oklch(0.208 0.017 60);
+  --leather-soft: oklch(0.6 0.092 54);
+  --field: oklch(0.382 0.082 148);
+  --field-soft: oklch(0.565 0.093 145);
+  --gold: oklch(0.762 0.122 82);
+  --gold-foreground: oklch(0.225 0.021 60);
+  --ember: oklch(0.628 0.156 45);
+  --cream: oklch(0.962 0.021 88);
+  --sand: oklch(0.915 0.028 86);
+  --ink: oklch(0.196 0.018 58);
+  --brandblue: oklch(0.452 0.148 259);
+  --brandred: oklch(0.552 0.192 27);
+  --brandgreen: oklch(0.532 0.132 148);
+
 
   --chart-1: oklch(0.415 0.078 148);
   --chart-2: oklch(0.395 0.062 48);
