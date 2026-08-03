@@ -55,7 +55,7 @@ function Fpo() {
         alt="Member farmer walking between rows of crops at sunrise"
       />
 
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+      <section className="shell section-y">
         <Reveal>
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div className="overflow-hidden">
@@ -74,7 +74,7 @@ function Fpo() {
                 title="Small holdings, collective strength"
                 intro="Most of our members farm under two hectares. Alone, that means weak bargaining power and distress sales. Together, it means graded lots, cold chains, branded packaging and buyers who come back."
               />
-              <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-5 text-sm leading-[1.75] text-muted-foreground">
                 Members hold shares, elect the board, and share in the surplus. Procurement prices
                 are published before the season begins, so no household plants a crop without
                 knowing what it will fetch.
@@ -85,7 +85,7 @@ function Fpo() {
       </section>
 
       <section className="bg-cream">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+        <div className="shell section-y">
           <Reveal>
             <SectionHeading
               eyebrow="Agricultural Process"
@@ -98,14 +98,14 @@ function Fpo() {
               <Reveal key={p.step} delay={i * 0.06} className="bg-cream p-8">
                 <p className="eyebrow text-gold">{p.step}</p>
                 <h3 className="mt-4 text-xl">{p.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+                <p className="mt-3 text-sm leading-[1.75] text-muted-foreground">{p.body}</p>
               </Reveal>
             ))}
           </ol>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+      <section className="shell section-y">
         <Reveal>
           <SectionHeading
             eyebrow="Sustainable Farming"
@@ -138,7 +138,7 @@ function Fpo() {
       </section>
 
       <section className="bg-cream">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+        <div className="shell section-y">
           <Reveal>
             <SectionHeading
               eyebrow="What the journey produces"
@@ -156,7 +156,7 @@ function Fpo() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+      <section className="shell section-y">
         <Reveal>
           <SectionHeading eyebrow="Community Stories" title="What membership changes" />
         </Reveal>
@@ -192,7 +192,7 @@ function Fpo() {
       </section>
 
       <section className="bg-primary text-primary-foreground">
-        <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 px-5 py-16 sm:px-8 md:flex-row md:items-center md:justify-between">
+        <div className="shell flex flex-col items-start gap-10 py-16 md:py-24 md:flex-row md:items-center md:justify-between">
           <h2 className="max-w-xl text-3xl leading-tight sm:text-4xl">
             Want to hear a farming family's story first hand?
           </h2>

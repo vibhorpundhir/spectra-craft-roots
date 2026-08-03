@@ -62,7 +62,7 @@ function Products() {
       />
 
 
-      <section className="mx-auto max-w-7xl px-5 pb-24 sm:px-8">
+      <section className="shell pb-20 md:pb-28">
         <div className="border-y border-border py-6">
           <div className="flex flex-wrap gap-3" role="group" aria-label="Filter by division">
             {(

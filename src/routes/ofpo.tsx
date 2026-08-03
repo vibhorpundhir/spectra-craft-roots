@@ -58,7 +58,7 @@ function Ofpo() {
         tone="leather"
       />
 
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+      <section className="shell section-y">
         <Reveal>
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
@@ -68,7 +68,7 @@ function Ofpo() {
                 intro="Leather work in our region has been passed down for four generations. It was also, until recently, disappearing — squeezed by cheap synthetics and unpredictable contract work."
                 tone="leather"
               />
-              <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-5 text-sm leading-[1.75] text-muted-foreground">
                 The OFPO exists to change the economics: tool grants, a shared finishing unit,
                 design collaboration with city retailers, and order books planned a season ahead so
                 that a young apprentice can see a future in the trade.
@@ -89,7 +89,7 @@ function Ofpo() {
       </section>
 
       <section className="bg-cream">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+        <div className="shell section-y">
           <Reveal>
             <SectionHeading
               eyebrow="Crafting Process"
@@ -103,14 +103,14 @@ function Ofpo() {
               <Reveal key={p.step} delay={i * 0.06} className="bg-cream p-8">
                 <p className="eyebrow text-gold">{p.step}</p>
                 <h3 className="mt-4 text-xl">{p.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+                <p className="mt-3 text-sm leading-[1.75] text-muted-foreground">{p.body}</p>
               </Reveal>
             ))}
           </ol>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+      <section className="shell section-y">
         <Reveal>
           <SectionHeading
             eyebrow="Traditional Skills"
@@ -144,7 +144,7 @@ function Ofpo() {
       </section>
 
       <section className="bg-cream">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+        <div className="shell section-y">
           <Reveal>
             <SectionHeading
               eyebrow="What the craft produces"
@@ -163,7 +163,7 @@ function Ofpo() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+      <section className="shell section-y">
         <Reveal>
           <SectionHeading eyebrow="Artisan Stories" title="Voices from the bench" tone="leather" />
         </Reveal>
@@ -199,7 +199,7 @@ function Ofpo() {
       </section>
 
       <section className="bg-leather text-leather-foreground">
-        <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 px-5 py-16 sm:px-8 md:flex-row md:items-center md:justify-between">
+        <div className="shell flex flex-col items-start gap-10 py-16 md:py-24 md:flex-row md:items-center md:justify-between">
           <h2 className="max-w-xl text-3xl leading-tight sm:text-4xl">
             Want to meet the artisans behind a pair?
           </h2>

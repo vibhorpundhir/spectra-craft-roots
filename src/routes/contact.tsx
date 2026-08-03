@@ -72,7 +72,7 @@ function Contact() {
         intro="Questions about a product, a partnership, a village visit or volunteering — write, call or message us. Every enquiry reaches a person at our Alwar office."
       />
 
-      <section className="mx-auto grid max-w-7xl gap-12 px-5 pb-24 sm:px-8 lg:grid-cols-2 lg:gap-16">
+      <section className="shell grid gap-12 pb-20 md:pb-28 lg:grid-cols-2 lg:gap-16">
         <form onSubmit={onSubmit} noValidate>
           <h2 className="text-3xl">Write to us</h2>
           <div className="mt-8 space-y-6">

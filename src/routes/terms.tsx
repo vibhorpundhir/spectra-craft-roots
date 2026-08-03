@@ -27,7 +27,7 @@ function Terms() {
       <p className="eyebrow text-primary">Legal</p>
       <h1 className="mt-4 text-4xl sm:text-5xl">Terms of Use</h1>
 
-      <div className="mt-10 space-y-8 text-sm leading-relaxed text-muted-foreground">
+      <div className="mt-10 space-y-8 text-sm leading-[1.75] text-muted-foreground">
         <section>
           <h2 className="text-2xl text-foreground">Catalogue is for display</h2>
           <p className="mt-3">

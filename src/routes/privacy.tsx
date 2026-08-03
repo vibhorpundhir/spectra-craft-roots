@@ -31,7 +31,7 @@ function Privacy() {
         information you share with us. It is not a certification or an independent audit.
       </p>
 
-      <div className="mt-10 space-y-8 text-sm leading-relaxed text-muted-foreground">
+      <div className="mt-10 space-y-8 text-sm leading-[1.75] text-muted-foreground">
         <section>
           <h2 className="text-2xl text-foreground">What we collect</h2>
           <p className="mt-3">
