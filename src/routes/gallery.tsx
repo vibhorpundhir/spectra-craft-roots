@@ -67,7 +67,7 @@ function Gallery() {
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((item, i) => (
             <Reveal key={item.alt} delay={(i % 6) * 0.05}>
-              <figure className="frame frame-hover aspect-4/3">
+              <figure className="frame frame-hover group aspect-4/3">
                 <img
                   src={item.src}
                   alt={item.alt}
@@ -76,8 +76,15 @@ function Gallery() {
                   height={900}
                   className="h-full w-full object-cover"
                 />
+                <figcaption className="absolute inset-x-0 bottom-0 z-[2] p-5">
+                  <span className="eyebrow text-gold">{item.category}</span>
+                  <p className="mt-2 text-sm leading-snug text-cream opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    {item.alt}
+                  </p>
+                </figcaption>
               </figure>
             </Reveal>
+
           ))}
         </div>
       </section>
