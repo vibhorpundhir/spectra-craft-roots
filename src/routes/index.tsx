@@ -192,7 +192,7 @@ function Home() {
 
       {/* Mission & Vision */}
       <section className="band-cream">
-        <div className="shell !px-0">
+        <div className="mx-auto max-w-7xl">
           <div className="grid gap-px bg-border sm:grid-cols-2">
             <Reveal className="band-cream p-8 sm:p-12 lg:p-16">
               <p className="eyebrow text-primary">Our Mission</p>

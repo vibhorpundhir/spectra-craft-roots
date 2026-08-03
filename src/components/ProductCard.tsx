@@ -18,7 +18,7 @@ export function ProductCard({ product }: { product: Product }) {
           height={1024}
           className="h-full w-full object-cover"
         />
-        <span className="eyebrow absolute left-4 top-4 z-2 bg-background/90 px-3 py-1.5 text-foreground">
+        <span className="eyebrow absolute left-4 top-4 z-[2] bg-background/90 px-3 py-1.5 text-foreground">
           {product.division === "fpo" ? "FPO" : "OFPO"}
         </span>
       </div>
