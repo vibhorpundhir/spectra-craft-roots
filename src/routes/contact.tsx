@@ -74,7 +74,7 @@ function Contact() {
       />
 
       <section className="shell grid gap-14 pb-20 md:pb-28 lg:grid-cols-2 lg:gap-20">
-        <form onSubmit={onSubmit} noValidate>
+        <form onSubmit={onSubmit} noValidate className="surface-card p-7 sm:p-10">
           <h2 className="text-3xl sm:text-4xl">Write to us</h2>
           <span className="gold-rule mt-4" />
           <div className="mt-8 space-y-6">
