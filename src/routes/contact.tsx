@@ -61,7 +61,8 @@ function Contact() {
     toast.success("Opening your email app with the enquiry ready to send.");
   }
 
-  const field = "mt-2 w-full border border-input bg-background px-4 py-3 text-sm outline-none focus:border-primary";
+  const field =
+    "mt-2.5 w-full border border-input bg-card px-4 py-3.5 text-sm outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary focus:bg-background";
   const label = "eyebrow text-muted-foreground";
 
   return (
@@ -72,9 +73,10 @@ function Contact() {
         intro="Questions about a product, a partnership, a village visit or volunteering — write, call or message us. Every enquiry reaches a person at our Alwar office."
       />
 
-      <section className="shell grid gap-12 pb-20 md:pb-28 lg:grid-cols-2 lg:gap-16">
+      <section className="shell grid gap-14 pb-20 md:pb-28 lg:grid-cols-2 lg:gap-20">
         <form onSubmit={onSubmit} noValidate>
-          <h2 className="text-3xl">Write to us</h2>
+          <h2 className="text-3xl sm:text-4xl">Write to us</h2>
+          <span className="gold-rule mt-4" />
           <div className="mt-8 space-y-6">
             <div>
               <label className={label} htmlFor="name">Name</label>
@@ -122,7 +124,7 @@ function Contact() {
             <div className="flex flex-wrap gap-3">
               <button
                 type="submit"
-                className="eyebrow bg-primary px-8 py-4 text-primary-foreground transition-colors hover:bg-primary/90"
+                className="btn-primary"
               >
                 Send enquiry
               </button>
@@ -130,7 +132,7 @@ function Contact() {
                 href={whatsappLink("Hello SPECTRA, I have an enquiry.")}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="eyebrow inline-flex items-center gap-2 border border-leather px-8 py-4 text-leather transition-colors hover:bg-leather hover:text-leather-foreground"
+                className="btn-ghost border-leather/40 text-leather hover:border-leather hover:bg-leather hover:text-leather-foreground"
               >
                 <MessageCircle className="h-4 w-4" /> WhatsApp
               </a>
@@ -139,7 +141,8 @@ function Contact() {
         </form>
 
         <div>
-          <h2 className="text-3xl">Visit or call</h2>
+          <h2 className="text-3xl sm:text-4xl">Visit or call</h2>
+          <span className="gold-rule mt-4" />
           <ul className="mt-8 space-y-6 text-sm">
             <li className="flex gap-4">
               <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={1.5} />
