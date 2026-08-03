@@ -1,63 +1,42 @@
-## SPECTRA — FPO & OFPO Brand Website
+# SPECTRA — Design Enhancement Phase
 
-A premium, editorial-style showcase site (no cart, no payments, no admin portal). Enquiry-driven: every product routes to a form or WhatsApp.
+Keep all existing content, routes and structure. This is a visual and layout refinement pass only — no new pages, no backend, no photo swaps (photos come next phase).
 
-### Note on the stack
-This project runs on React + TanStack Start (not Next.js) with Tailwind CSS and Motion for animation. Same capabilities — SSR, file-based routing, per-page SEO metadata — so nothing in the brief is lost; deployment is via Lovable Cloud hosting instead of Vercel.
+## Locked design decisions
+- **Palette:** warm earth, refined — deep field green (FPO), leather brown (OFPO), gold accent, cream/sand surfaces. Slightly deeper greens and warmer creams than today for more contrast and richness.
+- **Type:** Cormorant Garamond (display) + Karla (body) — kept, but with a proper scale: larger, tighter display sizes, better line-height, wider eyebrow tracking.
+- **Layout:** full-width story sections — each section owns the viewport width with alternating tone bands (cream → ink → sand) instead of one flat page.
 
-### Design direction
-- **Palette:** deep field green (FPO) and warm tan/leather brown (OFPO) as twin primaries, on cream / off-white / light beige surfaces, with gold and earthy-orange accents. Muted red and deep blue reserved for small state/accent use so the palette stays earthy, not flashy.
-- **Type:** elegant serif display headings + clean humanist sans body, generous spacing, large hero type.
-- **Motion:** restrained — scroll-reveal fades, slow image zoom on hover, soft card lifts. Nothing bouncy.
-- All colors defined as semantic tokens in `src/styles.css`, so future rebranding is one file.
+## 1. Logo and wordmark
+- Recreate the wordmark to match the logo file's typography: blue-toned, clean geometric sans, letter-spaced, all caps — replacing the current serif "SPECTRA" text next to the mark.
+- Add the logo blue as a semantic token so the wordmark is themable and dark-mode safe.
+- Header: mark + wordmark + small "Since 1996 · Alwar" line, tightened sizing so it never crowds nav on laptop or wraps on mobile.
+- Footer: same wordmark treatment, inverted on the dark band.
 
-### Pages
-```
-/                Home
-/about           About SPECTRA
-/fpo             Agriculture division
-/ofpo            Leather division
-/products        Catalogue (filter: division + category)
-/products/$slug  Product detail
-/gallery         Categorised gallery
-/contact         Contact + map + form
-/privacy /terms  Footer legal pages
-```
+## 2. Design system upgrade (`src/styles.css`)
+- Refine the token values: deeper primary green, richer leather, warmer cream, one gold accent, plus a logo-blue token.
+- Add reusable tokens for elevation and section bands: soft shadows, hairline borders, subtle gradient overlays for image cards.
+- Add utilities for the recurring premium patterns: section band, image frame with warm overlay, gold rule, oversized section numbers.
+- Tune the typographic scale and eyebrow utility for a more editorial feel.
 
-### Homepage composition
-1. Split hero — agriculture imagery left, leather workshop right, SPECTRA mark and "Empowering Farmers & Artisans Together" centered, two buttons: Explore FPO / Explore OFPO.
-2. About SPECTRA intro band.
-3. Mission & Vision (two-panel, green/brown coded).
-4. Featured products (6 cards, mixed divisions).
-5. Our Impact — counters (farmers, artisans, villages, products).
-6. Why Choose SPECTRA — 4 restrained icon points.
-7. Our Communities — farmer and artisan story cards.
-8. Gallery preview strip.
-9. Contact CTA band.
+## 3. Section and component polish
+- **Header:** slimmer, quieter at rest, more solid once scrolled; nav with underline-on-hover; refined mobile drawer (full-height panel, larger tap targets, Enquire CTA inside).
+- **Hero (home):** stronger vertical rhythm, larger display headline, gold rule, layered image treatment, subtle scroll cue.
+- **Section headings:** consistent eyebrow → rule → headline → intro pattern across every page.
+- **Cards (product, impact, gallery, community):** unified image ratios, warm overlay on hover, gentle lift, gold hairline — no boxy shadcn look.
+- **Impact / stats bands:** full-bleed dark band with large display numerals for emphasis.
+- **Gallery:** tighter grid, consistent aspect ratios per category, smooth category switching.
+- **Contact:** two-column on laptop, single column on mobile; refined inputs matching the design system.
+- **Footer:** clearer column hierarchy and generous spacing.
 
-### Division pages (FPO / OFPO)
-Each: intro hero, people story (farmers / artisans), process section (sustainable farming / leather craftsmanship, as a numbered step sequence), product strip for that division, gallery grid, community stories, CTA.
+## 4. Motion
+- Keep the existing `Reveal` scroll animation but standardise it: short distance, soft easing, staggered children, honours reduced-motion.
+- Add restrained hover motion on cards, links and buttons. Nothing bouncy.
 
-### Product catalogue
-- Grid with division and category filters, client-side, no reload.
-- Detail page: image gallery with thumbnails, name, category, material, sizes, availability, optional price, long description ("story behind the product"), Enquiry button (prefills contact form) + WhatsApp button, related products.
-- Products defined in one typed data file (`src/data/products.ts`) — CMS/database-ready later without touching UI.
+## 5. Responsive and quality pass
+- Verify every route at mobile (390), tablet (768) and laptop (1280): no horizontal scroll, no text overflow, comfortable tap targets, readable line lengths.
+- Check dark mode tokens still hold contrast.
+- Re-verify all routes render and typecheck cleanly, with screenshots at mobile and laptop widths.
 
-### Contact
-Accessible form (name, email, phone, subject, product-of-interest, message) with validation. Initial version opens a prepared email / WhatsApp message rather than storing submissions — say the word if you'd like enquiries stored in a database and emailed instead, and I'll add Lovable Cloud for that.
-Plus phone, email, address, embedded map, working hours, social links.
-
-### SEO & accessibility
-Per-route title/description/OG/Twitter tags, canonical URLs, Organization + Product JSON-LD, semantic landmarks, alt text on every image, keyboard-navigable menus and filters, AA contrast, lazy-loaded imagery, sitemap and robots.
-
-### Content & imagery
-I'll generate cohesive lifestyle photography (fields, spices, dairy, leather workshop, juti, shoes) and write placeholder brand copy, product names and stories in SPECTRA's voice. Swap in real photos, contact details, and product data whenever you have them.
-
-### Build order
-1. Design tokens, fonts, layout shell (header nav, mobile drawer, footer).
-2. Imagery generation + product/gallery data files.
-3. Home page.
-4. FPO, OFPO, About.
-5. Catalogue + product detail.
-6. Gallery, Contact, legal pages.
-7. SEO metadata, animation polish, responsive and accessibility pass.
+## Technical notes
+All colour work stays in `src/styles.css` as semantic OKLCH tokens — no hardcoded colour utilities in components. Changes are confined to `src/styles.css`, `src/components/*` (Logo, Header, Footer, SectionHeading, PageHero, ProductCard, Reveal) and presentation markup inside the existing route files. Data files and route structure are untouched.
