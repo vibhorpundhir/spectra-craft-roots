@@ -24,18 +24,38 @@ export function PageHero({
         aria-hidden
         className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-gold/10 blur-3xl"
       />
-      <div className="shell relative grid items-center gap-10 py-16 md:py-24 lg:grid-cols-12 lg:gap-16">
-        <div className="lg:col-span-6">
+      <div
+        className={cn(
+          "shell relative grid items-center gap-10 py-16 md:py-24 lg:gap-16",
+          image && "lg:grid-cols-12",
+        )}
+      >
+        <div className={cn(image ? "lg:col-span-6" : "max-w-4xl")}>
           <p className={cn("eyebrow", tone === "leather" ? "text-leather" : "text-primary")}>
             {eyebrow}
           </p>
           <span className="gold-rule mt-4" />
-          <h1 className="mt-6 text-[2.5rem] leading-[1.02] sm:text-5xl lg:text-[4rem]">{title}</h1>
-          <p className="mt-6 max-w-xl text-base leading-[1.8] text-muted-foreground sm:text-lg">
+          <h1
+            className={cn(
+              "mt-6 leading-[1.02]",
+              image
+                ? "text-[2.5rem] sm:text-5xl lg:text-[4rem]"
+                : "text-[2.75rem] sm:text-6xl lg:text-[4.5rem]",
+            )}
+          >
+            {title}
+          </h1>
+          <p
+            className={cn(
+              "mt-6 text-base leading-[1.8] text-muted-foreground sm:text-lg",
+              image ? "max-w-xl" : "max-w-2xl",
+            )}
+          >
             {intro}
           </p>
           {children ? <div className="mt-9">{children}</div> : null}
         </div>
+
         {image ? (
           <div className="frame frame-hover aspect-4/3 lg:col-span-6">
             <img
