@@ -60,6 +60,35 @@ const reasons = [
   },
 ];
 
+const communities = [
+  {
+    img: farmers,
+    alt: "Farmer members standing together in a field at sunrise",
+    eyebrow: "FPO · Farming families",
+    title: "Those who grow it",
+    body: "Cultivators and dairy households working together — sharing collection centres, grading discipline and a bargaining position no single smallholder can hold alone.",
+    to: "/fpo" as const,
+    cta: "Meet the farmers",
+  },
+  {
+    img: womenShg,
+    alt: "Women's self help group meeting with a savings ledger",
+    eyebrow: "Women's participation",
+    title: "Those who decide it",
+    body: "Self help groups where saving becomes confidence, and women take their place in planning, monitoring and every decision that shapes a household.",
+    to: "/impact" as const,
+    cta: "See our impact",
+  },
+  {
+    img: artisans,
+    alt: "Leather artisans cutting and stitching hides in a workshop",
+    eyebrow: "OFPO · Artisan households",
+    title: "Those who make it",
+    body: "Cutters, embroiderers, lasters and finishers carrying a craft learned from their parents — now with tools, training and orders that make it worth passing on.",
+    to: "/ofpo" as const,
+    cta: "Meet the artisans",
+  },
+];
 
 function Home() {
   const featured = products.filter((p) => p.featured).slice(0, 6);
@@ -68,196 +97,221 @@ function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative isolate min-h-[88vh] overflow-hidden bg-ink">
+      <section className="relative isolate min-h-[92svh] overflow-hidden bg-ink">
         <div className="absolute inset-0 grid grid-cols-2">
           <img
             src={agriculture}
             alt="Farmer walking through green fields at sunrise"
             width={1200}
             height={1600}
-            className="h-full w-full object-cover opacity-70"
+            className="h-full w-full object-cover"
           />
           <img
             src={leather}
             alt="Artisan finishing a handmade leather shoe in a workshop"
             width={1200}
             height={1600}
-            className="h-full w-full object-cover opacity-70"
+            className="h-full w-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-ink/55" aria-hidden="true" />
+        <div
+          className="absolute inset-0 bg-linear-to-b from-ink/75 via-ink/65 to-ink/90"
+          aria-hidden="true"
+        />
 
-        <div className="relative mx-auto flex min-h-[88vh] max-w-4xl flex-col items-center justify-center px-5 py-24 text-center sm:px-8">
+        <div className="shell relative flex min-h-[92svh] max-w-5xl flex-col items-center justify-center py-28 text-center">
           <p className="eyebrow text-gold">SPECTRA &nbsp;·&nbsp; FPO &amp; OFPO</p>
-          <h1 className="mt-6 max-w-3xl font-display text-4xl leading-[1.08] text-cream sm:text-5xl lg:text-6xl">
+          <span className="gold-rule mt-5" />
+          <h1 className="mt-7 max-w-4xl font-display text-[2.5rem] leading-[1.03] text-cream sm:text-[3.5rem] lg:text-[4.75rem]">
             Every product carries a story of hope, hard work and dignity.
           </h1>
-          <p className="mt-7 max-w-2xl text-base leading-relaxed text-cream/85 sm:text-lg">
+          <p className="mt-8 max-w-2xl text-base leading-[1.8] text-cream/85 sm:text-lg">
             Through our Farmer Producer Organizations (FPO) and Other Farmer Producer
             Organizations (OFPO), SPECTRA empowers rural farmers and skilled artisans by creating
             sustainable livelihood opportunities while preserving traditional knowledge and
             craftsmanship.
           </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Link
-              to="/impact"
-              className="eyebrow inline-flex items-center justify-center gap-2 bg-primary px-8 py-4 text-primary-foreground transition-colors hover:bg-primary/90"
-            >
+          <div className="mt-11 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+            <Link to="/impact" className="btn-primary">
               Our journey <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               to="/fpo"
-              className="eyebrow inline-flex items-center justify-center gap-2 border border-cream/40 px-8 py-4 text-cream transition-colors hover:bg-cream hover:text-ink"
+              className="btn-ghost border-cream/40 text-cream hover:border-cream hover:bg-cream hover:text-ink"
             >
               Meet the makers <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
 
+        <div
+          aria-hidden
+          className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 sm:flex"
+        >
+          <span className="eyebrow text-[0.55rem] text-cream/50">Scroll</span>
+          <span className="h-10 w-px bg-linear-to-b from-cream/50 to-transparent" />
+        </div>
       </section>
 
       {/* About */}
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
-        <Reveal>
-          <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-            <div className="lg:col-span-5">
-              <p className="eyebrow text-primary">About SPECTRA</p>
-              <h2 className="mt-4 text-3xl leading-tight sm:text-4xl md:text-5xl">
-                Behind every product is a person you would be glad to meet.
-              </h2>
+      <section className="section-y">
+        <div className="shell">
+          <Reveal>
+            <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+              <div className="lg:col-span-5">
+                <p className="eyebrow text-primary">About SPECTRA</p>
+                <span className="gold-rule mt-4" />
+                <h2 className="mt-6 text-[2rem] sm:text-4xl md:text-[3.25rem]">
+                  Behind every product is a person you would be glad to meet.
+                </h2>
+              </div>
+              <div className="space-y-6 text-base leading-[1.8] text-muted-foreground lg:col-span-7 lg:pt-3">
+                <p>
+                  SPECTRA — the Society for Public Education Cultural Training and Rural Action —
+                  is a voluntary, non-profit, non-government organisation that has worked since
+                  1996 in the rural and interior pockets of Rajasthan, alongside families
+                  struggling for a life of justice and dignity.
+                </p>
+                <p>
+                  Our FPO work stands with cultivators and dairy households. Our OFPO work stands
+                  with leather artisans whose families have shaped juti and shoes for generations.
+                  The spices, milk and handmade shoes you see here are simply what that partnership
+                  produces — the real output is a household that can plan its own future.
+                </p>
+                <Link
+                  to="/about"
+                  className="eyebrow link-underline inline-flex items-center gap-2 text-primary transition-colors hover:text-leather"
+                >
+                  Our journey <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
-            <div className="space-y-5 text-base leading-relaxed text-muted-foreground lg:col-span-7">
-              <p>
-                SPECTRA — the Society for Public Education Cultural Training and Rural Action — is
-                a voluntary, non-profit, non-government organisation that has worked since 1996 in
-                the rural and interior pockets of Rajasthan, alongside families struggling for a
-                life of justice and dignity.
-              </p>
-              <p>
-                Our FPO work stands with cultivators and dairy households. Our OFPO work stands
-                with leather artisans whose families have shaped juti and shoes for generations.
-                The spices, milk and handmade shoes you see here are simply what that partnership
-                produces — the real output is a household that can plan its own future.
-              </p>
-              <Link
-                to="/about"
-                className="eyebrow inline-flex items-center gap-2 text-primary transition-colors hover:text-leather"
-              >
-                Our journey <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="bg-cream">
-        <div className="mx-auto grid max-w-7xl gap-px bg-border sm:grid-cols-2">
-          <Reveal className="bg-cream p-8 sm:p-12 lg:p-16">
-            <p className="eyebrow text-primary">Our Mission</p>
-            <h2 className="mt-4 text-2xl leading-snug sm:text-3xl">
-              To make honest production financially viable for the people who practise it.
-            </h2>
-            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              We aggregate, grade, brand and market member produce so that small holdings and
-              small workshops can reach buyers who value what they do — without surrendering
-              margin to intermediaries.
-            </p>
-          </Reveal>
-          <Reveal delay={0.1} className="bg-cream p-8 sm:p-12 lg:p-16">
-            <p className="eyebrow text-leather">Our Vision</p>
-            <h2 className="mt-4 text-2xl leading-snug sm:text-3xl">
-              A rural economy where traditional skill is a livelihood, not a memory.
-            </h2>
-            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              We want the next generation in our villages to inherit a craft worth continuing —
-              with training, tools, fair pricing and a market that already knows their name.
-            </p>
-          </Reveal>
+      <section className="band-cream">
+        <div className="shell !px-0">
+          <div className="grid gap-px bg-border sm:grid-cols-2">
+            <Reveal className="band-cream p-8 sm:p-12 lg:p-16">
+              <p className="eyebrow text-primary">Our Mission</p>
+              <span className="gold-rule mt-4" />
+              <h2 className="mt-6 text-2xl leading-snug sm:text-3xl">
+                To make honest production financially viable for the people who practise it.
+              </h2>
+              <p className="mt-5 text-sm leading-[1.8] text-muted-foreground sm:text-base">
+                We aggregate, grade, brand and market member produce so that small holdings and
+                small workshops can reach buyers who value what they do — without surrendering
+                margin to intermediaries.
+              </p>
+            </Reveal>
+            <Reveal delay={0.1} className="band-cream p-8 sm:p-12 lg:p-16">
+              <p className="eyebrow text-leather">Our Vision</p>
+              <span className="gold-rule mt-4" />
+              <h2 className="mt-6 text-2xl leading-snug sm:text-3xl">
+                A rural economy where traditional skill is a livelihood, not a memory.
+              </h2>
+              <p className="mt-5 text-sm leading-[1.8] text-muted-foreground sm:text-base">
+                We want the next generation in our villages to inherit a craft worth continuing —
+                with training, tools, fair pricing and a market that already knows their name.
+              </p>
+            </Reveal>
+          </div>
         </div>
       </section>
 
       {/* Featured products */}
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
-        <Reveal>
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeading
-              eyebrow="Outcomes, not merchandise"
-              title="What the work looks like when it reaches your hands"
-              intro="Each of these began as somebody's early morning. Open one to read who made it and why it matters to their household."
-            />
-            <Link
-              to="/products"
-              className="eyebrow inline-flex items-center gap-2 text-primary transition-colors hover:text-leather"
-            >
-              View all stories <ArrowRight className="h-4 w-4" />
-            </Link>
-
+      <section className="section-y">
+        <div className="shell">
+          <Reveal>
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <SectionHeading
+                eyebrow="Outcomes, not merchandise"
+                title="What the work looks like when it reaches your hands"
+                intro="Each of these began as somebody's early morning. Open one to read who made it and why it matters to their household."
+              />
+              <Link
+                to="/products"
+                className="eyebrow link-underline inline-flex items-center gap-2 text-primary transition-colors hover:text-leather"
+              >
+                View all stories <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </Reveal>
+          <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+            {featured.map((product, i) => (
+              <Reveal key={product.slug} delay={i * 0.06}>
+                <ProductCard product={product} />
+              </Reveal>
+            ))}
           </div>
-        </Reveal>
-        <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((product, i) => (
-            <Reveal key={product.slug} delay={i * 0.06}>
-              <ProductCard product={product} />
-            </Reveal>
-          ))}
         </div>
       </section>
 
       {/* Impact */}
-      <section className="bg-ink text-cream">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-24">
+      <section className="band-ink section-y">
+        <div className="shell">
           <Reveal>
             <p className="eyebrow text-gold">Our Impact</p>
-            <h2 className="mt-4 max-w-2xl text-3xl leading-tight sm:text-4xl">
+            <span className="gold-rule mt-4" />
+            <h2 className="mt-6 max-w-2xl text-[2rem] sm:text-4xl md:text-[3rem]">
               Change measured in households, not in units sold.
             </h2>
           </Reveal>
-          <dl className="mt-14 grid grid-cols-2 gap-10 lg:grid-cols-4">
+          <dl className="mt-16 grid grid-cols-2 gap-x-8 gap-y-12 lg:grid-cols-4">
             {impact.map((stat, i) => (
               <Reveal key={stat.label} delay={i * 0.08}>
-                <dt className="font-display text-3xl text-gold sm:text-4xl">{stat.value}</dt>
-                <dd className="eyebrow mt-3 text-cream/60">{stat.label}</dd>
+                <div className="border-t border-cream/15 pt-6">
+                  <dt className="font-display text-[2.25rem] leading-none text-gold sm:text-[3rem]">
+                    {stat.value}
+                  </dt>
+                  <dd className="eyebrow mt-4 text-cream/55">{stat.label}</dd>
+                </div>
               </Reveal>
             ))}
           </dl>
           <Reveal delay={0.2}>
             <Link
               to="/impact"
-              className="eyebrow mt-12 inline-flex items-center gap-2 text-gold transition-colors hover:text-cream"
+              className="eyebrow link-underline mt-14 inline-flex items-center gap-2 text-gold transition-colors hover:text-cream"
             >
               See our impact <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
-
         </div>
       </section>
 
-      {/* Why choose */}
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Why it matters"
-            title="Four questions we answer for every product"
-            intro="Who made this, why does it matter, how does it improve a life, and what stays behind when the season ends."
-          />
-
-        </Reveal>
-        <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {reasons.map((reason, i) => (
-            <Reveal key={reason.title} delay={i * 0.06}>
-              <reason.icon className="h-6 w-6 text-primary" strokeWidth={1.5} aria-hidden="true" />
-              <h3 className="mt-5 text-xl">{reason.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{reason.body}</p>
-            </Reveal>
-          ))}
+      {/* Why it matters */}
+      <section className="section-y">
+        <div className="shell">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Why it matters"
+              title="Four questions we answer for every product"
+              intro="Who made this, why does it matter, how does it improve a life, and what stays behind when the season ends."
+            />
+          </Reveal>
+          <div className="mt-16 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
+            {reasons.map((reason, i) => (
+              <Reveal key={reason.title} delay={i * 0.06} className="bg-background p-8">
+                <span className="numeral block text-[2.5rem]">0{i + 1}</span>
+                <reason.icon
+                  className="mt-6 h-6 w-6 text-primary"
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                />
+                <h3 className="mt-5 text-xl">{reason.title}</h3>
+                <p className="mt-3 text-sm leading-[1.75] text-muted-foreground">{reason.body}</p>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Communities */}
-      <section className="bg-cream">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+      <section className="band-cream section-y">
+        <div className="shell">
           <Reveal>
             <SectionHeading
               eyebrow="Our Communities"
@@ -266,55 +320,26 @@ function Home() {
               tone="leather"
             />
           </Reveal>
-          <div className="mt-14 grid gap-10 md:grid-cols-3">
-            {[
-              {
-                img: farmers,
-                alt: "Farmer members standing together in a field at sunrise",
-                eyebrow: "FPO · Farming families",
-                title: "Those who grow it",
-                body: "Cultivators and dairy households working together — sharing collection centres, grading discipline and a bargaining position no single smallholder can hold alone.",
-                to: "/fpo" as const,
-                cta: "Meet the farmers",
-              },
-              {
-                img: womenShg,
-                alt: "Women's self help group meeting with a savings ledger",
-                eyebrow: "Women's participation",
-                title: "Those who decide it",
-                body: "Self help groups where saving becomes confidence, and women take their place in planning, monitoring and every decision that shapes a household.",
-                to: "/impact" as const,
-                cta: "See our impact",
-              },
-              {
-                img: artisans,
-                alt: "Leather artisans cutting and stitching hides in a workshop",
-                eyebrow: "OFPO · Artisan households",
-                title: "Those who make it",
-                body: "Cutters, embroiderers, lasters and finishers carrying a craft learned from their parents — now with tools, training and orders that make it worth passing on.",
-                to: "/ofpo" as const,
-                cta: "Meet the artisans",
-              },
-            ].map((c, i) => (
-
+          <div className="mt-16 grid gap-10 md:grid-cols-3">
+            {communities.map((c, i) => (
               <Reveal key={c.title} delay={i * 0.1}>
                 <div className="group">
-                  <div className="overflow-hidden">
+                  <div className="frame frame-hover aspect-4/3">
                     <img
                       src={c.img}
                       alt={c.alt}
                       loading="lazy"
                       width={1200}
                       height={900}
-                      className="aspect-4/3 w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+                      className="h-full w-full object-cover"
                     />
                   </div>
                   <p className="eyebrow mt-6 text-muted-foreground">{c.eyebrow}</p>
-                  <h3 className="mt-2 text-2xl">{c.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.body}</p>
+                  <h3 className="mt-2.5 text-2xl">{c.title}</h3>
+                  <p className="mt-3 text-sm leading-[1.75] text-muted-foreground">{c.body}</p>
                   <Link
                     to={c.to}
-                    className="eyebrow mt-5 inline-flex items-center gap-2 text-primary transition-colors hover:text-leather"
+                    className="eyebrow link-underline mt-6 inline-flex items-center gap-2 text-primary transition-colors hover:text-leather"
                   >
                     {c.cta} <ArrowRight className="h-4 w-4" />
                   </Link>
@@ -326,52 +351,56 @@ function Home() {
       </section>
 
       {/* Gallery preview */}
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
-        <Reveal>
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeading eyebrow="Gallery" title="Days on the farm and at the bench" />
-            <Link
-              to="/gallery"
-              className="eyebrow inline-flex items-center gap-2 text-primary transition-colors hover:text-leather"
-            >
-              Open gallery <ArrowRight className="h-4 w-4" />
-            </Link>
+      <section className="section-y">
+        <div className="shell">
+          <Reveal>
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <SectionHeading eyebrow="Gallery" title="Days on the farm and at the bench" />
+              <Link
+                to="/gallery"
+                className="eyebrow link-underline inline-flex items-center gap-2 text-primary transition-colors hover:text-leather"
+              >
+                Open gallery <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </Reveal>
+          <div className="mt-14 grid grid-cols-2 gap-3 lg:grid-cols-4">
+            {galleryPreview.map((item, i) => (
+              <Reveal key={item.alt} delay={i * 0.05}>
+                <div className="frame frame-hover aspect-square">
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    loading="lazy"
+                    width={1200}
+                    height={900}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </Reveal>
+            ))}
           </div>
-        </Reveal>
-        <div className="mt-12 grid grid-cols-2 gap-3 lg:grid-cols-4">
-          {galleryPreview.map((item, i) => (
-            <Reveal key={item.alt} delay={i * 0.05}>
-              <div className="overflow-hidden bg-sand">
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  loading="lazy"
-                  width={1200}
-                  height={900}
-                  className="aspect-square w-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-105"
-                />
-              </div>
-            </Reveal>
-          ))}
         </div>
       </section>
 
       {/* Contact CTA */}
       <section className="bg-primary text-primary-foreground">
-        <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 px-5 py-20 sm:px-8 md:flex-row md:items-center md:justify-between">
+        <div className="shell flex flex-col items-start gap-10 py-16 md:flex-row md:items-center md:justify-between md:py-24">
           <div>
-            <h2 className="max-w-xl text-3xl leading-tight sm:text-4xl">
+            <h2 className="max-w-xl text-[2rem] sm:text-4xl md:text-[3rem]">
               Want to know the family behind a product?
             </h2>
-            <p className="mt-4 max-w-lg text-sm leading-relaxed text-primary-foreground/80">
+            <p className="mt-5 max-w-lg text-sm leading-[1.8] text-primary-foreground/80 sm:text-base">
               Write to us about a story, a visit, a partnership or an enquiry. Every message
               reaches a person, and we reply within two working days.
             </p>
-
+            <p className="eyebrow mt-6 text-primary-foreground/60">
+              {site.phone} · {site.email}
+            </p>
           </div>
           <Link
             to="/contact"
-            className="eyebrow inline-flex shrink-0 items-center gap-2 bg-cream px-8 py-4 text-ink transition-colors hover:bg-gold"
+            className="eyebrow inline-flex shrink-0 items-center gap-2 bg-cream px-8 py-4 text-ink transition-all duration-500 hover:-translate-y-0.5 hover:bg-gold"
           >
             Send an enquiry <ArrowRight className="h-4 w-4" />
           </Link>
