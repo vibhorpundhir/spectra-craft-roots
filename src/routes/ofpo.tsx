@@ -74,7 +74,7 @@ function Ofpo() {
                 that a young apprentice can see a future in the trade.
               </p>
             </div>
-            <div className="overflow-hidden">
+            <div className="frame frame-hover">
               <img
                 src={artisans}
                 alt="Artisans cutting and stitching leather in a village workshop"
@@ -120,24 +120,24 @@ function Ofpo() {
           />
         </Reveal>
         <div className="mt-12 grid gap-3 sm:grid-cols-2">
-          <Reveal className="overflow-hidden">
+          <Reveal className="frame frame-hover">
             <img
               src={juti}
               alt="Hand-embroidered leather juti with gold tilla work"
               loading="lazy"
               width={1024}
               height={1024}
-              className="aspect-4/3 w-full object-cover transition-transform duration-[1200ms] hover:scale-105"
+              className="aspect-4/3 w-full object-cover"
             />
           </Reveal>
-          <Reveal delay={0.08} className="overflow-hidden">
+          <Reveal delay={0.08} className="frame frame-hover">
             <img
               src={goods}
               alt="Handmade leather satchel and belt on linen"
               loading="lazy"
               width={1024}
               height={1024}
-              className="aspect-4/3 w-full object-cover transition-transform duration-[1200ms] hover:scale-105"
+              className="aspect-4/3 w-full object-cover"
             />
           </Reveal>
         </div>

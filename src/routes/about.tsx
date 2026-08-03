@@ -135,7 +135,7 @@ function About() {
       <section className="shell section-y">
         <Reveal>
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-            <div className="overflow-hidden">
+            <div className="frame frame-hover">
               <img
                 src={artisans}
                 alt="Artisans working leather together in a village workshop"

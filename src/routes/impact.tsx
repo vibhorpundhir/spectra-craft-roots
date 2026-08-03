@@ -138,7 +138,7 @@ function Impact() {
           <div className="mt-14 grid gap-12 md:grid-cols-2">
             {stories.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.08}>
-                <div className="overflow-hidden">
+                <div className="frame frame-hover">
                   <img
                     src={s.img}
                     alt={s.title}

@@ -58,7 +58,7 @@ function Fpo() {
       <section className="shell section-y">
         <Reveal>
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-            <div className="overflow-hidden">
+            <div className="frame frame-hover">
               <img
                 src={farmers}
                 alt="SPECTRA farmer members gathered together at sunrise"
@@ -114,24 +114,24 @@ function Fpo() {
           />
         </Reveal>
         <div className="mt-12 grid gap-3 sm:grid-cols-2">
-          <Reveal className="overflow-hidden">
+          <Reveal className="frame frame-hover">
             <img
               src={dairyCentre}
               alt="Steel milk cans at a SPECTRA village collection centre"
               loading="lazy"
               width={1200}
               height={900}
-              className="aspect-4/3 w-full object-cover transition-transform duration-[1200ms] hover:scale-105"
+              className="aspect-4/3 w-full object-cover"
             />
           </Reveal>
-          <Reveal delay={0.08} className="overflow-hidden">
+          <Reveal delay={0.08} className="frame frame-hover">
             <img
               src={training}
               alt="Farmer training session under a field tent"
               loading="lazy"
               width={1200}
               height={900}
-              className="aspect-4/3 w-full object-cover transition-transform duration-[1200ms] hover:scale-105"
+              className="aspect-4/3 w-full object-cover"
             />
           </Reveal>
         </div>

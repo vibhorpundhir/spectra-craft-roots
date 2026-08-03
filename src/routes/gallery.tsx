@@ -67,14 +67,14 @@ function Gallery() {
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((item, i) => (
             <Reveal key={item.alt} delay={(i % 6) * 0.05}>
-              <figure className="overflow-hidden bg-sand">
+              <figure className="frame frame-hover aspect-4/3">
                 <img
                   src={item.src}
                   alt={item.alt}
                   loading="lazy"
                   width={1200}
                   height={900}
-                  className="aspect-4/3 w-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-105"
+                  className="h-full w-full object-cover"
                 />
               </figure>
             </Reveal>
