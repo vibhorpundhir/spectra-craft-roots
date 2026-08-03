@@ -8,6 +8,7 @@ export function PageHero({
   image,
   alt,
   tone = "field",
+  children,
 }: {
   eyebrow: string;
   title: string;
@@ -18,23 +19,51 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <section className="relative overflow-hidden bg-cream">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 sm:px-8 md:py-24 lg:grid-cols-2 lg:gap-16">
-        <div>
+    <section className="band-cream relative overflow-hidden">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-gold/10 blur-3xl"
+      />
+      <div
+        className={cn(
+          "shell relative grid items-center gap-10 py-16 md:py-24 lg:gap-16",
+          image && "lg:grid-cols-12",
+        )}
+      >
+        <div className={cn(image ? "lg:col-span-6" : "max-w-4xl")}>
           <p className={cn("eyebrow", tone === "leather" ? "text-leather" : "text-primary")}>
             {eyebrow}
           </p>
-          <h1 className="mt-5 text-4xl leading-[1.05] sm:text-5xl lg:text-6xl">{title}</h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">{intro}</p>
+          <span className="gold-rule mt-4" />
+          <h1
+            className={cn(
+              "mt-6 leading-[1.02]",
+              image
+                ? "text-[2.5rem] sm:text-5xl lg:text-[4rem]"
+                : "text-[2.75rem] sm:text-6xl lg:text-[4.5rem]",
+            )}
+          >
+            {title}
+          </h1>
+          <p
+            className={cn(
+              "mt-6 text-base leading-[1.8] text-muted-foreground sm:text-lg",
+              image ? "max-w-xl" : "max-w-2xl",
+            )}
+          >
+            {intro}
+          </p>
+          {children ? <div className="mt-9">{children}</div> : null}
         </div>
+
         {image ? (
-          <div className="overflow-hidden">
+          <div className="frame frame-hover aspect-4/3 lg:col-span-6">
             <img
               src={image}
               alt={alt ?? ""}
               width={1200}
               height={900}
-              className="aspect-4/3 w-full object-cover"
+              className="h-full w-full object-cover"
             />
           </div>
         ) : null}

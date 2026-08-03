@@ -58,7 +58,7 @@ function Ofpo() {
         tone="leather"
       />
 
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+      <section className="shell section-y">
         <Reveal>
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
@@ -68,13 +68,13 @@ function Ofpo() {
                 intro="Leather work in our region has been passed down for four generations. It was also, until recently, disappearing — squeezed by cheap synthetics and unpredictable contract work."
                 tone="leather"
               />
-              <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-5 text-sm leading-[1.75] text-muted-foreground">
                 The OFPO exists to change the economics: tool grants, a shared finishing unit,
                 design collaboration with city retailers, and order books planned a season ahead so
                 that a young apprentice can see a future in the trade.
               </p>
             </div>
-            <div className="overflow-hidden">
+            <div className="frame frame-hover">
               <img
                 src={artisans}
                 alt="Artisans cutting and stitching leather in a village workshop"
@@ -89,7 +89,7 @@ function Ofpo() {
       </section>
 
       <section className="bg-cream">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+        <div className="shell section-y">
           <Reveal>
             <SectionHeading
               eyebrow="Crafting Process"
@@ -103,14 +103,14 @@ function Ofpo() {
               <Reveal key={p.step} delay={i * 0.06} className="bg-cream p-8">
                 <p className="eyebrow text-gold">{p.step}</p>
                 <h3 className="mt-4 text-xl">{p.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+                <p className="mt-3 text-sm leading-[1.75] text-muted-foreground">{p.body}</p>
               </Reveal>
             ))}
           </ol>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+      <section className="shell section-y">
         <Reveal>
           <SectionHeading
             eyebrow="Traditional Skills"
@@ -120,31 +120,31 @@ function Ofpo() {
           />
         </Reveal>
         <div className="mt-12 grid gap-3 sm:grid-cols-2">
-          <Reveal className="overflow-hidden">
+          <Reveal className="frame frame-hover">
             <img
               src={juti}
               alt="Hand-embroidered leather juti with gold tilla work"
               loading="lazy"
               width={1024}
               height={1024}
-              className="aspect-4/3 w-full object-cover transition-transform duration-[1200ms] hover:scale-105"
+              className="aspect-4/3 w-full object-cover"
             />
           </Reveal>
-          <Reveal delay={0.08} className="overflow-hidden">
+          <Reveal delay={0.08} className="frame frame-hover">
             <img
               src={goods}
               alt="Handmade leather satchel and belt on linen"
               loading="lazy"
               width={1024}
               height={1024}
-              className="aspect-4/3 w-full object-cover transition-transform duration-[1200ms] hover:scale-105"
+              className="aspect-4/3 w-full object-cover"
             />
           </Reveal>
         </div>
       </section>
 
       <section className="bg-cream">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+        <div className="shell section-y">
           <Reveal>
             <SectionHeading
               eyebrow="What the craft produces"
@@ -163,7 +163,7 @@ function Ofpo() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+      <section className="shell section-y">
         <Reveal>
           <SectionHeading eyebrow="Artisan Stories" title="Voices from the bench" tone="leather" />
         </Reveal>
@@ -199,13 +199,13 @@ function Ofpo() {
       </section>
 
       <section className="bg-leather text-leather-foreground">
-        <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 px-5 py-16 sm:px-8 md:flex-row md:items-center md:justify-between">
+        <div className="shell flex flex-col items-start gap-10 py-16 md:py-24 md:flex-row md:items-center md:justify-between">
           <h2 className="max-w-xl text-3xl leading-tight sm:text-4xl">
             Want to meet the artisans behind a pair?
           </h2>
           <Link
             to="/contact"
-            className="eyebrow inline-flex shrink-0 items-center gap-2 bg-cream px-8 py-4 text-ink transition-colors hover:bg-gold"
+            className="eyebrow inline-flex shrink-0 items-center gap-2 bg-cream px-8 py-4 text-ink transition-all duration-500 hover:-translate-y-0.5 hover:bg-gold"
           >
             Meet the makers <ArrowRight className="h-4 w-4" />
           </Link>

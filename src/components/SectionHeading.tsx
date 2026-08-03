@@ -17,13 +17,22 @@ export function SectionHeading({
   className?: string;
 }) {
   const toneClass =
-    tone === "leather" ? "text-leather" : tone === "muted" ? "text-muted-foreground" : "text-primary";
+    tone === "leather"
+      ? "text-leather"
+      : tone === "muted"
+        ? "text-muted-foreground"
+        : "text-primary";
   return (
     <div className={cn("max-w-2xl", align === "center" && "mx-auto text-center", className)}>
-      {eyebrow ? <p className={cn("eyebrow", toneClass)}>{eyebrow}</p> : null}
-      <h2 className="mt-4 text-3xl leading-tight sm:text-4xl md:text-5xl">{title}</h2>
+      {eyebrow ? (
+        <>
+          <p className={cn("eyebrow", toneClass)}>{eyebrow}</p>
+          <span className={cn("gold-rule mt-4", align === "center" && "mx-auto")} />
+        </>
+      ) : null}
+      <h2 className="mt-6 text-[2rem] sm:text-4xl md:text-[3.25rem]">{title}</h2>
       {intro ? (
-        <p className="mt-5 text-base leading-relaxed text-muted-foreground">{intro}</p>
+        <p className="mt-5 text-base leading-[1.75] text-muted-foreground sm:text-lg">{intro}</p>
       ) : null}
     </div>
   );

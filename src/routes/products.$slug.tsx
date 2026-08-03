@@ -40,7 +40,7 @@ function ProductDetail() {
 
   return (
     <>
-      <div className="mx-auto max-w-7xl px-5 pt-10 sm:px-8">
+      <div className="shell pt-10">
         <Link
           to="/products"
           className="eyebrow inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
@@ -49,7 +49,7 @@ function ProductDetail() {
         </Link>
       </div>
 
-      <article className="mx-auto grid max-w-7xl gap-12 px-5 py-10 sm:px-8 lg:grid-cols-2 lg:gap-16">
+      <article className="shell grid gap-12 py-12 lg:grid-cols-2 lg:gap-16">
         <div>
           <div className="overflow-hidden bg-sand">
             <img
@@ -95,7 +95,7 @@ function ProductDetail() {
             {product.category}
           </p>
           <h1 className="mt-4 text-4xl leading-tight sm:text-5xl">{product.name}</h1>
-          <p className="mt-5 text-base leading-relaxed text-muted-foreground">{product.short}</p>
+          <p className="mt-5 text-base leading-[1.75] text-muted-foreground">{product.short}</p>
 
           <dl className="mt-8 grid gap-px border border-border bg-border sm:grid-cols-2">
             <div className="bg-background p-5">
@@ -119,7 +119,7 @@ function ProductDetail() {
             <Link
               to="/contact"
               search={{ product: product.name }}
-              className="eyebrow inline-flex items-center gap-2 bg-primary px-8 py-4 text-primary-foreground transition-colors hover:bg-primary/90"
+              className="btn-primary"
             >
               Enquire about this
             </Link>
@@ -127,7 +127,7 @@ function ProductDetail() {
               href={whatsappLink(`Hello SPECTRA, I would like to enquire about ${product.name}.`)}
               target="_blank"
               rel="noreferrer noopener"
-              className="eyebrow inline-flex items-center gap-2 border border-leather px-8 py-4 text-leather transition-colors hover:bg-leather hover:text-leather-foreground"
+              className="btn-ghost border-leather/40 text-leather hover:border-leather hover:bg-leather hover:text-leather-foreground"
             >
               <MessageCircle className="h-4 w-4" /> WhatsApp
             </a>
@@ -135,7 +135,7 @@ function ProductDetail() {
 
           <div className="mt-10 border-t border-border pt-8">
             <h2 className="text-2xl">Who made this</h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">{product.story}</p>
+            <p className="mt-4 text-base leading-[1.75] text-muted-foreground">{product.story}</p>
             <Link
               to={product.division === "fpo" ? "/fpo" : "/ofpo"}
               className="eyebrow mt-6 inline-flex items-center gap-2 text-primary transition-colors hover:text-leather"
@@ -148,7 +148,7 @@ function ProductDetail() {
       </article>
 
       {related.length ? (
-        <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+        <section className="shell py-16 md:py-24">
           <h2 className="text-3xl">Related products</h2>
           <div className="mt-10 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p, i) => (

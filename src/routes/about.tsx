@@ -69,7 +69,7 @@ function About() {
         alt="Farming families standing together in a field in rural Rajasthan"
       />
 
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+      <section className="shell section-y">
         <Reveal>
           <SectionHeading
             eyebrow="Our Story"
@@ -82,14 +82,14 @@ function About() {
           {timeline.map((t, i) => (
             <Reveal key={t.year} delay={i * 0.06} className="bg-background p-8">
               <p className="font-display text-3xl text-gold">{t.year}</p>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t.body}</p>
+              <p className="mt-4 text-sm leading-[1.75] text-muted-foreground">{t.body}</p>
             </Reveal>
           ))}
         </ol>
       </section>
 
       <section className="bg-cream">
-        <div className="mx-auto grid max-w-7xl gap-px bg-border sm:grid-cols-2">
+        <div className="mx-auto max-w-7xl grid gap-px bg-border sm:grid-cols-2">
           <Reveal className="bg-cream p-8 sm:p-12 lg:p-16">
             <p className="eyebrow text-primary">Mission</p>
             <h2 className="mt-4 text-2xl leading-snug sm:text-3xl">
@@ -105,7 +105,7 @@ function About() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+      <section className="shell section-y">
         <Reveal>
           <SectionHeading eyebrow="Our Values" title="Four commitments that shape every programme" />
         </Reveal>
@@ -113,14 +113,14 @@ function About() {
           {values.map((v, i) => (
             <Reveal key={v.title} delay={i * 0.06} className="border-t border-border pt-6">
               <h3 className="text-2xl">{v.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{v.body}</p>
+              <p className="mt-3 text-sm leading-[1.75] text-muted-foreground">{v.body}</p>
             </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="bg-ink text-cream">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+      <section className="band-ink">
+        <div className="shell py-16 md:py-24">
           <dl className="grid grid-cols-2 gap-10 lg:grid-cols-4">
             {impact.map((stat, i) => (
               <Reveal key={stat.label} delay={i * 0.08}>
@@ -132,10 +132,10 @@ function About() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+      <section className="shell section-y">
         <Reveal>
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-            <div className="overflow-hidden">
+            <div className="frame frame-hover">
               <img
                 src={artisans}
                 alt="Artisans working leather together in a village workshop"
@@ -155,13 +155,13 @@ function About() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   to="/fpo"
-                  className="eyebrow border border-primary px-6 py-3.5 text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                  className="btn-ghost border-primary/40 text-primary hover:border-primary hover:bg-primary hover:text-primary-foreground"
                 >
                   FPO · Agriculture
                 </Link>
                 <Link
                   to="/ofpo"
-                  className="eyebrow border border-leather px-6 py-3.5 text-leather transition-colors hover:bg-leather hover:text-leather-foreground"
+                  className="btn-ghost border-leather/40 text-leather hover:border-leather hover:bg-leather hover:text-leather-foreground"
                 >
                   OFPO · Leather
                 </Link>

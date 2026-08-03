@@ -105,7 +105,7 @@ function Impact() {
         alt="Village community programme in rural Rajasthan"
       />
 
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+      <section className="shell section-y">
         <Reveal>
           <SectionHeading
             eyebrow="Areas of action"
@@ -120,14 +120,14 @@ function Impact() {
                 {String(i + 1).padStart(2, "0")}
               </p>
               <h3 className="mt-5 text-xl leading-snug">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+              <p className="mt-3 text-sm leading-[1.75] text-muted-foreground">{item.body}</p>
             </Reveal>
           ))}
         </div>
       </section>
 
       <section className="bg-cream">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
+        <div className="shell section-y">
           <Reveal>
             <SectionHeading
               eyebrow="Real stories"
@@ -138,7 +138,7 @@ function Impact() {
           <div className="mt-14 grid gap-12 md:grid-cols-2">
             {stories.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.08}>
-                <div className="overflow-hidden">
+                <div className="frame frame-hover">
                   <img
                     src={s.img}
                     alt={s.title}
@@ -150,15 +150,15 @@ function Impact() {
                 </div>
                 <p className="eyebrow mt-6 text-muted-foreground">{s.eyebrow}</p>
                 <h3 className="mt-2 text-2xl leading-snug">{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+                <p className="mt-3 text-sm leading-[1.75] text-muted-foreground">{s.body}</p>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-ink text-cream">
-        <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 px-5 py-20 sm:px-8 md:flex-row md:items-center md:justify-between">
+      <section className="band-ink">
+        <div className="shell flex flex-col items-start gap-10 py-16 md:py-24 md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="max-w-xl text-3xl leading-tight sm:text-4xl">
               Want to walk through a village with us?
@@ -170,7 +170,7 @@ function Impact() {
           </div>
           <Link
             to="/contact"
-            className="eyebrow inline-flex shrink-0 items-center gap-2 bg-cream px-8 py-4 text-ink transition-colors hover:bg-gold"
+            className="eyebrow inline-flex shrink-0 items-center gap-2 bg-cream px-8 py-4 text-ink transition-all duration-500 hover:-translate-y-0.5 hover:bg-gold"
           >
             Contact us <ArrowRight className="h-4 w-4" />
           </Link>

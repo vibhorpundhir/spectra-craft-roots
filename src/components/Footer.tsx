@@ -4,31 +4,31 @@ import mark from "@/assets/spectra-mark.png.asset.json";
 
 export function Footer() {
   return (
-    <footer className="mt-24 bg-ink text-cream">
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 md:grid-cols-4">
-        <div className="md:col-span-2">
+    <footer className="band-ink mt-0">
+      <div className="shell grid gap-12 py-16 md:grid-cols-12 md:py-20">
+        <div className="md:col-span-5">
           <div className="flex items-center gap-3">
             <img
               src={mark.url}
               alt="SPECTRA logo"
-              width={44}
-              height={44}
-              className="h-10 w-auto shrink-0"
+              width={48}
+              height={48}
+              className="h-11 w-auto shrink-0"
             />
-            <p className="font-display text-2xl tracking-[0.3em]">SPECTRA</p>
+            <span className="wordmark text-lg text-cream">Spectra</span>
           </div>
-          <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/70">
+          <p className="mt-6 max-w-sm text-sm leading-relaxed text-cream/65">
             Society for Public Education Cultural Training and Rural Action — a voluntary,
             non-profit organisation working since 1996 with rural families across Rajasthan.
           </p>
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
+          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
             {site.social.map((s) => (
               <li key={s.label}>
                 <a
                   href={s.href}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="eyebrow text-cream/60 transition-colors hover:text-gold"
+                  className="eyebrow link-underline text-cream/55 transition-colors hover:text-gold"
                 >
                   {s.label}
                 </a>
@@ -37,14 +37,15 @@ export function Footer() {
           </ul>
         </div>
 
-        <div>
+        <div className="md:col-span-3">
           <h2 className="eyebrow text-gold">Explore</h2>
+          <span className="gold-rule mt-4 opacity-40" />
           <ul className="mt-5 space-y-3">
             {navigation.map((item) => (
               <li key={item.to}>
                 <Link
                   to={item.to}
-                  className="text-sm text-cream/70 transition-colors hover:text-cream"
+                  className="text-sm text-cream/65 transition-colors hover:text-cream"
                 >
                   {item.label}
                 </Link>
@@ -53,9 +54,10 @@ export function Footer() {
           </ul>
         </div>
 
-        <div>
+        <div className="md:col-span-4">
           <h2 className="eyebrow text-gold">Contact</h2>
-          <address className="mt-5 space-y-3 text-sm not-italic text-cream/70">
+          <span className="gold-rule mt-4 opacity-40" />
+          <address className="mt-5 space-y-3 text-sm not-italic leading-relaxed text-cream/65">
             <p>{site.address}</p>
             <p>
               <a className="transition-colors hover:text-cream" href={site.phoneHref}>
@@ -77,7 +79,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-cream/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-6 text-xs text-cream/50 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+        <div className="shell flex flex-col gap-3 py-6 text-xs text-cream/45 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} SPECTRA. All rights reserved.</p>
           <div className="flex gap-6">
             <Link to="/privacy" className="transition-colors hover:text-cream">

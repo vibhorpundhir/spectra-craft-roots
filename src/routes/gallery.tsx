@@ -48,7 +48,7 @@ function Gallery() {
         intro="A documentary record of the farmers, women's groups, artisans and communities SPECTRA works alongside — the people you are really looking at when you see a product."
       />
 
-      <section className="mx-auto max-w-7xl px-5 pb-24 sm:px-8">
+      <section className="shell pb-20 md:pb-28">
         <div
           className="flex flex-wrap gap-3 border-y border-border py-6"
           role="group"
@@ -67,17 +67,29 @@ function Gallery() {
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((item, i) => (
             <Reveal key={item.alt} delay={(i % 6) * 0.05}>
-              <figure className="overflow-hidden bg-sand">
+              <figure className="frame frame-hover group relative aspect-4/3">
                 <img
                   src={item.src}
                   alt={item.alt}
                   loading="lazy"
                   width={1200}
                   height={900}
-                  className="aspect-4/3 w-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
                 />
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-ink/85 via-ink/25 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100"
+                />
+                <figcaption className="absolute inset-x-0 bottom-0 z-[2] p-5">
+                  <span className="eyebrow text-gold">{item.category}</span>
+                  <p className="mt-2 max-w-prose translate-y-1 text-sm leading-snug text-cream opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                    {item.alt}
+                  </p>
+                </figcaption>
               </figure>
+
             </Reveal>
+
           ))}
         </div>
       </section>

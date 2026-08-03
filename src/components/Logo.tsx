@@ -14,21 +14,21 @@ export function Logo({ className, inverted }: { className?: string; inverted?: b
         alt="SPECTRA logo — three figures forming a circle"
         width={40}
         height={40}
-        className="h-9 w-auto shrink-0 transition-transform duration-500 group-hover:scale-105"
+        className="h-9 w-auto shrink-0 transition-transform duration-500 group-hover:scale-105 sm:h-10"
       />
-      <span className="flex min-w-0 flex-col leading-none">
+      <span className="flex min-w-0 flex-col">
         <span
           className={cn(
-            "font-display text-2xl tracking-[0.28em]",
-            inverted ? "text-primary-foreground" : "text-foreground",
+            "wordmark text-base sm:text-lg",
+            inverted ? "text-cream" : "text-brandblue",
           )}
         >
-          SPECTRA
+          Spectra
         </span>
         <span
           className={cn(
-            "eyebrow mt-1 text-[0.55rem] tracking-[0.3em]",
-            inverted ? "text-primary-foreground/70" : "text-muted-foreground",
+            "eyebrow mt-1.5 text-[0.5rem] tracking-[0.28em]",
+            inverted ? "text-cream/60" : "text-muted-foreground",
           )}
         >
           Since 1996 · Alwar
