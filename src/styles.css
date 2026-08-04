@@ -349,8 +349,8 @@
 }
 
 /* Hover motion only on pointer devices — avoids sticky hover states after a tap */
-@media (hover: hover) and (pointer: fine) {
-  @utility frame-hover {
+@utility frame-hover {
+  @media (hover: hover) and (pointer: fine) {
     &:hover img,
     .group:hover & img {
       transform: scale(1.04);
