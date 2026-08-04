@@ -17,7 +17,8 @@ export const Route = createFileRoute("/gallery")({
       { property: "og:title", content: "Gallery | SPECTRA" },
       {
         property: "og:description",
-        content: "The people behind every product — in the fields, the courtyards and the workshops.",
+        content:
+          "The people behind every product — in the fields, the courtyards and the workshops.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -58,7 +59,12 @@ function Gallery() {
             All
           </button>
           {galleryCategories.map((c) => (
-            <button key={c} type="button" onClick={() => setFilter(c)} className={chip(filter === c)}>
+            <button
+              key={c}
+              type="button"
+              onClick={() => setFilter(c)}
+              className={chip(filter === c)}
+            >
               {c}
             </button>
           ))}
@@ -72,24 +78,23 @@ function Gallery() {
                   src={item.src}
                   alt={item.alt}
                   loading="lazy"
+                  decoding="async"
                   width={1200}
                   height={900}
-                  className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+                  className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
                 />
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-ink/85 via-ink/25 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100"
+                  className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-ink/85 via-ink/25 to-transparent opacity-80 transition-opacity duration-200 group-hover:opacity-100"
                 />
                 <figcaption className="absolute inset-x-0 bottom-0 z-[2] p-5">
                   <span className="eyebrow text-gold">{item.category}</span>
-                  <p className="mt-2 max-w-prose translate-y-1 text-sm leading-snug text-cream opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                  <p className="mt-2 max-w-prose translate-y-1 text-sm leading-snug text-cream opacity-0 transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100">
                     {item.alt}
                   </p>
                 </figcaption>
               </figure>
-
             </Reveal>
-
           ))}
         </div>
       </section>

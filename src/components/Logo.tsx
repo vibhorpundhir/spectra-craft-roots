@@ -14,7 +14,7 @@ export function Logo({ className, inverted }: { className?: string; inverted?: b
         alt="SPECTRA logo — three figures forming a circle"
         width={40}
         height={40}
-        className="h-9 w-auto shrink-0 transition-transform duration-500 group-hover:scale-105 sm:h-10"
+        className="h-9 w-auto shrink-0 transition-transform duration-200 group-hover:scale-105 sm:h-10"
       />
       <span className="flex min-w-0 flex-col">
         <span

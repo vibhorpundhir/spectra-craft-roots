@@ -14,6 +14,7 @@ export function ProductCard({ product }: { product: Product }) {
           src={product.image}
           alt={product.name}
           loading="lazy"
+          decoding="async"
           width={1024}
           height={1024}
           className="h-full w-full object-cover"
@@ -30,7 +31,7 @@ export function ProductCard({ product }: { product: Product }) {
         <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{product.short}</p>
         <p className="eyebrow mt-5 inline-flex items-center gap-2 text-primary">
           View story
-          <ArrowRight className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-1" />
+          <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
         </p>
       </div>
     </Link>

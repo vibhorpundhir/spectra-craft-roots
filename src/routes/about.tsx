@@ -50,13 +50,27 @@ const values = [
 ];
 
 const timeline = [
-  { year: "1996", body: "SPECTRA begins work in the rural and interior pockets of Rajasthan, registered under the Rajasthan Societies Act, 1958." },
-  { year: "Education", body: "Programmes address the educational and social needs of the deprived rural population, especially children and girls." },
-  { year: "Women", body: "Self help groups and awareness generation place women's participation at the heart of programme planning." },
-  { year: "Livelihoods", body: "Food security, sanitation and rural industries create income within the village rather than away from it." },
-  { year: "Today", body: "FPO and OFPO collectives carry the same mission into agriculture, dairy and traditional leather craft." },
+  {
+    year: "1996",
+    body: "SPECTRA begins work in the rural and interior pockets of Rajasthan, registered under the Rajasthan Societies Act, 1958.",
+  },
+  {
+    year: "Education",
+    body: "Programmes address the educational and social needs of the deprived rural population, especially children and girls.",
+  },
+  {
+    year: "Women",
+    body: "Self help groups and awareness generation place women's participation at the heart of programme planning.",
+  },
+  {
+    year: "Livelihoods",
+    body: "Food security, sanitation and rural industries create income within the village rather than away from it.",
+  },
+  {
+    year: "Today",
+    body: "FPO and OFPO collectives carry the same mission into agriculture, dairy and traditional leather craft.",
+  },
 ];
-
 
 function About() {
   return (
@@ -93,13 +107,15 @@ function About() {
           <Reveal className="bg-cream p-8 sm:p-12 lg:p-16">
             <p className="eyebrow text-primary">Mission</p>
             <h2 className="mt-4 text-2xl leading-snug sm:text-3xl">
-              To improve the lives of marginalised rural communities through education, livelihood, women's empowerment and community participation.
+              To improve the lives of marginalised rural communities through education, livelihood,
+              women's empowerment and community participation.
             </h2>
           </Reveal>
           <Reveal delay={0.1} className="bg-cream p-8 sm:p-12 lg:p-16">
             <p className="eyebrow text-leather">Vision</p>
             <h2 className="mt-4 text-2xl leading-snug sm:text-3xl">
-              A rural Rajasthan where every family lives with justice, dignity and the means to govern its own future.
+              A rural Rajasthan where every family lives with justice, dignity and the means to
+              govern its own future.
             </h2>
           </Reveal>
         </div>
@@ -107,7 +123,10 @@ function About() {
 
       <section className="shell section-y">
         <Reveal>
-          <SectionHeading eyebrow="Our Values" title="Four commitments that shape every programme" />
+          <SectionHeading
+            eyebrow="Our Values"
+            title="Four commitments that shape every programme"
+          />
         </Reveal>
         <div className="mt-14 grid gap-10 sm:grid-cols-2">
           {values.map((v, i) => (
@@ -140,6 +159,7 @@ function About() {
                 src={artisans}
                 alt="Artisans working leather together in a village workshop"
                 loading="lazy"
+                decoding="async"
                 width={1200}
                 height={900}
                 className="aspect-4/3 w-full object-cover"
