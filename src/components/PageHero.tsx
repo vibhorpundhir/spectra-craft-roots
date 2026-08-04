@@ -61,6 +61,8 @@ export function PageHero({
             <img
               src={image}
               alt={alt ?? ""}
+              fetchPriority="high"
+              decoding="async"
               width={1200}
               height={900}
               className="h-full w-full object-cover"

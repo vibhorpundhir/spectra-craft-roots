@@ -23,5 +23,4 @@ export function Reveal({
       {children}
     </motion.div>
   );
-
 }

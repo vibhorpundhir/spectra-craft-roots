@@ -52,7 +52,6 @@ export function Header() {
           scrolled ? "h-16" : "h-20",
         )}
       >
-
         <Logo />
 
         <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">

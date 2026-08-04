@@ -35,11 +35,31 @@ export const Route = createFileRoute("/fpo")({
 });
 
 const process = [
-  { step: "01", title: "Sowing", body: "Members receive tested seed and soil-health cards; sowing calendars are set cluster by cluster." },
-  { step: "02", title: "Growing", body: "Rain-fed and drip-irrigated plots, crop rotation, and farmyard manure over synthetic inputs wherever the crop allows." },
-  { step: "03", title: "Harvest & Collection", body: "Harvest is aggregated at village level and graded on arrival; milk is chilled within ninety minutes." },
-  { step: "04", title: "Processing", body: "Sun-drying yards, stone mills and bilona churns — slow methods that keep aroma, colour and nutrition intact." },
-  { step: "05", title: "Packing & Dispatch", body: "Small-batch packing, lot numbers recorded, and every lot traceable to the households that supplied it." },
+  {
+    step: "01",
+    title: "Sowing",
+    body: "Members receive tested seed and soil-health cards; sowing calendars are set cluster by cluster.",
+  },
+  {
+    step: "02",
+    title: "Growing",
+    body: "Rain-fed and drip-irrigated plots, crop rotation, and farmyard manure over synthetic inputs wherever the crop allows.",
+  },
+  {
+    step: "03",
+    title: "Harvest & Collection",
+    body: "Harvest is aggregated at village level and graded on arrival; milk is chilled within ninety minutes.",
+  },
+  {
+    step: "04",
+    title: "Processing",
+    body: "Sun-drying yards, stone mills and bilona churns — slow methods that keep aroma, colour and nutrition intact.",
+  },
+  {
+    step: "05",
+    title: "Packing & Dispatch",
+    body: "Small-batch packing, lot numbers recorded, and every lot traceable to the households that supplied it.",
+  },
 ];
 
 function Fpo() {
@@ -63,6 +83,7 @@ function Fpo() {
                 src={farmers}
                 alt="SPECTRA farmer members gathered together at sunrise"
                 loading="lazy"
+                decoding="async"
                 width={1200}
                 height={900}
                 className="aspect-4/3 w-full object-cover"
@@ -119,6 +140,7 @@ function Fpo() {
               src={dairyCentre}
               alt="Steel milk cans at a SPECTRA village collection centre"
               loading="lazy"
+              decoding="async"
               width={1200}
               height={900}
               className="aspect-4/3 w-full object-cover"
@@ -129,6 +151,7 @@ function Fpo() {
               src={training}
               alt="Farmer training session under a field tent"
               loading="lazy"
+              decoding="async"
               width={1200}
               height={900}
               className="aspect-4/3 w-full object-cover"

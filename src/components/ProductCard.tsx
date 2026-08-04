@@ -14,6 +14,7 @@ export function ProductCard({ product }: { product: Product }) {
           src={product.image}
           alt={product.name}
           loading="lazy"
+          decoding="async"
           width={1024}
           height={1024}
           className="h-full w-full object-cover"

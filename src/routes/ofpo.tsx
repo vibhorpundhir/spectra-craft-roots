@@ -37,11 +37,31 @@ export const Route = createFileRoute("/ofpo")({
 });
 
 const process = [
-  { step: "01", title: "Selecting the hide", body: "Vegetable-tanned goat and buffalo hides are inspected by hand for grain, thickness and evenness." },
-  { step: "02", title: "Cutting", body: "Patterns are laid out to follow the natural stretch of the hide — a decision no machine makes well." },
-  { step: "03", title: "Embroidery", body: "Tilla and salma work is stitched on the vamp before assembly, one motif at a time." },
-  { step: "04", title: "Lasting & Stitching", body: "Uppers are shaped over wooden lasts and saddle- or welt-stitched with waxed linen thread." },
-  { step: "05", title: "Finishing", body: "Edges burnished, soles trimmed, beeswax rubbed in and buffed — then rested for two days before dispatch." },
+  {
+    step: "01",
+    title: "Selecting the hide",
+    body: "Vegetable-tanned goat and buffalo hides are inspected by hand for grain, thickness and evenness.",
+  },
+  {
+    step: "02",
+    title: "Cutting",
+    body: "Patterns are laid out to follow the natural stretch of the hide — a decision no machine makes well.",
+  },
+  {
+    step: "03",
+    title: "Embroidery",
+    body: "Tilla and salma work is stitched on the vamp before assembly, one motif at a time.",
+  },
+  {
+    step: "04",
+    title: "Lasting & Stitching",
+    body: "Uppers are shaped over wooden lasts and saddle- or welt-stitched with waxed linen thread.",
+  },
+  {
+    step: "05",
+    title: "Finishing",
+    body: "Edges burnished, soles trimmed, beeswax rubbed in and buffed — then rested for two days before dispatch.",
+  },
 ];
 
 function Ofpo() {
@@ -79,6 +99,7 @@ function Ofpo() {
                 src={artisans}
                 alt="Artisans cutting and stitching leather in a village workshop"
                 loading="lazy"
+                decoding="async"
                 width={1200}
                 height={900}
                 className="aspect-4/3 w-full object-cover"
@@ -125,6 +146,7 @@ function Ofpo() {
               src={juti}
               alt="Hand-embroidered leather juti with gold tilla work"
               loading="lazy"
+              decoding="async"
               width={1024}
               height={1024}
               className="aspect-4/3 w-full object-cover"
@@ -135,6 +157,7 @@ function Ofpo() {
               src={goods}
               alt="Handmade leather satchel and belt on linen"
               loading="lazy"
+              decoding="async"
               width={1024}
               height={1024}
               className="aspect-4/3 w-full object-cover"

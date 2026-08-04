@@ -18,7 +18,8 @@ export const Route = createFileRoute("/products/")({
       { property: "og:title", content: "Their Work, Made Visible | SPECTRA" },
       {
         property: "og:description",
-        content: "Agricultural produce and handmade leather craft, presented as stories of rural livelihood.",
+        content:
+          "Agricultural produce and handmade leather craft, presented as stories of rural livelihood.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -60,7 +61,6 @@ function Products() {
         title="Not products. Proof of what rural hands can do."
         intro="Each item here is the visible end of a long, patient effort by a farming family or an artisan household. There is no cart and no price list — only stories, and an open door if you would like to know more."
       />
-
 
       <section className="shell pb-20 md:pb-28">
         <div className="border-y border-border py-6">

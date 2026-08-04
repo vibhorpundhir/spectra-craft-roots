@@ -17,7 +17,8 @@ export const Route = createFileRoute("/gallery")({
       { property: "og:title", content: "Gallery | SPECTRA" },
       {
         property: "og:description",
-        content: "The people behind every product — in the fields, the courtyards and the workshops.",
+        content:
+          "The people behind every product — in the fields, the courtyards and the workshops.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -58,7 +59,12 @@ function Gallery() {
             All
           </button>
           {galleryCategories.map((c) => (
-            <button key={c} type="button" onClick={() => setFilter(c)} className={chip(filter === c)}>
+            <button
+              key={c}
+              type="button"
+              onClick={() => setFilter(c)}
+              className={chip(filter === c)}
+            >
               {c}
             </button>
           ))}
@@ -72,6 +78,7 @@ function Gallery() {
                   src={item.src}
                   alt={item.alt}
                   loading="lazy"
+                  decoding="async"
                   width={1200}
                   height={900}
                   className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
@@ -87,9 +94,7 @@ function Gallery() {
                   </p>
                 </figcaption>
               </figure>
-
             </Reveal>
-
           ))}
         </div>
       </section>

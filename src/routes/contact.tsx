@@ -79,23 +79,48 @@ function Contact() {
           <span className="gold-rule mt-4" />
           <div className="mt-8 space-y-6">
             <div>
-              <label className={label} htmlFor="name">Name</label>
-              <input id="name" name="name" className={field} maxLength={100} required aria-invalid={!!errors.name} />
+              <label className={label} htmlFor="name">
+                Name
+              </label>
+              <input
+                id="name"
+                name="name"
+                className={field}
+                maxLength={100}
+                required
+                aria-invalid={!!errors.name}
+              />
               {errors.name ? <p className="mt-2 text-xs text-destructive">{errors.name}</p> : null}
             </div>
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <label className={label} htmlFor="email">Email</label>
-                <input id="email" name="email" type="email" className={field} maxLength={255} required aria-invalid={!!errors.email} />
-                {errors.email ? <p className="mt-2 text-xs text-destructive">{errors.email}</p> : null}
+                <label className={label} htmlFor="email">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  className={field}
+                  maxLength={255}
+                  required
+                  aria-invalid={!!errors.email}
+                />
+                {errors.email ? (
+                  <p className="mt-2 text-xs text-destructive">{errors.email}</p>
+                ) : null}
               </div>
               <div>
-                <label className={label} htmlFor="phone">Phone (optional)</label>
+                <label className={label} htmlFor="phone">
+                  Phone (optional)
+                </label>
                 <input id="phone" name="phone" type="tel" className={field} maxLength={20} />
               </div>
             </div>
             <div>
-              <label className={label} htmlFor="subject">Subject</label>
+              <label className={label} htmlFor="subject">
+                Subject
+              </label>
               <input
                 id="subject"
                 name="subject"
@@ -105,10 +130,14 @@ function Contact() {
                 defaultValue={product ? `Enquiry: ${product}` : ""}
                 aria-invalid={!!errors.subject}
               />
-              {errors.subject ? <p className="mt-2 text-xs text-destructive">{errors.subject}</p> : null}
+              {errors.subject ? (
+                <p className="mt-2 text-xs text-destructive">{errors.subject}</p>
+              ) : null}
             </div>
             <div>
-              <label className={label} htmlFor="message">Message</label>
+              <label className={label} htmlFor="message">
+                Message
+              </label>
               <textarea
                 id="message"
                 name="message"
@@ -119,13 +148,12 @@ function Contact() {
                 defaultValue={product ? `I would like to know more about ${product}.` : ""}
                 aria-invalid={!!errors.message}
               />
-              {errors.message ? <p className="mt-2 text-xs text-destructive">{errors.message}</p> : null}
+              {errors.message ? (
+                <p className="mt-2 text-xs text-destructive">{errors.message}</p>
+              ) : null}
             </div>
             <div className="flex flex-wrap gap-3">
-              <button
-                type="submit"
-                className="btn-primary"
-              >
+              <button type="submit" className="btn-primary">
                 Send enquiry
               </button>
               <a
@@ -162,7 +190,10 @@ function Contact() {
             </li>
             <li className="flex gap-4">
               <Mail className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={1.5} />
-              <a href={`mailto:${site.email}`} className="text-muted-foreground hover:text-foreground">
+              <a
+                href={`mailto:${site.email}`}
+                className="text-muted-foreground hover:text-foreground"
+              >
                 {site.email}
               </a>
             </li>
@@ -183,6 +214,7 @@ function Contact() {
               title="SPECTRA office location on Google Maps"
               src={site.mapEmbed}
               loading="lazy"
+              decoding="async"
               className="h-72 w-full"
               referrerPolicy="no-referrer-when-downgrade"
             />

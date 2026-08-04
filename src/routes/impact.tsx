@@ -116,9 +116,7 @@ function Impact() {
         <div className="mt-14 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
           {initiatives.map((item, i) => (
             <Reveal key={item.title} delay={(i % 4) * 0.06} className="bg-background p-8">
-              <p className="font-display text-3xl text-gold">
-                {String(i + 1).padStart(2, "0")}
-              </p>
+              <p className="font-display text-3xl text-gold">{String(i + 1).padStart(2, "0")}</p>
               <h3 className="mt-5 text-xl leading-snug">{item.title}</h3>
               <p className="mt-3 text-sm leading-[1.75] text-muted-foreground">{item.body}</p>
             </Reveal>
@@ -143,6 +141,7 @@ function Impact() {
                     src={s.img}
                     alt={s.title}
                     loading="lazy"
+                    decoding="async"
                     width={1200}
                     height={900}
                     className="aspect-4/3 w-full object-cover"
@@ -164,8 +163,8 @@ function Impact() {
               Want to walk through a village with us?
             </h2>
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-cream/70">
-              Partners, institutions, students and volunteers are welcome. Write to us and we
-              will tell you where the work is happening this month.
+              Partners, institutions, students and volunteers are welcome. Write to us and we will
+              tell you where the work is happening this month.
             </p>
           </div>
           <Link

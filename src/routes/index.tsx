@@ -102,6 +102,8 @@ function Home() {
           <img
             src={agriculture}
             alt="Farmer walking through green fields at sunrise"
+            fetchPriority="high"
+            decoding="async"
             width={1200}
             height={1600}
             className="h-full w-full object-cover"
@@ -109,6 +111,8 @@ function Home() {
           <img
             src={leather}
             alt="Artisan finishing a handmade leather shoe in a workshop"
+            fetchPriority="high"
+            decoding="async"
             width={1200}
             height={1600}
             className="h-full w-full object-cover"
@@ -126,10 +130,9 @@ function Home() {
             Every product carries a story of hope, hard work and dignity.
           </h1>
           <p className="mt-8 max-w-2xl text-base leading-[1.8] text-cream/85 sm:text-lg">
-            Through our Farmer Producer Organizations (FPO) and Other Farmer Producer
-            Organizations (OFPO), SPECTRA empowers rural farmers and skilled artisans by creating
-            sustainable livelihood opportunities while preserving traditional knowledge and
-            craftsmanship.
+            Through our Farmer Producer Organizations (FPO) and Other Farmer Producer Organizations
+            (OFPO), SPECTRA empowers rural farmers and skilled artisans by creating sustainable
+            livelihood opportunities while preserving traditional knowledge and craftsmanship.
           </p>
           <div className="mt-11 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
             <Link to="/impact" className="btn-primary">
@@ -167,10 +170,10 @@ function Home() {
               </div>
               <div className="space-y-6 text-base leading-[1.8] text-muted-foreground lg:col-span-7 lg:pt-3">
                 <p>
-                  SPECTRA — the Society for Public Education Cultural Training and Rural Action —
-                  is a voluntary, non-profit, non-government organisation that has worked since
-                  1996 in the rural and interior pockets of Rajasthan, alongside families
-                  struggling for a life of justice and dignity.
+                  SPECTRA — the Society for Public Education Cultural Training and Rural Action — is
+                  a voluntary, non-profit, non-government organisation that has worked since 1996 in
+                  the rural and interior pockets of Rajasthan, alongside families struggling for a
+                  life of justice and dignity.
                 </p>
                 <p>
                   Our FPO work stands with cultivators and dairy households. Our OFPO work stands
@@ -329,6 +332,7 @@ function Home() {
                       src={c.img}
                       alt={c.alt}
                       loading="lazy"
+                      decoding="async"
                       width={1200}
                       height={900}
                       className="h-full w-full object-cover"
@@ -372,6 +376,7 @@ function Home() {
                     src={item.src}
                     alt={item.alt}
                     loading="lazy"
+                    decoding="async"
                     width={1200}
                     height={900}
                     className="h-full w-full object-cover"
@@ -391,8 +396,8 @@ function Home() {
               Want to know the family behind a product?
             </h2>
             <p className="mt-5 max-w-lg text-sm leading-[1.8] text-primary-foreground/80 sm:text-base">
-              Write to us about a story, a visit, a partnership or an enquiry. Every message
-              reaches a person, and we reply within two working days.
+              Write to us about a story, a visit, a partnership or an enquiry. Every message reaches
+              a person, and we reply within two working days.
             </p>
             <p className="eyebrow mt-6 text-primary-foreground/60">
               {site.phone} · {site.email}

@@ -14,7 +14,9 @@ export const Route = createFileRoute("/products/$slug")({
   },
   head: ({ params, loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Product not found | SPECTRA" }, { name: "robots", content: "noindex" }] };
+      return {
+        meta: [{ title: "Product not found | SPECTRA" }, { name: "robots", content: "noindex" }],
+      };
     }
     return {
       meta: [
@@ -79,6 +81,7 @@ function ProductDetail() {
                     src={img}
                     alt=""
                     loading="lazy"
+                    decoding="async"
                     width={1024}
                     height={1024}
                     className="aspect-square w-full object-cover"
@@ -114,13 +117,8 @@ function ProductDetail() {
             ) : null}
           </dl>
 
-
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              to="/contact"
-              search={{ product: product.name }}
-              className="btn-primary"
-            >
+            <Link to="/contact" search={{ product: product.name }} className="btn-primary">
               Enquire about this
             </Link>
             <a
@@ -143,7 +141,6 @@ function ProductDetail() {
               Meet the makers
             </Link>
           </div>
-
         </div>
       </article>
 
