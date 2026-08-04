@@ -400,7 +400,7 @@ function Home() {
           </div>
           <Link
             to="/contact"
-            className="eyebrow inline-flex shrink-0 items-center gap-2 bg-cream px-8 py-4 text-ink transition-all duration-500 hover:-translate-y-0.5 hover:bg-gold"
+            className="eyebrow inline-flex shrink-0 items-center gap-2 bg-cream px-8 py-4 text-ink transition-colors duration-200 hover:-translate-y-0.5 hover:bg-gold"
           >
             Send an enquiry <ArrowRight className="h-4 w-4" />
           </Link>
