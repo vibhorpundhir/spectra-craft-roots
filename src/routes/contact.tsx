@@ -214,7 +214,7 @@ function Contact() {
               title="SPECTRA office location on Google Maps"
               src={site.mapEmbed}
               loading="lazy"
-              decoding="async"
+
               className="h-72 w-full"
               referrerPolicy="no-referrer-when-downgrade"
             />
