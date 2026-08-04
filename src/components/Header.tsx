@@ -13,10 +13,20 @@ export function Header() {
   useEffect(() => setOpen(false), [pathname]);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
+    let frame = 0;
+    const onScroll = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        setScrolled(window.scrollY > 16);
+      });
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) cancelAnimationFrame(frame);
+    };
   }, []);
 
   useEffect(() => {
@@ -29,18 +39,20 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b transition-all duration-500",
+        "sticky top-0 z-50 border-b transition-[background-color,border-color,box-shadow] duration-200",
+        // Blur is expensive on touch devices — solid background there, blur only on fine-pointer screens.
         scrolled || open
-          ? "border-border bg-background/95 shadow-[0_1px_24px_-16px_var(--color-ink)] backdrop-blur-md"
-          : "border-transparent bg-background/60 backdrop-blur-sm",
+          ? "border-border bg-background shadow-[0_1px_24px_-16px_var(--color-ink)] lg:bg-background/95 lg:backdrop-blur-md"
+          : "border-transparent bg-background lg:bg-background/70 lg:backdrop-blur-sm",
       )}
     >
       <div
         className={cn(
-          "shell flex items-center justify-between transition-all duration-500",
+          "shell flex items-center justify-between transition-[height] duration-200",
           scrolled ? "h-16" : "h-20",
         )}
       >
+
         <Logo />
 
         <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
