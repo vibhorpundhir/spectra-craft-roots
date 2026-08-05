@@ -1,26 +1,27 @@
 import { Link } from "@tanstack/react-router";
 import { navigation, site } from "@/data/site";
-import mark from "@/assets/spectra-mark.png.asset.json";
+import lockup from "@/assets/spectra-lockup.png.asset.json";
 
 export function Footer() {
   return (
     <footer className="band-ink mt-0">
       <div className="shell grid gap-12 py-16 md:grid-cols-12 md:py-20">
         <div className="md:col-span-5">
-          <div className="flex items-center gap-3">
+          <span className="inline-flex rounded-lg bg-cream px-4 py-3">
             <img
-              src={mark.url}
-              alt="SPECTRA logo"
-              width={48}
-              height={48}
-              className="h-11 w-auto shrink-0"
+              src={lockup.url}
+              alt="SPECTRA"
+              width={881}
+              height={827}
+              decoding="async"
+              className="h-16 w-auto"
             />
-            <span className="wordmark text-lg text-cream">Spectra</span>
-          </div>
+          </span>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-cream/65">
             Society for Public Education Cultural Training and Rural Action — a voluntary,
             non-profit organisation working since 1996 with rural families across Rajasthan.
           </p>
+
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
             {site.social.map((s) => (
               <li key={s.label}>
