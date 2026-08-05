@@ -15,7 +15,7 @@ export function Logo({ className }: { className?: string; inverted?: boolean }) 
         width={881}
         height={827}
         decoding="async"
-        className="h-10 w-auto transition-transform duration-200 group-hover:scale-[1.03] sm:h-12"
+        className="h-14 w-auto transition-transform duration-200 group-hover:scale-[1.03] sm:h-16"
       />
     </Link>
   );
