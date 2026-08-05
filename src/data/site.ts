@@ -17,10 +17,11 @@ export const site = {
     { day: "Sunday", time: "Closed" },
   ],
   social: [
-    { label: "Instagram", href: "https://instagram.com" },
-    { label: "Facebook", href: "https://facebook.com" },
-    { label: "LinkedIn", href: "https://linkedin.com" },
-    { label: "YouTube", href: "https://youtube.com" },
+    { label: "Instagram", href: "https://www.instagram.com/spectraorganisation/" },
+    { label: "Facebook", href: "https://www.facebook.com/spectraalwar" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/spectraalwar/" },
+    { label: "X (Twitter)", href: "https://twitter.com/spectraalw" },
+    { label: "YouTube", href: "https://www.youtube.com/channel/UCP3gJdb8E2GtEMc2mDc63Og" },
   ],
   mapEmbed:
     "https://www.google.com/maps?q=Patel%20Nagar,%20Alwar,%20Rajasthan%20301001&output=embed",
