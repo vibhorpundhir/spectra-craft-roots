@@ -209,6 +209,23 @@ function Contact() {
             ))}
           </dl>
 
+          <h3 className="eyebrow mt-10 text-muted-foreground">Follow SPECTRA</h3>
+          <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-3 text-sm">
+            {site.social.map((s) => (
+              <li key={s.label}>
+                <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="link-underline text-muted-foreground transition-colors hover:text-primary"
+                >
+                  {s.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+
           <div className="mt-10 border border-border">
             <iframe
               title="SPECTRA office location on Google Maps"
