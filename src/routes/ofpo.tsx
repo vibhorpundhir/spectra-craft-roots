@@ -1,9 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import workshop from "@/assets/hero-leather.jpg";
-import artisans from "@/assets/community-artisans.jpg";
-import juti from "@/assets/product-juti.jpg";
+import stallAsset from "@/assets/real-ofpo-stall.jpg.asset.json";
+import stitchingAsset from "@/assets/real-stitching-unit.jpg.asset.json";
+import jutiDisplayAsset from "@/assets/real-juti-display.jpg.asset.json";
 import goods from "@/assets/product-leather-goods.jpg";
+
+const workshop = stallAsset.url;
+const artisans = stitchingAsset.url;
+const juti = jutiDisplayAsset.url;
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -74,7 +78,7 @@ function Ofpo() {
         title="Leather shaped by hands that inherited the skill."
         intro="Our Other Farmer Producer Organisation supports 600 artisans across village clusters — cutters, embroiderers, lasters and finishers making juti, shoes and leather goods the way their families always have."
         image={workshop}
-        alt="Artisan finishing a handmade leather shoe at a workbench"
+        alt="Artisan member at the Pahchaan Ismailpur Leather Producer Company stall with handmade juti"
         tone="leather"
       />
 
@@ -97,7 +101,7 @@ function Ofpo() {
             <div className="frame frame-hover">
               <img
                 src={artisans}
-                alt="Artisans cutting and stitching leather in a village workshop"
+                alt="Artisan members at work in the shared leather stitching unit"
                 loading="lazy"
                 decoding="async"
                 width={1200}
@@ -144,7 +148,7 @@ function Ofpo() {
           <Reveal className="frame frame-hover">
             <img
               src={juti}
-              alt="Hand-embroidered leather juti with gold tilla work"
+              alt="Rows of hand-stitched leather juti displayed by artisan members at an exhibition"
               loading="lazy"
               decoding="async"
               width={1024}

@@ -1,9 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import womenShg from "@/assets/community-women-shg.jpg";
-import programme from "@/assets/community-programme.jpg";
+import womenExposureAsset from "@/assets/real-women-exposure.jpg.asset.json";
+import exposureVisitAsset from "@/assets/real-exposure-visit.jpg.asset.json";
+import machineTrainingAsset from "@/assets/real-machine-training.jpg.asset.json";
 import farmers from "@/assets/community-farmers.jpg";
-import artisans from "@/assets/community-artisans.jpg";
+
+const womenShg = womenExposureAsset.url;
+const programme = exposureVisitAsset.url;
+const artisans = machineTrainingAsset.url;
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -102,7 +106,7 @@ function Impact() {
         title="Measured in dignity, not in units sold."
         intro="Since 1996, SPECTRA has worked in the rural and interior pockets of Rajasthan with one concern: that people struggling for a life of justice and dignity should have the means to build it themselves."
         image={programme}
-        alt="Village community programme in rural Rajasthan"
+        alt="SPECTRA members flagged off for an exposure visit in rural Rajasthan"
       />
 
       <section className="shell section-y">
