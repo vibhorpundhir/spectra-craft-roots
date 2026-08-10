@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import farmers from "@/assets/community-farmers.jpg";
-import artisans from "@/assets/community-artisans.jpg";
+import foundationDayAsset from "@/assets/real-foundation-day.jpg.asset.json";
+
+const artisans = foundationDayAsset.url;
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -157,7 +159,7 @@ function About() {
             <div className="frame frame-hover">
               <img
                 src={artisans}
-                alt="Artisans working leather together in a village workshop"
+                alt="SPECTRA members and artisans gathered at a NABARD foundation day programme in Alwar"
                 loading="lazy"
                 decoding="async"
                 width={1200}

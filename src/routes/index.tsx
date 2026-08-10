@@ -3,9 +3,12 @@ import { ArrowRight, Leaf, Handshake, ShieldCheck, Sprout } from "lucide-react";
 import agriculture from "@/assets/hero-agriculture.jpg";
 import leather from "@/assets/hero-leather.jpg";
 import farmers from "@/assets/community-farmers.jpg";
-import womenShg from "@/assets/community-women-shg.jpg";
+import womenExposureAsset from "@/assets/real-women-exposure.jpg.asset.json";
 
-import artisans from "@/assets/community-artisans.jpg";
+import stitchingAsset from "@/assets/real-stitching-unit.jpg.asset.json";
+
+const womenShg = womenExposureAsset.url;
+const artisans = stitchingAsset.url;
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductCard } from "@/components/ProductCard";
@@ -81,7 +84,7 @@ const communities = [
   },
   {
     img: artisans,
-    alt: "Leather artisans cutting and stitching hides in a workshop",
+    alt: "Artisan members at work in the shared leather stitching unit",
     eyebrow: "OFPO · Artisan households",
     title: "Those who make it",
     body: "Cutters, embroiderers, lasters and finishers carrying a craft learned from their parents — now with tools, training and orders that make it worth passing on.",
