@@ -13,6 +13,14 @@ import dairyCentre from "@/assets/gallery-dairy-centre.jpg";
 import womenShg from "@/assets/community-women-shg.jpg";
 import spiceProcessing from "@/assets/community-spice-processing.jpg";
 import programme from "@/assets/community-programme.jpg";
+import stallAsset from "@/assets/real-ofpo-stall.jpg.asset.json";
+import jutiDisplayAsset from "@/assets/real-juti-display.jpg.asset.json";
+import stitchingAsset from "@/assets/real-stitching-unit.jpg.asset.json";
+import machineTrainingAsset from "@/assets/real-machine-training.jpg.asset.json";
+import exposureVisitAsset from "@/assets/real-exposure-visit.jpg.asset.json";
+import womenExposureAsset from "@/assets/real-women-exposure.jpg.asset.json";
+import foundationDayAsset from "@/assets/real-foundation-day.jpg.asset.json";
+import trainingSessionAsset from "@/assets/real-training-session.jpg.asset.json";
 
 export const galleryCategories = [
   "Farmers",
@@ -35,6 +43,14 @@ export interface GalleryItem {
 }
 
 export const galleryItems: GalleryItem[] = [
+  { src: stallAsset.url, alt: "Artisan member at the Pahchaan Ismailpur Leather Producer Company stall of handmade juti", category: "Leather Craftsmanship" },
+  { src: jutiDisplayAsset.url, alt: "Rows of hand-stitched leather juti displayed by artisan members at an exhibition", category: "Success Stories" },
+  { src: stitchingAsset.url, alt: "Artisan members at work in the shared leather stitching unit", category: "Rural Development" },
+  { src: machineTrainingAsset.url, alt: "Artisans being shown a leather stitching machine during a training visit", category: "Training Sessions" },
+  { src: trainingSessionAsset.url, alt: "SPECTRA facilitator addressing farmer and artisan members at a training session", category: "Training Sessions" },
+  { src: womenExposureAsset.url, alt: "Women members of a self help group during a SPECTRA exposure visit", category: "Women Self Help Groups" },
+  { src: exposureVisitAsset.url, alt: "Exposure visit flagged off for OFPO members in Alwar, Rajasthan", category: "Community Programs" },
+  { src: foundationDayAsset.url, alt: "SPECTRA members gathered at a NABARD foundation day programme", category: "Community Programs" },
   { src: agriculture, alt: "Member farmer walking between crop rows at sunrise", category: "Farmers" },
   { src: farmers, alt: "Farmer members gathered together at the edge of a field", category: "Farmers" },
   { src: womenShg, alt: "Women's self help group meeting with savings ledger in a village courtyard", category: "Women Self Help Groups" },

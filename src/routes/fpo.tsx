@@ -3,7 +3,9 @@ import { ArrowRight } from "lucide-react";
 import agriculture from "@/assets/hero-agriculture.jpg";
 import farmers from "@/assets/community-farmers.jpg";
 import dairyCentre from "@/assets/gallery-dairy-centre.jpg";
-import training from "@/assets/gallery-training.jpg";
+import trainingSessionAsset from "@/assets/real-training-session.jpg.asset.json";
+
+const training = trainingSessionAsset.url;
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";

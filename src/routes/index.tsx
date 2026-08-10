@@ -5,7 +5,6 @@ import leather from "@/assets/hero-leather.jpg";
 import farmers from "@/assets/community-farmers.jpg";
 import womenExposureAsset from "@/assets/real-women-exposure.jpg.asset.json";
 import stitchingAsset from "@/assets/real-stitching-unit.jpg.asset.json";
-import trainingSessionAsset from "@/assets/real-training-session.jpg.asset.json";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductCard } from "@/components/ProductCard";
@@ -76,7 +75,7 @@ const communities = [
   },
   {
     img: womenShg,
-    alt: "Women's self help group meeting with a savings ledger",
+    alt: "Women members of a self help group during a SPECTRA exposure visit",
     eyebrow: "Women's participation",
     title: "Those who decide it",
     body: "Self help groups where saving becomes confidence, and women take their place in planning, monitoring and every decision that shapes a household.",
