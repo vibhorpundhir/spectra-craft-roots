@@ -4,17 +4,18 @@ import agriculture from "@/assets/hero-agriculture.jpg";
 import leather from "@/assets/hero-leather.jpg";
 import farmers from "@/assets/community-farmers.jpg";
 import womenExposureAsset from "@/assets/real-women-exposure.jpg.asset.json";
-
 import stitchingAsset from "@/assets/real-stitching-unit.jpg.asset.json";
-
-const womenShg = womenExposureAsset.url;
-const artisans = stitchingAsset.url;
+import trainingSessionAsset from "@/assets/real-training-session.jpg.asset.json";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductCard } from "@/components/ProductCard";
 import { products } from "@/data/products";
 import { galleryItems } from "@/data/gallery";
 import { impact, site } from "@/data/site";
+
+const womenShg = womenExposureAsset.url;
+const artisans = stitchingAsset.url;
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
