@@ -1,24 +1,46 @@
 import { motion, useReducedMotion } from "motion/react";
 import type { ReactNode } from "react";
 
+type Variant = "rise" | "fade" | "clip" | "left";
+
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+const variants: Record<Variant, { initial: Record<string, unknown>; animate: Record<string, unknown> }> =
+  {
+    // gentle lift, like a page turning
+    rise: { initial: { opacity: 0, y: 18 }, animate: { opacity: 1, y: 0 } },
+    fade: { initial: { opacity: 0 }, animate: { opacity: 1 } },
+    // grows open from the bottom — a seed becoming a frame
+    clip: {
+      initial: { opacity: 0, clipPath: "inset(14% 0% 0% 0%)", y: 10 },
+      animate: { opacity: 1, clipPath: "inset(0% 0% 0% 0%)", y: 0 },
+    },
+    left: { initial: { opacity: 0, x: -18 }, animate: { opacity: 1, x: 0 } },
+  };
+
 export function Reveal({
   children,
   delay = 0,
   className,
+  variant = "rise",
+  duration = 0.55,
 }: {
   children: ReactNode;
   delay?: number;
   className?: string;
+  variant?: Variant;
+  duration?: number;
 }) {
   const reduce = useReducedMotion();
   if (reduce) return <div className={className}>{children}</div>;
+  const v = variants[variant];
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.38, delay: delay * 0.6, ease: [0.22, 1, 0.36, 1] }}
+      initial={v.initial}
+      whileInView={v.animate}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration, delay: delay * 0.7, ease: EASE }}
     >
       {children}
     </motion.div>
