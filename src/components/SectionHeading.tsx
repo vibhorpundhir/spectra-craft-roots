@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
+import { GoldRule } from "./GoldRule";
 
 export function SectionHeading({
   eyebrow,
@@ -27,7 +28,7 @@ export function SectionHeading({
       {eyebrow ? (
         <>
           <p className={cn("eyebrow", toneClass)}>{eyebrow}</p>
-          <span className={cn("gold-rule mt-4", align === "center" && "mx-auto")} />
+          <GoldRule className={cn("mt-4", align === "center" && "mx-auto")} />
         </>
       ) : null}
       <h2 className="mt-6 text-[2rem] sm:text-4xl md:text-[3.25rem]">{title}</h2>
