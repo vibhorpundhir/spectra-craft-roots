@@ -59,7 +59,7 @@ export function Header() {
             <Link
               key={item.to}
               to={item.to}
-              className="eyebrow link-underline text-muted-foreground transition-colors hover:text-foreground"
+              className="eyebrow stitch-link text-muted-foreground transition-colors hover:text-foreground"
               activeProps={{ className: "text-foreground", "data-status": "active" }}
               activeOptions={{ exact: item.to === "/" }}
             >
@@ -67,6 +67,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
+
 
         <div className="hidden lg:block">
           <Link to="/contact" className="btn-ghost !px-5 !py-2.5">
