@@ -5,8 +5,7 @@ type Variant = "rise" | "fade" | "clip" | "left";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-const variants: Record<Variant, { initial: Record<string, unknown>; animate: Record<string, unknown> }> =
-  {
+const variants = {
     // gentle lift, like a page turning
     rise: { initial: { opacity: 0, y: 18 }, animate: { opacity: 1, y: 0 } },
     fade: { initial: { opacity: 0 }, animate: { opacity: 1 } },
