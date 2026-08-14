@@ -479,3 +479,77 @@
     scroll-behavior: auto;
   }
 }
+
+/* Warm paper grain — used over dark bands and hero imagery for depth */
+@utility grain {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.16;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Slow drift on documentary photographs — life without video */
+@utility kenburns {
+  & img {
+    animation: kenburns 22s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.07) translate3d(-1.2%, -1%, 0);
+  }
+}
+
+/* Dashed underline that runs across on hover — echoes juti stitching */
+@utility stitch-link {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    background-image: linear-gradient(
+      to right,
+      var(--color-gold) 0 6px,
+      transparent 6px 11px
+    );
+    background-size: 11px 2px;
+    background-repeat: repeat-x;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &:hover::after,
+  &[data-status="active"]::after {
+    transform: scaleX(1);
+  }
+}
+
+/* Physical press feedback for cards and tiles on touch */
+@utility press {
+  transition: transform 160ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  &:active {
+    transform: scale(0.985);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kenburns img {
+    animation: none !important;
+  }
+}
