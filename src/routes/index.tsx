@@ -9,6 +9,8 @@ import farmers from "@/assets/community-farmers.jpg";
 import womenExposureAsset from "@/assets/real-women-exposure.jpg.asset.json";
 import stitchingAsset from "@/assets/real-stitching-unit.jpg.asset.json";
 import { Reveal } from "@/components/Reveal";
+import { AnimatedCounter } from "@/components/AnimatedCounter";
+
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductCard } from "@/components/ProductCard";
 import { products } from "@/data/products";
