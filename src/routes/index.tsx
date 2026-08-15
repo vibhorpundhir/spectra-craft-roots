@@ -110,7 +110,6 @@ function Home() {
   });
   const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
   const copyY = useTransform(scrollYProgress, [0, 1], ["0%", "26%"]);
-  const copyOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
 
   return (
     <>
@@ -149,7 +148,7 @@ function Home() {
 
         <motion.div
           className="shell relative flex min-h-[92svh] max-w-5xl flex-col items-center justify-center py-28 text-center"
-          style={reduce ? undefined : { y: copyY, opacity: copyOpacity }}
+          style={reduce ? undefined : { y: copyY }}
         >
           <motion.p
             className="eyebrow text-gold"
