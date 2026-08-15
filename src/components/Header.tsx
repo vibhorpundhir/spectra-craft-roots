@@ -1,9 +1,13 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
+import { motion } from "motion/react";
+
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
+import { ScrollProgress } from "./ScrollProgress";
 import { navigation } from "@/data/site";
 import { cn } from "@/lib/utils";
+
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -86,6 +90,8 @@ export function Header() {
         </button>
       </div>
 
+      <ScrollProgress />
+
       {open ? (
         <nav
           aria-label="Mobile"
@@ -93,16 +99,22 @@ export function Header() {
         >
           <div className="shell flex min-h-full flex-col py-6">
             <ul>
-              {navigation.map((item) => (
+              {navigation.map((item, i) => (
                 <li key={item.to} className="border-b border-border/60">
-                  <Link
-                    to={item.to}
-                    className="block py-4 font-display text-[1.75rem] leading-none text-foreground"
-                    activeProps={{ className: "text-primary" }}
-                    activeOptions={{ exact: item.to === "/" }}
+                  <motion.div
+                    initial={{ opacity: 0, x: -14 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: 0.03 * i, ease: [0.22, 1, 0.36, 1] }}
                   >
-                    {item.label}
-                  </Link>
+                    <Link
+                      to={item.to}
+                      className="block py-4 font-display text-[1.75rem] leading-none text-foreground"
+                      activeProps={{ className: "text-primary" }}
+                      activeOptions={{ exact: item.to === "/" }}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
                 </li>
               ))}
             </ul>
@@ -115,6 +127,7 @@ export function Header() {
           </div>
         </nav>
       ) : null}
+
     </header>
   );
 }

@@ -1,9 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { useMemo, useState } from "react";
 import { PageHero } from "@/components/PageHero";
-import { Reveal } from "@/components/Reveal";
+import { FilterChips } from "@/components/FilterChips";
+import { Lightbox } from "@/components/Lightbox";
 import { galleryCategories, galleryItems } from "@/data/gallery";
-import { cn } from "@/lib/utils";
+
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -30,16 +32,19 @@ export const Route = createFileRoute("/gallery")({
 });
 
 function Gallery() {
-  const [filter, setFilter] = useState<string | null>(null);
-  const visible = filter ? galleryItems.filter((i) => i.category === filter) : galleryItems;
+  const [filter, setFilter] = useState<string>("all");
+  const [active, setActive] = useState<number | null>(null);
+  const reduce = useReducedMotion();
 
-  const chip = (active: boolean) =>
-    cn(
-      "eyebrow border px-5 py-2.5 transition-colors",
-      active
-        ? "border-primary bg-primary text-primary-foreground"
-        : "border-border text-muted-foreground hover:border-foreground hover:text-foreground",
-    );
+  const visible = useMemo(
+    () => (filter === "all" ? galleryItems : galleryItems.filter((i) => i.category === filter)),
+    [filter],
+  );
+
+  const options = useMemo(
+    () => [{ key: "all", label: "All" }, ...galleryCategories.map((c) => ({ key: c, label: c }))],
+    [],
+  );
 
   return (
     <>
@@ -50,54 +55,76 @@ function Gallery() {
       />
 
       <section className="shell pb-20 md:pb-28">
-        <div
-          className="flex flex-wrap gap-3 border-y border-border py-6"
-          role="group"
-          aria-label="Filter gallery"
-        >
-          <button type="button" onClick={() => setFilter(null)} className={chip(filter === null)}>
-            All
-          </button>
-          {galleryCategories.map((c) => (
-            <button
-              key={c}
-              type="button"
-              onClick={() => setFilter(c)}
-              className={chip(filter === c)}
-            >
-              {c}
-            </button>
-          ))}
+        <div className="border-y border-border py-6">
+          <FilterChips
+            options={options}
+            value={filter}
+            onChange={(k) => {
+              setFilter(k);
+              setActive(null);
+            }}
+            label="Filter gallery"
+            layoutId="gallery-filter"
+          />
         </div>
 
-        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {visible.map((item, i) => (
-            <Reveal key={item.alt} delay={(i % 6) * 0.05}>
-              <figure className="frame frame-hover group relative aspect-4/3">
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  loading="lazy"
-                  decoding="async"
-                  width={1200}
-                  height={900}
-                  className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
-                />
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-ink/85 via-ink/25 to-transparent opacity-80 transition-opacity duration-200 group-hover:opacity-100"
-                />
-                <figcaption className="absolute inset-x-0 bottom-0 z-[2] p-5">
-                  <span className="eyebrow text-gold">{item.category}</span>
-                  <p className="mt-2 max-w-prose translate-y-1 text-sm leading-snug text-cream opacity-0 transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100">
-                    {item.alt}
-                  </p>
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
+        <p className="mt-8 text-sm text-muted-foreground" aria-live="polite">
+          Showing {visible.length} {visible.length === 1 ? "photograph" : "photographs"}
+        </p>
+
+        <motion.div layout className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <AnimatePresence mode="popLayout">
+            {visible.map((item, i) => (
+              <motion.button
+                key={item.src + item.alt}
+                type="button"
+                layout
+                onClick={() => setActive(i)}
+                aria-label={`Open photograph: ${item.alt}`}
+                initial={reduce ? undefined : { opacity: 0, y: 16 }}
+                animate={reduce ? undefined : { opacity: 1, y: 0 }}
+                exit={reduce ? undefined : { opacity: 0, scale: 0.97 }}
+                transition={{
+                  duration: 0.42,
+                  delay: reduce ? 0 : (i % 6) * 0.04,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="press group block text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+              >
+                <figure className="frame frame-hover relative aspect-4/3">
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    loading="lazy"
+                    decoding="async"
+                    width={1200}
+                    height={900}
+                    className="h-full w-full object-cover"
+                  />
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 z-[1] bg-linear-to-t from-ink/85 via-ink/25 to-transparent opacity-80 transition-opacity duration-200 group-hover:opacity-100"
+                  />
+                  <figcaption className="absolute inset-x-0 bottom-0 z-[2] p-5">
+                    <span className="eyebrow text-gold">{item.category}</span>
+                    <p className="mt-2 max-w-prose translate-y-1.5 text-sm leading-snug text-cream opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+                      {item.alt}
+                    </p>
+                  </figcaption>
+                </figure>
+              </motion.button>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </section>
+
+      <Lightbox
+        items={visible}
+        index={active}
+        onClose={() => setActive(null)}
+        onIndexChange={setActive}
+      />
     </>
   );
 }
+
