@@ -2,8 +2,10 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
+import { ScrollProgress } from "./ScrollProgress";
 import { navigation } from "@/data/site";
 import { cn } from "@/lib/utils";
+
 
 export function Header() {
   const [open, setOpen] = useState(false);
