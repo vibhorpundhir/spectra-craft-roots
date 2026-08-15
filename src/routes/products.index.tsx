@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useState } from "react";
 import { PageHero } from "@/components/PageHero";
-import { Reveal } from "@/components/Reveal";
+import { FilterChips } from "@/components/FilterChips";
 import { ProductCard } from "@/components/ProductCard";
 import { products, categoriesByDivision, type Division } from "@/data/products";
-import { cn } from "@/lib/utils";
+
 
 export const Route = createFileRoute("/products/")({
   head: () => ({
