@@ -97,11 +97,27 @@ function Home() {
   const featured = products.filter((p) => p.featured).slice(0, 6);
   const galleryPreview = galleryItems.slice(0, 4);
 
+  const heroRef = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
+  const copyY = useTransform(scrollYProgress, [0, 1], ["0%", "26%"]);
+  const copyOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
+
   return (
     <>
       {/* Hero */}
-      <section className="relative isolate min-h-[92svh] overflow-hidden bg-ink">
-        <div className="absolute inset-0 grid grid-cols-2">
+      <section
+        ref={heroRef}
+        className="grain relative isolate min-h-[92svh] overflow-hidden bg-ink"
+      >
+        <motion.div
+          className="kenburns absolute inset-0 grid grid-cols-2"
+          style={reduce ? undefined : { y: imageY, scale: 1.06 }}
+        >
           <img
             src={agriculture}
             alt="Farmer walking through green fields at sunrise"
@@ -120,24 +136,54 @@ function Home() {
             height={1600}
             className="h-full w-full object-cover"
           />
-        </div>
+        </motion.div>
         <div
           className="absolute inset-0 bg-linear-to-b from-ink/75 via-ink/65 to-ink/90"
           aria-hidden="true"
         />
 
-        <div className="shell relative flex min-h-[92svh] max-w-5xl flex-col items-center justify-center py-28 text-center">
-          <p className="eyebrow text-gold">SPECTRA &nbsp;·&nbsp; FPO &amp; OFPO</p>
-          <span className="gold-rule mt-5" />
-          <h1 className="mt-7 max-w-4xl font-display text-[2.5rem] leading-[1.03] text-cream sm:text-[3.5rem] lg:text-[4.75rem]">
+        <motion.div
+          className="shell relative flex min-h-[92svh] max-w-5xl flex-col items-center justify-center py-28 text-center"
+          style={reduce ? undefined : { y: copyY, opacity: copyOpacity }}
+        >
+          <motion.p
+            className="eyebrow text-gold"
+            initial={reduce ? undefined : { opacity: 0, y: 12 }}
+            animate={reduce ? undefined : { opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          >
+            SPECTRA &nbsp;·&nbsp; FPO &amp; OFPO
+          </motion.p>
+          <motion.span
+            className="mt-5 block h-[2px] w-10 origin-left bg-gold"
+            initial={reduce ? undefined : { scaleX: 0 }}
+            animate={reduce ? undefined : { scaleX: 1 }}
+            transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+          />
+          <motion.h1
+            className="mt-7 max-w-4xl font-display text-[2.5rem] leading-[1.03] text-cream sm:text-[3.5rem] lg:text-[4.75rem]"
+            initial={reduce ? undefined : { opacity: 0, y: 20 }}
+            animate={reduce ? undefined : { opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
+          >
             Every product carries a story of hope, hard work and dignity.
-          </h1>
-          <p className="mt-8 max-w-2xl text-base leading-[1.8] text-cream/85 sm:text-lg">
+          </motion.h1>
+          <motion.p
+            className="mt-8 max-w-2xl text-base leading-[1.8] text-cream/85 sm:text-lg"
+            initial={reduce ? undefined : { opacity: 0, y: 16 }}
+            animate={reduce ? undefined : { opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
+          >
             Through our Farmer Producer Organizations (FPO) and Other Farmer Producer Organizations
             (OFPO), SPECTRA empowers rural farmers and skilled artisans by creating sustainable
             livelihood opportunities while preserving traditional knowledge and craftsmanship.
-          </p>
-          <div className="mt-11 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+          </motion.p>
+          <motion.div
+            className="mt-11 flex w-full flex-col gap-3 sm:w-auto sm:flex-row"
+            initial={reduce ? undefined : { opacity: 0, y: 14 }}
+            animate={reduce ? undefined : { opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          >
             <Link to="/impact" className="btn-primary">
               Our journey <ArrowRight className="h-4 w-4" />
             </Link>
@@ -147,17 +193,23 @@ function Home() {
             >
               Meet the makers <ArrowRight className="h-4 w-4" />
             </Link>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         <div
           aria-hidden
           className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 sm:flex"
         >
           <span className="eyebrow text-[0.55rem] text-cream/50">Scroll</span>
-          <span className="h-10 w-px bg-linear-to-b from-cream/50 to-transparent" />
+          <motion.span
+            className="h-10 w-px bg-linear-to-b from-cream/60 to-transparent"
+            animate={reduce ? undefined : { scaleY: [0.4, 1, 0.4], opacity: [0.4, 1, 0.4] }}
+            style={{ transformOrigin: "top" }}
+            transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+          />
         </div>
       </section>
+
 
       {/* About */}
       <section className="section-y">
