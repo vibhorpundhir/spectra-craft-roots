@@ -325,10 +325,11 @@ function Home() {
               <Reveal key={stat.label} delay={i * 0.08}>
                 <div className="border-t border-cream/15 pt-6">
                   <dt className="font-display text-[2.25rem] leading-none text-gold sm:text-[3rem]">
-                    {stat.value}
+                    <AnimatedCounter value={stat.value} />
                   </dt>
                   <dd className="eyebrow mt-4 text-cream/55">{stat.label}</dd>
                 </div>
+
               </Reveal>
             ))}
           </dl>
