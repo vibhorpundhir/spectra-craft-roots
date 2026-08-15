@@ -1,5 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
 import { ArrowRight, Leaf, Handshake, ShieldCheck, Sprout } from "lucide-react";
+
 import agriculture from "@/assets/hero-agriculture.jpg";
 import leather from "@/assets/hero-leather.jpg";
 import farmers from "@/assets/community-farmers.jpg";
