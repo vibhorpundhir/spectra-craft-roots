@@ -1,9 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { useMemo, useState } from "react";
 import { PageHero } from "@/components/PageHero";
-import { Reveal } from "@/components/Reveal";
+import { FilterChips } from "@/components/FilterChips";
+import { Lightbox } from "@/components/Lightbox";
 import { galleryCategories, galleryItems } from "@/data/gallery";
-import { cn } from "@/lib/utils";
+
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
