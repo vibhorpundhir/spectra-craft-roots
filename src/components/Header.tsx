@@ -1,5 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
+import { motion } from "motion/react";
+
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
 import { ScrollProgress } from "./ScrollProgress";
