@@ -35,7 +35,8 @@ type Filter = "all" | Division;
 
 function Products() {
   const [division, setDivision] = useState<Filter>("all");
-  const [category, setCategory] = useState<string | null>(null);
+  const [category, setCategory] = useState<string>("all");
+  const reduce = useReducedMotion();
 
   const categories =
     division === "all"
@@ -44,16 +45,9 @@ function Products() {
 
   const visible = products.filter(
     (p) =>
-      (division === "all" || p.division === division) && (!category || p.category === category),
+      (division === "all" || p.division === division) &&
+      (category === "all" || p.category === category),
   );
-
-  const chip = (active: boolean) =>
-    cn(
-      "eyebrow border px-5 py-2.5 transition-colors",
-      active
-        ? "border-primary bg-primary text-primary-foreground"
-        : "border-border text-muted-foreground hover:border-foreground hover:text-foreground",
-    );
 
   return (
     <>
@@ -65,48 +59,33 @@ function Products() {
 
       <section className="shell pb-20 md:pb-28">
         <div className="border-y border-border py-6">
-          <div className="flex flex-wrap gap-3" role="group" aria-label="Filter by division">
-            {(
-              [
-                { key: "all", label: "All" },
-                { key: "fpo", label: "FPO · Agriculture" },
-                { key: "ofpo", label: "OFPO · Leather" },
-              ] as const
-            ).map((d) => (
-              <button
-                key={d.key}
-                type="button"
-                aria-pressed={division === d.key}
-                onClick={() => {
-                  setDivision(d.key);
-                  setCategory(null);
-                }}
-                className={chip(division === d.key)}
-              >
-                {d.label}
-              </button>
-            ))}
-          </div>
-          <div className="mt-4 flex flex-wrap gap-3" role="group" aria-label="Filter by category">
-            <button
-              type="button"
-              aria-pressed={category === null}
-              onClick={() => setCategory(null)}
-              className={chip(category === null)}
-            >
-              All categories
-            </button>
-            {categories.map((c) => (
-              <button
-                key={c}
-                type="button"
-                aria-pressed={category === c}
-                onClick={() => setCategory(c)}
-                className={chip(category === c)}
-              >
-                {c}
-              </button>
-            ))}
+          <FilterChips
+            label="Filter by division"
+            layoutId="division-filter"
+            value={division}
+            onChange={(k) => {
+              setDivision(k as Filter);
+              setCategory("all");
+            }}
+            tone={division === "ofpo" ? "leather" : "field"}
+            options={[
+              { key: "all", label: "All" },
+              { key: "fpo", label: "FPO · Agriculture" },
+              { key: "ofpo", label: "OFPO · Leather" },
+            ]}
+          />
+          <div className="mt-4">
+            <FilterChips
+              label="Filter by category"
+              layoutId="category-filter"
+              value={category}
+              onChange={setCategory}
+              tone={division === "ofpo" ? "leather" : "field"}
+              options={[
+                { key: "all", label: "All categories" },
+                ...categories.map((c) => ({ key: c, label: c })),
+              ]}
+            />
           </div>
         </div>
 
@@ -114,14 +93,28 @@ function Products() {
           Showing {visible.length} {visible.length === 1 ? "product" : "products"}
         </p>
 
-        <div className="mt-8 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-          {visible.map((product, i) => (
-            <Reveal key={product.slug} delay={i * 0.05}>
-              <ProductCard product={product} />
-            </Reveal>
-          ))}
-        </div>
+        <motion.div layout className="mt-8 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+          <AnimatePresence mode="popLayout">
+            {visible.map((product, i) => (
+              <motion.div
+                key={product.slug}
+                layout
+                initial={reduce ? undefined : { opacity: 0, y: 18 }}
+                animate={reduce ? undefined : { opacity: 1, y: 0 }}
+                exit={reduce ? undefined : { opacity: 0, scale: 0.97 }}
+                transition={{
+                  duration: 0.45,
+                  delay: reduce ? 0 : (i % 6) * 0.05,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
+                <ProductCard product={product} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </section>
     </>
   );
 }
+
