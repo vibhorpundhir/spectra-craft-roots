@@ -1,13 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import stallAsset from "@/assets/real-ofpo-stall.jpg.asset.json";
-import stitchingAsset from "@/assets/real-stitching-unit.jpg.asset.json";
-import jutiDisplayAsset from "@/assets/real-juti-display.jpg.asset.json";
-import goods from "@/assets/product-leather-goods.jpg";
+import ofpoExhibitionArtisan from "@/assets/real/ofpo-exhibition-artisan.jpg";
+import ofpoStallInspection from "@/assets/real/ofpo-stall-inspection.jpg";
+import jutiEmbroideredGold from "@/assets/real/juti-embroidered-gold.jpg";
+import jutiEmbroideredMaroon from "@/assets/real/juti-embroidered-maroon.jpg";
 
-const workshop = stallAsset.url;
-const artisans = stitchingAsset.url;
-const juti = jutiDisplayAsset.url;
+const workshop = ofpoExhibitionArtisan;
+const artisans = ofpoStallInspection;
+const juti = jutiEmbroideredGold;
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -158,8 +158,8 @@ function Ofpo() {
           </Reveal>
           <Reveal delay={0.08} className="frame frame-hover">
             <img
-              src={goods}
-              alt="Handmade leather satchel and belt on linen"
+              src={jutiEmbroideredMaroon}
+              alt="Handmade velvet juti with intricate circular gold tilla embroidery"
               loading="lazy"
               decoding="async"
               width={1024}

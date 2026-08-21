@@ -46,7 +46,10 @@ export function FilterChips({
               <motion.span
                 layoutId={layoutId}
                 aria-hidden
-                className={cn("absolute inset-0 -z-10", tone === "leather" ? "bg-leather" : "bg-primary")}
+                className={cn(
+                  "absolute inset-0 -z-10",
+                  tone === "leather" ? "bg-leather" : "bg-primary",
+                )}
                 transition={{ type: "spring", stiffness: 420, damping: 34 }}
               />
             ) : null}

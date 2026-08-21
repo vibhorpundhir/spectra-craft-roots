@@ -1,11 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import agriculture from "@/assets/hero-agriculture.jpg";
-import farmers from "@/assets/community-farmers.jpg";
-import dairyCentre from "@/assets/gallery-dairy-centre.jpg";
-import trainingSessionAsset from "@/assets/real-training-session.jpg.asset.json";
+import fpoOfficeGathering from "@/assets/real/fpo-office-gathering.jpg";
+import fpoSpiceStall from "@/assets/real/fpo-spice-stall.jpg";
+import fpoAgmSpeakers from "@/assets/real/fpo-agm-speakers.jpg";
 
-const training = trainingSessionAsset.url;
+const training = fpoAgmSpeakers;
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -82,8 +82,8 @@ function Fpo() {
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div className="frame frame-hover">
               <img
-                src={farmers}
-                alt="SPECTRA farmer members gathered together at sunrise"
+                src={fpoOfficeGathering}
+                alt="SPECTRA farmer and women producer company members gathered at the SAUMPCL office in Alwar"
                 loading="lazy"
                 decoding="async"
                 width={1200}
@@ -139,8 +139,8 @@ function Fpo() {
         <div className="mt-12 grid gap-3 sm:grid-cols-2">
           <Reveal className="frame frame-hover">
             <img
-              src={dairyCentre}
-              alt="Steel milk cans at a SPECTRA village collection centre"
+              src={fpoSpiceStall}
+              alt="SPECTRA Aadarsh Mahila Producer Company spice production exhibition stall in Alwar"
               loading="lazy"
               decoding="async"
               width={1200}
@@ -151,7 +151,7 @@ function Fpo() {
           <Reveal delay={0.08} className="frame frame-hover">
             <img
               src={training}
-              alt="Farmer training session under a field tent"
+              alt="SPECTRA facilitator addressing farmer and artisan members at a training session"
               loading="lazy"
               decoding="async"
               width={1200}

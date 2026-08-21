@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "motion/react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 /**
@@ -7,8 +8,17 @@ import { cn } from "@/lib/utils";
  */
 export function GoldRule({ className, delay = 0 }: { className?: string; delay?: number }) {
   const reduce = useReducedMotion();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const base = "block h-[2px] w-10 origin-left bg-gold";
-  if (reduce) return <span className={cn(base, className)} />;
+
+  // On server or reduced-motion: render visible immediately
+  if (reduce || !mounted) return <span className={cn(base, className)} />;
+
   return (
     <motion.span
       aria-hidden

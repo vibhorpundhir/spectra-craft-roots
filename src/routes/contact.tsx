@@ -225,7 +225,6 @@ function Contact() {
             ))}
           </ul>
 
-
           <div className="mt-10 border border-border">
             <iframe
               title="SPECTRA office location on Google Maps"

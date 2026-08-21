@@ -8,7 +8,6 @@ import { ScrollProgress } from "./ScrollProgress";
 import { navigation } from "@/data/site";
 import { cn } from "@/lib/utils";
 
-
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -72,7 +71,6 @@ export function Header() {
           ))}
         </nav>
 
-
         <div className="hidden lg:block">
           <Link to="/contact" className="btn-ghost !px-5 !py-2.5">
             Enquire
@@ -95,7 +93,10 @@ export function Header() {
       {open ? (
         <nav
           aria-label="Mobile"
-          className="fixed inset-x-0 bottom-0 top-16 overflow-y-auto border-t border-border bg-background lg:hidden"
+          className={cn(
+            "fixed inset-x-0 bottom-0 overflow-y-auto border-t border-border bg-background lg:hidden",
+            scrolled ? "top-16" : "top-20",
+          )}
         >
           <div className="shell flex min-h-full flex-col py-6">
             <ul>
@@ -127,7 +128,6 @@ export function Header() {
           </div>
         </nav>
       ) : null}
-
     </header>
   );
 }

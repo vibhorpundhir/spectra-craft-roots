@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import farmers from "@/assets/community-farmers.jpg";
-import foundationDayAsset from "@/assets/real-foundation-day.jpg.asset.json";
+import fpoAgmCrowd from "@/assets/real/fpo-agm-crowd.jpg";
+import spectraStakeholderMeeting from "@/assets/real/spectra-stakeholder-meeting.jpg";
 
-const artisans = foundationDayAsset.url;
+const artisans = spectraStakeholderMeeting;
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -81,8 +81,8 @@ function About() {
         eyebrow="About SPECTRA"
         title="Society for Public Education Cultural Training and Rural Action"
         intro="SPECTRA is a voluntary, non-profit and non-government organisation, registered under the Rajasthan Societies Act 1958, working since 1996 in the rural and interior pockets of Rajasthan to meet the educational and social needs of the deprived rural population."
-        image={farmers}
-        alt="Farming families standing together in a field in rural Rajasthan"
+        image={fpoAgmCrowd}
+        alt="SPECTRA community members and women self help groups gathered at the FPO Annual General Meeting in Alwar"
       />
 
       <section className="shell section-y">

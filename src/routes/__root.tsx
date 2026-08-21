@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Toaster } from "@/components/ui/sonner";
+import { site } from "@/data/site";
 
 function NotFoundComponent() {
   return (
@@ -116,8 +117,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             addressRegion: "Rajasthan",
             addressCountry: "IN",
           },
-          telephone: "+91 98765 43210",
-          email: "hello@spectra.org",
+          telephone: site.phone,
+          email: site.email,
         }),
       },
     ],

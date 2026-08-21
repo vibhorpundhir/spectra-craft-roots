@@ -6,7 +6,6 @@ import { FilterChips } from "@/components/FilterChips";
 import { Lightbox } from "@/components/Lightbox";
 import { galleryCategories, galleryItems } from "@/data/gallery";
 
-
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
@@ -127,4 +126,3 @@ function Gallery() {
     </>
   );
 }
-

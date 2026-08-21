@@ -1,22 +1,30 @@
 import { Link } from "@tanstack/react-router";
 import { navigation, site } from "@/data/site";
-import lockup from "@/assets/spectra-lockup.png.asset.json";
+import spectraLogo from "@/assets/spectra-logo.jpg";
 
 export function Footer() {
   return (
     <footer className="band-ink mt-0">
       <div className="shell grid gap-12 py-16 md:grid-cols-12 md:py-20">
         <div className="md:col-span-5">
-          <span className="inline-flex rounded-lg bg-cream px-4 py-3">
+          <Link to="/" className="inline-flex items-center gap-3.5">
             <img
-              src={lockup.url}
+              src={spectraLogo}
               alt="SPECTRA"
-              width={881}
-              height={827}
+              width={160}
+              height={160}
               decoding="async"
-              className="h-16 w-auto"
+              className="h-14 w-14 rounded-full bg-white p-1 object-contain"
             />
-          </span>
+            <div className="flex flex-col">
+              <span className="font-display text-2xl font-bold tracking-tight text-cream">
+                SPECTRA
+              </span>
+              <span className="eyebrow -mt-1 text-[0.6rem] text-cream/60">
+                Society for Public Education &amp; Rural Action
+              </span>
+            </div>
+          </Link>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-cream/65">
             Society for Public Education Cultural Training and Rural Action — a voluntary,
             non-profit organisation working since 1996 with rural families across Rajasthan.

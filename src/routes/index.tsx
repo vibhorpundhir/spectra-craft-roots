@@ -1,13 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Leaf, Handshake, ShieldCheck, Sprout } from "lucide-react";
 
 import agriculture from "@/assets/hero-agriculture.jpg";
 import leather from "@/assets/hero-leather.jpg";
-import farmers from "@/assets/community-farmers.jpg";
-import womenExposureAsset from "@/assets/real-women-exposure.jpg.asset.json";
-import stitchingAsset from "@/assets/real-stitching-unit.jpg.asset.json";
+import fpoOfficeGathering from "@/assets/real/fpo-office-gathering.jpg";
+import fpoAgmCrowd from "@/assets/real/fpo-agm-crowd.jpg";
+import ofpoStallInspection from "@/assets/real/ofpo-stall-inspection.jpg";
 import { Reveal } from "@/components/Reveal";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 
@@ -16,10 +16,6 @@ import { ProductCard } from "@/components/ProductCard";
 import { products } from "@/data/products";
 import { galleryItems } from "@/data/gallery";
 import { impact, site } from "@/data/site";
-
-const womenShg = womenExposureAsset.url;
-const artisans = stitchingAsset.url;
-
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -70,8 +66,8 @@ const reasons = [
 
 const communities = [
   {
-    img: farmers,
-    alt: "Farmer members standing together in a field at sunrise",
+    img: fpoOfficeGathering,
+    alt: "SPECTRA farmer and producer company members gathered in Alwar",
     eyebrow: "FPO · Farming families",
     title: "Those who grow it",
     body: "Cultivators and dairy households working together — sharing collection centres, grading discipline and a bargaining position no single smallholder can hold alone.",
@@ -79,8 +75,8 @@ const communities = [
     cta: "Meet the farmers",
   },
   {
-    img: womenShg,
-    alt: "Women members of a self help group during a SPECTRA exposure visit",
+    img: fpoAgmCrowd,
+    alt: "Hundreds of women self-help group members at the SPECTRA FPO Annual General Meeting",
     eyebrow: "Women's participation",
     title: "Those who decide it",
     body: "Self help groups where saving becomes confidence, and women take their place in planning, monitoring and every decision that shapes a household.",
@@ -88,8 +84,8 @@ const communities = [
     cta: "See our impact",
   },
   {
-    img: artisans,
-    alt: "Artisan members at work in the shared leather stitching unit",
+    img: ofpoStallInspection,
+    alt: "Handmade leather juti and craft products on display at an exhibition stall",
     eyebrow: "OFPO · Artisan households",
     title: "Those who make it",
     body: "Cutters, embroiderers, lasters and finishers carrying a craft learned from their parents — now with tools, training and orders that make it worth passing on.",
@@ -104,12 +100,21 @@ function Home() {
 
   const heroRef = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"],
   });
   const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
   const copyY = useTransform(scrollYProgress, [0, 1], ["0%", "26%"]);
+
+  // Only apply motion styles after client mount (prevents SSR flash)
+  const heroMotion = mounted && !reduce;
 
   return (
     <>
@@ -119,8 +124,8 @@ function Home() {
         className="grain relative isolate min-h-[92svh] overflow-hidden bg-ink"
       >
         <motion.div
-          className="kenburns absolute inset-0 grid grid-cols-2"
-          style={reduce ? undefined : { y: imageY, scale: 1.06 }}
+          className="absolute inset-0 grid grid-cols-2 gpu"
+          style={heroMotion ? { y: imageY, scale: 1.06 } : undefined}
         >
           <img
             src={agriculture}
@@ -148,34 +153,34 @@ function Home() {
 
         <motion.div
           className="shell relative flex min-h-[92svh] max-w-5xl flex-col items-center justify-center py-28 text-center"
-          style={reduce ? undefined : { y: copyY }}
+          style={heroMotion ? { y: copyY } : undefined}
         >
           <motion.p
             className="eyebrow text-gold"
-            initial={reduce ? undefined : { opacity: 0, y: 12 }}
-            animate={reduce ? undefined : { opacity: 1, y: 0 }}
+            initial={heroMotion ? { opacity: 0, y: 12 } : undefined}
+            animate={heroMotion ? { opacity: 1, y: 0 } : undefined}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
             SPECTRA &nbsp;·&nbsp; FPO &amp; OFPO
           </motion.p>
           <motion.span
             className="mt-5 block h-[2px] w-10 origin-left bg-gold"
-            initial={reduce ? undefined : { scaleX: 0 }}
-            animate={reduce ? undefined : { scaleX: 1 }}
+            initial={heroMotion ? { scaleX: 0 } : undefined}
+            animate={heroMotion ? { scaleX: 1 } : undefined}
             transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
           />
           <motion.h1
             className="mt-7 max-w-4xl font-display text-[2.5rem] leading-[1.03] text-cream sm:text-[3.5rem] lg:text-[4.75rem]"
-            initial={reduce ? undefined : { opacity: 0, y: 20 }}
-            animate={reduce ? undefined : { opacity: 1, y: 0 }}
+            initial={heroMotion ? { opacity: 0, y: 20 } : undefined}
+            animate={heroMotion ? { opacity: 1, y: 0 } : undefined}
             transition={{ duration: 0.7, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
           >
             Every product carries a story of hope, hard work and dignity.
           </motion.h1>
           <motion.p
             className="mt-8 max-w-2xl text-base leading-[1.8] text-cream/85 sm:text-lg"
-            initial={reduce ? undefined : { opacity: 0, y: 16 }}
-            animate={reduce ? undefined : { opacity: 1, y: 0 }}
+            initial={heroMotion ? { opacity: 0, y: 16 } : undefined}
+            animate={heroMotion ? { opacity: 1, y: 0 } : undefined}
             transition={{ duration: 0.7, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
           >
             Through our Farmer Producer Organizations (FPO) and Other Farmer Producer Organizations
@@ -184,8 +189,8 @@ function Home() {
           </motion.p>
           <motion.div
             className="mt-11 flex w-full flex-col gap-3 sm:w-auto sm:flex-row"
-            initial={reduce ? undefined : { opacity: 0, y: 14 }}
-            animate={reduce ? undefined : { opacity: 1, y: 0 }}
+            initial={heroMotion ? { opacity: 0, y: 14 } : undefined}
+            animate={heroMotion ? { opacity: 1, y: 0 } : undefined}
             transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
             <Link to="/impact" className="btn-primary">
@@ -207,13 +212,12 @@ function Home() {
           <span className="eyebrow text-[0.55rem] text-cream/50">Scroll</span>
           <motion.span
             className="h-10 w-px bg-linear-to-b from-cream/60 to-transparent"
-            animate={reduce ? undefined : { scaleY: [0.4, 1, 0.4], opacity: [0.4, 1, 0.4] }}
+            animate={heroMotion ? { scaleY: [0.4, 1, 0.4], opacity: [0.4, 1, 0.4] } : undefined}
             style={{ transformOrigin: "top" }}
             transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
           />
         </div>
       </section>
-
 
       {/* About */}
       <section className="section-y">
@@ -330,7 +334,6 @@ function Home() {
                   </dt>
                   <dd className="eyebrow mt-4 text-cream/55">{stat.label}</dd>
                 </div>
-
               </Reveal>
             ))}
           </dl>

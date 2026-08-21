@@ -1,8 +1,6 @@
 # Spectra Connect
 
-https://spectraalwar.org This link for reference 
-
-
+https://spectraalwar.org This link for reference
 
 SPECTRA FPO & OFPO Website – Detailed Project Prompt
 
@@ -28,8 +26,6 @@ Highlight the social impact of supporting farmers and artisans.
 
 The overall experience should feel like a premium brand website rather than a government website.
 
-
-
 Website Goals
 
 The website should:
@@ -52,8 +48,6 @@ Be SEO-friendly.
 
 Be accessible and fast.
 
-
-
 Business Divisions
 
 1. FPO (Agriculture)
@@ -72,8 +66,6 @@ Purpose:
 
 Support local farmers by producing quality agricultural products using sustainable practices.
 
-
-
 2. OFPO (Leather)
 
 Focus Areas:
@@ -87,8 +79,6 @@ Handmade Leather Products
 Purpose:
 
 Support local artisans by promoting traditional leather craftsmanship while creating sustainable livelihoods.
-
-
 
 Website Style
 
@@ -122,8 +112,6 @@ Too much text
 
 Complex navigation
 
-
-
 Color Palette
 
 Primary Green
@@ -146,8 +134,6 @@ Accent Colors
 Gold
 Earthy Orange
 
-
-
 Typography
 
 Large headings
@@ -159,8 +145,6 @@ Comfortable spacing
 Minimal design
 
 Premium appearance
-
-
 
 Homepage Layout
 
@@ -198,8 +182,6 @@ Explore FPO
 
 Explore OFPO
 
-
-
 Homepage Sections
 
 About SPECTRA
@@ -220,8 +202,6 @@ Testimonials (optional)
 
 Contact CTA
 
-
-
 About Us
 
 History
@@ -239,8 +219,6 @@ Sustainability
 Quality Commitment
 
 Social Impact
-
-
 
 FPO Page
 
@@ -266,8 +244,6 @@ Benefits
 
 Community Stories
 
-
-
 OFPO Page
 
 Introduction
@@ -291,8 +267,6 @@ Crafting Process
 Gallery
 
 Artisan Stories
-
-
 
 Product Catalogue
 
@@ -328,8 +302,6 @@ Related Products
 
 Image Gallery
 
-
-
 Gallery
 
 Separate categories:
@@ -347,8 +319,6 @@ Events
 Training
 
 Community Activities
-
-
 
 Contact
 
@@ -368,8 +338,6 @@ Social Media Links
 
 WhatsApp
 
-
-
 Footer
 
 Quick Links
@@ -383,8 +351,6 @@ Copyright
 Privacy Policy
 
 Terms
-
-
 
 Navigation
 
@@ -402,8 +368,6 @@ Gallery
 
 Contact
 
-
-
 Animations
 
 Smooth scrolling
@@ -420,8 +384,6 @@ Minimal animations
 
 Premium feel
 
-
-
 Mobile Experience
 
 Fully responsive.
@@ -433,8 +395,6 @@ Desktop optimized.
 Fast loading.
 
 Touch-friendly navigation.
-
-
 
 SEO Requirements
 
@@ -452,8 +412,6 @@ Fast Performance
 
 Clean URLs
 
-
-
 Accessibility
 
 Readable typography
@@ -465,8 +423,6 @@ Keyboard navigation
 Alt text for images
 
 Accessible forms
-
-
 
 Technical Stack
 
@@ -490,8 +446,6 @@ Deployment:
 
 Vercel or Netlify
 
-
-
 Future Expansion
 
 Design the architecture so future modules can be added without redesigning the website.
@@ -514,8 +468,6 @@ Export catalogue
 
 Distributor portal
 
-
-
 Overall Design Inspiration
 
 The website should combine:
@@ -537,12 +489,6 @@ Earth-inspired color palette
 The final impression should be:
 
 “A premium, trustworthy organization that connects agriculture and traditional craftsmanship under one unified identity while creating sustainable livelihoods for farmers and artisans.”
-
-
-
-
-
-
 
 Colour red, green , yellow ,white blue , brown as suitable for that purpose
 

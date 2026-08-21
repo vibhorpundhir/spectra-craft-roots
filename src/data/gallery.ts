@@ -1,26 +1,24 @@
-import agriculture from "@/assets/hero-agriculture.jpg";
-import workshop from "@/assets/hero-leather.jpg";
-import spices from "@/assets/product-spices.jpg";
-import milk from "@/assets/product-milk.jpg";
-import dairy from "@/assets/product-dairy.jpg";
-import juti from "@/assets/product-juti.jpg";
-import shoes from "@/assets/product-shoes.jpg";
-import goods from "@/assets/product-leather-goods.jpg";
-import farmers from "@/assets/community-farmers.jpg";
-import artisans from "@/assets/community-artisans.jpg";
-import training from "@/assets/gallery-training.jpg";
-import dairyCentre from "@/assets/gallery-dairy-centre.jpg";
-import womenShg from "@/assets/community-women-shg.jpg";
-import spiceProcessing from "@/assets/community-spice-processing.jpg";
-import programme from "@/assets/community-programme.jpg";
-import stallAsset from "@/assets/real-ofpo-stall.jpg.asset.json";
-import jutiDisplayAsset from "@/assets/real-juti-display.jpg.asset.json";
-import stitchingAsset from "@/assets/real-stitching-unit.jpg.asset.json";
-import machineTrainingAsset from "@/assets/real-machine-training.jpg.asset.json";
-import exposureVisitAsset from "@/assets/real-exposure-visit.jpg.asset.json";
-import womenExposureAsset from "@/assets/real-women-exposure.jpg.asset.json";
-import foundationDayAsset from "@/assets/real-foundation-day.jpg.asset.json";
-import trainingSessionAsset from "@/assets/real-training-session.jpg.asset.json";
+import jutiEmbroideredMaroon from "@/assets/real/juti-embroidered-maroon.jpg";
+import jutiEmbroideredGold from "@/assets/real/juti-embroidered-gold.jpg";
+import jutiClassicBrown from "@/assets/real/juti-classic-brown.jpg";
+import jutiTanPunched from "@/assets/real/juti-tan-punched.jpg";
+import jutiBlackStitched from "@/assets/real/juti-black-stitched.jpg";
+import jutiTanPlain from "@/assets/real/juti-tan-plain.jpg";
+import fpoSpiceStall from "@/assets/real/fpo-spice-stall.jpg";
+import fpoSpiceInspection from "@/assets/real/fpo-spice-inspection.jpg";
+import fpoOfficeGathering from "@/assets/real/fpo-office-gathering.jpg";
+import fpoAgmCrowd from "@/assets/real/fpo-agm-crowd.jpg";
+import fpoAgmHall from "@/assets/real/fpo-agm-hall.jpg";
+import fpoAgmSpeakers from "@/assets/real/fpo-agm-speakers.jpg";
+import womenShgPledge from "@/assets/real/women-shg-pledge.jpg";
+import womenAwardCertificate from "@/assets/real/women-award-certificate.jpg";
+import ofpoExhibitionArtisan from "@/assets/real/ofpo-exhibition-artisan.jpg";
+import ofpoStallInspection from "@/assets/real/ofpo-stall-inspection.jpg";
+import ofpoExhibitionStall from "@/assets/real/ofpo-exhibition-stall.jpg";
+import livestockWeightMeasure from "@/assets/real/livestock-weight-measure.jpg";
+import livestockVillageSupport from "@/assets/real/livestock-village-support.jpg";
+import livestockMarketProgramme from "@/assets/real/livestock-market-programme.jpg";
+import spectraStakeholderMeeting from "@/assets/real/spectra-stakeholder-meeting.jpg";
 
 export const galleryCategories = [
   "Farmers",
@@ -43,27 +41,109 @@ export interface GalleryItem {
 }
 
 export const galleryItems: GalleryItem[] = [
-  { src: stallAsset.url, alt: "Artisan member at the Pahchaan Ismailpur Leather Producer Company stall of handmade juti", category: "Leather Craftsmanship" },
-  { src: jutiDisplayAsset.url, alt: "Rows of hand-stitched leather juti displayed by artisan members at an exhibition", category: "Success Stories" },
-  { src: stitchingAsset.url, alt: "Artisan members at work in the shared leather stitching unit", category: "Rural Development" },
-  { src: machineTrainingAsset.url, alt: "Artisans being shown a leather stitching machine during a training visit", category: "Training Sessions" },
-  { src: trainingSessionAsset.url, alt: "SPECTRA facilitator addressing farmer and artisan members at a training session", category: "Training Sessions" },
-  { src: womenExposureAsset.url, alt: "Women members of a self help group during a SPECTRA exposure visit", category: "Women Self Help Groups" },
-  { src: exposureVisitAsset.url, alt: "Exposure visit flagged off for OFPO members in Alwar, Rajasthan", category: "Community Programs" },
-  { src: foundationDayAsset.url, alt: "SPECTRA members gathered at a NABARD foundation day programme", category: "Community Programs" },
-  { src: agriculture, alt: "Member farmer walking between crop rows at sunrise", category: "Farmers" },
-  { src: farmers, alt: "Farmer members gathered together at the edge of a field", category: "Farmers" },
-  { src: womenShg, alt: "Women's self help group meeting with savings ledger in a village courtyard", category: "Women Self Help Groups" },
-  { src: programme, alt: "Village community programme with women, youth and elders seated together", category: "Community Programs" },
-  { src: dairyCentre, alt: "Steel milk cans at a village dairy collection centre", category: "Dairy Activities" },
-  { src: milk, alt: "Morning milk collected by member dairy households", category: "Dairy Activities" },
-  { src: spiceProcessing, alt: "Women spreading turmeric and chillies to dry on a terrace", category: "Spice Processing" },
-  { src: spices, alt: "Graded turmeric, chilli and whole spices ready for packing", category: "Spice Processing" },
-  { src: workshop, alt: "Artisan finishing a leather shoe at a workbench", category: "Leather Craftsmanship" },
-  { src: artisans, alt: "Artisans cutting and stitching leather together", category: "Leather Craftsmanship" },
-  { src: juti, alt: "Hand-embroidered leather juti with gold tilla work", category: "Leather Craftsmanship" },
-  { src: shoes, alt: "Hand-stitched leather shoes made in a village workshop", category: "Success Stories" },
-  { src: goods, alt: "Handmade leather satchel and belt made by artisan members", category: "Success Stories" },
-  { src: training, alt: "Farmer training session held under a field tent", category: "Training Sessions" },
-  { src: dairy, alt: "Household dairy processing supported by the collective", category: "Rural Development" },
+  {
+    src: jutiEmbroideredMaroon,
+    alt: "Hand-embroidered velvet juti with intricate circular gold tilla needlework by artisan members",
+    category: "Leather Craftsmanship",
+  },
+  {
+    src: jutiEmbroideredGold,
+    alt: "Intricate gold zari and tilla embroidered traditional wedding juti crafted in Rajasthan clusters",
+    category: "Leather Craftsmanship",
+  },
+  {
+    src: jutiClassicBrown,
+    alt: "Handmade classic brown leather closed shoes with genuine leather sole and interior lining",
+    category: "Leather Craftsmanship",
+  },
+  {
+    src: jutiTanPunched,
+    alt: "Tan vegetable-tanned leather juti featuring perforated heart motif punch detailing",
+    category: "Leather Craftsmanship",
+  },
+  {
+    src: jutiBlackStitched,
+    alt: "Classic black hand-stitched leather juti with visible craft welt construction",
+    category: "Leather Craftsmanship",
+  },
+  {
+    src: jutiTanPlain,
+    alt: "Traditional tan leather juti showcasing natural grain and hand-crafted inner sole",
+    category: "Leather Craftsmanship",
+  },
+  {
+    src: fpoSpiceStall,
+    alt: "SPECTRA Aadarsh Mahila Producer Company spice production stall at Pratap Auditorium, Alwar",
+    category: "Spice Processing",
+  },
+  {
+    src: fpoSpiceInspection,
+    alt: "Quality inspection of packaged turmeric, spices and pickles at the member storage facility",
+    category: "Spice Processing",
+  },
+  {
+    src: fpoOfficeGathering,
+    alt: "Farmer and women members gathered in front of the SAUMPCL producer company office in Alwar",
+    category: "Farmers",
+  },
+  {
+    src: fpoAgmCrowd,
+    alt: "Over two hundred women self-help group members attending the FPO Annual General Meeting",
+    category: "Women Self Help Groups",
+  },
+  {
+    src: womenShgPledge,
+    alt: "Women SHG leaders taking a solidarity and self-reliance pledge on stage during the annual meeting",
+    category: "Women Self Help Groups",
+  },
+  {
+    src: fpoAgmHall,
+    alt: "Annual General Meeting of Farmer Producer Company members at Hotel Swaroop Vilas Palace, Alwar",
+    category: "Women Self Help Groups",
+  },
+  {
+    src: fpoAgmSpeakers,
+    alt: "SPECTRA project facilitators presenting progress and annual audit to FPO members",
+    category: "Training Sessions",
+  },
+  {
+    src: womenAwardCertificate,
+    alt: "Recognition and certificate distribution to women leaders by SPECTRA and Mahila Shakti Kendra",
+    category: "Success Stories",
+  },
+  {
+    src: ofpoExhibitionArtisan,
+    alt: "Artisan member representing SPECTRA Aadarsh Mahila Producer Company at NABARD sponsored exhibition",
+    category: "Leather Craftsmanship",
+  },
+  {
+    src: ofpoStallInspection,
+    alt: "Handmade leather juti and agro products on display for institutional visitors and partners",
+    category: "Success Stories",
+  },
+  {
+    src: ofpoExhibitionStall,
+    alt: "National level exhibition stall showcasing SPECTRA rural artisan handcrafts and leather goods",
+    category: "Rural Development",
+  },
+  {
+    src: livestockWeightMeasure,
+    alt: "Livestock health check and scientific weight monitoring with rural goat rearers in Alwar",
+    category: "Rural Development",
+  },
+  {
+    src: livestockVillageSupport,
+    alt: "Doorstep veterinary and animal husbandry livelihood support for smallholder farming families",
+    category: "Dairy Activities",
+  },
+  {
+    src: livestockMarketProgramme,
+    alt: "Livelihood expansion and goat marketing programme supported by SPECTRA, NABARD & Heifer International",
+    category: "Community Programs",
+  },
+  {
+    src: spectraStakeholderMeeting,
+    alt: "SPECTRA organisation institutional review meeting and programme milestone presentation",
+    category: "Community Programs",
+  },
 ];

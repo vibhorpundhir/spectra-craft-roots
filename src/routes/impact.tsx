@@ -1,13 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import womenExposureAsset from "@/assets/real-women-exposure.jpg.asset.json";
-import exposureVisitAsset from "@/assets/real-exposure-visit.jpg.asset.json";
-import machineTrainingAsset from "@/assets/real-machine-training.jpg.asset.json";
-import farmers from "@/assets/community-farmers.jpg";
+import livestockMarketProgramme from "@/assets/real/livestock-market-programme.jpg";
+import womenShgPledge from "@/assets/real/women-shg-pledge.jpg";
+import livestockWeightMeasure from "@/assets/real/livestock-weight-measure.jpg";
+import ofpoStallInspection from "@/assets/real/ofpo-stall-inspection.jpg";
+import womenAwardCertificate from "@/assets/real/women-award-certificate.jpg";
 
-const womenShg = womenExposureAsset.url;
-const programme = exposureVisitAsset.url;
-const artisans = machineTrainingAsset.url;
+const programme = livestockMarketProgramme;
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -73,28 +72,28 @@ const initiatives = [
 
 const stories = [
   {
-    img: womenShg,
+    img: womenShgPledge,
     eyebrow: "Women Self Help Groups",
     title: "A ledger, a tin box, and a different kind of confidence",
     body: "Groups that begin with small weekly savings end up deciding where a household's money goes, which child stays in school, and what the family will plant next season. The change shows up in the meeting long before it shows up in a report.",
   },
   {
-    img: farmers,
+    img: livestockWeightMeasure,
     eyebrow: "Livelihood Development",
     title: "When farmers stop selling alone",
-    body: "Grading together, storing together and selling together changes the price a family is offered at the gate. The crop is the same. The bargaining position is not.",
+    body: "Scientific animal husbandry, livestock weighing and collective market linkage ensure smallholder families receive fair value without middleman distress sales.",
   },
   {
-    img: artisans,
+    img: ofpoStallInspection,
     eyebrow: "Handcraft & Rural Industries",
     title: "A craft worth handing down",
     body: "Artisans who were losing work to factory output now have steady order books and younger hands learning beside them. The skill survives because it finally pays.",
   },
   {
-    img: programme,
-    eyebrow: "Community Participation",
-    title: "Decisions made in the courtyard",
-    body: "Planning, monitoring and evaluation happen with the community present. People who are consulted about a programme tend to carry it long after the programme ends.",
+    img: womenAwardCertificate,
+    eyebrow: "Community Leadership",
+    title: "Decisions and recognition in the community",
+    body: "Planning, monitoring and evaluation happen with the community present. Women leaders receive institutional recognition and drive forward self-reliant local institutions.",
   },
 ];
 

@@ -1,9 +1,16 @@
 import spices from "@/assets/product-spices.jpg";
 import milk from "@/assets/product-milk.jpg";
 import dairy from "@/assets/product-dairy.jpg";
-import juti from "@/assets/product-juti.jpg";
-import shoes from "@/assets/product-shoes.jpg";
 import goods from "@/assets/product-leather-goods.jpg";
+
+import jutiEmbroideredMaroon from "@/assets/real/juti-embroidered-maroon.jpg";
+import jutiEmbroideredGold from "@/assets/real/juti-embroidered-gold.jpg";
+import jutiClassicBrown from "@/assets/real/juti-classic-brown.jpg";
+import jutiTanPunched from "@/assets/real/juti-tan-punched.jpg";
+import jutiBlackStitched from "@/assets/real/juti-black-stitched.jpg";
+import jutiTanPlain from "@/assets/real/juti-tan-plain.jpg";
+import fpoSpiceStall from "@/assets/real/fpo-spice-stall.jpg";
+import fpoSpiceInspection from "@/assets/real/fpo-spice-inspection.jpg";
 
 export type Division = "fpo" | "ofpo";
 
@@ -22,10 +29,7 @@ export interface Product {
   featured?: boolean;
 }
 
-export const divisionMeta: Record<
-  Division,
-  { label: string; long: string; accent: string }
-> = {
+export const divisionMeta: Record<Division, { label: string; long: string; accent: string }> = {
   fpo: { label: "FPO", long: "Agriculture", accent: "text-primary" },
   ofpo: { label: "OFPO", long: "Leather Craft", accent: "text-leather" },
 };
@@ -42,8 +46,8 @@ export const products: Product[] = [
     material: "Whole rhizome, stone-ground",
     sizes: ["250 g", "500 g", "1 kg"],
     availability: "In Stock",
-    image: spices,
-    gallery: [spices, dairy, milk],
+    image: fpoSpiceStall,
+    gallery: [fpoSpiceStall, fpoSpiceInspection, spices],
     featured: true,
   },
   {
@@ -57,8 +61,8 @@ export const products: Product[] = [
     material: "Whole dried chilli",
     sizes: ["200 g", "500 g"],
     availability: "Seasonal",
-    image: spices,
-    gallery: [spices, milk],
+    image: fpoSpiceInspection,
+    gallery: [fpoSpiceInspection, fpoSpiceStall, spices],
   },
   {
     slug: "farm-fresh-milk",
@@ -109,29 +113,29 @@ export const products: Product[] = [
     name: "Hand-Embroidered Juti",
     division: "ofpo",
     category: "Juti",
-    short: "Vegetable-tanned leather juti with gold tilla embroidery.",
+    short: "Vegetable-tanned leather juti with gold tilla and zari embroidery.",
     story:
       "Each pair passes through four sets of hands: the cutter, the embroiderer, the laster and the finisher. The tilla motif on the vamp takes a full day alone. Wear them a week and the leather remembers the shape of your foot.",
-    material: "Vegetable-tanned goat leather, tilla thread",
+    material: "Vegetable-tanned goat leather, tilla thread, velvet vamp",
     sizes: ["UK 5", "UK 6", "UK 7", "UK 8", "UK 9", "UK 10"],
     availability: "Made to Order",
-    image: juti,
-    gallery: [juti, shoes, goods],
+    image: jutiEmbroideredMaroon,
+    gallery: [jutiEmbroideredMaroon, jutiEmbroideredGold, jutiTanPunched, jutiTanPlain],
     featured: true,
   },
   {
     slug: "hand-stitched-derby",
-    name: "Hand-Stitched Derby",
+    name: "Hand-Stitched Leather Shoes",
     division: "ofpo",
     category: "Shoes",
-    short: "Full-grain derby, welted and finished entirely by hand.",
+    short: "Full-grain handcrafted leather footwear, welted and finished entirely by hand.",
     story:
-      "Built on a wooden last over five days, welted with waxed linen thread and burnished with beeswax. A resoleable shoe in a disposable market — made by artisans who learned the craft from their fathers.",
-    material: "Full-grain buffalo leather, leather sole",
+      "Built on a wooden last over five days, welted with waxed linen thread and burnished with beeswax. A resoleable shoe in a disposable market — made by artisans who learned the craft from their fathers in Rajasthan artisan clusters.",
+    material: "Full-grain buffalo leather, genuine leather sole",
     sizes: ["UK 6", "UK 7", "UK 8", "UK 9", "UK 10", "UK 11"],
     availability: "Made to Order",
-    image: shoes,
-    gallery: [shoes, juti, goods],
+    image: jutiClassicBrown,
+    gallery: [jutiClassicBrown, jutiBlackStitched, jutiTanPlain, jutiTanPunched],
     featured: true,
   },
   {
@@ -145,7 +149,7 @@ export const products: Product[] = [
     material: "Vegetable-tanned buffalo hide, brass fittings",
     availability: "In Stock",
     image: goods,
-    gallery: [goods, shoes, juti],
+    gallery: [goods, jutiClassicBrown, jutiEmbroideredGold],
     featured: true,
   },
   {
@@ -160,7 +164,7 @@ export const products: Product[] = [
     sizes: ['30"', '32"', '34"', '36"', '38"', '40"'],
     availability: "In Stock",
     image: goods,
-    gallery: [goods, juti],
+    gallery: [goods, jutiTanPunched, jutiBlackStitched],
   },
 ];
 

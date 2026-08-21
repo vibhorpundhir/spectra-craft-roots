@@ -6,7 +6,6 @@ import { FilterChips } from "@/components/FilterChips";
 import { ProductCard } from "@/components/ProductCard";
 import { products, categoriesByDivision, type Division } from "@/data/products";
 
-
 export const Route = createFileRoute("/products/")({
   head: () => ({
     meta: [
@@ -117,4 +116,3 @@ function Products() {
     </>
   );
 }
-
