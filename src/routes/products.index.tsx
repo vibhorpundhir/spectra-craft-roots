@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useState } from "react";
 import { PageHero } from "@/components/PageHero";
 import { FilterChips } from "@/components/FilterChips";
@@ -35,7 +34,6 @@ type Filter = "all" | Division;
 function Products() {
   const [division, setDivision] = useState<Filter>("all");
   const [category, setCategory] = useState<string>("all");
-  const reduce = useReducedMotion();
 
   const categories =
     division === "all"
@@ -92,26 +90,13 @@ function Products() {
           Showing {visible.length} {visible.length === 1 ? "product" : "products"}
         </p>
 
-        <motion.div layout className="mt-8 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-          <AnimatePresence mode="popLayout">
-            {visible.map((product, i) => (
-              <motion.div
-                key={product.slug}
-                layout
-                initial={reduce ? undefined : { opacity: 0, y: 18 }}
-                animate={reduce ? undefined : { opacity: 1, y: 0 }}
-                exit={reduce ? undefined : { opacity: 0, scale: 0.97 }}
-                transition={{
-                  duration: 0.45,
-                  delay: reduce ? 0 : (i % 6) * 0.05,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              >
-                <ProductCard product={product} />
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+        <div className="mt-8 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+          {visible.map((product) => (
+            <div key={product.slug} className="transition-opacity duration-200">
+              <ProductCard product={product} />
+            </div>
+          ))}
+        </div>
       </section>
     </>
   );

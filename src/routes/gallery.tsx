@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useMemo, useState } from "react";
 import { PageHero } from "@/components/PageHero";
 import { FilterChips } from "@/components/FilterChips";
@@ -33,7 +32,6 @@ export const Route = createFileRoute("/gallery")({
 function Gallery() {
   const [filter, setFilter] = useState<string>("all");
   const [active, setActive] = useState<number | null>(null);
-  const reduce = useReducedMotion();
 
   const visible = useMemo(
     () => (filter === "all" ? galleryItems : galleryItems.filter((i) => i.category === filter)),
@@ -71,50 +69,39 @@ function Gallery() {
           Showing {visible.length} {visible.length === 1 ? "photograph" : "photographs"}
         </p>
 
-        <motion.div layout className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          <AnimatePresence mode="popLayout">
-            {visible.map((item, i) => (
-              <motion.button
-                key={item.src + item.alt}
-                type="button"
-                layout
-                onClick={() => setActive(i)}
-                aria-label={`Open photograph: ${item.alt}`}
-                initial={reduce ? undefined : { opacity: 0, y: 16 }}
-                animate={reduce ? undefined : { opacity: 1, y: 0 }}
-                exit={reduce ? undefined : { opacity: 0, scale: 0.97 }}
-                transition={{
-                  duration: 0.42,
-                  delay: reduce ? 0 : (i % 6) * 0.04,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className="press group block text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
-              >
-                <figure className="frame frame-hover relative aspect-4/3">
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    loading="lazy"
-                    decoding="async"
-                    width={1200}
-                    height={900}
-                    className="h-full w-full object-cover"
-                  />
-                  <div
-                    aria-hidden
-                    className="pointer-events-none absolute inset-0 z-[1] bg-linear-to-t from-ink/85 via-ink/25 to-transparent opacity-80 transition-opacity duration-200 group-hover:opacity-100"
-                  />
-                  <figcaption className="absolute inset-x-0 bottom-0 z-[2] p-5">
-                    <span className="eyebrow text-gold">{item.category}</span>
-                    <p className="mt-2 max-w-prose translate-y-1.5 text-sm leading-snug text-cream opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-                      {item.alt}
-                    </p>
-                  </figcaption>
-                </figure>
-              </motion.button>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {visible.map((item, i) => (
+            <button
+              key={`${item.category}-${item.src}-${i}`}
+              type="button"
+              onClick={() => setActive(i)}
+              aria-label={`Open photograph: ${item.alt}`}
+              className="press group block w-full text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+            >
+              <figure className="frame frame-hover relative aspect-4/3 overflow-hidden bg-sand/30">
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  loading={i < 6 ? "eager" : "lazy"}
+                  decoding="async"
+                  width={1200}
+                  height={900}
+                  className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                />
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 z-[1] bg-linear-to-t from-ink/90 via-ink/25 to-transparent opacity-75 transition-opacity duration-300 group-hover:opacity-95"
+                />
+                <figcaption className="absolute inset-x-0 bottom-0 z-[2] p-5">
+                  <span className="eyebrow text-gold">{item.category}</span>
+                  <p className="mt-2 max-w-prose text-sm leading-snug text-cream/90 transition-all duration-300">
+                    {item.alt}
+                  </p>
+                </figcaption>
+              </figure>
+            </button>
+          ))}
+        </div>
       </section>
 
       <Lightbox
