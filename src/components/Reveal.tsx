@@ -46,8 +46,8 @@ export function Reveal({
       className={className}
       initial={v.initial}
       whileInView={v.animate}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration, delay: delay * 0.7, ease: EASE }}
+      viewport={{ once: true, margin: "0px 0px -20px 0px" }}
+      transition={{ duration: Math.min(duration, 0.45), delay: delay * 0.4, ease: EASE }}
     >
       {children}
     </motion.div>
