@@ -81,14 +81,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SPECTRA — Empowering Farmers & Artisans Together" },
+      { title: "Pahchan Leather Work — From Hands to Heritage | By SPECTRA" },
       {
         name: "description",
         content:
-          "SPECTRA unites Farmer Producer Organisations and leather artisan collectives — sustainably grown spices, milk and dairy alongside handcrafted juti, shoes and leather goods.",
+          "Pahchan Leather Work is an artisanal craft initiative by SPECTRA (Est. 2023) in Alwar, Rajasthan — preserving 4 generations of handmade leather juti, shoes and goods. From hands to heritage.",
       },
-      { name: "author", content: "SPECTRA" },
-      { property: "og:site_name", content: "SPECTRA" },
+      { name: "author", content: "Pahchan Leather Work" },
+      { property: "og:site_name", content: "Pahchan Leather Work" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -107,15 +107,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "SPECTRA",
+          "@type": "Brand",
+          name: "Pahchan Leather Work",
           description:
-            "Producer-owned collective supporting farmers and leather artisans through FPO and OFPO divisions.",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Alwar",
-            addressRegion: "Rajasthan",
-            addressCountry: "IN",
+            "Empowering 600+ rural leather artisans in Alwar, Rajasthan through handmade juti, mojari and leather craft, established under SPECTRA's OFPO initiative.",
+          parentOrganization: {
+            "@type": "NGO",
+            name: "SPECTRA",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "E-11, Patel Nagar, Mannaka Road",
+              addressLocality: "Alwar",
+              addressRegion: "Rajasthan",
+              postalCode: "301001",
+              addressCountry: "IN",
+            },
           },
           telephone: site.phone,
           email: site.email,

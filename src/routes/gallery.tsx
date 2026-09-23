@@ -8,17 +8,17 @@ import { galleryCategories, galleryItems } from "@/data/gallery";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — Farmers, Women, Artisans & Community | SPECTRA" },
+      { title: "Gallery — Artisans, Craft Process & Handmade Heritage | Pahchan Leather Work" },
       {
         name: "description",
         content:
-          "Documentary photographs of the farmers, women's self help groups, dairy and spice work, leather artisans, training sessions and community programmes behind SPECTRA.",
+          "Documentary photographs of the leather artisans, craft process, finished juti and shoes, workshops and community programmes behind Pahchan Leather Work.",
       },
-      { property: "og:title", content: "Gallery | SPECTRA" },
+      { property: "og:title", content: "Gallery | Pahchan Leather Work" },
       {
         property: "og:description",
         content:
-          "The people behind every product — in the fields, the courtyards and the workshops.",
+          "The artisans behind every piece — in the workshops, the exhibitions and the communities.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -47,8 +47,9 @@ function Gallery() {
     <>
       <PageHero
         eyebrow="Gallery"
-        title="Faces, hands and the days that build a livelihood."
-        intro="A documentary record of the farmers, women's groups, artisans and communities SPECTRA works alongside — the people you are really looking at when you see a product."
+        title="Hands, heritage and the craft that connects them."
+        intro="A documentary record of the artisans, workshops and communities SPECTRA works alongside — the people you are really looking at when you see a piece of handmade craft."
+        tone="leather"
       />
 
       <section className="shell pb-20 md:pb-28">

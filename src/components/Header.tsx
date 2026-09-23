@@ -123,7 +123,7 @@ export function Header() {
               Enquire
             </Link>
             <p className="mt-8 text-xs leading-relaxed text-muted-foreground">
-              Society for Public Education Cultural Training and Rural Action · Alwar, Rajasthan
+              Pahchan Leather Work (Est. 2023) · An Initiative by SPECTRA · Alwar, Rajasthan
             </p>
           </div>
         </nav>

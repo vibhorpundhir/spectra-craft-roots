@@ -1,6 +1,3 @@
-import spices from "@/assets/product-spices.jpg";
-import milk from "@/assets/product-milk.jpg";
-import dairy from "@/assets/product-dairy.jpg";
 import goods from "@/assets/product-leather-goods.jpg";
 
 import jutiEmbroideredMaroon from "@/assets/real/juti-embroidered-maroon.jpg";
@@ -9,169 +6,175 @@ import jutiClassicBrown from "@/assets/real/juti-classic-brown.jpg";
 import jutiTanPunched from "@/assets/real/juti-tan-punched.jpg";
 import jutiBlackStitched from "@/assets/real/juti-black-stitched.jpg";
 import jutiTanPlain from "@/assets/real/juti-tan-plain.jpg";
-import fpoSpiceStall from "@/assets/real/fpo-spice-stall.jpg";
-import fpoSpiceInspection from "@/assets/real/fpo-spice-inspection.jpg";
 
-export type Division = "fpo" | "ofpo";
+// New uploaded product images
+import jutiSilverZari from "@/assets/real/juti-silver-zari.jpg";
+import jutiBeadedVelvet from "@/assets/real/juti-beaded-velvet.jpg";
+import jutiTanEmbossed from "@/assets/real/juti-tan-embossed.jpg";
+import jutiRedPerforated from "@/assets/real/juti-red-perforated.jpg";
+import jutiMaroonBeadwork from "@/assets/real/juti-maroon-beadwork.jpg";
+import jutiGoldenBrocade from "@/assets/real/juti-golden-brocade.jpg";
+import jutiGoldZari from "@/assets/real/juti-gold-zari.jpg";
+import jutiMojariBrown from "@/assets/real/juti-mojari-brown.jpg";
+import jutiFloralTan from "@/assets/real/juti-floral-tan.jpg";
+import jutiCreamPearl from "@/assets/real/juti-cream-pearl.jpg";
+import jutiOrangeCasual from "@/assets/real/juti-orange-casual.jpg";
+import jutiCamelLeather from "@/assets/real/juti-camel-leather.jpg";
 
 export interface Product {
   slug: string;
   name: string;
-  division: Division;
   category: string;
   short: string;
   story: string;
   material: string;
-  sizes?: string[];
-  availability: "In Stock" | "Made to Order" | "Seasonal";
   image: string;
   gallery: string[];
   featured?: boolean;
 }
 
-export const divisionMeta: Record<Division, { label: string; long: string; accent: string }> = {
-  fpo: { label: "FPO", long: "Agriculture", accent: "text-primary" },
-  ofpo: { label: "OFPO", long: "Leather Craft", accent: "text-leather" },
-};
+export const categories = ["Juti", "Shoes", "Leather Goods"] as const;
 
 export const products: Product[] = [
   {
-    slug: "single-origin-turmeric",
-    name: "Single-Origin Turmeric",
-    division: "fpo",
-    category: "Spices",
-    short: "Sun-dried, stone-ground turmeric with a deep 4.2% curcumin count.",
+    slug: "silver-zari-juti",
+    name: "Silver Zari Juti",
+    category: "Juti",
+    short: "Intricately woven silver zari on black leather — a craft inherited through four generations.",
     story:
-      "Grown on rain-fed plots by eighteen member families, our turmeric is lifted by hand, boiled the traditional way, then sun-dried on open terraces for eleven days. Stone grinding keeps the rhizome cool so the colour and aroma survive the mill. Nothing is added, nothing is polished.",
-    material: "Whole rhizome, stone-ground",
-    sizes: ["250 g", "500 g", "1 kg"],
-    availability: "In Stock",
-    image: fpoSpiceStall,
-    gallery: [fpoSpiceStall, fpoSpiceInspection, spices],
+      "Each pair takes two full days of patient zari needlework. The diamond motif across the vamp is a signature of the Alwar artisan cluster — a pattern that has travelled from grandmother to granddaughter. The leather sole is hand-stitched with visible welt work, a mark of construction that machines cannot replicate.",
+    material: "Vegetable-tanned goat leather, silver zari thread",
+    image: jutiSilverZari,
+    gallery: [jutiSilverZari, jutiGoldZari, jutiGoldenBrocade],
     featured: true,
   },
   {
-    slug: "hand-pounded-chilli",
-    name: "Hand-Pounded Red Chilli",
-    division: "fpo",
-    category: "Spices",
-    short: "Slow-dried Mathania chillies, coarse pounded for colour over heat.",
+    slug: "beaded-velvet-juti",
+    name: "Beaded Velvet Juti",
+    category: "Juti",
+    short: "Black velvet with hand-placed beads, sequins and a floral heart motif on the toe.",
     story:
-      "Selected for colour rather than sheer heat, these chillies are shade-cured over three weeks before being pounded in small batches. The result is a warm, rounded pungency that carries a deep red across a dish.",
-    material: "Whole dried chilli",
-    sizes: ["200 g", "500 g"],
-    availability: "Seasonal",
-    image: fpoSpiceInspection,
-    gallery: [fpoSpiceInspection, fpoSpiceStall, spices],
-  },
-  {
-    slug: "farm-fresh-milk",
-    name: "Farm-Fresh Milk",
-    division: "fpo",
-    category: "Milk",
-    short: "Morning-collected whole milk from indigenous-breed herds.",
-    story:
-      "Collected before sunrise at village level and chilled within ninety minutes, our milk travels a short distance from udder to bottle. Every batch is tested at the collection centre, and every rupee above cost returns to the member household that produced it.",
-    material: "Whole cow milk, 4.2% fat",
-    sizes: ["500 ml", "1 L"],
-    availability: "In Stock",
-    image: milk,
-    gallery: [milk, dairy],
+      "The beadwork on these juti is done entirely by hand — each bead is individually placed and secured by Zarina Bano's embroidery circle. The floral heart on the vamp carries her grandmother's motif, unchanged in twenty years. The leather interior moulds to the foot within a week of wear.",
+    material: "Velvet upper, genuine leather lining, hand-placed beadwork",
+    image: jutiBeadedVelvet,
+    gallery: [jutiBeadedVelvet, jutiMaroonBeadwork, jutiCamelLeather],
     featured: true,
   },
   {
-    slug: "bilona-ghee",
-    name: "Bilona Cultured Ghee",
-    division: "fpo",
-    category: "Dairy",
-    short: "Hand-churned from cultured curd, simmered slowly in clay-lined vessels.",
+    slug: "tan-embossed-mojari",
+    name: "Tan Embossed Mojari",
+    category: "Juti",
+    short: "Sun-tanned goat leather with hand-punched floral embossing — warm, honest craftsmanship.",
     story:
-      "We set the curd overnight, churn it at dawn with a wooden bilona, and simmer the butter gently until it turns amber and grainy. It takes close to thirty litres of milk to fill a single litre jar — which is exactly why it tastes the way it does.",
-    material: "Cultured cow butter",
-    sizes: ["250 ml", "500 ml", "1 L"],
-    availability: "In Stock",
-    image: dairy,
-    gallery: [dairy, milk],
+      "The embossing on these mojari is done with hand-carved brass stamps heated over coals — a technique learned over years and executed in seconds. The tan deepens with wear, each pair developing its own patina. Sohan Lal's finishing unit rests them two days before dispatch so the leather settles.",
+    material: "Vegetable-tanned goat leather, brass embossing",
+    image: jutiTanEmbossed,
+    gallery: [jutiTanEmbossed, jutiTanPunched, jutiTanPlain],
     featured: true,
   },
   {
-    slug: "village-paneer",
-    name: "Village Paneer",
-    division: "fpo",
-    category: "Dairy",
-    short: "Soft-set paneer pressed the same morning the milk arrives.",
+    slug: "red-perforated-juti",
+    name: "Red Perforated Juti",
+    category: "Juti",
+    short: "Hand-perforated crimson leather with wave-pattern detailing that breathes like no machine shoe can.",
     story:
-      "Set with lemon, pressed under stone weights, and dispatched the same day. No emulsifiers, no shelf-life chemistry — just milk that had a short journey and a careful pair of hands.",
-    material: "Whole milk paneer",
-    sizes: ["200 g", "500 g"],
-    availability: "Made to Order",
-    image: dairy,
-    gallery: [dairy, milk],
+      "Each perforation in these juti is punched individually with a hand awl — a full pair takes half a day of careful, rhythmic work. The wave pattern follows the natural flex lines of the foot, ensuring the shoe breathes and moves. Made in Rajasthan's artisan clusters where the craft has survived five generations.",
+    material: "Full-grain dyed leather, hand-perforated detailing",
+    image: jutiRedPerforated,
+    gallery: [jutiRedPerforated, jutiCamelLeather, jutiBeadedVelvet],
   },
   {
-    slug: "embroidered-juti",
+    slug: "hand-embroidered-juti",
     name: "Hand-Embroidered Juti",
-    division: "ofpo",
     category: "Juti",
     short: "Vegetable-tanned leather juti with gold tilla and zari embroidery.",
     story:
       "Each pair passes through four sets of hands: the cutter, the embroiderer, the laster and the finisher. The tilla motif on the vamp takes a full day alone. Wear them a week and the leather remembers the shape of your foot.",
     material: "Vegetable-tanned goat leather, tilla thread, velvet vamp",
-    sizes: ["UK 5", "UK 6", "UK 7", "UK 8", "UK 9", "UK 10"],
-    availability: "Made to Order",
     image: jutiEmbroideredMaroon,
     gallery: [jutiEmbroideredMaroon, jutiEmbroideredGold, jutiTanPunched, jutiTanPlain],
     featured: true,
   },
   {
+    slug: "golden-brocade-juti",
+    name: "Golden Brocade Juti",
+    category: "Juti",
+    short: "Lustrous gold brocade with intricate paisley motifs — traditionally worn for celebrations and ceremonies.",
+    story:
+      "The golden brocade is sourced from weaving families and married to a leather sole by artisan hands. The paisley motifs carry centuries of meaning — prosperity, fertility, continuity. These are the juti that mark a wedding day, a harvest festival, a homecoming.",
+    material: "Gold brocade fabric, leather sole, hand-stitched construction",
+    image: jutiGoldenBrocade,
+    gallery: [jutiGoldenBrocade, jutiGoldZari, jutiSilverZari],
+    featured: true,
+  },
+  {
+    slug: "maroon-beadwork-juti",
+    name: "Maroon Velvet Beadwork Juti",
+    category: "Juti",
+    short: "Deep maroon velvet adorned with gold beadwork and leaf motifs — each bead tells a story of patience.",
+    story:
+      "The leaf pattern on these juti is Zarina Bano's original design — drawn from the neem trees outside her workshop. Gold beads are hand-applied in rows, secured with invisible knots. The velvet catches light differently at every angle, turning a simple shoe into an heirloom.",
+    material: "Velvet upper, gold beadwork, genuine leather sole",
+    image: jutiMaroonBeadwork,
+    gallery: [jutiMaroonBeadwork, jutiBeadedVelvet, jutiEmbroideredMaroon],
+    featured: true,
+  },
+  {
     slug: "hand-stitched-derby",
     name: "Hand-Stitched Leather Shoes",
-    division: "ofpo",
     category: "Shoes",
     short: "Full-grain handcrafted leather footwear, welted and finished entirely by hand.",
     story:
       "Built on a wooden last over five days, welted with waxed linen thread and burnished with beeswax. A resoleable shoe in a disposable market — made by artisans who learned the craft from their fathers in Rajasthan artisan clusters.",
     material: "Full-grain buffalo leather, genuine leather sole",
-    sizes: ["UK 6", "UK 7", "UK 8", "UK 9", "UK 10", "UK 11"],
-    availability: "Made to Order",
     image: jutiClassicBrown,
     gallery: [jutiClassicBrown, jutiBlackStitched, jutiTanPlain, jutiTanPunched],
-    featured: true,
+  },
+  {
+    slug: "classic-black-mojari",
+    name: "Classic Black Mojari",
+    category: "Shoes",
+    short: "Pure black leather mojari with clean lines and traditional hand-stitching — timeless elegance.",
+    story:
+      "No embroidery, no embellishment — just the honest beauty of hand-finished black leather. The pointed toe follows a last carved by Iqbal Khan's family forty years ago. The visible welt stitching is not decoration; it is the reason this shoe can be resoled and worn for a decade.",
+    material: "Full-grain black goat leather, hand-stitched sole",
+    image: jutiOrangeCasual,
+    gallery: [jutiOrangeCasual, jutiBlackStitched, jutiClassicBrown],
+  },
+  {
+    slug: "mojari-floral-tan",
+    name: "Floral Tan Mojari",
+    category: "Juti",
+    short: "Golden-tan leather with delicate floral embroidery — where craft meets everyday comfort.",
+    story:
+      "The floral motifs are embroidered with thick cotton thread over tanned leather, creating a raised texture you can feel with your fingertips. These mojari are built for daily life — soft enough to wear without socks, strong enough to last years. The artisans call them 'the kind ones'.",
+    material: "Vegetable-tanned leather, cotton thread embroidery",
+    image: jutiFloralTan,
+    gallery: [jutiFloralTan, jutiTanEmbossed, jutiMojariBrown],
+  },
+  {
+    slug: "cream-pearl-juti",
+    name: "Cream Pearl Juti",
+    category: "Juti",
+    short: "Soft cream leather with pearl-white hand-stitching — crafted for celebrations and milestones.",
+    story:
+      "Made for weddings and special occasions, these juti carry the lightest touch of the artisan's hand. The cream colour is achieved through a natural bleaching process, and each stitch of pearl-white thread is placed with the precision of a needle artist working against the clock of a wedding season.",
+    material: "Bleached goat leather, pearl-white stitching",
+    image: jutiCreamPearl,
+    gallery: [jutiCreamPearl, jutiGoldenBrocade, jutiGoldZari],
   },
   {
     slug: "artisan-satchel",
     name: "Artisan Satchel",
-    division: "ofpo",
     category: "Leather Goods",
     short: "Saddle-stitched satchel in vegetable-tanned hide that ages honestly.",
     story:
       "Cut from a single hide, saddle-stitched by hand so a broken thread never unravels the seam, and finished with solid brass hardware. It leaves us pale tan and turns deep honey within a year of daily use.",
     material: "Vegetable-tanned buffalo hide, brass fittings",
-    availability: "In Stock",
     image: goods,
     gallery: [goods, jutiClassicBrown, jutiEmbroideredGold],
-    featured: true,
-  },
-  {
-    slug: "hand-cut-belt",
-    name: "Hand-Cut Leather Belt",
-    division: "ofpo",
-    category: "Leather Goods",
-    short: "A single strip of hide, edge-burnished and hand-punched.",
-    story:
-      "No bonded layers, no filler. One strip of thick vegetable-tanned hide, bevelled, burnished and buckled — the sort of belt that outlasts the trousers it holds up.",
-    material: "Vegetable-tanned hide, brass buckle",
-    sizes: ['30"', '32"', '34"', '36"', '38"', '40"'],
-    availability: "In Stock",
-    image: goods,
-    gallery: [goods, jutiTanPunched, jutiBlackStitched],
   },
 ];
-
-export const categoriesByDivision: Record<Division, string[]> = {
-  fpo: ["Spices", "Milk", "Dairy"],
-  ofpo: ["Juti", "Shoes", "Leather Goods"],
-};
 
 export function getProduct(slug: string) {
   return products.find((p) => p.slug === slug);
@@ -179,6 +182,6 @@ export function getProduct(slug: string) {
 
 export function relatedProducts(product: Product) {
   return products
-    .filter((p) => p.slug !== product.slug && p.division === product.division)
+    .filter((p) => p.slug !== product.slug && p.category === product.category)
     .slice(0, 3);
 }

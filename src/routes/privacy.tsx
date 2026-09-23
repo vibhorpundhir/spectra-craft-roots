@@ -4,14 +4,14 @@ import { site } from "@/data/site";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy | SPECTRA" },
+      { title: "Privacy Policy | Pahchan Leather Work" },
       {
         name: "description",
         content:
-          "How SPECTRA handles the information you share through enquiry forms, email and WhatsApp.",
+          "How Pahchan Leather Work and SPECTRA handle the information you share through enquiry forms, email and WhatsApp.",
       },
-      { property: "og:title", content: "Privacy Policy | SPECTRA" },
-      { property: "og:description", content: "How SPECTRA handles enquiry information." },
+      { property: "og:title", content: "Privacy Policy | Pahchan Leather Work" },
+      { property: "og:description", content: "How Pahchan Leather Work handles enquiry information." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/privacy" },

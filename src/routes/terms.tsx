@@ -4,14 +4,14 @@ import { site } from "@/data/site";
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Terms of Use | SPECTRA" },
+      { title: "Terms of Use | Pahchan Leather Work" },
       {
         name: "description",
         content:
-          "Terms governing the use of the SPECTRA website, its product catalogue and enquiry channels.",
+          "Terms governing the use of the Pahchan Leather Work website, its craft catalogue and enquiry channels.",
       },
-      { property: "og:title", content: "Terms of Use | SPECTRA" },
-      { property: "og:description", content: "Terms for using the SPECTRA website and catalogue." },
+      { property: "og:title", content: "Terms of Use | Pahchan Leather Work" },
+      { property: "og:description", content: "Terms for using the Pahchan Leather Work website." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/terms" },

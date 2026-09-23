@@ -4,6 +4,10 @@ import ofpoExhibitionArtisan from "@/assets/real/ofpo-exhibition-artisan.jpg";
 import ofpoStallInspection from "@/assets/real/ofpo-stall-inspection.jpg";
 import jutiEmbroideredGold from "@/assets/real/juti-embroidered-gold.jpg";
 import jutiEmbroideredMaroon from "@/assets/real/juti-embroidered-maroon.jpg";
+import jutiSilverZari from "@/assets/real/juti-silver-zari.jpg";
+import jutiGoldenBrocade from "@/assets/real/juti-golden-brocade.jpg";
+import jutiTanEmbossed from "@/assets/real/juti-tan-embossed.jpg";
+import jutiMaroonBeadwork from "@/assets/real/juti-maroon-beadwork.jpg";
 
 const workshop = ofpoExhibitionArtisan;
 const artisans = ofpoStallInspection;
@@ -17,19 +21,19 @@ import { products } from "@/data/products";
 export const Route = createFileRoute("/ofpo")({
   head: () => ({
     meta: [
-      { title: "OFPO Division — Handmade Leather Juti, Shoes & Goods | SPECTRA" },
+      { title: "The Craft — Handmade Leather Juti, Shoes & Goods | Pahchan Leather Work" },
       {
         name: "description",
         content:
-          "SPECTRA's OFPO division works with 600 leather artisans crafting vegetable-tanned juti, hand-stitched shoes and leather goods using traditional skills.",
+          "Pahchan Leather Work (supported by SPECTRA) works with 600+ rural leather artisans in Alwar, crafting vegetable-tanned juti, hand-stitched shoes and leather goods using traditional skills passed through four generations.",
       },
       {
         property: "og:title",
-        content: "OFPO Division — Handmade Leather Juti, Shoes & Goods | SPECTRA",
+        content: "The Craft — Handmade Leather Juti, Shoes & Goods | Pahchan Leather Work",
       },
       {
         property: "og:description",
-        content: "Vegetable-tanned, hand-stitched leather craft from village artisan clusters.",
+        content: "Vegetable-tanned, hand-stitched leather craft from Alwar's artisan clusters.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -69,14 +73,14 @@ const process = [
 ];
 
 function Ofpo() {
-  const ofpoProducts = products.filter((p) => p.division === "ofpo");
+  const ofpoProducts = products.slice(0, 6);
 
   return (
     <>
       <PageHero
-        eyebrow="OFPO · Leather Craft"
+        eyebrow="Pahchan Leather Work · Handcrafted Heritage"
         title="Leather shaped by hands that inherited the skill."
-        intro="Our Other Farmer Producer Organisation supports 600 artisans across village clusters — cutters, embroiderers, lasters and finishers making juti, shoes and leather goods the way their families always have."
+        intro="Pahchan Leather Work supports 600+ artisan families across village clusters in Alwar — cutters, embroiderers, lasters and finishers making authentic juti, shoes and leather goods the way their families always have. Every stitch carries a generation of knowledge."
         image={workshop}
         alt="Artisan member at the Pahchaan Ismailpur Leather Producer Company stall with handmade juti"
         tone="leather"
@@ -111,6 +115,24 @@ function Ofpo() {
             </div>
           </div>
         </Reveal>
+      </section>
+
+      {/* Heritage image gallery */}
+      <section className="shell pb-8">
+        <div className="grid gap-3 grid-cols-2 md:grid-cols-4">
+          <Reveal className="frame frame-hover aspect-square">
+            <img src={jutiSilverZari} alt="Silver zari juti with intricate diamond pattern" loading="lazy" decoding="async" width={600} height={600} className="h-full w-full object-cover" />
+          </Reveal>
+          <Reveal delay={0.06} className="frame frame-hover aspect-square">
+            <img src={jutiGoldenBrocade} alt="Golden brocade juti with paisley motifs" loading="lazy" decoding="async" width={600} height={600} className="h-full w-full object-cover" />
+          </Reveal>
+          <Reveal delay={0.12} className="frame frame-hover aspect-square">
+            <img src={jutiTanEmbossed} alt="Tan embossed mojari with hand-punched floral design" loading="lazy" decoding="async" width={600} height={600} className="h-full w-full object-cover" />
+          </Reveal>
+          <Reveal delay={0.18} className="frame frame-hover aspect-square">
+            <img src={jutiMaroonBeadwork} alt="Maroon velvet juti with gold leaf beadwork" loading="lazy" decoding="async" width={600} height={600} className="h-full w-full object-cover" />
+          </Reveal>
+        </div>
       </section>
 
       <section className="bg-cream">
@@ -174,7 +196,7 @@ function Ofpo() {
         <div className="shell section-y">
           <Reveal>
             <SectionHeading
-              eyebrow="What the craft produces"
+              eyebrow="Our Collection"
               title="Juti, shoes and leather goods — made, not manufactured"
               intro="Every pair is signed by the hours behind it. Open one to meet the bench it came from."
               tone="leather"
@@ -216,7 +238,7 @@ function Ofpo() {
             },
           ].map((s, i) => (
             <Reveal key={s.name} delay={i * 0.08} className="border-t border-border pt-6">
-              <blockquote className="font-display text-xl leading-snug">“{s.quote}”</blockquote>
+              <blockquote className="font-display text-xl leading-snug">"{s.quote}"</blockquote>
               <p className="eyebrow mt-5 text-muted-foreground">
                 {s.name} · {s.place}
               </p>

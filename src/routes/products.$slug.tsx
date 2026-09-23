@@ -20,9 +20,9 @@ export const Route = createFileRoute("/products/$slug")({
     }
     return {
       meta: [
-        { title: `${loaderData.name} | SPECTRA` },
+        { title: `${loaderData.name} — Handcrafted by Pahchan Artisans` },
         { name: "description", content: loaderData.short },
-        { property: "og:title", content: `${loaderData.name} | SPECTRA` },
+        { property: "og:title", content: `${loaderData.name} | Pahchan Leather Work` },
         { property: "og:description", content: loaderData.short },
         { property: "og:type", content: "product" },
         { name: "twitter:card", content: "summary_large_image" },
@@ -47,7 +47,7 @@ function ProductDetail() {
           to="/products"
           className="eyebrow inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
         >
-          <ArrowLeft className="h-4 w-4" /> Back to catalogue
+          <ArrowLeft className="h-4 w-4" /> Back to collection
         </Link>
       </div>
 
@@ -73,7 +73,7 @@ function ProductDetail() {
                   aria-current={active === i}
                   className={
                     active === i
-                      ? "w-20 border-2 border-primary"
+                      ? "w-20 border-2 border-leather"
                       : "w-20 border-2 border-transparent opacity-70 hover:opacity-100"
                   }
                 >
@@ -93,36 +93,29 @@ function ProductDetail() {
         </div>
 
         <div>
-          <p className="eyebrow text-muted-foreground">
-            {product.division === "fpo" ? "FPO · Agriculture" : "OFPO · Leather Craft"} ·{" "}
-            {product.category}
+          <p className="eyebrow text-leather">
+            Handcrafted · {product.category}
           </p>
           <h1 className="mt-4 text-4xl leading-tight sm:text-5xl">{product.name}</h1>
           <p className="mt-5 text-base leading-[1.75] text-muted-foreground">{product.short}</p>
 
-          <dl className="mt-8 grid gap-px border border-border bg-border sm:grid-cols-2">
+          <dl className="mt-8 grid gap-px border border-border bg-border">
             <div className="bg-background p-5">
               <dt className="eyebrow text-muted-foreground">Material</dt>
               <dd className="mt-2 text-sm">{product.material}</dd>
             </div>
             <div className="bg-background p-5">
-              <dt className="eyebrow text-muted-foreground">Availability</dt>
-              <dd className="mt-2 text-sm">{product.availability}</dd>
+              <dt className="eyebrow text-muted-foreground">Craft Origin</dt>
+              <dd className="mt-2 text-sm">Artisan clusters, Alwar, Rajasthan</dd>
             </div>
-            {product.sizes ? (
-              <div className="bg-background p-5">
-                <dt className="eyebrow text-muted-foreground">Sizes</dt>
-                <dd className="mt-2 text-sm">{product.sizes.join(" · ")}</dd>
-              </div>
-            ) : null}
           </dl>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/contact" search={{ product: product.name }} className="btn-primary">
-              Enquire about this
+              Know the Story
             </Link>
             <a
-              href={whatsappLink(`Hello SPECTRA, I would like to enquire about ${product.name}.`)}
+              href={whatsappLink(`Hello Pahchan Leather Work, I would like to know more about ${product.name}.`)}
               target="_blank"
               rel="noreferrer noopener"
               className="btn-ghost border-leather/40 text-leather hover:border-leather hover:bg-leather hover:text-leather-foreground"
@@ -135,8 +128,8 @@ function ProductDetail() {
             <h2 className="text-2xl">Who made this</h2>
             <p className="mt-4 text-base leading-[1.75] text-muted-foreground">{product.story}</p>
             <Link
-              to={product.division === "fpo" ? "/fpo" : "/ofpo"}
-              className="eyebrow mt-6 inline-flex items-center gap-2 text-primary transition-colors hover:text-leather"
+              to="/ofpo"
+              className="eyebrow mt-6 inline-flex items-center gap-2 text-leather transition-colors hover:text-primary"
             >
               Meet the makers
             </Link>
@@ -146,7 +139,7 @@ function ProductDetail() {
 
       {related.length ? (
         <section className="shell py-16 md:py-24">
-          <h2 className="text-3xl">Related products</h2>
+          <h2 className="text-3xl">More from this collection</h2>
           <div className="mt-10 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p, i) => (
               <Reveal key={p.slug} delay={i * 0.06}>

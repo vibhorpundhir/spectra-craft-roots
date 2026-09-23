@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as FpoRouteImport } from './routes/fpo'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ImpactRouteImport } from './routes/impact'
 import { Route as OfpoRouteImport } from './routes/ofpo'
@@ -35,11 +34,6 @@ const AboutRoute = AboutRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FpoRoute = FpoRouteImport.update({
-  id: '/fpo',
-  path: '/fpo',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GalleryRoute = GalleryRouteImport.update({
@@ -87,7 +81,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/fpo': typeof FpoRoute
   '/gallery': typeof GalleryRoute
   '/impact': typeof ImpactRoute
   '/ofpo': typeof OfpoRoute
@@ -101,7 +94,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/fpo': typeof FpoRoute
   '/gallery': typeof GalleryRoute
   '/impact': typeof ImpactRoute
   '/ofpo': typeof OfpoRoute
@@ -116,7 +108,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/fpo': typeof FpoRoute
   '/gallery': typeof GalleryRoute
   '/impact': typeof ImpactRoute
   '/ofpo': typeof OfpoRoute
@@ -132,7 +123,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/fpo'
     | '/gallery'
     | '/impact'
     | '/ofpo'
@@ -146,7 +136,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/fpo'
     | '/gallery'
     | '/impact'
     | '/ofpo'
@@ -160,7 +149,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/fpo'
     | '/gallery'
     | '/impact'
     | '/ofpo'
@@ -175,7 +163,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  FpoRoute: typeof FpoRoute
   GalleryRoute: typeof GalleryRoute
   ImpactRoute: typeof ImpactRoute
   OfpoRoute: typeof OfpoRoute
@@ -207,13 +194,6 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/fpo': {
-      id: '/fpo'
-      path: '/fpo'
-      fullPath: '/fpo'
-      preLoaderRoute: typeof FpoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gallery': {
@@ -279,7 +259,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  FpoRoute: FpoRoute,
   GalleryRoute: GalleryRoute,
   ImpactRoute: ImpactRoute,
   OfpoRoute: OfpoRoute,

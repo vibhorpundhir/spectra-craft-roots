@@ -1,31 +1,67 @@
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
-import spectraLogo from "@/assets/spectra-logo.jpg";
+import pahchanLogo from "@/assets/pahchan-logo.jpg";
 
-export function Logo({ className }: { className?: string; inverted?: boolean }) {
+export function Logo({
+  className,
+  inverted = false,
+}: {
+  className?: string;
+  inverted?: boolean;
+}) {
   return (
     <Link
       to="/"
       className={cn("group inline-flex shrink-0 items-center gap-3", className)}
-      aria-label="SPECTRA home"
+      aria-label="Pahchan Leather Work home"
     >
-      <img
-        src={spectraLogo}
-        alt="SPECTRA Logo"
-        width={160}
-        height={160}
-        loading="eager"
-        fetchPriority="high"
-        decoding="async"
-        className="h-12 w-12 rounded-full object-contain transition-transform duration-200 group-hover:scale-105 sm:h-14 sm:w-14"
-      />
+      <div className="relative shrink-0">
+        <img
+          src={pahchanLogo}
+          alt="Pahchan Leather Work Logo"
+          width={160}
+          height={160}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          className="h-12 w-12 rounded-full object-cover bg-white ring-2 ring-leather/30 shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:ring-leather sm:h-14 sm:w-14"
+        />
+        <span
+          className="absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-leather text-[8px] font-bold text-cream ring-1 ring-white"
+          title="Established 2023"
+        >
+          '23
+        </span>
+      </div>
       <div className="flex flex-col">
-        <span className="font-display text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary sm:text-[1.75rem]">
-          SPECTRA
+        <span
+          className={cn(
+            "font-display text-xl font-bold tracking-wider transition-colors sm:text-2xl leading-none",
+            inverted
+              ? "text-cream group-hover:text-gold"
+              : "text-foreground group-hover:text-leather"
+          )}
+        >
+          PAHCHAN
         </span>
-        <span className="eyebrow -mt-1 text-[0.6rem] text-muted-foreground">
-          FPO &amp; OFPO · Alwar
-        </span>
+        <div className="mt-1 flex items-center gap-1.5">
+          <span
+            className={cn(
+              "eyebrow text-[0.62rem] font-bold tracking-widest",
+              inverted ? "text-gold" : "text-leather"
+            )}
+          >
+            LEATHER WORK
+          </span>
+          <span
+            className={cn(
+              "text-[0.62rem] font-medium",
+              inverted ? "text-cream/60" : "text-muted-foreground"
+            )}
+          >
+            · By SPECTRA
+          </span>
+        </div>
       </div>
     </Link>
   );

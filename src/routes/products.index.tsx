@@ -1,24 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { PageHero } from "@/components/PageHero";
 import { FilterChips } from "@/components/FilterChips";
 import { ProductCard } from "@/components/ProductCard";
-import { products, categoriesByDivision, type Division } from "@/data/products";
+import { products, categories } from "@/data/products";
 
 export const Route = createFileRoute("/products/")({
   head: () => ({
     meta: [
-      { title: "Their Work, Made Visible — Spices, Dairy & Leather | SPECTRA" },
+      { title: "The Collection — Handmade Juti, Shoes & Leather Goods | Pahchan Leather Work" },
       {
         name: "description",
         content:
-          "Every spice, dairy product, juti and pair of shoes here is the outcome of a farming or artisan household's work. Read their stories and enquire — no prices, no cart.",
+          "Every juti, shoe and leather good here is the outcome of an artisan household's patient craft. Read their stories — no prices, no cart, just heritage.",
       },
-      { property: "og:title", content: "Their Work, Made Visible | SPECTRA" },
+      { property: "og:title", content: "The Collection — Handmade Leather Craft | Pahchan Leather Work" },
       {
         property: "og:description",
         content:
-          "Agricultural produce and handmade leather craft, presented as stories of rural livelihood.",
+          "Handmade leather craft, presented as stories of artisan livelihood and heritage.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -29,65 +29,43 @@ export const Route = createFileRoute("/products/")({
   component: Products,
 });
 
-type Filter = "all" | Division;
-
 function Products() {
-  const [division, setDivision] = useState<Filter>("all");
   const [category, setCategory] = useState<string>("all");
 
-  const categories =
-    division === "all"
-      ? [...categoriesByDivision.fpo, ...categoriesByDivision.ofpo]
-      : categoriesByDivision[division];
-
-  const visible = products.filter(
-    (p) =>
-      (division === "all" || p.division === division) &&
-      (category === "all" || p.category === category),
+  const visible = useMemo(
+    () =>
+      category === "all"
+        ? products
+        : products.filter((p) => p.category === category),
+    [category],
   );
 
   return (
     <>
       <PageHero
-        eyebrow="Outcomes of a journey"
-        title="Not products. Proof of what rural hands can do."
-        intro="Each item here is the visible end of a long, patient effort by a farming family or an artisan household. There is no cart and no price list — only stories, and an open door if you would like to know more."
+        eyebrow="Our Collection"
+        title="Not products. Proof of what artisan hands can do."
+        intro="Each piece here is the visible end of a long, patient effort by an artisan household. There is no cart and no price list — only stories, and an open door if you would like to know more."
+        tone="leather"
       />
 
       <section className="shell pb-20 md:pb-28">
         <div className="border-y border-border py-6">
           <FilterChips
-            label="Filter by division"
-            layoutId="division-filter"
-            value={division}
-            onChange={(k) => {
-              setDivision(k as Filter);
-              setCategory("all");
-            }}
-            tone={division === "ofpo" ? "leather" : "field"}
+            label="Filter by category"
+            layoutId="category-filter"
+            value={category}
+            onChange={setCategory}
+            tone="leather"
             options={[
               { key: "all", label: "All" },
-              { key: "fpo", label: "FPO · Agriculture" },
-              { key: "ofpo", label: "OFPO · Leather" },
+              ...categories.map((c) => ({ key: c, label: c })),
             ]}
           />
-          <div className="mt-4">
-            <FilterChips
-              label="Filter by category"
-              layoutId="category-filter"
-              value={category}
-              onChange={setCategory}
-              tone={division === "ofpo" ? "leather" : "field"}
-              options={[
-                { key: "all", label: "All categories" },
-                ...categories.map((c) => ({ key: c, label: c })),
-              ]}
-            />
-          </div>
         </div>
 
         <p className="mt-8 text-sm text-muted-foreground" aria-live="polite">
-          Showing {visible.length} {visible.length === 1 ? "product" : "products"}
+          Showing {visible.length} {visible.length === 1 ? "piece" : "pieces"}
         </p>
 
         <div className="mt-8 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
