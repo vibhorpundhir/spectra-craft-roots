@@ -29,7 +29,7 @@ export function PageHero({
         "relative overflow-hidden border-b border-gold/25",
         isDark
           ? "bg-espresso text-cream grain"
-          : "bg-gradient-to-b from-card via-parchment/70 to-background text-foreground"
+          : "bg-gradient-to-b from-card via-parchment/70 to-background text-foreground",
       )}
     >
       {/* Decorative Gold Trim Top Line */}
@@ -54,7 +54,7 @@ export function PageHero({
       <div
         className={cn(
           "shell relative grid items-center gap-12 py-16 sm:py-20 md:py-24 lg:gap-16",
-          image && "lg:grid-cols-12"
+          image && "lg:grid-cols-12",
         )}
       >
         <div className={cn(image ? "lg:col-span-7" : "max-w-4xl")}>
@@ -69,7 +69,7 @@ export function PageHero({
           <p
             className={cn(
               "eyebrow flex items-center gap-2 font-semibold",
-              isDark ? "text-gold" : "text-leather"
+              isDark ? "text-gold" : "text-leather",
             )}
           >
             <span className="h-px w-6 bg-gold/70" />
@@ -79,7 +79,7 @@ export function PageHero({
           <h1
             className={cn(
               "mt-5 font-display text-[2.5rem] leading-[1.04] sm:text-5xl lg:text-[3.75rem] text-balance font-medium",
-              isDark ? "text-cream" : "text-foreground"
+              isDark ? "text-cream" : "text-foreground",
             )}
           >
             {title}
@@ -88,7 +88,7 @@ export function PageHero({
           <p
             className={cn(
               "mt-6 text-base leading-[1.8] sm:text-lg max-w-2xl text-pretty",
-              isDark ? "text-cream/80" : "text-muted-foreground"
+              isDark ? "text-cream/80" : "text-muted-foreground",
             )}
           >
             {intro}

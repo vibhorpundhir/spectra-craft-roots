@@ -10,13 +10,19 @@ import ofpoExhibitionStall from "@/assets/real/ofpo-exhibition-stall.jpg";
 export const Route = createFileRoute("/products/")({
   head: () => ({
     meta: [
-      { title: "The Collection — Handcrafted Juti, Shoes & Leather Craft | Promoted by SPECTRA Organisation & NABARD Bank" },
+      {
+        title:
+          "The Collection — Handcrafted Juti, Shoes & Leather Craft | Promoted by SPECTRA Organisation & NABARD Bank",
+      },
       {
         name: "description",
         content:
           "Every juti, shoe and leather good here is the outcome of a rural artisan household's patient craft. Read their stories — promoted by SPECTRA Organisation and NABARD Bank.",
       },
-      { property: "og:title", content: "The Collection — Handcrafted Leather Craft | Pahchan Leather Work" },
+      {
+        property: "og:title",
+        content: "The Collection — Handcrafted Leather Craft | Pahchan Leather Work",
+      },
       {
         property: "og:description",
         content:
@@ -35,10 +41,7 @@ function Products() {
   const [category, setCategory] = useState<string>("all");
 
   const visible = useMemo(
-    () =>
-      category === "all"
-        ? products
-        : products.filter((p) => p.category === category),
+    () => (category === "all" ? products : products.filter((p) => p.category === category)),
     [category],
   );
 
@@ -69,8 +72,12 @@ function Products() {
             ]}
           />
 
-          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground shrink-0" aria-live="polite">
-            Showing <span className="text-gold font-bold">{visible.length}</span> handcrafted designs
+          <p
+            className="text-xs font-semibold uppercase tracking-widest text-muted-foreground shrink-0"
+            aria-live="polite"
+          >
+            Showing <span className="text-gold font-bold">{visible.length}</span> handcrafted
+            designs
           </p>
         </div>
 

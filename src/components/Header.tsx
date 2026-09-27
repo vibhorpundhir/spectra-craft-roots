@@ -61,7 +61,9 @@ export function Header() {
             </a>
             <span className="h-2.5 w-px bg-gold/25" />
             <a
-              href={whatsappLink("Hello! I would like to enquire about Pahchan Leather Work handcrafted collections.")}
+              href={whatsappLink(
+                "Hello! I would like to enquire about Pahchan Leather Work handcrafted collections.",
+              )}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 text-gold hover:text-cream transition-colors font-semibold"
@@ -79,14 +81,15 @@ export function Header() {
           "relative transition-all duration-300 border-b backdrop-blur-xl",
           scrolled || open
             ? "bg-card/95 border-gold/25 shadow-[0_8px_30px_-12px_rgba(26,18,11,0.15)]"
-            : "bg-card/90 border-gold/15 shadow-sm"
+            : "bg-card/90 border-gold/15 shadow-sm",
         )}
       >
         {/* Subtle gold hairline trim */}
         <div
           className="absolute top-0 inset-x-0 h-[1.5px]"
           style={{
-            background: "linear-gradient(90deg, transparent 0%, var(--color-gold) 35%, var(--color-ember) 50%, var(--color-gold) 65%, transparent 100%)",
+            background:
+              "linear-gradient(90deg, transparent 0%, var(--color-gold) 35%, var(--color-ember) 50%, var(--color-gold) 65%, transparent 100%)",
           }}
         />
 
@@ -100,14 +103,15 @@ export function Header() {
 
           <nav aria-label="Primary" className="hidden items-center gap-7 xl:gap-9 lg:flex">
             {navigation.map((item) => {
-              const isActive = pathname === item.to || (item.to !== "/" && pathname.startsWith(item.to));
+              const isActive =
+                pathname === item.to || (item.to !== "/" && pathname.startsWith(item.to));
               return (
                 <Link
                   key={item.to}
                   to={item.to}
                   className={cn(
                     "eyebrow stitch-link relative flex items-center gap-1.5 transition-colors duration-200",
-                    isActive ? "text-leather font-bold" : "text-foreground/75 hover:text-leather"
+                    isActive ? "text-leather font-bold" : "text-foreground/75 hover:text-leather",
                   )}
                   activeOptions={{ exact: item.to === "/" }}
                 >
@@ -157,7 +161,8 @@ export function Header() {
 
             <ul className="space-y-1">
               {navigation.map((item, i) => {
-                const isActive = pathname === item.to || (item.to !== "/" && pathname.startsWith(item.to));
+                const isActive =
+                  pathname === item.to || (item.to !== "/" && pathname.startsWith(item.to));
                 return (
                   <li key={item.to} className="border-b border-border/40">
                     <motion.div
@@ -169,7 +174,9 @@ export function Header() {
                         to={item.to}
                         className={cn(
                           "flex items-center justify-between py-4 font-display text-[1.65rem] leading-none group",
-                          isActive ? "text-leather font-bold" : "text-foreground hover:text-leather"
+                          isActive
+                            ? "text-leather font-bold"
+                            : "text-foreground hover:text-leather",
                         )}
                         activeOptions={{ exact: item.to === "/" }}
                       >
@@ -186,14 +193,13 @@ export function Header() {
             </ul>
 
             <div className="mt-8 space-y-3">
-              <Link
-                to="/contact"
-                className="btn-gold w-full rounded-sm text-center py-3.5"
-              >
+              <Link to="/contact" className="btn-gold w-full rounded-sm text-center py-3.5">
                 Send Direct Enquiry <ArrowRight className="h-4 w-4" />
               </Link>
               <a
-                href={whatsappLink("Hello! I would like to connect with Pahchan Leather Work artisan collective.")}
+                href={whatsappLink(
+                  "Hello! I would like to connect with Pahchan Leather Work artisan collective.",
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-ghost w-full rounded-sm text-center py-3 flex items-center justify-center gap-2 border-leather/30 text-leather"

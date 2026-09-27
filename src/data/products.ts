@@ -40,7 +40,8 @@ export const products: Product[] = [
     slug: "silver-zari-juti",
     name: "Silver Zari Juti",
     category: "Juti",
-    short: "Intricately woven silver zari on black leather — a craft inherited through four generations.",
+    short:
+      "Intricately woven silver zari on black leather — a craft inherited through four generations.",
     story:
       "Each pair takes two full days of patient zari needlework. The diamond motif across the vamp is a signature of the Alwar artisan cluster — a pattern that has travelled from grandmother to granddaughter. The leather sole is hand-stitched with visible welt work, a mark of construction that machines cannot replicate.",
     material: "Vegetable-tanned goat leather, silver zari thread",
@@ -64,7 +65,8 @@ export const products: Product[] = [
     slug: "tan-embossed-mojari",
     name: "Tan Embossed Mojari",
     category: "Juti",
-    short: "Sun-tanned goat leather with hand-punched floral embossing — warm, honest craftsmanship.",
+    short:
+      "Sun-tanned goat leather with hand-punched floral embossing — warm, honest craftsmanship.",
     story:
       "The embossing on these mojari is done with hand-carved brass stamps heated over coals — a technique learned over years and executed in seconds. The tan deepens with wear, each pair developing its own patina. Sohan Lal's finishing unit rests them two days before dispatch so the leather settles.",
     material: "Vegetable-tanned goat leather, brass embossing",
@@ -76,7 +78,8 @@ export const products: Product[] = [
     slug: "red-perforated-juti",
     name: "Red Perforated Juti",
     category: "Juti",
-    short: "Hand-perforated crimson leather with wave-pattern detailing that breathes like no machine shoe can.",
+    short:
+      "Hand-perforated crimson leather with wave-pattern detailing that breathes like no machine shoe can.",
     story:
       "Each perforation in these juti is punched individually with a hand awl — a full pair takes half a day of careful, rhythmic work. The wave pattern follows the natural flex lines of the foot, ensuring the shoe breathes and moves. Made in Rajasthan's artisan clusters where the craft has survived five generations.",
     material: "Full-grain dyed leather, hand-perforated detailing",
@@ -99,7 +102,8 @@ export const products: Product[] = [
     slug: "golden-brocade-juti",
     name: "Golden Brocade Juti",
     category: "Juti",
-    short: "Lustrous gold brocade with intricate paisley motifs — traditionally worn for celebrations and ceremonies.",
+    short:
+      "Lustrous gold brocade with intricate paisley motifs — traditionally worn for celebrations and ceremonies.",
     story:
       "The golden brocade is sourced from weaving families and married to a leather sole by artisan hands. The paisley motifs carry centuries of meaning — prosperity, fertility, continuity. These are the juti that mark a wedding day, a harvest festival, a homecoming.",
     material: "Gold brocade fabric, leather sole, hand-stitched construction",
@@ -111,7 +115,8 @@ export const products: Product[] = [
     slug: "maroon-beadwork-juti",
     name: "Maroon Velvet Beadwork Juti",
     category: "Juti",
-    short: "Deep maroon velvet adorned with gold beadwork and leaf motifs — each bead tells a story of patience.",
+    short:
+      "Deep maroon velvet adorned with gold beadwork and leaf motifs — each bead tells a story of patience.",
     story:
       "The leaf pattern on these juti is Zarina Bano's original design — drawn from the neem trees outside her workshop. Gold beads are hand-applied in rows, secured with invisible knots. The velvet catches light differently at every angle, turning a simple shoe into an heirloom.",
     material: "Velvet upper, gold beadwork, genuine leather sole",
@@ -134,7 +139,8 @@ export const products: Product[] = [
     slug: "classic-black-mojari",
     name: "Classic Black Mojari",
     category: "Shoes",
-    short: "Pure black leather mojari with clean lines and traditional hand-stitching — timeless elegance.",
+    short:
+      "Pure black leather mojari with clean lines and traditional hand-stitching — timeless elegance.",
     story:
       "No embroidery, no embellishment — just the honest beauty of hand-finished black leather. The pointed toe follows a last carved by Iqbal Khan's family forty years ago. The visible welt stitching is not decoration; it is the reason this shoe can be resoled and worn for a decade.",
     material: "Full-grain black goat leather, hand-stitched sole",
@@ -145,7 +151,8 @@ export const products: Product[] = [
     slug: "mojari-floral-tan",
     name: "Floral Tan Mojari",
     category: "Juti",
-    short: "Golden-tan leather with delicate floral embroidery — where craft meets everyday comfort.",
+    short:
+      "Golden-tan leather with delicate floral embroidery — where craft meets everyday comfort.",
     story:
       "The floral motifs are embroidered with thick cotton thread over tanned leather, creating a raised texture you can feel with your fingertips. These mojari are built for daily life — soft enough to wear without socks, strong enough to last years. The artisans call them 'the kind ones'.",
     material: "Vegetable-tanned leather, cotton thread embroidery",
@@ -156,7 +163,8 @@ export const products: Product[] = [
     slug: "cream-pearl-juti",
     name: "Cream Pearl Juti",
     category: "Juti",
-    short: "Soft cream leather with pearl-white hand-stitching — crafted for celebrations and milestones.",
+    short:
+      "Soft cream leather with pearl-white hand-stitching — crafted for celebrations and milestones.",
     story:
       "Made for weddings and special occasions, these juti carry the lightest touch of the artisan's hand. The cream colour is achieved through a natural bleaching process, and each stitch of pearl-white thread is placed with the precision of a needle artist working against the clock of a wedding season.",
     material: "Bleached goat leather, pearl-white stitching",

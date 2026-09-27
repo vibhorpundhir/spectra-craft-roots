@@ -1,5 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Award, CheckCircle, DollarSign, FileBadge, GraduationCap, ShieldCheck, Sparkles, TrendingUp, Users } from "lucide-react";
+import {
+  ArrowRight,
+  Award,
+  CheckCircle,
+  DollarSign,
+  FileBadge,
+  GraduationCap,
+  ShieldCheck,
+  Sparkles,
+  TrendingUp,
+  Users,
+} from "lucide-react";
 import womenShgPledge from "@/assets/real/women-shg-pledge.jpg";
 import ofpoStallInspection from "@/assets/real/ofpo-stall-inspection.jpg";
 import womenAwardCertificate from "@/assets/real/women-award-certificate.jpg";
@@ -12,13 +23,19 @@ import { site, whatsappLink } from "@/data/site";
 export const Route = createFileRoute("/impact")({
   head: () => ({
     meta: [
-      { title: "Our Impact — Verified Livelihoods Transformed | Promoted by SPECTRA Organisation & NABARD Bank" },
+      {
+        title:
+          "Our Impact — Verified Livelihoods Transformed | Promoted by SPECTRA Organisation & NABARD Bank",
+      },
       {
         name: "description",
         content:
           "Documented progress of Pahchan Ismailpur Leather Producer Company Limited: 200 artisans mobilised, 92 women craftswomen, PM Vishwakarma, Udyam Aadhaar, and FDDI Noida training. Promoted by SPECTRA Organisation and NABARD Bank.",
       },
-      { property: "og:title", content: "Our Impact — Verified Livelihoods Transformed | Pahchan Leather Work" },
+      {
+        property: "og:title",
+        content: "Our Impact — Verified Livelihoods Transformed | Pahchan Leather Work",
+      },
       {
         property: "og:description",
         content:
@@ -44,43 +61,50 @@ const verifiedMetrics = [
     icon: ShieldCheck,
     number: "199",
     label: "SC & ST Shareholders",
-    detail: "100% of contributing shareholders are from traditional SC & ST leather-crafting households.",
+    detail:
+      "100% of contributing shareholders are from traditional SC & ST leather-crafting households.",
   },
   {
     icon: Award,
     number: "92",
     label: "Women Leather Artisans",
-    detail: "46% female participation, driving traditional tilla embroidery, cutting, and enterprise governance.",
+    detail:
+      "46% female participation, driving traditional tilla embroidery, cutting, and enterprise governance.",
   },
   {
     icon: GraduationCap,
     number: "35",
     label: "FDDI Noida Trainees",
-    detail: "Master artisans trained at premier Footwear Design & Development Institute in modern lasting & ergonomics.",
+    detail:
+      "Master artisans trained at premier Footwear Design & Development Institute in modern lasting & ergonomics.",
   },
   {
     icon: FileBadge,
     number: "92",
     label: "Artisan Cards Issued",
-    detail: "Government of India recognized artisan identity cards distributed out of 155 submitted applications.",
+    detail:
+      "Government of India recognized artisan identity cards distributed out of 155 submitted applications.",
   },
   {
     icon: CheckCircle,
     number: "50",
     label: "PM Vishwakarma Enrolled",
-    detail: "24 artisans already selected for direct financial and modern toolkit assistance under the national scheme.",
+    detail:
+      "24 artisans already selected for direct financial and modern toolkit assistance under the national scheme.",
   },
   {
     icon: DollarSign,
     number: "₹11.62 L",
     label: "Quarterly Turnover",
-    detail: "Generated through handmade juti and leather footwear with 100% surplus reinvested into artisan welfare.",
+    detail:
+      "Generated through handmade juti and leather footwear with 100% surplus reinvested into artisan welfare.",
   },
   {
     icon: ShieldCheck,
     number: "45",
     label: "Udyam Aadhaar Registered",
-    detail: "Enabling individual artisan micro-enterprises to access formal banking, DIC loans, and social security.",
+    detail:
+      "Enabling individual artisan micro-enterprises to access formal banking, DIC loans, and social security.",
   },
 ];
 
@@ -156,9 +180,7 @@ function Impact() {
                       <p className="mt-4 font-display text-3xl sm:text-4xl font-bold text-leather">
                         <AnimatedCounter value={m.number} />
                       </p>
-                      <h3 className="mt-2 text-sm font-bold text-foreground">
-                        {m.label}
-                      </h3>
+                      <h3 className="mt-2 text-sm font-bold text-foreground">{m.label}</h3>
                       <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
                         {m.detail}
                       </p>
@@ -183,7 +205,8 @@ function Impact() {
             Real Lives Behind the Statistics
           </h2>
           <p className="mt-4 text-sm sm:text-base text-muted-foreground">
-            How institutional support from SPECTRA Organisation and NABARD Bank changes the everyday reality of artisan families in Alwar.
+            How institutional support from SPECTRA Organisation and NABARD Bank changes the everyday
+            reality of artisan families in Alwar.
           </p>
         </div>
 
@@ -233,13 +256,12 @@ function Impact() {
             Support Sustainable Artisan Livelihoods
           </h2>
           <p className="text-cream/70 text-sm sm:text-base leading-relaxed">
-            By choosing Pahchan handcrafted leather, you are supporting a verified, government-sanctioned rural producer company where 100% of proceeds go directly to artisan equity holders.
+            By choosing Pahchan handcrafted leather, you are supporting a verified,
+            government-sanctioned rural producer company where 100% of proceeds go directly to
+            artisan equity holders.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-            <Link
-              to="/products"
-              className="btn-gold rounded-sm inline-flex items-center gap-2"
-            >
+            <Link to="/products" className="btn-gold rounded-sm inline-flex items-center gap-2">
               Explore Handcrafted Products <ArrowRight className="h-4 w-4" />
             </Link>
             <Link

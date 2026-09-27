@@ -68,7 +68,8 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact Pahchan Ismailpur Leather Producer Company" },
       {
         property: "og:description",
-        content: "Direct contact, official emails, CFC address, and Google Maps pin for our artisan collective. Promoted by SPECTRA Organisation and NABARD Bank.",
+        content:
+          "Direct contact, official emails, CFC address, and Google Maps pin for our artisan collective. Promoted by SPECTRA Organisation and NABARD Bank.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -214,7 +215,9 @@ function Contact() {
               </div>
               <div>
                 <p className="eyebrow text-[0.6rem] text-leather">Legal Form</p>
-                <p className="text-xs font-semibold text-foreground">Producer Co. Ltd (Co. Act 2013)</p>
+                <p className="text-xs font-semibold text-foreground">
+                  Producer Co. Ltd (Co. Act 2013)
+                </p>
               </div>
             </div>
 
@@ -232,7 +235,11 @@ function Contact() {
                     title="Copy CIN"
                     className="text-muted-foreground hover:text-gold transition-colors"
                   >
-                    {copiedKey === "cin" ? <Check className="h-3 w-3 text-green-600" /> : <Copy className="h-3 w-3" />}
+                    {copiedKey === "cin" ? (
+                      <Check className="h-3 w-3 text-green-600" />
+                    ) : (
+                      <Copy className="h-3 w-3" />
+                    )}
                   </button>
                 </div>
               </div>
@@ -244,7 +251,9 @@ function Contact() {
               </div>
               <div>
                 <p className="eyebrow text-[0.6rem] text-leather">Institutional Promoters</p>
-                <p className="text-xs font-semibold text-foreground">SPECTRA Organisation &amp; NABARD Bank</p>
+                <p className="text-xs font-semibold text-foreground">
+                  SPECTRA Organisation &amp; NABARD Bank
+                </p>
               </div>
             </div>
 
@@ -275,7 +284,8 @@ function Contact() {
                 Send an Official Enquiry
               </h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                We typically respond within 24 hours. Connect regarding retail bespoke craft, bulk wholesale, or workshop visits.
+                We typically respond within 24 hours. Connect regarding retail bespoke craft, bulk
+                wholesale, or workshop visits.
               </p>
 
               {/* Submitted Feedback State */}
@@ -288,8 +298,8 @@ function Contact() {
                         Enquiry Prepared Successfully!
                       </h3>
                       <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
-                        Your default email client has been triggered to dispatch this message directly to{" "}
-                        <strong className="text-foreground">{site.email}</strong>.
+                        Your default email client has been triggered to dispatch this message
+                        directly to <strong className="text-foreground">{site.email}</strong>.
                       </p>
                     </div>
                   </div>
@@ -300,7 +310,8 @@ function Contact() {
                       <strong className="text-foreground">Subject:</strong> {submittedData.subject}
                     </p>
                     <p className="text-muted-foreground">
-                      <strong className="text-foreground">Inquirer:</strong> {submittedData.name} ({submittedData.email})
+                      <strong className="text-foreground">Inquirer:</strong> {submittedData.name} (
+                      {submittedData.email})
                     </p>
                     {submittedData.phone && (
                       <p className="text-muted-foreground">
@@ -315,17 +326,19 @@ function Contact() {
                   {/* WhatsApp Quick Link with identical prefilled text */}
                   <div className="space-y-3 pt-2">
                     <p className="text-xs font-semibold text-foreground">
-                      Need an instant response? Send this exact message directly to our WhatsApp Desk:
+                      Need an instant response? Send this exact message directly to our WhatsApp
+                      Desk:
                     </p>
                     <a
                       href={whatsappLink(
-                        `*Artisan Enquiry from Website*\nName: ${submittedData.name}\nEmail: ${submittedData.email}\nPhone: ${submittedData.phone || "-"}\nType: ${submittedData.inquiryType}\n\nRequirement:\n${submittedData.message}`
+                        `*Artisan Enquiry from Website*\nName: ${submittedData.name}\nEmail: ${submittedData.email}\nPhone: ${submittedData.phone || "-"}\nType: ${submittedData.inquiryType}\n\nRequirement:\n${submittedData.message}`,
                       )}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-gold w-full rounded-md inline-flex items-center justify-center gap-2 py-3 text-center text-sm font-semibold shadow-md"
                     >
-                      <MessageCircle className="h-4 w-4" /> Send Instant Message on WhatsApp (+91 94148 57385)
+                      <MessageCircle className="h-4 w-4" /> Send Instant Message on WhatsApp (+91
+                      94148 57385)
                     </a>
                   </div>
 
@@ -335,12 +348,16 @@ function Contact() {
                       onClick={() =>
                         handleCopy(
                           `Subject: ${submittedData.subject}\nName: ${submittedData.name}\nEmail: ${submittedData.email}\nPhone: ${submittedData.phone || "-"}\nMessage:\n${submittedData.message}`,
-                          "enquiry-text"
+                          "enquiry-text",
                         )
                       }
                       className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
                     >
-                      {copiedKey === "enquiry-text" ? <Check className="h-3.5 w-3.5 text-green-600" /> : <Copy className="h-3.5 w-3.5" />}
+                      {copiedKey === "enquiry-text" ? (
+                        <Check className="h-3.5 w-3.5 text-green-600" />
+                      ) : (
+                        <Copy className="h-3.5 w-3.5" />
+                      )}
                       Copy Message Text
                     </button>
 
@@ -393,7 +410,9 @@ function Contact() {
                         placeholder="e.g. Anand Sharma"
                         className={field}
                       />
-                      {errors.name ? <p className="mt-1 text-xs text-destructive">{errors.name}</p> : null}
+                      {errors.name ? (
+                        <p className="mt-1 text-xs text-destructive">{errors.name}</p>
+                      ) : null}
                     </div>
 
                     <div>
@@ -408,7 +427,9 @@ function Contact() {
                         placeholder="you@example.com"
                         className={field}
                       />
-                      {errors.email ? <p className="mt-1 text-xs text-destructive">{errors.email}</p> : null}
+                      {errors.email ? (
+                        <p className="mt-1 text-xs text-destructive">{errors.email}</p>
+                      ) : null}
                     </div>
                   </div>
 
@@ -453,7 +474,9 @@ function Contact() {
                       placeholder="e.g. Bespoke Bridal Juti Order"
                       className={field}
                     />
-                    {errors.subject ? <p className="mt-1 text-xs text-destructive">{errors.subject}</p> : null}
+                    {errors.subject ? (
+                      <p className="mt-1 text-xs text-destructive">{errors.subject}</p>
+                    ) : null}
                   </div>
 
                   <div>
@@ -468,7 +491,9 @@ function Contact() {
                       placeholder="Describe your design requirement, preferred size, quantity, custom embroidery pattern, or scheduled visit date..."
                       className={field}
                     />
-                    {errors.message ? <p className="mt-1 text-xs text-destructive">{errors.message}</p> : null}
+                    {errors.message ? (
+                      <p className="mt-1 text-xs text-destructive">{errors.message}</p>
+                    ) : null}
                   </div>
 
                   <div className="pt-2">
@@ -479,7 +504,8 @@ function Contact() {
                       <Send className="h-4 w-4" /> Send Enquiry via Official Mail
                     </button>
                     <span className="mt-3 block text-xs text-muted-foreground">
-                      * Triggers your default email client with all fields formatted. Direct WhatsApp fallback also provided upon submission.
+                      * Triggers your default email client with all fields formatted. Direct
+                      WhatsApp fallback also provided upon submission.
                     </span>
                   </div>
                 </form>
@@ -499,10 +525,13 @@ function Contact() {
                 Artisan WhatsApp Desk
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Connect immediately with our cluster coordinator for rapid questions on product dimensions, bespoke bridal sizing, wholesale pricing, or studio visits.
+                Connect immediately with our cluster coordinator for rapid questions on product
+                dimensions, bespoke bridal sizing, wholesale pricing, or studio visits.
               </p>
               <a
-                href={whatsappLink("Hello! I would like to enquire about Pahchan leather craft orders and visiting the CFC studio.")}
+                href={whatsappLink(
+                  "Hello! I would like to enquire about Pahchan leather craft orders and visiting the CFC studio.",
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 btn-gold w-full rounded-md text-center inline-flex items-center justify-center gap-2 py-3 text-sm font-semibold shadow-md"
@@ -516,7 +545,9 @@ function Contact() {
               {/* Studio Status Live Indicator */}
               <div className="flex items-center justify-between pb-4 border-b border-border/60">
                 <div className="flex items-center gap-2">
-                  <span className={`h-2.5 w-2.5 rounded-full ${officeStatus.isOpen ? "bg-emerald-500 animate-pulse" : "bg-muted-foreground/60"}`} />
+                  <span
+                    className={`h-2.5 w-2.5 rounded-full ${officeStatus.isOpen ? "bg-emerald-500 animate-pulse" : "bg-muted-foreground/60"}`}
+                  />
                   <span className="text-xs font-semibold text-foreground">
                     {officeStatus.isOpen ? "Live Status: Open" : "Live Status: After Hours"}
                   </span>
@@ -532,10 +563,15 @@ function Contact() {
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <p className="text-xs font-bold text-foreground">CEO — {site.ceo.name}</p>
-                      <p className="text-[0.72rem] text-muted-foreground">{site.ceo.title} · {site.ceo.qualification}</p>
+                      <p className="text-[0.72rem] text-muted-foreground">
+                        {site.ceo.title} · {site.ceo.qualification}
+                      </p>
                       <p className="text-xs text-muted-foreground mt-0.5">
                         Direct:{" "}
-                        <a href={site.ceoPhoneHref} className="text-leather font-semibold hover:underline">
+                        <a
+                          href={site.ceoPhoneHref}
+                          className="text-leather font-semibold hover:underline"
+                        >
                           {site.ceoPhone}
                         </a>
                       </p>
@@ -551,11 +587,18 @@ function Contact() {
 
                   <div className="flex items-start justify-between gap-4 pt-3 border-t border-border/40">
                     <div>
-                      <p className="text-xs font-bold text-foreground">Facilitator — {site.facilitator.name}</p>
-                      <p className="text-[0.72rem] text-muted-foreground">{site.facilitator.title}</p>
+                      <p className="text-xs font-bold text-foreground">
+                        Facilitator — {site.facilitator.name}
+                      </p>
+                      <p className="text-[0.72rem] text-muted-foreground">
+                        {site.facilitator.title}
+                      </p>
                       <p className="text-xs text-muted-foreground mt-0.5">
                         Direct:{" "}
-                        <a href={site.phoneHref} className="text-leather font-semibold hover:underline">
+                        <a
+                          href={site.phoneHref}
+                          className="text-leather font-semibold hover:underline"
+                        >
                           {site.phone}
                         </a>
                       </p>
@@ -570,9 +613,14 @@ function Contact() {
                   </div>
 
                   <div className="pt-3 border-t border-border/40">
-                    <p className="text-xs font-bold text-foreground">Official Communications Email</p>
+                    <p className="text-xs font-bold text-foreground">
+                      Official Communications Email
+                    </p>
                     <div className="mt-1 flex items-center justify-between">
-                      <a href={`mailto:${site.email}`} className="text-xs text-leather font-bold hover:underline">
+                      <a
+                        href={`mailto:${site.email}`}
+                        className="text-xs text-leather font-bold hover:underline"
+                      >
                         {site.email}
                       </a>
                       <button
@@ -581,7 +629,11 @@ function Contact() {
                         title="Copy Email"
                         className="text-muted-foreground hover:text-gold transition-colors p-1"
                       >
-                        {copiedKey === "email" ? <Check className="h-3.5 w-3.5 text-green-600" /> : <Copy className="h-3.5 w-3.5" />}
+                        {copiedKey === "email" ? (
+                          <Check className="h-3.5 w-3.5 text-green-600" />
+                        ) : (
+                          <Copy className="h-3.5 w-3.5" />
+                        )}
                       </button>
                     </div>
                   </div>
@@ -590,14 +642,20 @@ function Contact() {
 
               {/* Physical Locations */}
               <div className="pt-4 border-t border-border/60">
-                <span className="eyebrow text-gold text-[0.62rem]">Studio &amp; Office Locations</span>
+                <span className="eyebrow text-gold text-[0.62rem]">
+                  Studio &amp; Office Locations
+                </span>
                 <div className="mt-4 space-y-3.5 text-xs leading-relaxed text-muted-foreground">
                   <div className="rounded-lg border border-border/60 bg-muted/20 p-3">
-                    <strong className="text-foreground block font-semibold">Common Facility Centre (CFC) &amp; Artisan Studio:</strong>
+                    <strong className="text-foreground block font-semibold">
+                      Common Facility Centre (CFC) &amp; Artisan Studio:
+                    </strong>
                     <span>{site.cfcAddress}</span>
                   </div>
                   <div className="rounded-lg border border-border/60 bg-muted/20 p-3">
-                    <strong className="text-foreground block font-semibold">Registered Head Office:</strong>
+                    <strong className="text-foreground block font-semibold">
+                      Registered Head Office:
+                    </strong>
                     <span>{site.registeredOffice}</span>
                   </div>
                   <div className="rounded-lg border border-border/60 bg-muted/20 p-3">
@@ -609,7 +667,9 @@ function Contact() {
 
               {/* Visiting Hours */}
               <div className="pt-4 border-t border-border/60">
-                <span className="eyebrow text-gold text-[0.62rem]">Common Facility Centre Operating Hours</span>
+                <span className="eyebrow text-gold text-[0.62rem]">
+                  Common Facility Centre Operating Hours
+                </span>
                 <div className="mt-3 space-y-1.5 text-xs">
                   {site.hours.map((h) => (
                     <div key={h.day} className="flex justify-between py-0.5 text-muted-foreground">
@@ -661,44 +721,57 @@ function Contact() {
               Artisan Ordering &amp; Inquiries
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Everything you need to know about placing custom craft orders, sizing, visiting the studio, and institutional procurement.
+              Everything you need to know about placing custom craft orders, sizing, visiting the
+              studio, and institutional procurement.
             </p>
           </div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
             <div className="surface-card rounded-xl border border-gold/20 p-6">
               <h3 className="font-display text-base font-bold text-foreground flex items-center gap-2">
-                <Sparkles className="h-4 w-4 text-gold shrink-0" /> Can I request bespoke bridal embroidery or custom sizing?
+                <Sparkles className="h-4 w-4 text-gold shrink-0" /> Can I request bespoke bridal
+                embroidery or custom sizing?
               </h3>
               <p className="mt-2.5 text-xs text-muted-foreground leading-relaxed">
-                Yes! Every pair can be custom-fitted. We can embroider specific bridal color palettes, initials, or use custom foot traces. Share your requirements through our form or WhatsApp concierge.
+                Yes! Every pair can be custom-fitted. We can embroider specific bridal color
+                palettes, initials, or use custom foot traces. Share your requirements through our
+                form or WhatsApp concierge.
               </p>
             </div>
 
             <div className="surface-card rounded-xl border border-gold/20 p-6">
               <h3 className="font-display text-base font-bold text-foreground flex items-center gap-2">
-                <Sparkles className="h-4 w-4 text-gold shrink-0" /> What is the minimum quantity for corporate or bulk gifting?
+                <Sparkles className="h-4 w-4 text-gold shrink-0" /> What is the minimum quantity for
+                corporate or bulk gifting?
               </h3>
               <p className="mt-2.5 text-xs text-muted-foreground leading-relaxed">
-                We accommodate batch orders starting from 15 pairs up to 500+ pairs. For institutional and corporate clients, we provide personalized branding on insoles and luxury fabric dust pouches.
+                We accommodate batch orders starting from 15 pairs up to 500+ pairs. For
+                institutional and corporate clients, we provide personalized branding on insoles and
+                luxury fabric dust pouches.
               </p>
             </div>
 
             <div className="surface-card rounded-xl border border-gold/20 p-6">
               <h3 className="font-display text-base font-bold text-foreground flex items-center gap-2">
-                <Sparkles className="h-4 w-4 text-gold shrink-0" /> Can visitors and students visit the Common Facility Centre?
+                <Sparkles className="h-4 w-4 text-gold shrink-0" /> Can visitors and students visit
+                the Common Facility Centre?
               </h3>
               <p className="mt-2.5 text-xs text-muted-foreground leading-relaxed">
-                Yes, our Common Facility Centre in Kishangarh Bas welcomes design researchers, institutional buyers, and craft admirers. Please notify us 24–48 hours prior to arrange artisan demonstrations.
+                Yes, our Common Facility Centre in Kishangarh Bas welcomes design researchers,
+                institutional buyers, and craft admirers. Please notify us 24–48 hours prior to
+                arrange artisan demonstrations.
               </p>
             </div>
 
             <div className="surface-card rounded-xl border border-gold/20 p-6">
               <h3 className="font-display text-base font-bold text-foreground flex items-center gap-2">
-                <Sparkles className="h-4 w-4 text-gold shrink-0" /> Are invoices issued under our registered Producer Company?
+                <Sparkles className="h-4 w-4 text-gold shrink-0" /> Are invoices issued under our
+                registered Producer Company?
               </h3>
               <p className="mt-2.5 text-xs text-muted-foreground leading-relaxed">
-                Yes. All official transactions, quotes, and bills are issued under Pahchan Ismailpur Leather Producer Company Limited (CIN: U01500RJ2023PTC087293, GSTIN: 08AANCP7187P1Z9), promoted by SPECTRA &amp; NABARD.
+                Yes. All official transactions, quotes, and bills are issued under Pahchan Ismailpur
+                Leather Producer Company Limited (CIN: U01500RJ2023PTC087293, GSTIN:
+                08AANCP7187P1Z9), promoted by SPECTRA &amp; NABARD.
               </p>
             </div>
           </div>

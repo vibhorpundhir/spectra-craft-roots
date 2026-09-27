@@ -1,5 +1,18 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Award, Building2, CheckCircle2, ChevronRight, Factory, FileText, GraduationCap, MapPin, ShieldCheck, Sparkles, Users } from "lucide-react";
+import {
+  ArrowRight,
+  Award,
+  Building2,
+  CheckCircle2,
+  ChevronRight,
+  Factory,
+  FileText,
+  GraduationCap,
+  MapPin,
+  ShieldCheck,
+  Sparkles,
+  Users,
+} from "lucide-react";
 import spectraStakeholderMeeting from "@/assets/real/spectra-stakeholder-meeting.jpg";
 import womenShgPledge from "@/assets/real/women-shg-pledge.jpg";
 import ofpoStallInspection from "@/assets/real/ofpo-stall-inspection.jpg";
@@ -37,13 +50,19 @@ const credentials = [
   { label: "Full Legal Name", value: "Pahchan Ismailpur Leather Producer Company Limited" },
   { label: "Corporate Identity Number (CIN)", value: "U01500RJ2023PTC087293" },
   { label: "Date of Incorporation", value: "28 April 2023 (Companies Act 2013)" },
-  { label: "Institutional Grant Partner", value: "NABARD Bank (Sanction: NB/Raj./1414/OFDD/2022-23)" },
+  {
+    label: "Institutional Grant Partner",
+    value: "NABARD Bank (Sanction: NB/Raj./1414/OFDD/2022-23)",
+  },
   { label: "Promoting Institution (POPI)", value: "SPECTRA Organisation, Alwar (Est. 1996)" },
   { label: "GSTIN / PAN / TAN", value: "08AANCP7187P1Z9 / AANCP7187P / JPRP09059B" },
   { label: "Total Mobilised Artisans", value: "200 Artisans across 6 Village Producer Groups" },
   { label: "Contributing Shareholders", value: "199 SC & ST Artisans (107 Male, 92 Female)" },
   { label: "Common Facility Centre (CFC)", value: "Established 7 Dec 2023, Kishangarh Bas" },
-  { label: "Design Training Institution", value: "FDDI (Footwear Design & Development Institute), Noida" },
+  {
+    label: "Design Training Institution",
+    value: "FDDI (Footwear Design & Development Institute), Noida",
+  },
 ];
 
 const timeline = [
@@ -118,7 +137,8 @@ function About() {
               </h2>
             </div>
             <div className="flex items-center gap-2 rounded-full bg-gold/10 px-4 py-2 text-xs font-bold text-leather border border-gold/40">
-              <Award className="h-4 w-4 text-gold" /> Promoted by SPECTRA Organisation &amp; NABARD Bank
+              <Award className="h-4 w-4 text-gold" /> Promoted by SPECTRA Organisation &amp; NABARD
+              Bank
             </div>
           </div>
 
@@ -143,7 +163,10 @@ function About() {
               </a>
             </p>
             <p>
-              CEO Contact: <span className="font-bold text-foreground">{site.ceo.name} ({site.ceo.phone})</span>
+              CEO Contact:{" "}
+              <span className="font-bold text-foreground">
+                {site.ceo.name} ({site.ceo.phone})
+              </span>
             </p>
           </div>
         </div>
@@ -161,7 +184,8 @@ function About() {
             From Grassroots Action to a Registered Enterprise
           </h2>
           <p className="mt-4 text-sm sm:text-base text-muted-foreground">
-            How decades of dedicated community organizing by SPECTRA Organisation and institutional backing from NABARD Bank built Rajasthan's leading leather OFPO.
+            How decades of dedicated community organizing by SPECTRA Organisation and institutional
+            backing from NABARD Bank built Rajasthan's leading leather OFPO.
           </p>
         </div>
 
@@ -170,15 +194,11 @@ function About() {
             <Reveal key={item.year} delay={idx * 0.06}>
               <div className="surface-card rounded-xl p-6 border border-gold/20 h-full flex flex-col justify-between hover:border-gold/50 transition-all">
                 <div>
-                  <span className="font-display text-3xl font-bold text-gold">
-                    {item.year}
-                  </span>
+                  <span className="font-display text-3xl font-bold text-gold">{item.year}</span>
                   <h3 className="mt-3 font-display text-xl font-bold text-foreground">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-                    {item.body}
-                  </p>
+                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground">{item.body}</p>
                 </div>
                 <div className="mt-6 pt-3 border-t border-border/60">
                   <span className="text-[0.62rem] text-leather font-semibold uppercase tracking-wider">
@@ -204,7 +224,8 @@ function About() {
               Modern Machinery Honouring Ancestral Hands
             </h2>
             <p className="mt-4 text-sm sm:text-base text-muted-foreground">
-              Pahchan combines centuries of hand-stitching with our Kishangarh Bas Common Facility Centre (CFC) and specialized technical training from FDDI Noida.
+              Pahchan combines centuries of hand-stitching with our Kishangarh Bas Common Facility
+              Centre (CFC) and specialized technical training from FDDI Noida.
             </p>
           </div>
 
@@ -218,7 +239,9 @@ function About() {
                   Common Facility Centre (CFC)
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Established on 7th December 2023 at Kishangarh Bas. Features high-grade Head Clicker sole cutting, sole stitching, skiving, and post-bed single needle machines available to all member artisans.
+                  Established on 7th December 2023 at Kishangarh Bas. Features high-grade Head
+                  Clicker sole cutting, sole stitching, skiving, and post-bed single needle machines
+                  available to all member artisans.
                 </p>
                 <div className="mt-6 pt-4 border-t border-border/80 flex items-center gap-2 text-xs font-semibold text-leather">
                   <MapPin className="h-3.5 w-3.5 text-gold" /> Kishangarh Bas, Alwar
@@ -235,7 +258,9 @@ function About() {
                   FDDI Noida Exposure
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  35 key artisans underwent intensive technical training at Footwear Design &amp; Development Institute (FDDI), Noida — mastering ergonomic footwear lasts, hygienic leather processing, and modern packaging.
+                  35 key artisans underwent intensive technical training at Footwear Design &amp;
+                  Development Institute (FDDI), Noida — mastering ergonomic footwear lasts, hygienic
+                  leather processing, and modern packaging.
                 </p>
                 <div className="mt-6 pt-4 border-t border-border/80 flex items-center gap-2 text-xs font-semibold text-leather">
                   <Award className="h-3.5 w-3.5 text-gold" /> 35 Master Artisans Trained
@@ -252,7 +277,9 @@ function About() {
                   Democratic Producer Ownership
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  199 contributing shareholders from SC &amp; ST communities, 92 female craftswomen, and an elected 5-member Board of Directors ensuring 100% of company earnings directly uplift artisan households.
+                  199 contributing shareholders from SC &amp; ST communities, 92 female craftswomen,
+                  and an elected 5-member Board of Directors ensuring 100% of company earnings
+                  directly uplift artisan households.
                 </p>
                 <div className="mt-6 pt-4 border-t border-border/80 flex items-center gap-2 text-xs font-semibold text-leather">
                   <ShieldCheck className="h-3.5 w-3.5 text-gold" /> 100% SC/ST Equity Ownership
@@ -284,9 +311,7 @@ function About() {
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gold/15 text-xs font-bold text-gold">
                     0{i + 1}
                   </span>
-                  <h3 className="font-display text-2xl font-bold text-foreground">
-                    {v.title}
-                  </h3>
+                  <h3 className="font-display text-2xl font-bold text-foreground">{v.title}</h3>
                 </div>
                 <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
                   {v.body}
@@ -309,13 +334,12 @@ function About() {
             Partner With Our Artisan Collective
           </h2>
           <p className="text-cream/70 text-sm sm:text-base leading-relaxed">
-            Whether you are an ethical retailer seeking bulk craft supplies, an institution exploring artisan welfare, or an enthusiast wanting bespoke shoes — connect with us directly.
+            Whether you are an ethical retailer seeking bulk craft supplies, an institution
+            exploring artisan welfare, or an enthusiast wanting bespoke shoes — connect with us
+            directly.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-            <Link
-              to="/ofpo"
-              className="btn-gold rounded-sm inline-flex items-center gap-2"
-            >
+            <Link to="/ofpo" className="btn-gold rounded-sm inline-flex items-center gap-2">
               Explore the Craft Process <ArrowRight className="h-4 w-4" />
             </Link>
             <Link

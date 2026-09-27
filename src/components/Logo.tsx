@@ -2,13 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 import pahchanLogo from "@/assets/pahchan-logo.jpg";
 
-export function Logo({
-  className,
-  inverted = false,
-}: {
-  className?: string;
-  inverted?: boolean;
-}) {
+export function Logo({ className, inverted = false }: { className?: string; inverted?: boolean }) {
   return (
     <Link
       to="/"
@@ -39,7 +33,7 @@ export function Logo({
             "font-display text-xl font-bold tracking-wider transition-colors sm:text-2xl leading-none",
             inverted
               ? "text-cream group-hover:text-gold"
-              : "text-foreground group-hover:text-leather"
+              : "text-foreground group-hover:text-leather",
           )}
         >
           PAHCHAN
@@ -48,7 +42,7 @@ export function Logo({
           <span
             className={cn(
               "eyebrow text-[0.62rem] font-bold tracking-widest",
-              inverted ? "text-gold" : "text-leather"
+              inverted ? "text-gold" : "text-leather",
             )}
           >
             LEATHER WORK
@@ -56,7 +50,7 @@ export function Logo({
           <span
             className={cn(
               "text-[0.58rem] font-medium tracking-tight mt-0.5 leading-tight",
-              inverted ? "text-cream/70" : "text-muted-foreground"
+              inverted ? "text-cream/70" : "text-muted-foreground",
             )}
           >
             Promoted by SPECTRA Organisation &amp; NABARD Bank

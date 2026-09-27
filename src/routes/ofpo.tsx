@@ -1,5 +1,18 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Award, CheckCircle2, Compass, Feather, Hammer, Layers, PenTool, Scissors, Sparkles, Star, Users } from "lucide-react";
+import {
+  ArrowRight,
+  Award,
+  CheckCircle2,
+  Compass,
+  Feather,
+  Hammer,
+  Layers,
+  PenTool,
+  Scissors,
+  Sparkles,
+  Star,
+  Users,
+} from "lucide-react";
 import ofpoExhibitionArtisan from "@/assets/real/ofpo-exhibition-artisan.jpg";
 import ofpoStallInspection from "@/assets/real/ofpo-stall-inspection.jpg";
 import jutiEmbroideredGold from "@/assets/real/juti-embroidered-gold.jpg";
@@ -32,7 +45,8 @@ export const Route = createFileRoute("/ofpo")({
       },
       {
         property: "og:description",
-        content: "Vegetable-tanned, hand-stitched leather craft from Alwar's artisan clusters. Promoted by SPECTRA Organisation and NABARD Bank.",
+        content:
+          "Vegetable-tanned, hand-stitched leather craft from Alwar's artisan clusters. Promoted by SPECTRA Organisation and NABARD Bank.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -97,26 +111,49 @@ const pillars = [
   {
     icon: Feather,
     title: "Chemical-Free Tanning",
-    description: "Tanned using indigenous babool (acacia) bark and myrobalan nuts. Hypoallergenic, breathable, and gains a deep caramel patina with time.",
+    description:
+      "Tanned using indigenous babool (acacia) bark and myrobalan nuts. Hypoallergenic, breathable, and gains a deep caramel patina with time.",
   },
   {
     icon: Compass,
     title: "Generational Wooden Lasts",
-    description: "Carved from dense neem and sheesham wood to conform to the natural contours of the human foot, reducing foot fatigue naturally.",
+    description:
+      "Carved from dense neem and sheesham wood to conform to the natural contours of the human foot, reducing foot fatigue naturally.",
   },
   {
     icon: Sparkles,
     title: "Authentic Zari & Needlework",
-    description: "True tilla, dabka, and sitara work stitched by 92 certified women artisans who preserve family motifs from royal Rajput and Mughal courts.",
+    description:
+      "True tilla, dabka, and sitara work stitched by 92 certified women artisans who preserve family motifs from royal Rajput and Mughal courts.",
   },
 ];
 
 /* ─────────────────────────────────── Artisan Tool Archive ─────────────────────────────────── */
 const toolArchive = [
-  { name: "Rampi", description: "Curved moon-blade hand knife used for precision skiving and edge bevelling without tearing the leather fibres.", role: "Cutting & Skiving" },
-  { name: "Kharapa", description: "Generational hand-carved wooden last that gives each juti its distinctive curved toe and ergonomic heel cradle.", role: "Lasting" },
-  { name: "Sua & Katarni", description: "Hand-forged awl and fine needle shears used to pierce heavy buffalo welt cord without machine punch holes.", role: "Saddle Stitching" },
-  { name: "Waxed Cotton Cord", description: "Multi-ply twisted cotton thread steeped in beeswax and pine rosin to create a water-resistant permanent welt stitch.", role: "Assembly" },
+  {
+    name: "Rampi",
+    description:
+      "Curved moon-blade hand knife used for precision skiving and edge bevelling without tearing the leather fibres.",
+    role: "Cutting & Skiving",
+  },
+  {
+    name: "Kharapa",
+    description:
+      "Generational hand-carved wooden last that gives each juti its distinctive curved toe and ergonomic heel cradle.",
+    role: "Lasting",
+  },
+  {
+    name: "Sua & Katarni",
+    description:
+      "Hand-forged awl and fine needle shears used to pierce heavy buffalo welt cord without machine punch holes.",
+    role: "Saddle Stitching",
+  },
+  {
+    name: "Waxed Cotton Cord",
+    description:
+      "Multi-ply twisted cotton thread steeped in beeswax and pine rosin to create a water-resistant permanent welt stitch.",
+    role: "Assembly",
+  },
 ];
 
 function Ofpo() {
@@ -135,10 +172,7 @@ function Ofpo() {
         badgeText="Promoted by SPECTRA Organisation & NABARD Bank"
       >
         <div className="flex flex-wrap gap-4 pt-2">
-          <a
-            href="#craft-process"
-            className="btn-gold rounded-sm"
-          >
+          <a href="#craft-process" className="btn-gold rounded-sm">
             Explore the 5 Stages <ArrowRight className="h-4 w-4" />
           </a>
           <Link
@@ -187,21 +221,33 @@ function Ofpo() {
             </h2>
             <div className="space-y-4 text-muted-foreground text-sm sm:text-base leading-relaxed">
               <p>
-                In the rural hamlets of Ismailpur and Kishangarh Bas, leather craft is not an industry — it is an identity passed down for four generations. For decades, however, artisans were forced to depend on exploitative middlemen and unstable contract wages.
+                In the rural hamlets of Ismailpur and Kishangarh Bas, leather craft is not an
+                industry — it is an identity passed down for four generations. For decades, however,
+                artisans were forced to depend on exploitative middlemen and unstable contract
+                wages.
               </p>
               <p>
-                With the guidance and promotion of <strong className="text-foreground">SPECTRA Organisation</strong> and sanction from <strong className="text-foreground">NABARD Bank</strong>, Pahchan was incorporated as a formal Producer Company. Today, 199 SC &amp; ST artisans own equity in the enterprise, work with modernized machinery at our Common Facility Centre (CFC), and take pride in shoes that carry their ancestral signatures.
+                With the guidance and promotion of{" "}
+                <strong className="text-foreground">SPECTRA Organisation</strong> and sanction from{" "}
+                <strong className="text-foreground">NABARD Bank</strong>, Pahchan was incorporated
+                as a formal Producer Company. Today, 199 SC &amp; ST artisans own equity in the
+                enterprise, work with modernized machinery at our Common Facility Centre (CFC), and
+                take pride in shoes that carry their ancestral signatures.
               </p>
             </div>
 
             <div className="pt-2 grid grid-cols-2 gap-4 border-t border-border/80">
               <div className="rounded-lg bg-sand/40 p-4 border border-gold/20">
                 <p className="font-display text-3xl font-bold text-leather">4</p>
-                <p className="eyebrow mt-1 text-[0.62rem] text-muted-foreground">Generations of Craft</p>
+                <p className="eyebrow mt-1 text-[0.62rem] text-muted-foreground">
+                  Generations of Craft
+                </p>
               </div>
               <div className="rounded-lg bg-sand/40 p-4 border border-gold/20">
                 <p className="font-display text-3xl font-bold text-leather">100%</p>
-                <p className="eyebrow mt-1 text-[0.62rem] text-muted-foreground">Artisan-Owned Equity</p>
+                <p className="eyebrow mt-1 text-[0.62rem] text-muted-foreground">
+                  Artisan-Owned Equity
+                </p>
               </div>
             </div>
           </div>
@@ -234,11 +280,10 @@ function Ofpo() {
               The Ritual of Creation
               <span className="h-px w-6 bg-gold" />
             </span>
-            <h2 className="mt-4 font-display text-3xl sm:text-5xl">
-              Five stages. Zero shortcuts.
-            </h2>
+            <h2 className="mt-4 font-display text-3xl sm:text-5xl">Five stages. Zero shortcuts.</h2>
             <p className="mt-4 text-sm sm:text-base text-muted-foreground">
-              A single pair of embroidered Pahchan juti passes through four pairs of dedicated artisan hands over three days.
+              A single pair of embroidered Pahchan juti passes through four pairs of dedicated
+              artisan hands over three days.
             </p>
           </div>
 
@@ -309,7 +354,8 @@ function Ofpo() {
             Tools Shaped by Generations of Use
           </h2>
           <p className="mt-3 text-sm text-muted-foreground">
-            Our artisans wield tools crafted by village blacksmiths that have been honed over decades.
+            Our artisans wield tools crafted by village blacksmiths that have been honed over
+            decades.
           </p>
         </div>
 
@@ -350,7 +396,8 @@ function Ofpo() {
                 Handcrafted Juti &amp; Mojari Selection
               </h2>
               <p className="mt-2 text-sm text-muted-foreground max-w-xl">
-                Every pair is unique — signed by the hours and hands of our Alwar artisan collective.
+                Every pair is unique — signed by the hours and hands of our Alwar artisan
+                collective.
               </p>
             </div>
             <Link
@@ -375,27 +422,28 @@ function Ofpo() {
       <section className="shell section-y">
         <div className="text-center max-w-xl mx-auto mb-14">
           <span className="eyebrow text-leather">Living Voices</span>
-          <h2 className="mt-3 font-display text-3xl sm:text-4xl">
-            From the Benches of Ismailpur
-          </h2>
+          <h2 className="mt-3 font-display text-3xl sm:text-4xl">From the Benches of Ismailpur</h2>
         </div>
 
         <div className="grid gap-8 md:grid-cols-3">
           {[
             {
-              quote: "The tilla motif on the vamp was handed down to me by my mother. For twenty years, nobody asked for genuine zari work. Now, our collective ships hundreds of pairs across India.",
+              quote:
+                "The tilla motif on the vamp was handed down to me by my mother. For twenty years, nobody asked for genuine zari work. Now, our collective ships hundreds of pairs across India.",
               author: "Zarina Bano",
               role: "Master Tilla Embroiderer",
               cluster: "Ismailpur Cluster",
             },
             {
-              quote: "My father made shoes for middleman contractors who paid whenever they felt like it. Here at Pahchan, we own our company and receive our payments with total dignity.",
+              quote:
+                "My father made shoes for middleman contractors who paid whenever they felt like it. Here at Pahchan, we own our company and receive our payments with total dignity.",
               author: "Ramu Ram",
               role: "Master Cutter & Laster",
               cluster: "Kishangarh Bas Cluster",
             },
             {
-              quote: "With the sole cutting and skiving machines at our CFC, we save hours of physical strain while keeping 100% of the hand-stitched character intact.",
+              quote:
+                "With the sole cutting and skiving machines at our CFC, we save hours of physical strain while keeping 100% of the hand-stitched character intact.",
               author: "Kishan Lal",
               role: "Finishing & Assembly Specialist",
               cluster: "Alwar Cluster",
@@ -436,11 +484,14 @@ function Ofpo() {
             Experience the Timeless Weight of Real Handcrafted Leather
           </h2>
           <p className="text-cream/70 text-sm sm:text-base leading-relaxed">
-            Interested in bespoke heritage orders, visiting our Common Facility Centre in Kishangarh Bas, or partnering with our producer collective?
+            Interested in bespoke heritage orders, visiting our Common Facility Centre in Kishangarh
+            Bas, or partnering with our producer collective?
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <a
-              href={whatsappLink("Hello! I would like to inquire about Pahchan handcrafted leather juti and craft orders.")}
+              href={whatsappLink(
+                "Hello! I would like to inquire about Pahchan handcrafted leather juti and craft orders.",
+              )}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold rounded-sm inline-flex items-center gap-2"

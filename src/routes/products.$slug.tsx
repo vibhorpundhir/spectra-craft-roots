@@ -1,6 +1,17 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowLeft, ArrowRight, Award, CheckCircle2, Clock, MapPin, MessageCircle, Scissors, ShieldCheck, Sparkles } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Award,
+  CheckCircle2,
+  Clock,
+  MapPin,
+  MessageCircle,
+  Scissors,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { ProductCard } from "@/components/ProductCard";
 import { getProduct, relatedProducts } from "@/data/products";
@@ -15,7 +26,10 @@ export const Route = createFileRoute("/products/$slug")({
   head: ({ params, loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Product not found | Pahchan Leather Work" }, { name: "robots", content: "noindex" }],
+        meta: [
+          { title: "Product not found | Pahchan Leather Work" },
+          { name: "robots", content: "noindex" },
+        ],
       };
     }
     return {
@@ -136,11 +150,15 @@ function ProductDetail() {
               </div>
               <div>
                 <dt className="eyebrow text-[0.6rem] text-muted-foreground">Sole &amp; Welt</dt>
-                <dd className="mt-1 text-sm font-semibold text-foreground">Vegetable-Tanned Buffalo</dd>
+                <dd className="mt-1 text-sm font-semibold text-foreground">
+                  Vegetable-Tanned Buffalo
+                </dd>
               </div>
               <div>
                 <dt className="eyebrow text-[0.6rem] text-muted-foreground">Stitch Method</dt>
-                <dd className="mt-1 text-sm font-semibold text-foreground">Saddle-Stitched Waxed Cord</dd>
+                <dd className="mt-1 text-sm font-semibold text-foreground">
+                  Saddle-Stitched Waxed Cord
+                </dd>
               </div>
               <div>
                 <dt className="eyebrow text-[0.6rem] text-muted-foreground">Artisan Origin</dt>
@@ -154,9 +172,7 @@ function ProductDetail() {
             <h3 className="font-display text-2xl font-bold text-foreground">
               Who Crafted This Pair
             </h3>
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              {product.story}
-            </p>
+            <p className="text-sm leading-relaxed text-muted-foreground">{product.story}</p>
             <div className="pt-2">
               <Link
                 to="/ofpo"
@@ -177,7 +193,9 @@ function ProductDetail() {
               Enquire About This Pair <ArrowRight className="h-4 w-4" />
             </Link>
             <a
-              href={whatsappLink(`Hello Pahchan Leather Work, I would like to inquire about ${product.name} (Material: ${product.material}).`)}
+              href={whatsappLink(
+                `Hello Pahchan Leather Work, I would like to inquire about ${product.name} (Material: ${product.material}).`,
+              )}
               target="_blank"
               rel="noreferrer noopener"
               className="btn-ghost rounded-sm border-gold/30 text-foreground hover:bg-gold hover:text-ink inline-flex items-center gap-2"

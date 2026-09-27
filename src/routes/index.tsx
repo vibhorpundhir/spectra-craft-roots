@@ -1,7 +1,24 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { ArrowRight, Scissors, PenTool, Layers, Sparkles, Hand, Award, Users, MapPin, Star, ChevronRight, MessageCircle, Building2, GraduationCap, Wrench, Phone } from "lucide-react";
+import {
+  ArrowRight,
+  Scissors,
+  PenTool,
+  Layers,
+  Sparkles,
+  Hand,
+  Award,
+  Users,
+  MapPin,
+  Star,
+  ChevronRight,
+  MessageCircle,
+  Building2,
+  GraduationCap,
+  Wrench,
+  Phone,
+} from "lucide-react";
 
 import leather from "@/assets/hero-leather.jpg";
 import ofpoExhibitionArtisan from "@/assets/real/ofpo-exhibition-artisan.jpg";
@@ -25,31 +42,32 @@ import { ProductCard } from "@/components/ProductCard";
 import { products } from "@/data/products";
 import { impact, site, whatsappLink } from "@/data/site";
 
-export const Route = createFileRoute("/")(
-  {
-    head: () => ({
-      meta: [
-        { title: "Pahchan Leather Work — Crafted by Hands. Carried by Stories." },
-        {
-          name: "description",
-          content:
-            "Pahchan Leather Work (Est. 2023) empowers rural leather artisans in Rajasthan — promoted by SPECTRA Organisation and NABARD Bank — preserving traditional craftsmanship through handmade shoes, juti and leather goods. From hands to heritage.",
-        },
-        { property: "og:title", content: "Pahchan Leather Work — Crafted by Hands. Carried by Stories." },
-        {
-          property: "og:description",
-          content:
-            "Each piece reflects the skill, tradition, and dignity of artisans empowered by Pahchan Leather Work, promoted by SPECTRA Organisation and NABARD Bank.",
-        },
-        { property: "og:type", content: "website" },
-        { name: "twitter:card", content: "summary_large_image" },
-        { property: "og:url", content: "/" },
-      ],
-      links: [{ rel: "canonical", href: "/" }],
-    }),
-    component: Home,
-  },
-);
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Pahchan Leather Work — Crafted by Hands. Carried by Stories." },
+      {
+        name: "description",
+        content:
+          "Pahchan Leather Work (Est. 2023) empowers rural leather artisans in Rajasthan — promoted by SPECTRA Organisation and NABARD Bank — preserving traditional craftsmanship through handmade shoes, juti and leather goods. From hands to heritage.",
+      },
+      {
+        property: "og:title",
+        content: "Pahchan Leather Work — Crafted by Hands. Carried by Stories.",
+      },
+      {
+        property: "og:description",
+        content:
+          "Each piece reflects the skill, tradition, and dignity of artisans empowered by Pahchan Leather Work, promoted by SPECTRA Organisation and NABARD Bank.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "/" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+  }),
+  component: Home,
+});
 
 /* ─────────────────────────────────── Craft Journey Steps ─────────────────────────────────── */
 const craftSteps = [
@@ -96,7 +114,8 @@ const artisanVoices = [
     name: "Zarina Bano",
     title: "4th Generation Master Embroiderer",
     image: womenShgPledge,
-    quote: "My grandmother taught me that every stitch carries the weight of our ancestors. When I embroider a juti, I am not just making a shoe — I am keeping a promise.",
+    quote:
+      "My grandmother taught me that every stitch carries the weight of our ancestors. When I embroider a juti, I am not just making a shoe — I am keeping a promise.",
     metric: "12 hours per pair",
     cluster: "Ismailpur Cluster",
   },
@@ -104,7 +123,8 @@ const artisanVoices = [
     name: "Ramu Ram",
     title: "Master Cutter & Pattern Maker",
     image: ofpoExhibitionArtisan,
-    quote: "A good cutter wastes nothing. The hide tells you where to place the pattern — you just have to listen with your hands.",
+    quote:
+      "A good cutter wastes nothing. The hide tells you where to place the pattern — you just have to listen with your hands.",
     metric: "30 years of experience",
     cluster: "Kishangarh Bas Cluster",
   },
@@ -112,7 +132,8 @@ const artisanVoices = [
     name: "Kishan Lal",
     title: "Master Laster & Finisher",
     image: ofpoStallInspection,
-    quote: "The last my father carved is the same one I use today. The foot has not changed, and neither has our craft.",
+    quote:
+      "The last my father carved is the same one I use today. The foot has not changed, and neither has our craft.",
     metric: "40 pairs finished per month",
     cluster: "Alwar District Cluster",
   },
@@ -120,9 +141,21 @@ const artisanVoices = [
 
 /* ─────────────────────────────────── CFC Machines ─────────────────────────────────── */
 const cfcMachines = [
-  { name: "Head Clicker Sole Cutting Machine", description: "Precision die-cutting that saves artisan hands from repetitive strain", icon: Scissors },
-  { name: "Post-Bed Sewing Machine", description: "Industrial-grade stitching for soles and heavy leather assembly", icon: Wrench },
-  { name: "Leather Skiving Machine", description: "Uniform edge-thinning for seamless joins without bulk", icon: Layers },
+  {
+    name: "Head Clicker Sole Cutting Machine",
+    description: "Precision die-cutting that saves artisan hands from repetitive strain",
+    icon: Scissors,
+  },
+  {
+    name: "Post-Bed Sewing Machine",
+    description: "Industrial-grade stitching for soles and heavy leather assembly",
+    icon: Wrench,
+  },
+  {
+    name: "Leather Skiving Machine",
+    description: "Uniform edge-thinning for seamless joins without bulk",
+    icon: Layers,
+  },
 ];
 
 /* ─────────────────────────────────── Anatomy Hotspots ─────────────────────────────────── */
@@ -130,25 +163,29 @@ const anatomyParts = [
   {
     id: "vamp",
     label: "The Vamp (Upper)",
-    description: "Vegetable-tanned goat leather hand-stitched with authentic silver tilla & salma zari. The embroidery alone takes a full day.",
+    description:
+      "Vegetable-tanned goat leather hand-stitched with authentic silver tilla & salma zari. The embroidery alone takes a full day.",
     position: { top: "15%", left: "50%" },
   },
   {
     id: "lining",
     label: "The Inner Lining",
-    description: "Breathable, moisture-wicking organic inner leather that moulds to the foot's unique shape within a week of wear.",
+    description:
+      "Breathable, moisture-wicking organic inner leather that moulds to the foot's unique shape within a week of wear.",
     position: { top: "45%", left: "25%" },
   },
   {
     id: "sole",
     label: "The Sole & Welt",
-    description: "Double-layer buffalo leather welt-stitched with waxed linen cord. Zero harmful adhesives. Fully resoleable.",
+    description:
+      "Double-layer buffalo leather welt-stitched with waxed linen cord. Zero harmful adhesives. Fully resoleable.",
     position: { top: "78%", left: "50%" },
   },
   {
     id: "heel",
     label: "The Heel & Last",
-    description: "Ergonomically shaped over generational wooden lasts passed down 4 generations — each foot's contours are honoured.",
+    description:
+      "Ergonomically shaped over generational wooden lasts passed down 4 generations — each foot's contours are honoured.",
     position: { top: "55%", left: "75%" },
   },
 ];
@@ -159,7 +196,8 @@ const heroMasterpieces = [
     id: "silver-zari",
     title: "Signature Silver Zari Juti",
     category: "Royal Bridal & Ceremonial",
-    subtitle: "Real silver tilla & salma metallic thread hand-coiled on vegetable-tanned goat leather. Double-layer buffalo welt.",
+    subtitle:
+      "Real silver tilla & salma metallic thread hand-coiled on vegetable-tanned goat leather. Double-layer buffalo welt.",
     artisan: "Zarina Bano · 4th Generation Master Embroiderer",
     cluster: "Ismailpur Cluster, Alwar",
     stats: "3 Days Crafting · 14h Needlework",
@@ -171,7 +209,8 @@ const heroMasterpieces = [
     id: "golden-brocade",
     title: "Golden Brocade Heritage Juti",
     category: "Ancestral Festive Craft",
-    subtitle: "Shaped over neem-wood lasts passed down 4 generations. 100% organic babool bark tanning, zero chemical adhesives.",
+    subtitle:
+      "Shaped over neem-wood lasts passed down 4 generations. 100% organic babool bark tanning, zero chemical adhesives.",
     artisan: "Ramu Ram · Master Pattern Maker & Cutter",
     cluster: "Kishangarh Bas Cluster",
     stats: "Generational Wooden Last · Double Buffalo Sole",
@@ -183,7 +222,8 @@ const heroMasterpieces = [
     id: "maroon-velvet",
     title: "Embroidered Maroon Velvet Mojari",
     category: "Classic Atelier Mojari",
-    subtitle: "Hand-placed dabka, salma and sequin embellishments on supple velvet with hand-buffed organic beeswax edges.",
+    subtitle:
+      "Hand-placed dabka, salma and sequin embellishments on supple velvet with hand-buffed organic beeswax edges.",
     artisan: "Kishan Lal · Master Laster & Finisher",
     cluster: "Alwar Studio Hub",
     stats: "Waxed Saddle Stitch · 48h Natural Setting",
@@ -213,13 +253,9 @@ function AnimatedSeal() {
       transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
     >
       {/* Outer ring - pure CSS rotation on GPU compositor */}
-      <div
-        className="absolute inset-0 rounded-full border border-gold/40 spin-slow"
-      />
+      <div className="absolute inset-0 rounded-full border border-gold/40 spin-slow" />
       {/* Inner ring - pure CSS rotation on GPU compositor */}
-      <div
-        className="absolute inset-1.5 rounded-full border border-gold/25 spin-reverse-slow"
-      />
+      <div className="absolute inset-1.5 rounded-full border border-gold/25 spin-reverse-slow" />
       {/* Logo center */}
       <div className="relative z-10 flex flex-col items-center">
         <img
@@ -238,7 +274,15 @@ function AnimatedSeal() {
 }
 
 /* ─────────────────────────────────── Hotspot Component ─────────────────────────────────── */
-function AnatomyHotspot({ part, isActive, onClick }: { part: typeof anatomyParts[0]; isActive: boolean; onClick: () => void }) {
+function AnatomyHotspot({
+  part,
+  isActive,
+  onClick,
+}: {
+  part: (typeof anatomyParts)[0];
+  isActive: boolean;
+  onClick: () => void;
+}) {
   return (
     <button
       onClick={onClick}
@@ -247,7 +291,9 @@ function AnatomyHotspot({ part, isActive, onClick }: { part: typeof anatomyParts
       aria-label={`Learn about ${part.label}`}
     >
       <span className="relative flex h-8 w-8 items-center justify-center">
-        <span className={`absolute inset-0 rounded-full transition-all duration-300 ${isActive ? "bg-gold scale-125 shadow-lg shadow-gold/50" : "bg-gold/80 scale-100"}`} />
+        <span
+          className={`absolute inset-0 rounded-full transition-all duration-300 ${isActive ? "bg-gold scale-125 shadow-lg shadow-gold/50" : "bg-gold/80 scale-100"}`}
+        />
         <span className="absolute inset-0 rounded-full border-2 border-gold animate-ping opacity-60" />
         <span className="relative text-[0.65rem] font-black text-ink">
           {part.id === "vamp" ? "1" : part.id === "lining" ? "2" : part.id === "sole" ? "3" : "4"}
@@ -258,11 +304,24 @@ function AnatomyHotspot({ part, isActive, onClick }: { part: typeof anatomyParts
 }
 
 /* ─────────────────────────────────── Reusable Stat Card ─────────────────────────────────── */
-function ImpactCard({ value, label, icon: Icon, delay = 0 }: { value: string; label: string; icon: typeof Award; delay?: number }) {
+function ImpactCard({
+  value,
+  label,
+  icon: Icon,
+  delay = 0,
+}: {
+  value: string;
+  label: string;
+  icon: typeof Award;
+  delay?: number;
+}) {
   return (
     <Reveal delay={delay}>
       <div className="surface-glass-dark rounded-xl p-6 sm:p-8 text-center group hover:border-gold/50 transition-all duration-300">
-        <Icon className="mx-auto h-6 w-6 text-gold mb-4 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.5} />
+        <Icon
+          className="mx-auto h-6 w-6 text-gold mb-4 transition-transform duration-300 group-hover:scale-110"
+          strokeWidth={1.5}
+        />
         <dt className="font-display text-[2.5rem] leading-none text-gold sm:text-[3.25rem]">
           <AnimatedCounter value={value} />
         </dt>
@@ -290,9 +349,12 @@ function Home() {
 
   const currentPiece = heroMasterpieces[activeMasterpiece];
 
-  const filteredProducts = productCategory === "all"
-    ? products.filter((p) => p.featured).slice(0, 6)
-    : products.filter((p) => p.category.toLowerCase() === productCategory.toLowerCase()).slice(0, 6);
+  const filteredProducts =
+    productCategory === "all"
+      ? products.filter((p) => p.featured).slice(0, 6)
+      : products
+          .filter((p) => p.category.toLowerCase() === productCategory.toLowerCase())
+          .slice(0, 6);
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -329,7 +391,8 @@ function Home() {
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(135deg, rgba(24,16,10,0.95) 0%, rgba(24,16,10,0.80) 45%, rgba(24,16,10,0.92) 100%)",
+            background:
+              "linear-gradient(135deg, rgba(24,16,10,0.95) 0%, rgba(24,16,10,0.80) 45%, rgba(24,16,10,0.92) 100%)",
           }}
           aria-hidden="true"
         />
@@ -373,11 +436,9 @@ function Home() {
                   animate={heroMotion ? { opacity: 1, y: 0 } : undefined}
                   transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  Crafted by{" "}
-                  <span className="italic text-gold font-normal">Hands.</span>
+                  Crafted by <span className="italic text-gold font-normal">Hands.</span>
                   <br />
-                  Carried by{" "}
-                  <span className="italic text-gold font-normal">Stories.</span>
+                  Carried by <span className="italic text-gold font-normal">Stories.</span>
                 </motion.h1>
 
                 {/* Golden horizontal rule */}
@@ -540,10 +601,14 @@ function Home() {
                             : "bg-ink/50 border-cream/15 hover:border-gold/40 hover:bg-ink/80"
                         }`}
                       >
-                        <p className={`eyebrow text-[0.5rem] font-bold ${activeMasterpiece === idx ? "text-gold" : "text-cream/50"}`}>
+                        <p
+                          className={`eyebrow text-[0.5rem] font-bold ${activeMasterpiece === idx ? "text-gold" : "text-cream/50"}`}
+                        >
                           0{idx + 1} Piece
                         </p>
-                        <p className={`font-display text-xs sm:text-sm mt-0.5 truncate ${activeMasterpiece === idx ? "text-cream font-semibold" : "text-cream/70"}`}>
+                        <p
+                          className={`font-display text-xs sm:text-sm mt-0.5 truncate ${activeMasterpiece === idx ? "text-cream font-semibold" : "text-cream/70"}`}
+                        >
                           {piece.title.split(" ")[1] || piece.title}
                         </p>
                       </button>
@@ -586,7 +651,8 @@ function Home() {
               </h2>
               <p className="mt-4 text-base leading-[1.75] text-muted-foreground sm:text-lg">
                 Click each hotspot on the master shoe to examine how four generations of handcrafted
-                techniques create a breathable, lifelong fit that synthetic commercial footwear cannot match.
+                techniques create a breathable, lifelong fit that synthetic commercial footwear
+                cannot match.
               </p>
             </div>
           </Reveal>
@@ -636,9 +702,13 @@ function Home() {
                     }`}
                   >
                     <div className="flex items-start gap-4">
-                      <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold transition-all ${
-                        activeHotspot === part.id ? "bg-gold text-ink shadow-md" : "bg-sand text-leather"
-                      }`}>
+                      <span
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold transition-all ${
+                          activeHotspot === part.id
+                            ? "bg-gold text-ink shadow-md"
+                            : "bg-sand text-leather"
+                        }`}
+                      >
                         0{i + 1}
                       </span>
                       <div className="flex-1">
@@ -652,9 +722,13 @@ function Home() {
                             </span>
                           )}
                         </div>
-                        <p className={`mt-2 text-sm leading-relaxed text-muted-foreground transition-all duration-300 ${
-                          activeHotspot === part.id ? "max-h-40 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
-                        }`}>
+                        <p
+                          className={`mt-2 text-sm leading-relaxed text-muted-foreground transition-all duration-300 ${
+                            activeHotspot === part.id
+                              ? "max-h-40 opacity-100"
+                              : "max-h-0 opacity-0 overflow-hidden"
+                          }`}
+                        >
                           {part.description}
                         </p>
                       </div>
@@ -669,8 +743,8 @@ function Home() {
                   </p>
                   <p className="mt-1 text-muted-foreground">
                     Unlike mass-market shoes made with PVC that trap sweat and split within months,
-                    vegetable-tanned leather moulds to the exact anatomy of your foot within seven days,
-                    cushioning every step naturally.
+                    vegetable-tanned leather moulds to the exact anatomy of your foot within seven
+                    days, cushioning every step naturally.
                   </p>
                 </div>
               </div>
@@ -692,8 +766,8 @@ function Home() {
                   <span className="italic text-leather font-normal">Generational Mastery</span>
                 </h2>
                 <p className="mt-4 text-base leading-[1.75] text-muted-foreground sm:text-lg">
-                  Every piece is direct-from-artisan. Pure vegetable-tanned leather, zero toxic adhesives,
-                  and 100% democratic equity for rural Rajasthan craftspeople.
+                  Every piece is direct-from-artisan. Pure vegetable-tanned leather, zero toxic
+                  adhesives, and 100% democratic equity for rural Rajasthan craftspeople.
                 </p>
               </div>
 
@@ -755,18 +829,23 @@ function Home() {
                 </h2>
                 <p className="mt-5 text-base leading-[1.8] text-cream/75 sm:text-lg">
                   Supported by NABARD Bank, our Common Facility Centre (CFC) at Kishangarh Bas
-                  bridges four generations of hand-stitching with specialized machinery — eliminating
-                  physical fatigue while preserving pure artisanal heritage.
+                  bridges four generations of hand-stitching with specialized machinery —
+                  eliminating physical fatigue while preserving pure artisanal heritage.
                 </p>
 
                 {/* CFC Machinery List */}
                 <div className="mt-8 space-y-4">
                   {cfcMachines.map((machine) => (
-                    <div key={machine.name} className="flex items-start gap-4 p-4 rounded-xl border border-gold/20 bg-ink/60 backdrop-blur-sm">
+                    <div
+                      key={machine.name}
+                      className="flex items-start gap-4 p-4 rounded-xl border border-gold/20 bg-ink/60 backdrop-blur-sm"
+                    >
                       <machine.icon className="h-5 w-5 text-gold shrink-0 mt-1" strokeWidth={1.5} />
                       <div>
                         <p className="text-sm font-bold text-cream">{machine.name}</p>
-                        <p className="mt-1 text-xs text-cream/60 leading-relaxed">{machine.description}</p>
+                        <p className="mt-1 text-xs text-cream/60 leading-relaxed">
+                          {machine.description}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -778,17 +857,25 @@ function Home() {
                 <div className="surface-glass-dark rounded-2xl p-7 border border-gold/30">
                   <div className="flex items-center gap-3 mb-4">
                     <GraduationCap className="h-6 w-6 text-gold" strokeWidth={1.5} />
-                    <p className="eyebrow text-gold text-[0.62rem]">National Institutional Partnership</p>
+                    <p className="eyebrow text-gold text-[0.62rem]">
+                      National Institutional Partnership
+                    </p>
                   </div>
                   <h3 className="font-display text-2xl sm:text-3xl text-cream font-bold">
                     35 Master Artisans Certified by FDDI Noida
                   </h3>
                   <p className="mt-2 text-sm text-cream/75 leading-relaxed">
-                    Underwent rigorous advanced technical training at the premier Footwear Design &amp;
-                    Development Institute, Noida in pattern grading, ergonomic lasts, and international finishing.
+                    Underwent rigorous advanced technical training at the premier Footwear Design
+                    &amp; Development Institute, Noida in pattern grading, ergonomic lasts, and
+                    international finishing.
                   </p>
                   <div className="mt-5 flex flex-wrap gap-2">
-                    {["Export Standards", "Ergonomic Lasting", "Die Precision", "Zero Waste Cutting"].map((skill) => (
+                    {[
+                      "Export Standards",
+                      "Ergonomic Lasting",
+                      "Die Precision",
+                      "Zero Waste Cutting",
+                    ].map((skill) => (
                       <span key={skill} className="trust-seal rounded-full text-[0.55rem]">
                         {skill}
                       </span>
@@ -852,57 +939,73 @@ function Home() {
 
           {/* Active Artisan Profile */}
           <div className="mt-12 max-w-5xl mx-auto">
-            {artisanVoices.map((artisan, i) => (
-              activeArtisan === i && (
-                <motion.div
-                  key={artisan.name}
-                  initial={{ opacity: 0, y: 14 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  className="grid gap-8 md:grid-cols-12 items-center surface-glass-dark rounded-2xl p-6 sm:p-10 border border-gold/30"
-                >
-                  <div className="md:col-span-5 aspect-[4/3] rounded-xl overflow-hidden shadow-xl border border-gold/25">
-                    <img
-                      src={artisan.image}
-                      alt={artisan.name}
-                      className="h-full w-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="md:col-span-7">
-                    <span className="eyebrow text-gold text-[0.62rem] font-bold">
-                      {artisan.cluster}
-                    </span>
-                    <h3 className="mt-2 font-display text-3xl sm:text-4xl text-cream font-bold">
-                      {artisan.name}
-                    </h3>
-                    <p className="text-xs text-gold/80 font-medium">{artisan.title}</p>
-
-                    <blockquote className="mt-5 pl-5 border-l-2 border-gold">
-                      <p className="font-display italic text-lg sm:text-xl text-cream/85 leading-relaxed">
-                        "{artisan.quote}"
-                      </p>
-                    </blockquote>
-
-                    <div className="mt-6 flex items-center gap-3">
-                      <span className="trust-seal rounded-full">
-                        <Star className="h-3 w-3 text-gold" /> {artisan.metric}
-                      </span>
+            {artisanVoices.map(
+              (artisan, i) =>
+                activeArtisan === i && (
+                  <motion.div
+                    key={artisan.name}
+                    initial={{ opacity: 0, y: 14 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    className="grid gap-8 md:grid-cols-12 items-center surface-glass-dark rounded-2xl p-6 sm:p-10 border border-gold/30"
+                  >
+                    <div className="md:col-span-5 aspect-[4/3] rounded-xl overflow-hidden shadow-xl border border-gold/25">
+                      <img
+                        src={artisan.image}
+                        alt={artisan.name}
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                      />
                     </div>
-                  </div>
-                </motion.div>
-              )
-            ))}
+                    <div className="md:col-span-7">
+                      <span className="eyebrow text-gold text-[0.62rem] font-bold">
+                        {artisan.cluster}
+                      </span>
+                      <h3 className="mt-2 font-display text-3xl sm:text-4xl text-cream font-bold">
+                        {artisan.name}
+                      </h3>
+                      <p className="text-xs text-gold/80 font-medium">{artisan.title}</p>
+
+                      <blockquote className="mt-5 pl-5 border-l-2 border-gold">
+                        <p className="font-display italic text-lg sm:text-xl text-cream/85 leading-relaxed">
+                          "{artisan.quote}"
+                        </p>
+                      </blockquote>
+
+                      <div className="mt-6 flex items-center gap-3">
+                        <span className="trust-seal rounded-full">
+                          <Star className="h-3 w-3 text-gold" /> {artisan.metric}
+                        </span>
+                      </div>
+                    </div>
+                  </motion.div>
+                ),
+            )}
           </div>
 
           {/* Geographic Cluster Cards */}
           <div className="mt-14 grid gap-4 sm:grid-cols-3 max-w-4xl mx-auto">
             {[
-              { name: "Ismailpur Cluster", district: "Kishangarh Bas, Alwar", count: "80+ Master Artisans" },
-              { name: "Khairthal-Tijara", district: "Alwar District, Rajasthan", count: "60+ Craftsmen" },
-              { name: "Alwar City Hub", district: "Patel Nagar, Alwar", count: "60+ Finishers & Lasters" },
+              {
+                name: "Ismailpur Cluster",
+                district: "Kishangarh Bas, Alwar",
+                count: "80+ Master Artisans",
+              },
+              {
+                name: "Khairthal-Tijara",
+                district: "Alwar District, Rajasthan",
+                count: "60+ Craftsmen",
+              },
+              {
+                name: "Alwar City Hub",
+                district: "Patel Nagar, Alwar",
+                count: "60+ Finishers & Lasters",
+              },
             ].map((cluster) => (
-              <div key={cluster.name} className="surface-glass-dark rounded-xl p-5 text-center border border-gold/20">
+              <div
+                key={cluster.name}
+                className="surface-glass-dark rounded-xl p-5 text-center border border-gold/20"
+              >
                 <MapPin className="mx-auto h-5 w-5 text-gold" strokeWidth={1.5} />
                 <p className="mt-2 font-display text-lg text-cream font-semibold">{cluster.name}</p>
                 <p className="mt-1 text-[0.65rem] text-cream/50">{cluster.district}</p>
@@ -933,25 +1036,51 @@ function Home() {
 
           {/* 4 Core Stat Cards */}
           <div className="mt-14 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
-            <ImpactCard value="200" label="Artisans Mobilised across 6 Producer Groups" icon={Users} delay={0} />
-            <ImpactCard value="199" label="SC & ST Shareholders (100% Equity Ownership)" icon={Award} delay={0.06} />
-            <ImpactCard value="92" label="Women Artisans (46% Democratic Leadership)" icon={Star} delay={0.12} />
-            <ImpactCard value="35" label="Artisans Certified by FDDI Noida" icon={GraduationCap} delay={0.18} />
+            <ImpactCard
+              value="200"
+              label="Artisans Mobilised across 6 Producer Groups"
+              icon={Users}
+              delay={0}
+            />
+            <ImpactCard
+              value="199"
+              label="SC & ST Shareholders (100% Equity Ownership)"
+              icon={Award}
+              delay={0.06}
+            />
+            <ImpactCard
+              value="92"
+              label="Women Artisans (46% Democratic Leadership)"
+              icon={Star}
+              delay={0.12}
+            />
+            <ImpactCard
+              value="35"
+              label="Artisans Certified by FDDI Noida"
+              icon={GraduationCap}
+              delay={0.18}
+            />
           </div>
 
           {/* Secondary Metric Badges */}
           <div className="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-3 max-w-4xl mx-auto">
             <div className="surface-glass-dark rounded-xl p-5 text-center border border-gold/20">
               <p className="font-display text-3xl text-gold font-bold">92</p>
-              <p className="mt-1 text-[0.62rem] text-cream/60 uppercase tracking-wider font-semibold">Government Artisan Cards Issued</p>
+              <p className="mt-1 text-[0.62rem] text-cream/60 uppercase tracking-wider font-semibold">
+                Government Artisan Cards Issued
+              </p>
             </div>
             <div className="surface-glass-dark rounded-xl p-5 text-center border border-gold/20">
               <p className="font-display text-3xl text-gold font-bold">50</p>
-              <p className="mt-1 text-[0.62rem] text-cream/60 uppercase tracking-wider font-semibold">PM Vishwakarma Scheme Enrolled</p>
+              <p className="mt-1 text-[0.62rem] text-cream/60 uppercase tracking-wider font-semibold">
+                PM Vishwakarma Scheme Enrolled
+              </p>
             </div>
             <div className="surface-glass-dark rounded-xl p-5 text-center col-span-2 lg:col-span-1 border border-gold/20">
               <p className="font-display text-3xl text-gold font-bold">₹11.62L</p>
-              <p className="mt-1 text-[0.62rem] text-cream/60 uppercase tracking-wider font-semibold">Quarterly Sales (100% Reinvested)</p>
+              <p className="mt-1 text-[0.62rem] text-cream/60 uppercase tracking-wider font-semibold">
+                Quarterly Sales (100% Reinvested)
+              </p>
             </div>
           </div>
 
@@ -978,7 +1107,8 @@ function Home() {
                 <span className="italic text-leather font-normal">Zero Shortcuts.</span>
               </h2>
               <p className="mt-4 text-base leading-[1.75] text-muted-foreground sm:text-lg">
-                A single pair of embroidered juti passes through four pairs of master hands over three days.
+                A single pair of embroidered juti passes through four pairs of master hands over
+                three days.
               </p>
             </div>
           </Reveal>
@@ -1006,7 +1136,9 @@ function Home() {
                       <step.icon className="h-4 w-4 text-gold" strokeWidth={1.5} />
                     </div>
                     <h3 className="font-display text-lg text-cream font-semibold">{step.title}</h3>
-                    <p className="mt-1.5 text-[0.7rem] leading-relaxed text-cream/70">{step.body}</p>
+                    <p className="mt-1.5 text-[0.7rem] leading-relaxed text-cream/70">
+                      {step.body}
+                    </p>
                   </div>
                 </div>
               </Reveal>
@@ -1042,19 +1174,20 @@ function Home() {
                   </p>
                   <p className="flex items-center gap-2">
                     <Phone className="h-4 w-4 text-gold shrink-0" />
-                    <a href={`tel:${site.phone}`} className="hover:text-gold transition-colors">{site.phone}</a>
+                    <a href={`tel:${site.phone}`} className="hover:text-gold transition-colors">
+                      {site.phone}
+                    </a>
                   </p>
                 </div>
 
                 <div className="mt-9 flex flex-col gap-3.5 sm:flex-row">
-                  <Link
-                    to="/contact"
-                    className="btn-gold rounded-sm px-7 py-3 text-center"
-                  >
+                  <Link to="/contact" className="btn-gold rounded-sm px-7 py-3 text-center">
                     Send Direct Enquiry <ArrowRight className="h-4 w-4" />
                   </Link>
                   <a
-                    href={whatsappLink("Hello! I'm interested in exploring handcrafted pieces from Pahchan Leather Work.")}
+                    href={whatsappLink(
+                      "Hello! I'm interested in exploring handcrafted pieces from Pahchan Leather Work.",
+                    )}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-ghost rounded-sm border-cream/35 text-cream hover:bg-gold hover:text-ink hover:border-gold py-3 flex items-center justify-center gap-2"

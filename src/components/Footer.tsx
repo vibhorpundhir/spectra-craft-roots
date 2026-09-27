@@ -7,7 +7,12 @@ export function Footer() {
   return (
     <footer className="relative overflow-hidden" style={{ backgroundColor: "oklch(0.14 0.02 48)" }}>
       {/* Decorative top border */}
-      <div className="h-[2px]" style={{ background: "linear-gradient(90deg, transparent, var(--color-gold), transparent)" }} />
+      <div
+        className="h-[2px]"
+        style={{
+          background: "linear-gradient(90deg, transparent, var(--color-gold), transparent)",
+        }}
+      />
 
       <div className="shell grid gap-12 py-16 md:grid-cols-12 md:py-24 lg:gap-16">
         {/* Brand Column */}
@@ -49,8 +54,8 @@ export function Footer() {
           </div>
 
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/55">
-            Promoted by SPECTRA Organisation and NABARD Bank, uniting 200 rural artisans and 199 SC/ST
-            shareholders to preserve generational leather craft with dignified livelihoods.
+            Promoted by SPECTRA Organisation and NABARD Bank, uniting 200 rural artisans and 199
+            SC/ST shareholders to preserve generational leather craft with dignified livelihoods.
           </p>
 
           <ul className="mt-7 flex flex-wrap gap-x-5 gap-y-3">
@@ -107,7 +112,9 @@ export function Footer() {
             </div>
 
             <div className="pt-2">
-              <p className="text-[0.62rem] font-bold text-gold/70 uppercase tracking-wider">Institutional Promoters</p>
+              <p className="text-[0.62rem] font-bold text-gold/70 uppercase tracking-wider">
+                Institutional Promoters
+              </p>
               <div className="mt-2 flex flex-wrap gap-2">
                 <span className="trust-seal rounded-full text-[0.55rem]">
                   <Building2 className="h-2.5 w-2.5" /> SPECTRA Organisation
@@ -129,7 +136,10 @@ export function Footer() {
               <p className="text-[0.62rem] font-bold text-cream/70 uppercase tracking-wider flex items-center gap-1.5">
                 <Mail className="h-3 w-3 text-gold/60" /> Company Email
               </p>
-              <a className="mt-1 block text-gold font-medium text-sm hover:text-cream transition-colors" href={`mailto:${site.email}`}>
+              <a
+                className="mt-1 block text-gold font-medium text-sm hover:text-cream transition-colors"
+                href={`mailto:${site.email}`}
+              >
                 {site.email}
               </a>
             </div>
@@ -140,13 +150,19 @@ export function Footer() {
               </p>
               <p className="mt-1 text-xs text-cream/65">
                 CEO — {site.ceo.name}:{" "}
-                <a className="hover:text-gold text-cream/80 transition-colors" href={site.ceoPhoneHref}>
+                <a
+                  className="hover:text-gold text-cream/80 transition-colors"
+                  href={site.ceoPhoneHref}
+                >
                   {site.ceoPhone}
                 </a>
               </p>
               <p className="text-xs text-cream/65">
                 Facilitator — {site.facilitator.name}:{" "}
-                <a className="hover:text-gold text-cream/80 transition-colors" href={site.phoneHref}>
+                <a
+                  className="hover:text-gold text-cream/80 transition-colors"
+                  href={site.phoneHref}
+                >
                   {site.phone}
                 </a>
               </p>
@@ -169,9 +185,15 @@ export function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div style={{ borderTopColor: "color-mix(in oklab, var(--color-gold) 15%, transparent)" }} className="border-t">
+      <div
+        style={{ borderTopColor: "color-mix(in oklab, var(--color-gold) 15%, transparent)" }}
+        className="border-t"
+      >
         <div className="shell flex flex-col gap-3 py-6 text-xs text-cream/40 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} {site.legalName}. Promoted by SPECTRA Organisation and NABARD Bank.</p>
+          <p>
+            © {new Date().getFullYear()} {site.legalName}. Promoted by SPECTRA Organisation and
+            NABARD Bank.
+          </p>
           <div className="flex gap-6">
             <Link to="/privacy" className="transition-colors hover:text-cream">
               Privacy Policy

@@ -16,7 +16,7 @@ export const site = {
   est: "2023",
   description:
     "Pahchan Ismailpur Leather Producer Company Limited (Pahchan Leather Work) is an artisan-owned producer company incorporated under the Companies Act 2013 on 28 April 2023. Promoted by SPECTRA Organisation and NABARD Bank, it unites 200 rural leather artisans (199 SC/ST shareholders, 92 women artisans) across Ismailpur and Kishangarh Bas to preserve generational craft and build sustainable livelihoods.",
-  
+
   // Contacts
   email: "pahchanismailpurleatherpcl@gmail.com",
   secondaryEmail: "spectraalw@gmail.com",
@@ -27,7 +27,7 @@ export const site = {
   landline: "0144-3500145",
   landlineHref: "tel:01443500145",
   whatsapp: "919414857385",
-  
+
   // Leadership & Team
   ceo: {
     name: "Mahesh Chouhan",
@@ -42,10 +42,12 @@ export const site = {
   },
 
   // Addresses
-  registeredOffice: "C/o Kusumlata, W/o Pradeep Kr, Nagla Raysis, Katoriwala, Kishan Garh Bass, Alwar (Khairthal-Tijara), Rajasthan – 301405",
+  registeredOffice:
+    "C/o Kusumlata, W/o Pradeep Kr, Nagla Raysis, Katoriwala, Kishan Garh Bass, Alwar (Khairthal-Tijara), Rajasthan – 301405",
   address: "E-11, Patel Nagar, Mannaka Road, Alwar, Rajasthan – 301001",
-  cfcAddress: "Common Facility Centre (CFC) & Design Studio, Ismailpur, Kishangarh Bas (Est. 7 Dec 2023)",
-  
+  cfcAddress:
+    "Common Facility Centre (CFC) & Design Studio, Ismailpur, Kishangarh Bas (Est. 7 Dec 2023)",
+
   hours: [
     { day: "Monday – Friday", time: "10:00 AM – 6:00 PM" },
     { day: "Saturday", time: "10:00 AM – 4:00 PM" },
