@@ -8,25 +8,46 @@ export interface LightboxItem {
   category?: string;
 }
 
+export interface LightboxProps {
+  items?: LightboxItem[];
+  item?: LightboxItem;
+  index: number | null;
+  total?: number;
+  onClose: () => void;
+  onIndexChange?: (i: number) => void;
+  onPrev?: () => void;
+  onNext?: () => void;
+}
+
 export function Lightbox({
   items,
+  item,
   index,
+  total,
   onClose,
   onIndexChange,
-}: {
-  items: LightboxItem[];
-  index: number | null;
-  onClose: () => void;
-  onIndexChange: (i: number) => void;
-}) {
+  onPrev,
+  onNext,
+}: LightboxProps) {
   const open = index !== null;
+  const list = items ?? (item ? [item] : []);
+  const count = total ?? list.length;
+  const current = item ?? (index !== null && list[index] ? list[index] : list[0]);
 
   const go = useCallback(
     (dir: 1 | -1) => {
-      if (index === null || items.length === 0) return;
-      onIndexChange((index + dir + items.length) % items.length);
+      if (dir === -1 && onPrev) {
+        onPrev();
+        return;
+      }
+      if (dir === 1 && onNext) {
+        onNext();
+        return;
+      }
+      if (index === null || list.length === 0 || !onIndexChange) return;
+      onIndexChange((index + dir + list.length) % list.length);
     },
-    [index, items.length, onIndexChange],
+    [index, list.length, onIndexChange, onNext, onPrev],
   );
 
   useEffect(() => {
@@ -43,8 +64,6 @@ export function Lightbox({
       document.body.style.overflow = "";
     };
   }, [open, onClose, go]);
-
-  const current = index !== null ? items[index] : undefined;
 
   return (
     <AnimatePresence>
@@ -104,7 +123,14 @@ export function Lightbox({
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
-            <p className="max-w-xl text-center text-sm leading-snug text-cream/75">{current.alt}</p>
+            <div className="max-w-xl text-center">
+              <p className="text-sm leading-snug text-cream/90">{current.alt}</p>
+              {count > 1 && (
+                <p className="mt-1 text-[0.7rem] uppercase tracking-widest text-gold font-mono">
+                  {index !== null ? index + 1 : 1} of {count}
+                </p>
+              )}
+            </div>
             <button
               type="button"
               onClick={() => go(1)}
