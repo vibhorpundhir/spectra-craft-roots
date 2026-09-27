@@ -44,7 +44,7 @@ export function Logo({
         >
           PAHCHAN
         </span>
-        <div className="mt-1 flex items-center gap-1.5">
+        <div className="mt-0.5 flex flex-col">
           <span
             className={cn(
               "eyebrow text-[0.62rem] font-bold tracking-widest",
@@ -55,11 +55,11 @@ export function Logo({
           </span>
           <span
             className={cn(
-              "text-[0.62rem] font-medium",
-              inverted ? "text-cream/60" : "text-muted-foreground"
+              "text-[0.58rem] font-medium tracking-tight mt-0.5 leading-tight",
+              inverted ? "text-cream/70" : "text-muted-foreground"
             )}
           >
-            · By SPECTRA
+            Promoted by SPECTRA Organisation &amp; NABARD Bank
           </span>
         </div>
       </div>

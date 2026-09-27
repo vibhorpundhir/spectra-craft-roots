@@ -1,24 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
+import { Award, Camera, Eye, Filter } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { FilterChips } from "@/components/FilterChips";
 import { Lightbox } from "@/components/Lightbox";
 import { galleryCategories, galleryItems } from "@/data/gallery";
+import ofpoExhibitionArtisan from "@/assets/real/ofpo-exhibition-artisan.jpg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — Artisans, Craft Process & Handmade Heritage | Pahchan Leather Work" },
+      { title: "Visual Archive — Handcrafted Leather & Artisans | Promoted by SPECTRA Organisation & NABARD Bank" },
       {
         name: "description",
         content:
-          "Documentary photographs of the leather artisans, craft process, finished juti and shoes, workshops and community programmes behind Pahchan Leather Work.",
+          "Documentary photographs of rural leather artisans, traditional craft processes, finished juti, and exhibitions behind Pahchan Leather Work, promoted by SPECTRA Organisation and NABARD Bank.",
       },
-      { property: "og:title", content: "Gallery | Pahchan Leather Work" },
+      { property: "og:title", content: "Visual Archive | Pahchan Leather Work" },
       {
         property: "og:description",
         content:
-          "The artisans behind every piece — in the workshops, the exhibitions and the communities.",
+          "The artisans and heritage behind every piece — in the workshops, exhibitions and communities of Alwar. Promoted by SPECTRA Organisation and NABARD Bank.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -39,21 +41,25 @@ function Gallery() {
   );
 
   const options = useMemo(
-    () => [{ key: "all", label: "All" }, ...galleryCategories.map((c) => ({ key: c, label: c }))],
+    () => [{ key: "all", label: "All Photographs" }, ...galleryCategories.map((c) => ({ key: c, label: c }))],
     [],
   );
 
   return (
     <>
       <PageHero
-        eyebrow="Gallery"
-        title="Hands, heritage and the craft that connects them."
-        intro="A documentary record of the artisans, workshops and communities SPECTRA works alongside — the people you are really looking at when you see a piece of handmade craft."
-        tone="leather"
+        tone="dark"
+        eyebrow="Documentary Archive · Living Heritage"
+        title="Hands, Heritage & the Craft That Connects Them."
+        intro="A verified photographic record of the artisans, workshops, and community collectives behind Pahchan Leather Work — promoted by SPECTRA Organisation and NABARD Bank in Alwar, Rajasthan."
+        image={ofpoExhibitionArtisan}
+        alt="Artisan presenting handcrafted footwear"
+        badgeText="Promoted by SPECTRA Organisation & NABARD Bank"
       />
 
-      <section className="shell pb-20 md:pb-28">
-        <div className="border-y border-border py-6">
+      <section className="shell py-16 md:py-24">
+        {/* Category Filters */}
+        <div className="border-b border-gold/20 pb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <FilterChips
             options={options}
             value={filter}
@@ -61,25 +67,26 @@ function Gallery() {
               setFilter(k);
               setActive(null);
             }}
-            label="Filter gallery"
+            label="Filter visual archive"
             layoutId="gallery-filter"
           />
+
+          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground shrink-0" aria-live="polite">
+            Showing <span className="text-gold font-bold">{visible.length}</span> photographs
+          </p>
         </div>
 
-        <p className="mt-8 text-sm text-muted-foreground" aria-live="polite">
-          Showing {visible.length} {visible.length === 1 ? "photograph" : "photographs"}
-        </p>
-
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Gallery Grid */}
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((item, i) => (
             <button
               key={`${item.category}-${item.src}-${i}`}
               type="button"
               onClick={() => setActive(i)}
               aria-label={`Open photograph: ${item.alt}`}
-              className="press group block w-full text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+              className="press group corner-brackets relative block w-full text-left rounded-2xl overflow-hidden border border-gold/25 bg-sand/30 shadow-md hover:border-gold/60 hover:shadow-2xl transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
             >
-              <figure className="frame frame-hover relative aspect-4/3 overflow-hidden bg-sand/30">
+              <figure className="relative aspect-4/3 overflow-hidden">
                 <img
                   src={item.src}
                   alt={item.alt}
@@ -89,13 +96,23 @@ function Gallery() {
                   height={900}
                   className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                 />
+
+                {/* Dark gradient for text readability */}
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute inset-0 z-[1] bg-linear-to-t from-ink/90 via-ink/25 to-transparent opacity-75 transition-opacity duration-300 group-hover:opacity-95"
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300"
                 />
-                <figcaption className="absolute inset-x-0 bottom-0 z-[2] p-5">
-                  <span className="eyebrow text-gold">{item.category}</span>
-                  <p className="mt-2 max-w-prose text-sm leading-snug text-cream/90 transition-all duration-300">
+
+                {/* View Icon Badge on Hover */}
+                <div className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-ink/70 text-gold border border-gold/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <Eye className="h-4 w-4" />
+                </div>
+
+                <figcaption className="absolute inset-x-0 bottom-0 p-5">
+                  <span className="eyebrow text-gold text-[0.62rem] font-bold">
+                    {item.category}
+                  </span>
+                  <p className="mt-2 text-sm leading-snug text-cream/90 font-medium">
                     {item.alt}
                   </p>
                 </figcaption>
@@ -105,12 +122,17 @@ function Gallery() {
         </div>
       </section>
 
-      <Lightbox
-        items={visible}
-        index={active}
-        onClose={() => setActive(null)}
-        onIndexChange={setActive}
-      />
+      {/* Lightbox Modal */}
+      {active !== null && visible[active] ? (
+        <Lightbox
+          item={visible[active]}
+          index={active}
+          total={visible.length}
+          onClose={() => setActive(null)}
+          onPrev={() => setActive((i) => (i === null ? 0 : (i - 1 + visible.length) % visible.length))}
+          onNext={() => setActive((i) => (i === null ? 0 : (i + 1) % visible.length))}
+        />
+      ) : null}
     </>
   );
 }

@@ -8,7 +8,7 @@ export const Route = createFileRoute("/terms")({
       {
         name: "description",
         content:
-          "Terms governing the use of the Pahchan Leather Work website, its craft catalogue and enquiry channels.",
+          "Terms governing the use of the Pahchan Leather Work website, its craft catalogue and enquiry channels. Promoted by SPECTRA Organisation and NABARD Bank.",
       },
       { property: "og:title", content: "Terms of Use | Pahchan Leather Work" },
       { property: "og:description", content: "Terms for using the Pahchan Leather Work website." },
@@ -24,48 +24,40 @@ export const Route = createFileRoute("/terms")({
 function Terms() {
   return (
     <article className="mx-auto max-w-3xl px-5 py-20 sm:px-8">
-      <p className="eyebrow text-primary">Legal</p>
-      <h1 className="mt-4 text-4xl sm:text-5xl">Terms of Use</h1>
+      <div className="border-b border-gold/20 pb-6 mb-8">
+        <p className="eyebrow text-leather">Official Policy</p>
+        <h1 className="mt-3 font-display text-4xl sm:text-5xl font-bold">Terms of Use</h1>
+        <p className="mt-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          Pahchan Ismailpur Leather Producer Company Limited · Promoted by SPECTRA Organisation &amp; NABARD Bank
+        </p>
+      </div>
 
-      <div className="mt-10 space-y-8 text-sm leading-[1.75] text-muted-foreground">
+      <div className="space-y-8 text-sm leading-[1.8] text-muted-foreground">
         <section>
-          <h2 className="text-2xl text-foreground">Catalogue is for display</h2>
+          <h2 className="font-display text-2xl font-bold text-foreground">Catalogue is for Showcase &amp; Storytelling</h2>
           <p className="mt-3">
-            Products shown here are presented for information only. Listing a product is not an
-            offer of sale. Availability, sizes, lead times and prices are confirmed in writing in
-            response to an enquiry.
+            Handcrafted shoes, juti, and leather accessories displayed on this platform are presented to celebrate rural artisan mastery and document heritage traditions. The site is a non-commercial storytelling catalogue. Sizing, custom requirements, and delivery times are coordinated individually via our direct artisan channels.
           </p>
         </section>
+
         <section>
-          <h2 className="text-2xl text-foreground">Handmade variation</h2>
+          <h2 className="font-display text-2xl font-bold text-foreground">Natural Handmade Variations</h2>
           <p className="mt-3">
-            Agricultural produce varies by season, and handmade leather goods vary by hide and by
-            hand. Colour, grain and finish will differ from the photographs, which we consider a
-            feature of the work rather than a defect.
+            Each piece is crafted by hand using vegetable-tanned goat and buffalo hides. Natural grain textures, slight shade variations, and hand-stitched needlework nuances are intentional hallmarks of slow artisanal craft, reflecting authentic hand-work rather than factory defects.
           </p>
         </section>
+
         <section>
-          <h2 className="text-2xl text-foreground">Content and imagery</h2>
+          <h2 className="font-display text-2xl font-bold text-foreground">Intellectual Property &amp; Craft Imagery</h2>
           <p className="mt-3">
-            Text, photographs and marks on this site belong to SPECTRA and its members. Please ask
-            before reproducing them commercially.
+            Documentary photography, brand identity, and craft narratives published on this platform belong to Pahchan Ismailpur Leather Producer Company Limited, promoted by SPECTRA Organisation and NABARD Bank. Unauthorized commercial reproduction is strictly prohibited.
           </p>
         </section>
+
         <section>
-          <h2 className="text-2xl text-foreground">Changes</h2>
+          <h2 className="font-display text-2xl font-bold text-foreground">Corporate Identity</h2>
           <p className="mt-3">
-            We may update these terms as our operations change. The version published here is the
-            current one.
-          </p>
-        </section>
-        <section>
-          <h2 className="text-2xl text-foreground">Questions</h2>
-          <p className="mt-3">
-            Write to{" "}
-            <a className="text-primary hover:underline" href={`mailto:${site.email}`}>
-              {site.email}
-            </a>{" "}
-            or call {site.phone}.
+            Pahchan Ismailpur Leather Producer Company Limited is incorporated under the Companies Act 2013 (CIN: <span className="font-mono text-foreground font-semibold">{site.cin}</span>, GSTIN: <span className="font-mono text-foreground font-semibold">{site.gstin}</span>), with its registered office in Alwar (Khairthal-Tijara), Rajasthan.
           </p>
         </section>
       </div>

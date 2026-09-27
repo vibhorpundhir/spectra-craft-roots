@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Award, CheckCircle2, Compass, Feather, Hammer, Layers, PenTool, Scissors, Sparkles, Star, Users } from "lucide-react";
 import ofpoExhibitionArtisan from "@/assets/real/ofpo-exhibition-artisan.jpg";
 import ofpoStallInspection from "@/assets/real/ofpo-stall-inspection.jpg";
 import jutiEmbroideredGold from "@/assets/real/juti-embroidered-gold.jpg";
@@ -8,32 +8,31 @@ import jutiSilverZari from "@/assets/real/juti-silver-zari.jpg";
 import jutiGoldenBrocade from "@/assets/real/juti-golden-brocade.jpg";
 import jutiTanEmbossed from "@/assets/real/juti-tan-embossed.jpg";
 import jutiMaroonBeadwork from "@/assets/real/juti-maroon-beadwork.jpg";
-
-const workshop = ofpoExhibitionArtisan;
-const artisans = ofpoStallInspection;
-const juti = jutiEmbroideredGold;
+import jutiBeadedVelvet from "@/assets/real/juti-beaded-velvet.jpg";
+import jutiClassicBrown from "@/assets/real/juti-classic-brown.jpg";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductCard } from "@/components/ProductCard";
 import { products } from "@/data/products";
+import { site, whatsappLink } from "@/data/site";
 
 export const Route = createFileRoute("/ofpo")({
   head: () => ({
     meta: [
-      { title: "The Craft — Handmade Leather Juti, Shoes & Goods | Pahchan Leather Work" },
+      { title: "The Craft — Handcrafted Leather Juti, Shoes & Goods | Pahchan Leather Work" },
       {
         name: "description",
         content:
-          "Pahchan Leather Work (supported by SPECTRA) works with 600+ rural leather artisans in Alwar, crafting vegetable-tanned juti, hand-stitched shoes and leather goods using traditional skills passed through four generations.",
+          "Promoted by SPECTRA Organisation and NABARD Bank, Pahchan Leather Work unites 200 rural artisans in Alwar, crafting vegetable-tanned juti, hand-stitched shoes and leather goods using traditional skills passed through four generations.",
       },
       {
         property: "og:title",
-        content: "The Craft — Handmade Leather Juti, Shoes & Goods | Pahchan Leather Work",
+        content: "The Craft — Handcrafted Leather Juti, Shoes & Goods | Pahchan Leather Work",
       },
       {
         property: "og:description",
-        content: "Vegetable-tanned, hand-stitched leather craft from Alwar's artisan clusters.",
+        content: "Vegetable-tanned, hand-stitched leather craft from Alwar's artisan clusters. Promoted by SPECTRA Organisation and NABARD Bank.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -44,220 +43,417 @@ export const Route = createFileRoute("/ofpo")({
   component: Ofpo,
 });
 
-const process = [
+/* ─────────────────────────────────── Craft Journey Stages ─────────────────────────────────── */
+const craftStages = [
   {
     step: "01",
-    title: "Selecting the hide",
-    body: "Vegetable-tanned goat and buffalo hides are inspected by hand for grain, thickness and evenness.",
+    title: "Hide Selection & Vegetable Tanning",
+    subtitle: "Organic Babool Bark & Sun Drying",
+    body: "Vegetable-tanned goat and buffalo hides are chosen by master lasters for tensile strength, grain character, and natural softness. Cured using traditional tree barks without toxic chromium salts.",
+    duration: "4–6 Weeks Curing",
+    artisan: "Master Tanner & Cutter",
+    image: ofpoExhibitionArtisan,
   },
   {
     step: "02",
-    title: "Cutting",
-    body: "Patterns are laid out to follow the natural stretch of the hide — a decision no machine makes well.",
+    title: "Pattern Drafting & Hand Cutting",
+    subtitle: "Aligned With Natural Grain Stretch",
+    body: "Sole and upper patterns are laid out to follow the natural stretch of the hide. Every curve is guided by hand-sharpened knives called rampis — a sensitive judgment no factory punch press can emulate.",
+    duration: "3 Hours per Pair",
+    artisan: "Pattern Craftsman",
+    image: jutiTanEmbossed,
   },
   {
     step: "03",
-    title: "Embroidery",
-    body: "Tilla and salma work is stitched on the vamp before assembly, one motif at a time.",
+    title: "Salma & Tilla Zari Embroidery",
+    subtitle: "Dabka, Sequins & Pure Metallic Thread",
+    body: "The vamp (upper) is stretched on a wooden karchob frame. Women artisans needlework authentic motifs — kalgi, chinar, and ambi — stitch by stitch with silver, brass, and gold wire before shoe assembly.",
+    duration: "10–14 Hours Embroidery",
+    artisan: "Women Master Artisans",
+    image: jutiMaroonBeadwork,
   },
   {
     step: "04",
-    title: "Lasting & Stitching",
-    body: "Uppers are shaped over wooden lasts and saddle- or welt-stitched with waxed linen thread.",
+    title: "Ergonomic Lasting & Welt Stitching",
+    subtitle: "Generational Wooden Lasts & Waxed Cord",
+    body: "Uppers are shaped over generational neem-wood lasts. The upper, lining, and double-layer sole are saddle-stitched together using thick waxed cotton-linen thread, locking the shoe into lifelong durability.",
+    duration: "5 Hours Hand Lasting",
+    artisan: "Master Laster",
+    image: jutiBeadedVelvet,
   },
   {
     step: "05",
-    title: "Finishing",
-    body: "Edges burnished, soles trimmed, beeswax rubbed in and buffed — then rested for two days before dispatch.",
+    title: "Edge Burnishing & Natural Wax Polish",
+    subtitle: "Smooth Edges & 48-Hour Final Cure",
+    body: "Soles are bevelled and edge-burnished with smooth agate stones. Organic beeswax and mustard oil are massaged into the grain. The shoes rest on wooden forms for two days to set memory.",
+    duration: "48 Hours Setting",
+    artisan: "Finishing Specialist",
+    image: jutiSilverZari,
   },
 ];
 
+/* ─────────────────────────────────── Craft Pillars ─────────────────────────────────── */
+const pillars = [
+  {
+    icon: Feather,
+    title: "Chemical-Free Tanning",
+    description: "Tanned using indigenous babool (acacia) bark and myrobalan nuts. Hypoallergenic, breathable, and gains a deep caramel patina with time.",
+  },
+  {
+    icon: Compass,
+    title: "Generational Wooden Lasts",
+    description: "Carved from dense neem and sheesham wood to conform to the natural contours of the human foot, reducing foot fatigue naturally.",
+  },
+  {
+    icon: Sparkles,
+    title: "Authentic Zari & Needlework",
+    description: "True tilla, dabka, and sitara work stitched by 92 certified women artisans who preserve family motifs from royal Rajput and Mughal courts.",
+  },
+];
+
+/* ─────────────────────────────────── Artisan Tool Archive ─────────────────────────────────── */
+const toolArchive = [
+  { name: "Rampi", description: "Curved moon-blade hand knife used for precision skiving and edge bevelling without tearing the leather fibres.", role: "Cutting & Skiving" },
+  { name: "Kharapa", description: "Generational hand-carved wooden last that gives each juti its distinctive curved toe and ergonomic heel cradle.", role: "Lasting" },
+  { name: "Sua & Katarni", description: "Hand-forged awl and fine needle shears used to pierce heavy buffalo welt cord without machine punch holes.", role: "Saddle Stitching" },
+  { name: "Waxed Cotton Cord", description: "Multi-ply twisted cotton thread steeped in beeswax and pine rosin to create a water-resistant permanent welt stitch.", role: "Assembly" },
+];
+
 function Ofpo() {
-  const ofpoProducts = products.slice(0, 6);
+  const craftProducts = products.slice(0, 6);
 
   return (
     <>
+      {/* ═══════════════════════ Hero Section ═══════════════════════ */}
       <PageHero
-        eyebrow="Pahchan Leather Work · Handcrafted Heritage"
+        tone="dark"
+        eyebrow="Artisanal Craftsmanship · Alwar Cluster"
         title="Leather shaped by hands that inherited the skill."
-        intro="Pahchan Leather Work supports 600+ artisan families across village clusters in Alwar — cutters, embroiderers, lasters and finishers making authentic juti, shoes and leather goods the way their families always have. Every stitch carries a generation of knowledge."
-        image={workshop}
-        alt="Artisan member at the Pahchaan Ismailpur Leather Producer Company stall with handmade juti"
-        tone="leather"
-      />
+        intro="Pahchan Leather Work supports 200 artisan families across rural Rajasthan — cutters, tilla embroiderers, lasters and finishers making authentic juti, shoes and leather goods the way their families always have. Promoted by SPECTRA Organisation and NABARD Bank."
+        image={ofpoExhibitionArtisan}
+        alt="Artisan craftsman exhibiting handmade leather footwear"
+        badgeText="Promoted by SPECTRA Organisation & NABARD Bank"
+      >
+        <div className="flex flex-wrap gap-4 pt-2">
+          <a
+            href="#craft-process"
+            className="btn-gold rounded-sm"
+          >
+            Explore the 5 Stages <ArrowRight className="h-4 w-4" />
+          </a>
+          <Link
+            to="/gallery"
+            className="btn-ghost rounded-sm border-gold/30 text-cream hover:bg-gold hover:text-ink"
+          >
+            View Photo Archive
+          </Link>
+        </div>
+      </PageHero>
 
+      {/* ═══════════════════════ The Three Tenets ═══════════════════════ */}
+      <section className="shell -mt-10 relative z-10 mb-16">
+        <div className="grid gap-6 md:grid-cols-3">
+          {pillars.map((pillar, i) => {
+            const Icon = pillar.icon;
+            return (
+              <Reveal key={pillar.title} delay={i * 0.08}>
+                <div className="surface-glass rounded-xl p-8 border border-gold/30 shadow-xl hover:border-gold/60 transition-all duration-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gold/15 text-gold mb-5">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="font-display text-2xl font-bold text-foreground">
+                    {pillar.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {pillar.description}
+                  </p>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ═══════════════════════ Editorial Story Section ═══════════════════════ */}
       <section className="shell section-y">
-        <Reveal>
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-            <div>
-              <SectionHeading
-                eyebrow="Our Artisans"
-                title="A craft that survives only if it pays"
-                intro="Leather work in our region has been passed down for four generations. It was also, until recently, disappearing — squeezed by cheap synthetics and unpredictable contract work."
-                tone="leather"
-              />
-              <p className="mt-5 text-sm leading-[1.75] text-muted-foreground">
-                The OFPO exists to change the economics: tool grants, a shared finishing unit,
-                design collaboration with city retailers, and order books planned a season ahead so
-                that a young apprentice can see a future in the trade.
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 items-center">
+          <div className="lg:col-span-6 space-y-6">
+            <span className="eyebrow text-leather flex items-center gap-2">
+              <span className="h-px w-6 bg-gold" />
+              Preserving Living Heritage
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight">
+              A craft that survives only when dignity meets fair economics.
+            </h2>
+            <div className="space-y-4 text-muted-foreground text-sm sm:text-base leading-relaxed">
+              <p>
+                In the rural hamlets of Ismailpur and Kishangarh Bas, leather craft is not an industry — it is an identity passed down for four generations. For decades, however, artisans were forced to depend on exploitative middlemen and unstable contract wages.
+              </p>
+              <p>
+                With the guidance and promotion of <strong className="text-foreground">SPECTRA Organisation</strong> and sanction from <strong className="text-foreground">NABARD Bank</strong>, Pahchan was incorporated as a formal Producer Company. Today, 199 SC &amp; ST artisans own equity in the enterprise, work with modernized machinery at our Common Facility Centre (CFC), and take pride in shoes that carry their ancestral signatures.
               </p>
             </div>
-            <div className="frame frame-hover">
-              <img
-                src={artisans}
-                alt="Artisan members at work in the shared leather stitching unit"
-                loading="lazy"
-                decoding="async"
-                width={1200}
-                height={900}
-                className="aspect-4/3 w-full object-cover"
-              />
+
+            <div className="pt-2 grid grid-cols-2 gap-4 border-t border-border/80">
+              <div className="rounded-lg bg-sand/40 p-4 border border-gold/20">
+                <p className="font-display text-3xl font-bold text-leather">4</p>
+                <p className="eyebrow mt-1 text-[0.62rem] text-muted-foreground">Generations of Craft</p>
+              </div>
+              <div className="rounded-lg bg-sand/40 p-4 border border-gold/20">
+                <p className="font-display text-3xl font-bold text-leather">100%</p>
+                <p className="eyebrow mt-1 text-[0.62rem] text-muted-foreground">Artisan-Owned Equity</p>
+              </div>
             </div>
           </div>
-        </Reveal>
-      </section>
 
-      {/* Heritage image gallery */}
-      <section className="shell pb-8">
-        <div className="grid gap-3 grid-cols-2 md:grid-cols-4">
-          <Reveal className="frame frame-hover aspect-square">
-            <img src={jutiSilverZari} alt="Silver zari juti with intricate diamond pattern" loading="lazy" decoding="async" width={600} height={600} className="h-full w-full object-cover" />
-          </Reveal>
-          <Reveal delay={0.06} className="frame frame-hover aspect-square">
-            <img src={jutiGoldenBrocade} alt="Golden brocade juti with paisley motifs" loading="lazy" decoding="async" width={600} height={600} className="h-full w-full object-cover" />
-          </Reveal>
-          <Reveal delay={0.12} className="frame frame-hover aspect-square">
-            <img src={jutiTanEmbossed} alt="Tan embossed mojari with hand-punched floral design" loading="lazy" decoding="async" width={600} height={600} className="h-full w-full object-cover" />
-          </Reveal>
-          <Reveal delay={0.18} className="frame frame-hover aspect-square">
-            <img src={jutiMaroonBeadwork} alt="Maroon velvet juti with gold leaf beadwork" loading="lazy" decoding="async" width={600} height={600} className="h-full w-full object-cover" />
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="bg-cream">
-        <div className="shell section-y">
-          <Reveal>
-            <SectionHeading
-              eyebrow="Crafting Process"
-              title="Five stages, no shortcuts"
-              intro="A single pair of embroidered juti passes through four sets of hands over three days."
-              tone="leather"
-            />
-          </Reveal>
-          <ol className="mt-14 grid gap-px bg-border md:grid-cols-3 lg:grid-cols-5">
-            {process.map((p, i) => (
-              <Reveal key={p.step} delay={i * 0.06} className="bg-cream p-8">
-                <p className="eyebrow text-gold">{p.step}</p>
-                <h3 className="mt-4 text-xl">{p.title}</h3>
-                <p className="mt-3 text-sm leading-[1.75] text-muted-foreground">{p.body}</p>
-              </Reveal>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <section className="shell section-y">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Traditional Skills"
-            title="Tilla embroidery, saddle stitching, hand burnishing"
-            intro="Techniques that take years to learn and minutes to notice — the reason a handmade juti outlives three machine-made pairs."
-            tone="leather"
-          />
-        </Reveal>
-        <div className="mt-12 grid gap-3 sm:grid-cols-2">
-          <Reveal className="frame frame-hover">
-            <img
-              src={juti}
-              alt="Rows of hand-stitched leather juti displayed by artisan members at an exhibition"
-              loading="lazy"
-              decoding="async"
-              width={1024}
-              height={1024}
-              className="aspect-4/3 w-full object-cover"
-            />
-          </Reveal>
-          <Reveal delay={0.08} className="frame frame-hover">
-            <img
-              src={jutiEmbroideredMaroon}
-              alt="Handmade velvet juti with intricate circular gold tilla embroidery"
-              loading="lazy"
-              decoding="async"
-              width={1024}
-              height={1024}
-              className="aspect-4/3 w-full object-cover"
-            />
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="bg-cream">
-        <div className="shell section-y">
-          <Reveal>
-            <SectionHeading
-              eyebrow="Our Collection"
-              title="Juti, shoes and leather goods — made, not manufactured"
-              intro="Every pair is signed by the hours behind it. Open one to meet the bench it came from."
-              tone="leather"
-            />
-          </Reveal>
-          <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-            {ofpoProducts.map((product, i) => (
-              <Reveal key={product.slug} delay={i * 0.06}>
-                <ProductCard product={product} />
-              </Reveal>
-            ))}
+          <div className="lg:col-span-6">
+            <div className="relative mx-auto max-w-md lg:max-w-none">
+              <div className="absolute -inset-3 rounded-2xl border border-gold/25 pointer-events-none" />
+              <div className="frame frame-hover aspect-4/3 rounded-xl overflow-hidden shadow-2xl ring-1 ring-gold/30">
+                <img
+                  src={ofpoStallInspection}
+                  alt="Artisans gathered at the craft studio inspect leather footwear"
+                  loading="lazy"
+                  decoding="async"
+                  width={1200}
+                  height={900}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* ═══════════════════════ Five Stages of Craftsmanship ═══════════════════════ */}
+      <section id="craft-process" className="bg-sand/30 border-y border-gold/20 py-20 md:py-28">
+        <div className="shell">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="eyebrow text-leather flex items-center justify-center gap-2">
+              <span className="h-px w-6 bg-gold" />
+              The Ritual of Creation
+              <span className="h-px w-6 bg-gold" />
+            </span>
+            <h2 className="mt-4 font-display text-3xl sm:text-5xl">
+              Five stages. Zero shortcuts.
+            </h2>
+            <p className="mt-4 text-sm sm:text-base text-muted-foreground">
+              A single pair of embroidered Pahchan juti passes through four pairs of dedicated artisan hands over three days.
+            </p>
+          </div>
+
+          <div className="space-y-12">
+            {craftStages.map((stage, idx) => (
+              <Reveal key={stage.step} delay={idx * 0.05}>
+                <div className="surface-card rounded-2xl overflow-hidden border border-gold/25 p-6 sm:p-8 lg:p-10 transition-all duration-300 hover:shadow-2xl">
+                  <div className="grid gap-8 lg:grid-cols-12 items-center">
+                    {/* Left: Step number and text */}
+                    <div className="lg:col-span-7 space-y-4">
+                      <div className="flex items-center gap-4">
+                        <span className="font-display text-4xl sm:text-5xl font-bold text-gold">
+                          {stage.step}
+                        </span>
+                        <div>
+                          <p className="eyebrow text-[0.62rem] text-leather">{stage.subtitle}</p>
+                          <h3 className="font-display text-2xl sm:text-3xl font-bold text-foreground">
+                            {stage.title}
+                          </h3>
+                        </div>
+                      </div>
+
+                      <p className="text-sm sm:text-base leading-relaxed text-muted-foreground">
+                        {stage.body}
+                      </p>
+
+                      <div className="pt-2 flex flex-wrap gap-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground border-t border-border/60">
+                        <span className="inline-flex items-center gap-1.5 text-leather">
+                          <CheckCircle2 className="h-3.5 w-3.5 text-gold" /> Time: {stage.duration}
+                        </span>
+                        <span className="inline-flex items-center gap-1.5 text-leather">
+                          <Users className="h-3.5 w-3.5 text-gold" /> Artisan: {stage.artisan}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Right: Real documentary photograph */}
+                    <div className="lg:col-span-5">
+                      <div className="frame frame-hover aspect-4/3 rounded-xl overflow-hidden shadow-lg border border-gold/20">
+                        <img
+                          src={stage.image}
+                          alt={stage.title}
+                          loading="lazy"
+                          decoding="async"
+                          width={800}
+                          height={600}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════ Traditional Tool Archive ═══════════════════════ */}
       <section className="shell section-y">
-        <Reveal>
-          <SectionHeading eyebrow="Artisan Stories" title="Voices from the bench" tone="leather" />
-        </Reveal>
-        <div className="mt-12 grid gap-10 md:grid-cols-3">
-          {[
-            {
-              name: "Iqbal Khan",
-              place: "Master laster, 31 years",
-              quote:
-                "My father made forty pairs a week for a contractor who paid when he felt like it. I make twelve pairs and they are paid for before they leave the room.",
-            },
-            {
-              name: "Zarina Bano",
-              place: "Tilla embroiderer",
-              quote:
-                "The motif on the vamp is my grandmother's. Nobody asked me for it in twenty years. Last season we sent three hundred pairs of it to Jaipur.",
-            },
-            {
-              name: "Sohan Lal",
-              place: "Finishing unit",
-              quote:
-                "We have proper light, proper tools and a place to rest the shoes before packing. Small things. They are the whole difference in a finish.",
-            },
-          ].map((s, i) => (
-            <Reveal key={s.name} delay={i * 0.08} className="border-t border-border pt-6">
-              <blockquote className="font-display text-xl leading-snug">"{s.quote}"</blockquote>
-              <p className="eyebrow mt-5 text-muted-foreground">
-                {s.name} · {s.place}
-              </p>
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <span className="eyebrow text-leather flex items-center justify-center gap-2">
+            <span className="h-px w-6 bg-gold" />
+            The Artisan Bench
+            <span className="h-px w-6 bg-gold" />
+          </span>
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl">
+            Tools Shaped by Generations of Use
+          </h2>
+          <p className="mt-3 text-sm text-muted-foreground">
+            Our artisans wield tools crafted by village blacksmiths that have been honed over decades.
+          </p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {toolArchive.map((tool, i) => (
+            <Reveal key={tool.name} delay={i * 0.06}>
+              <div className="surface-card rounded-xl p-6 border border-gold/20 h-full flex flex-col justify-between hover:border-gold/50 transition-colors">
+                <div>
+                  <div className="flex items-center justify-between">
+                    <span className="eyebrow text-[0.6rem] text-gold">{tool.role}</span>
+                    <Hammer className="h-4 w-4 text-gold/60" />
+                  </div>
+                  <h3 className="mt-3 font-display text-2xl font-bold text-foreground">
+                    {tool.name}
+                  </h3>
+                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                    {tool.description}
+                  </p>
+                </div>
+                <div className="mt-6 pt-3 border-t border-border/60">
+                  <span className="text-[0.62rem] text-leather font-semibold uppercase tracking-wider">
+                    Traditional Tool
+                  </span>
+                </div>
+              </div>
             </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="bg-leather text-leather-foreground">
-        <div className="shell flex flex-col items-start gap-10 py-16 md:py-24 md:flex-row md:items-center md:justify-between">
-          <h2 className="max-w-xl text-3xl leading-tight sm:text-4xl">
-            Want to meet the artisans behind a pair?
+      {/* ═══════════════════════ Curated Collection Showcase ═══════════════════════ */}
+      <section className="bg-sand/40 border-t border-gold/20 py-20 md:py-24">
+        <div className="shell">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+            <div>
+              <span className="eyebrow text-leather">Artisan Collection</span>
+              <h2 className="mt-3 font-display text-3xl sm:text-4xl">
+                Handcrafted Juti &amp; Mojari Selection
+              </h2>
+              <p className="mt-2 text-sm text-muted-foreground max-w-xl">
+                Every pair is unique — signed by the hours and hands of our Alwar artisan collective.
+              </p>
+            </div>
+            <Link
+              to="/products"
+              className="btn-gold rounded-sm inline-flex items-center gap-2 self-start"
+            >
+              View All 12 Designs <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {craftProducts.map((p, i) => (
+              <Reveal key={p.slug} delay={i * 0.05}>
+                <ProductCard product={p} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════ Artisan Testimonials ═══════════════════════ */}
+      <section className="shell section-y">
+        <div className="text-center max-w-xl mx-auto mb-14">
+          <span className="eyebrow text-leather">Living Voices</span>
+          <h2 className="mt-3 font-display text-3xl sm:text-4xl">
+            From the Benches of Ismailpur
           </h2>
-          <Link
-            to="/contact"
-            className="eyebrow inline-flex shrink-0 items-center gap-2 bg-cream px-8 py-4 text-ink transition-colors duration-200 hover:-translate-y-0.5 hover:bg-gold"
-          >
-            Meet the makers <ArrowRight className="h-4 w-4" />
-          </Link>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-3">
+          {[
+            {
+              quote: "The tilla motif on the vamp was handed down to me by my mother. For twenty years, nobody asked for genuine zari work. Now, our collective ships hundreds of pairs across India.",
+              author: "Zarina Bano",
+              role: "Master Tilla Embroiderer",
+              cluster: "Ismailpur Cluster",
+            },
+            {
+              quote: "My father made shoes for middleman contractors who paid whenever they felt like it. Here at Pahchan, we own our company and receive our payments with total dignity.",
+              author: "Ramu Ram",
+              role: "Master Cutter & Laster",
+              cluster: "Kishangarh Bas Cluster",
+            },
+            {
+              quote: "With the sole cutting and skiving machines at our CFC, we save hours of physical strain while keeping 100% of the hand-stitched character intact.",
+              author: "Kishan Lal",
+              role: "Finishing & Assembly Specialist",
+              cluster: "Alwar Cluster",
+            },
+          ].map((item, idx) => (
+            <Reveal key={item.author} delay={idx * 0.08}>
+              <div className="surface-card rounded-2xl p-8 border border-gold/30 flex flex-col justify-between h-full hover:border-gold/60 transition-all duration-300">
+                <div>
+                  <div className="flex gap-1 text-gold mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-gold text-gold" />
+                    ))}
+                  </div>
+                  <blockquote className="font-display text-lg sm:text-xl leading-relaxed text-foreground italic">
+                    "{item.quote}"
+                  </blockquote>
+                </div>
+                <div className="mt-8 pt-4 border-t border-border/80">
+                  <p className="font-bold text-sm text-foreground">{item.author}</p>
+                  <p className="text-xs text-leather font-medium">{item.role}</p>
+                  <p className="text-[0.65rem] text-muted-foreground mt-0.5">{item.cluster}</p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* ═══════════════════════ Institutional Promoters Bottom Band ═══════════════════════ */}
+      <section className="bg-espresso text-cream border-t border-gold/30 py-16 sm:py-20">
+        <div className="shell flex flex-col items-center text-center max-w-3xl mx-auto space-y-6">
+          <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5">
+            <span className="text-xs font-bold tracking-wider text-gold uppercase">
+              Promoted by SPECTRA Organisation and NABARD Bank
+            </span>
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-cream">
+            Experience the Timeless Weight of Real Handcrafted Leather
+          </h2>
+          <p className="text-cream/70 text-sm sm:text-base leading-relaxed">
+            Interested in bespoke heritage orders, visiting our Common Facility Centre in Kishangarh Bas, or partnering with our producer collective?
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+            <a
+              href={whatsappLink("Hello! I would like to inquire about Pahchan handcrafted leather juti and craft orders.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold rounded-sm inline-flex items-center gap-2"
+            >
+              Direct WhatsApp Concierge <ArrowRight className="h-4 w-4" />
+            </a>
+            <Link
+              to="/contact"
+              className="btn-ghost rounded-sm border-gold/30 text-cream hover:bg-gold hover:text-ink"
+            >
+              Contact Leadership Team
+            </Link>
+          </div>
         </div>
       </section>
     </>

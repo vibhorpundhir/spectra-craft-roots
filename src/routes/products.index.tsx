@@ -1,24 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
+import { ArrowRight, Award, Sparkles } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { FilterChips } from "@/components/FilterChips";
 import { ProductCard } from "@/components/ProductCard";
 import { products, categories } from "@/data/products";
+import ofpoExhibitionStall from "@/assets/real/ofpo-exhibition-stall.jpg";
 
 export const Route = createFileRoute("/products/")({
   head: () => ({
     meta: [
-      { title: "The Collection — Handmade Juti, Shoes & Leather Goods | Pahchan Leather Work" },
+      { title: "The Collection — Handcrafted Juti, Shoes & Leather Craft | Promoted by SPECTRA Organisation & NABARD Bank" },
       {
         name: "description",
         content:
-          "Every juti, shoe and leather good here is the outcome of an artisan household's patient craft. Read their stories — no prices, no cart, just heritage.",
+          "Every juti, shoe and leather good here is the outcome of a rural artisan household's patient craft. Read their stories — promoted by SPECTRA Organisation and NABARD Bank.",
       },
-      { property: "og:title", content: "The Collection — Handmade Leather Craft | Pahchan Leather Work" },
+      { property: "og:title", content: "The Collection — Handcrafted Leather Craft | Pahchan Leather Work" },
       {
         property: "og:description",
         content:
-          "Handmade leather craft, presented as stories of artisan livelihood and heritage.",
+          "Handmade leather craft, presented as stories of artisan livelihood and heritage. Promoted by SPECTRA Organisation and NABARD Bank.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -43,14 +45,18 @@ function Products() {
   return (
     <>
       <PageHero
-        eyebrow="Our Collection"
-        title="Not products. Proof of what artisan hands can do."
-        intro="Each piece here is the visible end of a long, patient effort by an artisan household. There is no cart and no price list — only stories, and an open door if you would like to know more."
-        tone="leather"
+        tone="dark"
+        eyebrow="Curated Heritage · Pure Handcraft"
+        title="Not Products. Living Proof of Ancestral Mastery."
+        intro="Each piece here is the visible outcome of days of patient effort by rural artisan households in Alwar. There are no corporate cart buttons or price tags — only authentic stories, dignified livelihoods, and timeless craftsmanship. Promoted by SPECTRA Organisation and NABARD Bank."
+        image={ofpoExhibitionStall}
+        alt="Exhibition stall displaying artisanal leather goods"
+        badgeText="Promoted by SPECTRA Organisation & NABARD Bank"
       />
 
-      <section className="shell pb-20 md:pb-28">
-        <div className="border-y border-border py-6">
+      <section className="shell py-16 md:py-24">
+        {/* Category Filter */}
+        <div className="border-b border-gold/20 pb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <FilterChips
             label="Filter by category"
             layoutId="category-filter"
@@ -58,19 +64,20 @@ function Products() {
             onChange={setCategory}
             tone="leather"
             options={[
-              { key: "all", label: "All" },
+              { key: "all", label: "All Creations" },
               ...categories.map((c) => ({ key: c, label: c })),
             ]}
           />
+
+          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground shrink-0" aria-live="polite">
+            Showing <span className="text-gold font-bold">{visible.length}</span> handcrafted designs
+          </p>
         </div>
 
-        <p className="mt-8 text-sm text-muted-foreground" aria-live="polite">
-          Showing {visible.length} {visible.length === 1 ? "piece" : "pieces"}
-        </p>
-
-        <div className="mt-8 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Product Cards Grid */}
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((product) => (
-            <div key={product.slug} className="transition-opacity duration-200">
+            <div key={product.slug} className="transition-all duration-300">
               <ProductCard product={product} />
             </div>
           ))}

@@ -7,13 +7,15 @@ export const site = {
   pan: "AANCP7187P",
   tan: "JPRP09059B",
   incorporationDate: "28 April 2023",
-  parentOrg: "SPECTRA",
+  parentOrg: "SPECTRA Organisation",
   parentFullName: "Society for Public Education Cultural Training and Rural Action (POPI)",
-  supportingBody: "NABARD (National Bank for Agriculture and Rural Development)",
+  supportingBody: "NABARD Bank (National Bank for Agriculture and Rural Development)",
+  promotedBy: "Promoted by SPECTRA Organisation and NABARD Bank",
+  promotedByShort: "Promoted by SPECTRA Organisation & NABARD Bank",
   tagline: "From Hands to Heritage · Traditional Handcrafted Leather",
   est: "2023",
   description:
-    "Pahchan Ismailpur Leather Producer Company Limited (Pahchan Leather Work) is an artisan-owned producer company incorporated under the Companies Act 2013 on 28 April 2023. Supported by NABARD and promoted by SPECTRA, it unites 200 rural leather artisans (199 SC/ST shareholders, 92 women artisans) across Ismailpur and Kishangarh Bas to preserve generational craft and build sustainable livelihoods.",
+    "Pahchan Ismailpur Leather Producer Company Limited (Pahchan Leather Work) is an artisan-owned producer company incorporated under the Companies Act 2013 on 28 April 2023. Promoted by SPECTRA Organisation and NABARD Bank, it unites 200 rural leather artisans (199 SC/ST shareholders, 92 women artisans) across Ismailpur and Kishangarh Bas to preserve generational craft and build sustainable livelihoods.",
   
   // Contacts
   email: "pahchanismailpurleatherpcl@gmail.com",

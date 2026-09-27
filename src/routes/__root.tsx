@@ -81,11 +81,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Pahchan Leather Work — From Hands to Heritage | By SPECTRA" },
+      { title: "Pahchan Leather Work — From Hands to Heritage | Promoted by SPECTRA Organisation & NABARD Bank" },
       {
         name: "description",
         content:
-          "Pahchan Leather Work is an artisanal craft initiative by SPECTRA (Est. 2023) in Alwar, Rajasthan — preserving 4 generations of handmade leather juti, shoes and goods. From hands to heritage.",
+          "Pahchan Leather Work is an artisanal craft initiative promoted by SPECTRA Organisation and NABARD Bank (Est. 2023) in Alwar, Rajasthan — preserving 4 generations of handmade leather juti, shoes and goods. From hands to heritage.",
       },
       { name: "author", content: "Pahchan Leather Work" },
       { property: "og:site_name", content: "Pahchan Leather Work" },
@@ -99,7 +99,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Karla:wght@300;400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap",
       },
     ],
     scripts: [
