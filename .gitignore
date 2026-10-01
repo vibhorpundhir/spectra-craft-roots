@@ -34,5 +34,6 @@ dist-ssr
 
 # Raw uploads
 image/
+Website/
 PHOTO-*.jpg
 *.pdf

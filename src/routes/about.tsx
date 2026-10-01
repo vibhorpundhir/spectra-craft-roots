@@ -21,6 +21,7 @@ import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { site, whatsappLink } from "@/data/site";
+import { aboutPageImages } from "@/data/galleryImages";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -319,6 +320,53 @@ function About() {
               </div>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      {/* ═══════════════════════ Life in the Clusters — Documentary Chronicle ═══════════════════════ */}
+      <section className="band-ink section-y-lg relative grain border-t border-gold/20">
+        <div className="shell relative z-[3]">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <p className="eyebrow text-gold font-semibold">
+                Life in the Clusters · Documentary Chronicle
+              </p>
+              <span className="gold-rule mt-3 mx-auto" />
+              <h2 className="mt-5 text-[2.2rem] sm:text-4xl md:text-[3.25rem] text-cream">
+                The Community Behind <span className="italic text-gold font-normal">Pahchan</span>
+              </h2>
+              <p className="mt-4 text-base leading-[1.75] text-cream/70 sm:text-lg">
+                Verified documentary moments from the workshops, meetings, and exhibitions across
+                Alwar and Kishangarh Bas.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* Equal Sized Uniform Photo Grid (No White Gaps) */}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {aboutPageImages.map((img, i) => (
+              <Reveal key={img.src} delay={i * 0.08}>
+                <div className="group img-hover-overlay rounded-2xl overflow-hidden border border-gold/25 bg-card/40 shadow-lg aspect-[4/3] relative">
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="img-hover-text">
+                    <span className="eyebrow text-gold text-[0.62rem] font-bold">
+                      {img.category}
+                    </span>
+                    <h3 className="mt-1 font-display text-lg font-bold text-cream">{img.title}</h3>
+                    {img.caption && (
+                      <p className="mt-1 text-xs text-cream/75 line-clamp-2">{img.caption}</p>
+                    )}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

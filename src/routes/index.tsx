@@ -41,6 +41,14 @@ import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { ProductCard } from "@/components/ProductCard";
 import { products } from "@/data/products";
 import { impact, site, whatsappLink } from "@/data/site";
+import {
+  heroSlideImages,
+  collageImages,
+  artisanPortraits,
+  processImages,
+  detailImages,
+  cinematicImages,
+} from "@/data/galleryImages";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -342,9 +350,20 @@ function Home() {
   const [activeHotspot, setActiveHotspot] = useState<string | null>("vamp");
   const [activeArtisan, setActiveArtisan] = useState(0);
   const [productCategory, setProductCategory] = useState<string>("all");
+  const [heroSlide, setHeroSlide] = useState(0);
+
+  const { scrollYProgress } = useScroll();
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  /* Hero slideshow auto-advance every 5 seconds */
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHeroSlide((prev) => (prev + 1) % heroSlideImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
   }, []);
 
   const currentPiece = heroMasterpieces[activeMasterpiece];
@@ -356,36 +375,42 @@ function Home() {
           .filter((p) => p.category.toLowerCase() === productCategory.toLowerCase())
           .slice(0, 6);
 
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
-  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
-  const copyY = useTransform(scrollYProgress, [0, 1], ["0%", "24%"]);
   const heroMotion = mounted && !reduce;
 
   return (
     <>
+      {/* Hardware-Accelerated Smooth Scroll Progress Bar */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-gold via-ember to-gold z-[100] origin-left pointer-events-none"
+        style={{ scaleX: scrollYProgress }}
+        aria-hidden="true"
+      />
+
       {/* ═══════════════════════ SECTION 1: Grand Editorial Hero ═══════════════════════ */}
-      <section
-        ref={heroRef}
-        className="grain relative isolate min-h-[95svh] overflow-hidden bg-ink"
-      >
-        {/* Parallax Background */}
-        <motion.div
-          className="absolute inset-0 gpu"
-          style={heroMotion ? { y: imageY, scale: 1.08 } : undefined}
-        >
-          <img
-            src={leather}
-            alt="Artisan finishing a handmade leather shoe in workshop"
-            fetchPriority="high"
-            decoding="async"
-            width={2400}
-            height={1600}
-            className="h-full w-full object-cover"
-          />
-        </motion.div>
+      <section ref={heroRef} className="grain relative isolate min-h-[90vh] overflow-hidden bg-ink">
+        {/* Dynamic Hero Slideshow with Smooth Ken Burns */}
+        {heroSlideImages.map((slide, idx) => (
+          <motion.div
+            key={slide.src}
+            className={`absolute inset-0 gpu ${idx === heroSlide ? "hero-slide-active" : ""}`}
+            initial={false}
+            animate={{
+              opacity: idx === heroSlide ? 1 : 0,
+            }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <img
+              src={slide.src}
+              alt={slide.alt}
+              fetchPriority={idx === 0 ? "high" : "low"}
+              decoding="async"
+              width={2400}
+              height={1600}
+              className="h-full w-full object-cover"
+              loading={idx === 0 ? "eager" : "lazy"}
+            />
+          </motion.div>
+        ))}
 
         {/* Cinematic gradient overlay with warm leather tones */}
         <div
@@ -407,11 +432,8 @@ function Home() {
           <div className="absolute top-0 left-[15%] w-px h-full bg-gradient-to-b from-transparent via-gold/15 to-transparent" />
         </div>
 
-        {/* Hero Content Shell */}
-        <motion.div
-          className="shell relative flex min-h-[92svh] flex-col justify-center py-16 sm:py-20 lg:py-24"
-          style={heroMotion ? { y: copyY } : undefined}
-        >
+        {/* Hero Content Shell (Rock-solid, zero scroll jitter) */}
+        <div className="shell relative flex min-h-[85vh] flex-col justify-center py-16 sm:py-20 lg:py-24">
           <div className="w-full">
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-14 items-center">
               {/* Left Column: Brand Story & CTAs */}
@@ -618,7 +640,26 @@ function Home() {
               </motion.div>
             </div>
           </div>
-        </motion.div>
+        </div>
+
+        {/* Hero Slideshow Dots + Caption */}
+        <div className="absolute bottom-20 left-0 right-0 z-20 flex flex-col items-center gap-3">
+          <p className="text-[0.65rem] text-cream/50 tracking-widest uppercase font-semibold">
+            {heroSlideImages[heroSlide]?.caption}
+          </p>
+          <div className="flex gap-2">
+            {heroSlideImages.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setHeroSlide(idx)}
+                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  idx === heroSlide ? "w-8 bg-gold" : "w-1.5 bg-cream/30 hover:bg-cream/50"
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+        </div>
 
         {/* Sub-Hero Trust Bar */}
         <div className="border-t border-gold/20 bg-espresso/90 backdrop-blur-md relative z-20">
@@ -635,6 +676,194 @@ function Home() {
               <Building2 className="h-3 w-3" /> Promoted by SPECTRA Organisation &amp; NABARD Bank
             </span>
           </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════ VISUAL: Collage Mosaic Strip ═══════════════════════ */}
+      <section className="bg-ink py-10 sm:py-14 overflow-hidden">
+        <div className="shell mb-8">
+          <Reveal>
+            <p className="eyebrow text-gold font-semibold text-center">Visual Stories</p>
+            <p className="mt-2 text-center text-cream/60 text-sm">Swipe to explore our journey</p>
+          </Reveal>
+        </div>
+        <div className="collage-strip px-5">
+          {collageImages.map((img, i) => (
+            <div key={img.src} className="collage-item img-hover-overlay">
+              <img src={img.src} alt={img.alt} loading="lazy" decoding="async" />
+              <div className="img-hover-text">
+                <p className="font-display text-lg text-cream font-semibold">{img.title}</p>
+                <p className="text-xs text-cream/70 mt-1">{img.category}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ═══════════════════════ VISUAL: "Meet the Hands" — Artisan Portraits ═══════════════════════ */}
+      <section className="band-espresso section-y-lg relative grain">
+        <div className="shell relative z-[3]">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto">
+              <p className="eyebrow text-gold font-semibold">The People Behind the Craft</p>
+              <span className="gold-rule mt-3 mx-auto" />
+              <h2 className="mt-5 text-[2.2rem] sm:text-4xl md:text-[3.25rem] text-cream">
+                Meet the <span className="italic text-gold font-normal">Hands</span>
+              </h2>
+              <p className="mt-4 text-base leading-[1.75] text-cream/70 sm:text-lg">
+                Every pair of juti carries the fingerprints of master craftspeople who have
+                dedicated their lives to this art.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="mt-14 grid gap-8 md:grid-cols-3">
+            {artisanPortraits.map((portrait, i) => (
+              <Reveal key={portrait.src} delay={i * 0.1}>
+                <div className="group relative overflow-hidden rounded-2xl border border-gold/30 img-hover-overlay aspect-[3/4]">
+                  <img
+                    src={portrait.src}
+                    alt={portrait.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="img-hover-text">
+                    <h3 className="font-display text-2xl text-cream font-semibold">
+                      {portrait.title}
+                    </h3>
+                    {portrait.caption && (
+                      <p className="mt-1 text-sm text-gold/90">{portrait.caption}</p>
+                    )}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={0.3}>
+            <p className="mt-10 text-center font-display italic text-xl sm:text-2xl text-gold/80">
+              "Built by hands that never stop."
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ═══════════════════════ VISUAL: "From Raw to Real" — Horizontal Process Scroll ═══════════════════════ */}
+      <section className="band-parchment section-y-lg">
+        <div className="shell">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto">
+              <p className="eyebrow text-leather font-semibold">The Journey of Creation</p>
+              <span className="gold-rule mt-3 mx-auto" />
+              <h2 className="mt-5 text-[2.2rem] sm:text-4xl md:text-[3.25rem]">
+                From Raw to <span className="italic text-leather font-normal">Real</span>
+              </h2>
+              <p className="mt-4 text-base leading-[1.75] text-muted-foreground sm:text-lg">
+                Follow the journey of leather — from raw material to a piece of wearable heritage.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="mt-14 process-scroll px-4">
+            {processImages.map((step, i) => (
+              <div key={step.src} className="process-card">
+                <div className="corner-brackets relative overflow-hidden rounded-2xl border border-border bg-card shadow-lg img-hover-zoom aspect-[4/3]">
+                  <img
+                    src={step.src}
+                    alt={step.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
+                  <div className="absolute bottom-0 inset-x-0 p-5">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gold text-[0.6rem] font-black text-ink">
+                        0{i + 1}
+                      </span>
+                    </div>
+                    <h3 className="font-display text-xl text-cream font-semibold">{step.title}</h3>
+                    {step.caption && <p className="mt-1 text-xs text-cream/70">{step.caption}</p>}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <Reveal delay={0.2}>
+            <p className="mt-8 text-center text-sm text-muted-foreground">
+              ← Swipe to follow the craft journey →
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ═══════════════════════ CINEMATIC BREAK 1 ═══════════════════════ */}
+      <div className="cinematic-break">
+        <img
+          src={cinematicImages[0].src}
+          alt={cinematicImages[0].alt}
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="cinematic-overlay" />
+        <div className="cinematic-text">
+          <Reveal>
+            <span className="gold-rule mx-auto mb-6" />
+            <p className="font-display italic text-3xl sm:text-5xl md:text-6xl text-cream leading-tight">
+              "Behind every stitch
+              <br />
+              is a <span className="text-gold">story.</span>"
+            </p>
+            <p className="mt-4 text-sm text-cream/60 tracking-widest uppercase">
+              Made with patience. Crafted with pride.
+            </p>
+          </Reveal>
+        </div>
+      </div>
+
+      {/* ═══════════════════════ VISUAL: "Details Matter" — Asymmetric Grid ═══════════════════════ */}
+      <section className="band-ink section-y-lg relative grain">
+        <div className="shell relative z-[3]">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto">
+              <p className="eyebrow text-gold font-semibold">Craftsmanship in Every Detail</p>
+              <span className="gold-rule mt-3 mx-auto" />
+              <h2 className="mt-5 text-[2.2rem] sm:text-4xl md:text-[3.25rem] text-cream">
+                Details <span className="italic text-gold font-normal">Matter</span>
+              </h2>
+              <p className="mt-4 text-base leading-[1.75] text-cream/70 sm:text-lg">
+                The beauty is in the close-up. Stitching, textures, edges — each telling a story of
+                patience.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+            {detailImages.map((img, i) => (
+              <Reveal key={img.src} delay={i * 0.08}>
+                <div className="group relative overflow-hidden rounded-2xl border border-gold/25 bg-card/40 shadow-lg img-hover-overlay aspect-[4/3]">
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="img-hover-text">
+                    <p className="font-display text-lg text-cream font-semibold">{img.title}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={0.3}>
+            <p className="mt-10 text-center font-display italic text-xl sm:text-2xl text-gold/80">
+              "Rooted in tradition. Built for the future."
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -759,15 +988,17 @@ function Home() {
           <Reveal>
             <div className="flex flex-wrap items-end justify-between gap-6 pb-4 border-b border-border/80">
               <div className="max-w-2xl">
-                <p className="eyebrow text-leather font-semibold">Curated Atelier Collection</p>
+                <p className="eyebrow text-leather font-semibold">
+                  Our Creations · Handcrafted With Care
+                </p>
                 <span className="gold-rule mt-3" />
                 <h2 className="mt-5 text-[2.2rem] sm:text-4xl md:text-[3.25rem]">
                   Handcrafted Proof of{" "}
                   <span className="italic text-leather font-normal">Generational Mastery</span>
                 </h2>
                 <p className="mt-4 text-base leading-[1.75] text-muted-foreground sm:text-lg">
-                  Every piece is direct-from-artisan. Pure vegetable-tanned leather, zero toxic
-                  adhesives, and 100% democratic equity for rural Rajasthan craftspeople.
+                  Each piece is handcrafted with care. Direct from rural master artisans in Alwar —
+                  pure vegetable-tanned leather, zero toxic adhesives, and 100% democratic equity.
                 </p>
               </div>
 
@@ -1094,6 +1325,30 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* ═══════════════════════ CINEMATIC BREAK 2 ═══════════════════════ */}
+      <div className="cinematic-break">
+        <img
+          src={cinematicImages[1].src}
+          alt={cinematicImages[1].alt}
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="cinematic-overlay" />
+        <div className="cinematic-text">
+          <Reveal>
+            <span className="gold-rule mx-auto mb-6" />
+            <p className="font-display italic text-3xl sm:text-5xl md:text-6xl text-cream leading-tight">
+              "This is not just a product…
+              <br />
+              this is <span className="text-gold">someone's life’s work.</span>"
+            </p>
+            <p className="mt-4 text-sm text-cream/60 tracking-widest uppercase">
+              Made with patience · Crafted with pride · Rooted in tradition
+            </p>
+          </Reveal>
+        </div>
+      </div>
 
       {/* ═══════════════════════ SECTION 7: The 5-Stage Craft Journey ═══════════════════════ */}
       <section className="band-parchment section-y-lg">
