@@ -32,8 +32,15 @@ dist-ssr
 *.sln
 *.sw?
 
-# Raw uploads
+# Raw uploads (not part of the website)
 image/
 Website/
 PHOTO-*.jpg
 *.pdf
+
+# Lovable (optional — remove if fully migrated)
+.lovable/
+
+# Lock files (use package-lock.json for npm)
+bun.lock
+bunfig.toml

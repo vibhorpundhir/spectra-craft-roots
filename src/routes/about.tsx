@@ -24,26 +24,6 @@ import { site, whatsappLink } from "@/data/site";
 import { aboutPageImages } from "@/data/galleryImages";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Us — Producer Enterprise | Promoted by SPECTRA Organisation & NABARD Bank" },
-      {
-        name: "description",
-        content:
-          "Pahchan Ismailpur Leather Producer Company Limited (CIN: U01500RJ2023PTC087293) is an artisan-owned producer enterprise incorporated in April 2023, promoted by SPECTRA Organisation and NABARD Bank in Alwar, Rajasthan.",
-      },
-      { property: "og:title", content: "About Pahchan Ismailpur Leather Producer Company Limited" },
-      {
-        property: "og:description",
-        content:
-          "Artisan-owned producer company empowering 200 rural leather craftspeople (199 SC/ST shareholders, 92 women artisans) with sustainable livelihoods. Promoted by SPECTRA Organisation and NABARD Bank.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/about" },
-    ],
-    links: [{ rel: "canonical", href: "/about" }],
-  }),
   component: About,
 });
 

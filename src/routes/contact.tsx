@@ -58,26 +58,6 @@ interface SubmittedData {
 
 export const Route = createFileRoute("/contact")({
   validateSearch: searchSchema,
-  head: () => ({
-    meta: [
-      { title: "Contact Us — Artisan Enterprise | Promoted by SPECTRA Organisation & NABARD Bank" },
-      {
-        name: "description",
-        content:
-          "Reach Pahchan Ismailpur Leather Producer Company Limited (Pahchan Leather Work). Promoted by SPECTRA Organisation and NABARD Bank. Contact CEO Mahesh Chouhan, email pahchanismailpurleatherpcl@gmail.com, exact Google Maps location.",
-      },
-      { property: "og:title", content: "Contact Pahchan Ismailpur Leather Producer Company" },
-      {
-        property: "og:description",
-        content:
-          "Direct contact, official emails, CFC address, and Google Maps pin for our artisan collective. Promoted by SPECTRA Organisation and NABARD Bank.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/contact" },
-    ],
-    links: [{ rel: "canonical", href: "/contact" }],
-  }),
   component: Contact,
 });
 

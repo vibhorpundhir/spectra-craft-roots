@@ -22,32 +22,6 @@ import { site, whatsappLink } from "@/data/site";
 import { impactPageImages } from "@/data/galleryImages";
 
 export const Route = createFileRoute("/impact")({
-  head: () => ({
-    meta: [
-      {
-        title:
-          "Our Impact — Verified Livelihoods Transformed | Promoted by SPECTRA Organisation & NABARD Bank",
-      },
-      {
-        name: "description",
-        content:
-          "Documented progress of Pahchan Ismailpur Leather Producer Company Limited: 200 artisans mobilised, 92 women craftswomen, PM Vishwakarma, Udyam Aadhaar, and FDDI Noida training. Promoted by SPECTRA Organisation and NABARD Bank.",
-      },
-      {
-        property: "og:title",
-        content: "Our Impact — Verified Livelihoods Transformed | Pahchan Leather Work",
-      },
-      {
-        property: "og:description",
-        content:
-          "Transforming inherited craft into sustainable livelihoods, verified by official NABARD progress reports. Promoted by SPECTRA Organisation and NABARD Bank.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/impact" },
-    ],
-    links: [{ rel: "canonical", href: "/impact" }],
-  }),
   component: Impact,
 });
 

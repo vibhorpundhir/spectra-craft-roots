@@ -23,28 +23,6 @@ export const Route = createFileRoute("/products/$slug")({
     if (!product) throw notFound();
     return { name: product.name, short: product.short };
   },
-  head: ({ params, loaderData }) => {
-    if (!loaderData) {
-      return {
-        meta: [
-          { title: "Product not found | Pahchan Leather Work" },
-          { name: "robots", content: "noindex" },
-        ],
-      };
-    }
-    return {
-      meta: [
-        { title: `${loaderData.name} — Handcrafted Heritage | Pahchan Leather Work` },
-        { name: "description", content: loaderData.short },
-        { property: "og:title", content: `${loaderData.name} | Pahchan Leather Work` },
-        { property: "og:description", content: loaderData.short },
-        { property: "og:type", content: "product" },
-        { name: "twitter:card", content: "summary_large_image" },
-        { property: "og:url", content: `/products/${params.slug}` },
-      ],
-      links: [{ rel: "canonical", href: `/products/${params.slug}` }],
-    };
-  },
   component: ProductDetail,
 });
 

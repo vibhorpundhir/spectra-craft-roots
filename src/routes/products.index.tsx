@@ -8,32 +8,6 @@ import { products, categories } from "@/data/products";
 import ofpoExhibitionStall from "@/assets/real/ofpo-exhibition-stall.jpg";
 
 export const Route = createFileRoute("/products/")({
-  head: () => ({
-    meta: [
-      {
-        title:
-          "The Collection — Handcrafted Juti, Shoes & Leather Craft | Promoted by SPECTRA Organisation & NABARD Bank",
-      },
-      {
-        name: "description",
-        content:
-          "Every juti, shoe and leather good here is the outcome of a rural artisan household's patient craft. Read their stories — promoted by SPECTRA Organisation and NABARD Bank.",
-      },
-      {
-        property: "og:title",
-        content: "The Collection — Handcrafted Leather Craft | Pahchan Leather Work",
-      },
-      {
-        property: "og:description",
-        content:
-          "Handmade leather craft, presented as stories of artisan livelihood and heritage. Promoted by SPECTRA Organisation and NABARD Bank.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/products" },
-    ],
-    links: [{ rel: "canonical", href: "/products" }],
-  }),
   component: Products,
 });
 

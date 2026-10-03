@@ -2,25 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { site } from "@/data/site";
 
 export const Route = createFileRoute("/privacy")({
-  head: () => ({
-    meta: [
-      { title: "Privacy Policy | Pahchan Leather Work" },
-      {
-        name: "description",
-        content:
-          "How Pahchan Ismailpur Leather Producer Company Limited (promoted by SPECTRA Organisation and NABARD Bank) handles information you share through enquiry forms, email and WhatsApp.",
-      },
-      { property: "og:title", content: "Privacy Policy | Pahchan Leather Work" },
-      {
-        property: "og:description",
-        content: "How Pahchan Leather Work handles enquiry information.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/privacy" },
-    ],
-    links: [{ rel: "canonical", href: "/privacy" }],
-  }),
   component: Privacy,
 });
 

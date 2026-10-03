@@ -32,29 +32,6 @@ import { site, whatsappLink } from "@/data/site";
 import { craftPageImages } from "@/data/galleryImages";
 
 export const Route = createFileRoute("/ofpo")({
-  head: () => ({
-    meta: [
-      { title: "The Craft — Handcrafted Leather Juti, Shoes & Goods | Pahchan Leather Work" },
-      {
-        name: "description",
-        content:
-          "Promoted by SPECTRA Organisation and NABARD Bank, Pahchan Leather Work unites 200 rural artisans in Alwar, crafting vegetable-tanned juti, hand-stitched shoes and leather goods using traditional skills passed through four generations.",
-      },
-      {
-        property: "og:title",
-        content: "The Craft — Handcrafted Leather Juti, Shoes & Goods | Pahchan Leather Work",
-      },
-      {
-        property: "og:description",
-        content:
-          "Vegetable-tanned, hand-stitched leather craft from Alwar's artisan clusters. Promoted by SPECTRA Organisation and NABARD Bank.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/ofpo" },
-    ],
-    links: [{ rel: "canonical", href: "/ofpo" }],
-  }),
   component: Ofpo,
 });
 

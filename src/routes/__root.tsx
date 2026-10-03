@@ -1,20 +1,10 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import {
-  Outlet,
-  Link,
-  createRootRouteWithContext,
-  useRouter,
-  HeadContent,
-  Scripts,
-} from "@tanstack/react-router";
+import { Outlet, Link, createRootRouteWithContext, useRouter } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
-import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Toaster } from "@/components/ui/sonner";
-import { site } from "@/data/site";
 
 function NotFoundComponent() {
   return (
@@ -41,9 +31,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -77,86 +64,14 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      {
-        title:
-          "Pahchan Leather Work — From Hands to Heritage | Promoted by SPECTRA Organisation & NABARD Bank",
-      },
-      {
-        name: "description",
-        content:
-          "Pahchan Leather Work is an artisanal craft initiative promoted by SPECTRA Organisation and NABARD Bank (Est. 2023) in Alwar, Rajasthan — preserving 4 generations of handmade leather juti, shoes and goods. From hands to heritage.",
-      },
-      { name: "author", content: "Pahchan Leather Work" },
-      { property: "og:site_name", content: "Pahchan Leather Work" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap",
-      },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Brand",
-          name: "Pahchan Leather Work",
-          description:
-            "Empowering 600+ rural leather artisans in Alwar, Rajasthan through handmade juti, mojari and leather craft, established under SPECTRA's OFPO initiative.",
-          parentOrganization: {
-            "@type": "NGO",
-            name: "SPECTRA",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "E-11, Patel Nagar, Mannaka Road",
-              addressLocality: "Alwar",
-              addressRegion: "Rajasthan",
-              postalCode: "301001",
-              addressCountry: "IN",
-            },
-          },
-          telephone: site.phone,
-          email: site.email,
-        }),
-      },
-    ],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
 
-function RootShell({ children }: { children: ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
-
 function RootComponent() {
-  const { queryClient } = Route.useRouteContext();
-
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <Header />
       <main id="main">
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
@@ -164,6 +79,6 @@ function RootComponent() {
       </main>
       <Footer />
       <Toaster position="top-center" />
-    </QueryClientProvider>
+    </>
   );
 }

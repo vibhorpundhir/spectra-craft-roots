@@ -9,29 +9,6 @@ import { allGalleryImages, type ImageCategory } from "@/data/galleryImages";
 import ofpoExhibitionArtisan from "@/assets/real/ofpo-exhibition-artisan.jpg";
 
 export const Route = createFileRoute("/gallery")({
-  head: () => ({
-    meta: [
-      {
-        title:
-          "Visual Archive — Handcrafted Leather & Artisans | Promoted by SPECTRA Organisation & NABARD Bank",
-      },
-      {
-        name: "description",
-        content:
-          "Documentary photographs and design stories of rural leather artisans, traditional craft processes, finished juti, and exhibitions behind Pahchan Leather Work, promoted by SPECTRA Organisation and NABARD Bank.",
-      },
-      { property: "og:title", content: "Visual Archive | Pahchan Leather Work" },
-      {
-        property: "og:description",
-        content:
-          "The artisans and heritage behind every piece — in the workshops, exhibitions and communities of Alwar. Promoted by SPECTRA Organisation and NABARD Bank.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/gallery" },
-    ],
-    links: [{ rel: "canonical", href: "/gallery" }],
-  }),
   component: Gallery,
 });
 

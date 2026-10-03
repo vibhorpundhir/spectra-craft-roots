@@ -51,29 +51,6 @@ import {
 } from "@/data/galleryImages";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Pahchan Leather Work — Crafted by Hands. Carried by Stories." },
-      {
-        name: "description",
-        content:
-          "Pahchan Leather Work (Est. 2023) empowers rural leather artisans in Rajasthan — promoted by SPECTRA Organisation and NABARD Bank — preserving traditional craftsmanship through handmade shoes, juti and leather goods. From hands to heritage.",
-      },
-      {
-        property: "og:title",
-        content: "Pahchan Leather Work — Crafted by Hands. Carried by Stories.",
-      },
-      {
-        property: "og:description",
-        content:
-          "Each piece reflects the skill, tradition, and dignity of artisans empowered by Pahchan Leather Work, promoted by SPECTRA Organisation and NABARD Bank.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/" },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-  }),
   component: Home,
 });
 

@@ -2,22 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { site } from "@/data/site";
 
 export const Route = createFileRoute("/terms")({
-  head: () => ({
-    meta: [
-      { title: "Terms of Use | Pahchan Leather Work" },
-      {
-        name: "description",
-        content:
-          "Terms governing the use of the Pahchan Leather Work website, its craft catalogue and enquiry channels. Promoted by SPECTRA Organisation and NABARD Bank.",
-      },
-      { property: "og:title", content: "Terms of Use | Pahchan Leather Work" },
-      { property: "og:description", content: "Terms for using the Pahchan Leather Work website." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "/terms" },
-    ],
-    links: [{ rel: "canonical", href: "/terms" }],
-  }),
   component: Terms,
 });
 
