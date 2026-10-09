@@ -27,8 +27,8 @@ export const heroSlideImages: GalleryImage[] = [
     caption: "Grameen Bharat Mahotsav, Chandigarh 2026",
   },
   {
-    src: "/gallery/artisan-stall-full.jpg",
-    alt: "Artisan surrounded by handcrafted leather products at exhibition stall",
+    src: "/gallery/stall-nabard-banner.jpg",
+    alt: "Artisan with full handcrafted leather juti collection at exhibition stall",
     title: "Artisan with Full Collection",
     category: "artisans",
     caption: "Every piece, a story told through leather",
@@ -101,9 +101,9 @@ export const collageImages: GalleryImage[] = [
     aspect: "tall",
   },
   {
-    src: "/gallery/workshop-discussion.jpg",
-    alt: "Discussion at workshop with juti samples",
-    title: "Design Discussion",
+    src: "/gallery/stall-decoration.jpg",
+    alt: "Common Facility Centre footwear studio with modern sewing machinery",
+    title: "Production Studio",
     category: "workshops",
     aspect: "wide",
   },
@@ -144,11 +144,11 @@ export const artisanPortraits: GalleryImage[] = [
 /* ─── "From Raw to Real" Process Section ─── */
 export const processImages: GalleryImage[] = [
   {
-    src: "/gallery/workshop-discussion.jpg",
-    alt: "Design discussion and planning at CFC workshop",
-    title: "Design & Planning",
+    src: "/gallery/stall-decoration.jpg",
+    alt: "Footwear machine lasting and stitching at CFC workshop",
+    title: "Production & Lasting Studio",
     category: "workshops",
-    caption: "Expert eyes guide every detail",
+    caption: "Expert artisans guide every detail",
   },
   {
     src: "/gallery/product-closeup-stall.jpg",
@@ -228,9 +228,9 @@ export const allGalleryImages: GalleryImage[] = [
     aspect: "tall",
   },
   {
-    src: "/gallery/artisan-stall-full.jpg",
-    alt: "Full artisan stall with leather products",
-    title: "Complete Artisan Collection",
+    src: "/gallery/stall-with-wall.jpg",
+    alt: "Senior inspection of handcrafted leather collection at exhibition",
+    title: "Exhibition Quality Inspection",
     category: "exhibitions",
     aspect: "wide",
   },
@@ -453,9 +453,9 @@ export const allGalleryImages: GalleryImage[] = [
     aspect: "wide",
   },
   {
-    src: "/gallery/workshop-discussion.jpg",
-    alt: "Workshop discussion with craft experts",
-    title: "Design Atelier",
+    src: "/gallery/stall-decoration.jpg",
+    alt: "Artisans at work in footwear production studio",
+    title: "Footwear Production Studio",
     category: "workshops",
     aspect: "wide",
   },
@@ -516,7 +516,7 @@ export const allGalleryImages: GalleryImage[] = [
 
 export const aboutPageImages: GalleryImage[] = [
   {
-    src: "/gallery/grameen-full-stall.jpg",
+    src: "/gallery/stall-grand-display.jpg",
     alt: "Grand Grameen Bharat Mahotsav stall with full product display",
     title: "Grand Exhibition Stall",
     category: "exhibitions",
@@ -561,8 +561,8 @@ export const aboutPageImages: GalleryImage[] = [
 
 export const craftPageImages: GalleryImage[] = [
   {
-    src: "/gallery/workshop-discussion.jpg",
-    alt: "Artisans discussing footwear patterns and designs",
+    src: "/gallery/product-arrangement.jpg",
+    alt: "Artisans crafting shoe uppers and ergonomic patterns",
     title: "Pattern Atelier",
     category: "workshops",
     caption: "Designing ergonomic lasts tailored to foot anatomy",
@@ -589,14 +589,14 @@ export const craftPageImages: GalleryImage[] = [
     caption: "Vegetable dye treatments paired with metallic zari cords",
   },
   {
-    src: "/gallery/artisan-stall-full.jpg",
-    alt: "Complete handcrafted leather footwear display",
-    title: "Heirloom Footwear",
+    src: "/gallery/product-closeup-stall.jpg",
+    alt: "Artisan with Pahchan Leather Producer Company banner and collection",
+    title: "Market Access & Growth",
     category: "products",
-    caption: "Traditional Mojari and bridal juti built for a lifetime",
+    caption: "Artisan-owned company competing at premier national fairs",
   },
   {
-    src: "/gallery/precision-inspection.jpg",
+    src: "/gallery/inspection-juti.jpg",
     alt: "Precision inspection of finished leather footwear",
     title: "Beeswax Burnishing",
     category: "workshops",
@@ -627,7 +627,7 @@ export const impactPageImages: GalleryImage[] = [
     caption: "Periodic review by NABARD Bank officials and SPECTRA leadership",
   },
   {
-    src: "/gallery/grameen-full-stall.jpg",
+    src: "/gallery/stall-grand-display.jpg",
     alt: "Complete stall display with Pahchan leather products and NABARD branding",
     title: "Grand Exhibition Setup",
     category: "exhibitions",
@@ -672,10 +672,10 @@ export const contactPageImages: GalleryImage[] = [
     caption: "Full range of handcrafted leather footwear and accessories",
   },
   {
-    src: "/gallery/grameen-full-stall.jpg",
-    alt: "Grand stall display at Grameen Bharat Mahotsav",
-    title: "Common Facility Centre",
+    src: "/gallery/stall-with-wall.jpg",
+    alt: "Artisanal leather display at national exhibition",
+    title: "National Exhibition Stall",
     category: "exhibitions",
-    caption: "Kishangarh Bas, Alwar District, Rajasthan (Open Mon–Sat)",
+    caption: "Handcrafted leather footwear showcased across India",
   },
 ];

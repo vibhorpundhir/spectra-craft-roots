@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import grameenArtisanDisplay from "@/assets/real/grameen-artisan-display.jpg";
 import officialsInspectingJuti from "@/assets/real/officials-inspecting-juti.jpg";
-import grameenFullStall from "@/assets/real/grameen-full-stall.jpg";
 import grameenStallArtisan from "@/assets/real/grameen-stall-artisan.jpg";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";

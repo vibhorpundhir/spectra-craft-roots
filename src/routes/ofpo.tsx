@@ -13,8 +13,6 @@ import {
   Star,
   Users,
 } from "lucide-react";
-import cfcDesignStudioMeeting from "@/assets/real/cfc-design-studio-meeting.jpg";
-import grameenFullStall from "@/assets/real/grameen-full-stall.jpg";
 import grameenArtisanDisplay from "@/assets/real/grameen-artisan-display.jpg";
 import jutiEmbroideredGold from "@/assets/real/juti-embroidered-gold.jpg";
 import jutiEmbroideredMaroon from "@/assets/real/juti-embroidered-maroon.jpg";

@@ -5,11 +5,7 @@ import jutiTanPunched from "@/assets/real/juti-tan-punched.jpg";
 import jutiBlackStitched from "@/assets/real/juti-black-stitched.jpg";
 import jutiTanPlain from "@/assets/real/juti-tan-plain.jpg";
 import grameenArtisanDisplay from "@/assets/real/grameen-artisan-display.jpg";
-import officialsInspectingJuti from "@/assets/real/officials-inspecting-juti.jpg";
-import grameenFullStall from "@/assets/real/grameen-full-stall.jpg";
 import pahchanIsmailpurOfficeCommunity from "@/assets/real/pahchan-ismailpur-office-community.jpg";
-import cfcDesignStudioMeeting from "@/assets/real/cfc-design-studio-meeting.jpg";
-import spectraStakeholderMeeting from "@/assets/real/spectra-stakeholder-meeting.jpg";
 
 // New uploaded craft images
 import jutiSilverZari from "@/assets/real/juti-silver-zari.jpg";
