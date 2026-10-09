@@ -14,6 +14,8 @@ import {
   Users,
 } from "lucide-react";
 import grameenArtisanDisplay from "@/assets/real/grameen-artisan-display.jpg";
+import cfcLeatherWorkshop from "@/assets/real/cfc-leather-workshop.jpg";
+import pahchanStallGrand from "@/assets/real/pahchan-stall-grand.jpg";
 import jutiEmbroideredGold from "@/assets/real/juti-embroidered-gold.jpg";
 import jutiEmbroideredMaroon from "@/assets/real/juti-embroidered-maroon.jpg";
 import jutiSilverZari from "@/assets/real/juti-silver-zari.jpg";
@@ -144,7 +146,7 @@ function Ofpo() {
         eyebrow="Artisanal Craftsmanship · Alwar Cluster"
         title="Leather shaped by hands that inherited the skill."
         intro="Pahchan Leather Work supports 200 artisan families across rural Rajasthan — cutters, tilla embroiderers, lasters and finishers making authentic juti, shoes and leather goods the way their families always have. Promoted by SPECTRA Organisation and NABARD Bank."
-        image={cfcDesignStudioMeeting}
+        image={cfcLeatherWorkshop}
         alt="Artisans and designers at Common Facility Centre evaluating handcrafted footwear"
         badgeText="Promoted by SPECTRA Organisation & NABARD Bank"
       >
@@ -234,7 +236,7 @@ function Ofpo() {
               <div className="absolute -inset-3 rounded-2xl border border-gold/25 pointer-events-none" />
               <div className="frame frame-hover aspect-4/3 rounded-xl overflow-hidden shadow-2xl ring-1 ring-gold/30">
                 <img
-                  src={grameenFullStall}
+                  src={pahchanStallGrand}
                   alt="Full showcase of handcrafted leather footwear and artisan heritage"
                   loading="lazy"
                   decoding="async"

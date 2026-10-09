@@ -6,6 +6,10 @@ import jutiBlackStitched from "@/assets/real/juti-black-stitched.jpg";
 import jutiTanPlain from "@/assets/real/juti-tan-plain.jpg";
 import grameenArtisanDisplay from "@/assets/real/grameen-artisan-display.jpg";
 import pahchanIsmailpurOfficeCommunity from "@/assets/real/pahchan-ismailpur-office-community.jpg";
+import officialsInspectingJuti from "@/assets/real/officials-inspecting-juti.jpg";
+import pahchanStallGrand from "@/assets/real/pahchan-stall-grand.jpg";
+import cfcLeatherWorkshop from "@/assets/real/cfc-leather-workshop.jpg";
+import officialsGrameenVisit from "@/assets/real/officials-grameen-visit.jpg";
 
 // New uploaded craft images
 import jutiSilverZari from "@/assets/real/juti-silver-zari.jpg";
@@ -321,7 +325,7 @@ export const galleryItems: GalleryItem[] = [
   // 18. Workshops — Full Exhibition Stall Display
   {
     id: "exhibition-stall-showcase",
-    src: grameenFullStall,
+    src: pahchanStallGrand,
     alt: "Grand Grameen Bharat Mahotsav pavilion showcasing Pahchan rural artisan handcrafts and leather goods",
     title: "Pahchan National Artisan Exhibition Pavilion",
     category: "Workshops",
@@ -353,7 +357,7 @@ export const galleryItems: GalleryItem[] = [
   // 20. Community — CFC Design Studio Collaboration
   {
     id: "cfc-design-studio-forum",
-    src: cfcDesignStudioMeeting,
+    src: cfcLeatherWorkshop,
     alt: "Master craftspeople, women embroiderers, and SPECTRA leadership collaborating at the Common Facility Centre",
     title: "Common Facility Centre Design & Innovation Forum",
     category: "Community",
@@ -369,7 +373,7 @@ export const galleryItems: GalleryItem[] = [
   // 21. Community — Stakeholder Meeting
   {
     id: "spectra-stakeholder-annual-review",
-    src: spectraStakeholderMeeting,
+    src: officialsGrameenVisit,
     alt: "SPECTRA organisation institutional review meeting and programme milestone presentation",
     title: "Producer Company Annual Governance Forum",
     category: "Community",

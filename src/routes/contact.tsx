@@ -163,7 +163,9 @@ function Contact() {
       });
 
       if (res.ok) {
-        toast.success("Enquiry sent directly to official mail: pahchanismailpurleatherpcl@gmail.com!");
+        toast.success(
+          "Enquiry sent directly to official mail: pahchanismailpurleatherpcl@gmail.com!",
+        );
       } else {
         toast.success("Enquiry generated successfully! Our artisan office will review it.");
       }
@@ -291,7 +293,8 @@ function Contact() {
                       </h3>
                       <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
                         Your message has been dispatched to official inbox:{" "}
-                        <strong className="text-gold font-mono">{site.email}</strong>. Our enterprise coordinator will review your requirement.
+                        <strong className="text-gold font-mono">{site.email}</strong>. Our
+                        enterprise coordinator will review your requirement.
                       </p>
                     </div>
                   </div>
@@ -339,7 +342,8 @@ function Contact() {
                       rel="noopener noreferrer"
                       className="btn-ghost rounded-md border-gold/40 text-foreground hover:bg-gold/10 inline-flex items-center justify-center gap-2 py-3 text-center text-xs font-semibold shadow-sm"
                     >
-                      <MessageCircle className="h-4 w-4 text-emerald-600" /> WhatsApp Desk (+91 94148 57385)
+                      <MessageCircle className="h-4 w-4 text-emerald-600" /> WhatsApp Desk (+91
+                      94148 57385)
                     </a>
                   </div>
 
@@ -514,7 +518,8 @@ function Contact() {
                       )}
                     </button>
                     <span className="mt-3 block text-xs text-muted-foreground">
-                      * Dispatches directly to official inbox ({site.email}). Instant WhatsApp &amp; Gmail webmail channels also provided.
+                      * Dispatches directly to official inbox ({site.email}). Instant WhatsApp &amp;
+                      Gmail webmail channels also provided.
                     </span>
                   </div>
                 </form>

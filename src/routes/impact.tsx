@@ -14,6 +14,7 @@ import {
 import grameenArtisanDisplay from "@/assets/real/grameen-artisan-display.jpg";
 import officialsInspectingJuti from "@/assets/real/officials-inspecting-juti.jpg";
 import grameenStallArtisan from "@/assets/real/grameen-stall-artisan.jpg";
+import pahchanStallGrand from "@/assets/real/pahchan-stall-grand.jpg";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
@@ -96,7 +97,7 @@ const transformationStories = [
     body: "Holding official Artisan Identity Cards, bank account linkages with SBI Kishangarh Bas, and PM Vishwakarma recognition restores lifelong dignity to artisan families.",
   },
   {
-    img: grameenFullStall,
+    img: pahchanStallGrand,
     badge: "Generational Continuity",
     title: "A Trade Worth Passing to the Next Generation",
     body: "With steady seasonal orders and the Common Facility Centre running, young village apprentices now see a prosperous, dignified future in handmade footwear rather than migrating for day-labor.",

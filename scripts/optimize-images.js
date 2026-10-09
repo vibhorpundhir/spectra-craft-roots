@@ -49,7 +49,9 @@ async function optimizeFolder(dir) {
         if (optimizedBuffer.length < originalSize) {
           fs.writeFileSync(fullPath, optimizedBuffer);
           const savedKb = Math.round((originalSize - optimizedBuffer.length) / 1024);
-          console.log(`[OPTIMIZED] ${file}: ${Math.round(originalSize / 1024)}KB -> ${Math.round(optimizedBuffer.length / 1024)}KB (-${savedKb}KB)`);
+          console.log(
+            `[OPTIMIZED] ${file}: ${Math.round(originalSize / 1024)}KB -> ${Math.round(optimizedBuffer.length / 1024)}KB (-${savedKb}KB)`,
+          );
         }
       } catch (err) {
         console.error(`Error processing ${file}:`, err.message);
