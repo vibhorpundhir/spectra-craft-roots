@@ -11,10 +11,10 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
-import womenShgPledge from "@/assets/real/women-shg-pledge.jpg";
-import ofpoStallInspection from "@/assets/real/ofpo-stall-inspection.jpg";
-import womenAwardCertificate from "@/assets/real/women-award-certificate.jpg";
-import ofpoExhibitionStall from "@/assets/real/ofpo-exhibition-stall.jpg";
+import grameenArtisanDisplay from "@/assets/real/grameen-artisan-display.jpg";
+import officialsInspectingJuti from "@/assets/real/officials-inspecting-juti.jpg";
+import grameenFullStall from "@/assets/real/grameen-full-stall.jpg";
+import grameenStallArtisan from "@/assets/real/grameen-stall-artisan.jpg";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
@@ -85,25 +85,25 @@ const verifiedMetrics = [
 
 const transformationStories = [
   {
-    img: womenShgPledge,
+    img: grameenArtisanDisplay,
     badge: "Women Leadership",
     title: "92 Women Artisans Rewriting the Household Economy",
     body: "Women who traditionally performed unacknowledged auxiliary work now hold formal company shares, lead tilla embroidery batches, and negotiate fair piece-rates in Ismailpur.",
   },
   {
-    img: womenAwardCertificate,
+    img: officialsInspectingJuti,
     badge: "Official Identity",
     title: "From Anonymous Labor to Certified Master Craftspeople",
     body: "Holding official Artisan Identity Cards, bank account linkages with SBI Kishangarh Bas, and PM Vishwakarma recognition restores lifelong dignity to artisan families.",
   },
   {
-    img: ofpoStallInspection,
+    img: grameenFullStall,
     badge: "Generational Continuity",
     title: "A Trade Worth Passing to the Next Generation",
     body: "With steady seasonal orders and the Common Facility Centre running, young village apprentices now see a prosperous, dignified future in handmade footwear rather than migrating for day-labor.",
   },
   {
-    img: ofpoExhibitionStall,
+    img: grameenStallArtisan,
     badge: "Direct Market Reach",
     title: "Eliminating the Middleman Cut Forever",
     body: "By showcasing at national trade melas, exhibitions, and direct institutional channels, the full commercial value of each handmade shoe flows directly back into the artisans' pockets.",
@@ -119,7 +119,7 @@ function Impact() {
         eyebrow="Ground Reality · Verified Progress"
         title="Documented Progress. Livelihoods Transformed."
         intro="Pahchan Ismailpur Leather Producer Company Limited, promoted by SPECTRA Organisation and NABARD Bank, turns inherited craft into financial security, certified identity, and social dignity for 200 artisan families across rural Rajasthan."
-        image={ofpoExhibitionStall}
+        image={grameenStallArtisan}
         alt="Pahchan artisans displaying handmade leather craft at a national level exhibition"
         badgeText="Promoted by SPECTRA Organisation & NABARD Bank"
       />

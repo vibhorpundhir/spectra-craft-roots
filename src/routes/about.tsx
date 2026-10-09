@@ -13,10 +13,7 @@ import {
   Sparkles,
   Users,
 } from "lucide-react";
-import spectraStakeholderMeeting from "@/assets/real/spectra-stakeholder-meeting.jpg";
-import womenShgPledge from "@/assets/real/women-shg-pledge.jpg";
-import ofpoStallInspection from "@/assets/real/ofpo-stall-inspection.jpg";
-import womenAwardCertificate from "@/assets/real/women-award-certificate.jpg";
+import pahchanIsmailpurOfficeCommunity from "@/assets/real/pahchan-ismailpur-office-community.jpg";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -102,7 +99,7 @@ function About() {
         eyebrow="Institutional Roots & Governance"
         title="Pahchan: Giving Name and Ownership to Inherited Mastery."
         intro="Pahchan Ismailpur Leather Producer Company Limited was incorporated on 28 April 2023 under the Companies Act 2013, promoted by SPECTRA Organisation and NABARD Bank. 'Pahchan' means Identity — giving 200 rural leather artisans in Alwar the rightful brand, democratic ownership, and sustainable livelihoods they deserve."
-        image={womenShgPledge}
+        image={pahchanIsmailpurOfficeCommunity}
         alt="Pahchan artisan shareholders and SPECTRA leaders gathered at the community meeting in Alwar"
         badgeText="Promoted by SPECTRA Organisation & NABARD Bank"
       />

@@ -6,7 +6,7 @@ import { FilterChips } from "@/components/FilterChips";
 import { Lightbox } from "@/components/Lightbox";
 import { galleryCategories, galleryItems } from "@/data/gallery";
 import { allGalleryImages, type ImageCategory } from "@/data/galleryImages";
-import ofpoExhibitionArtisan from "@/assets/real/ofpo-exhibition-artisan.jpg";
+import grameenStallWall from "@/assets/real/grameen-stall-wall.jpg";
 
 export const Route = createFileRoute("/gallery")({
   component: Gallery,
@@ -60,7 +60,7 @@ function Gallery() {
         eyebrow="Documentary Archive · Living Heritage"
         title="Hands, Heritage & the Craft That Connects Them."
         intro="A verified photographic and design archive of the rural artisans, craft processes, finished juti, and community collectives behind Pahchan Leather Work — promoted by SPECTRA Organisation and NABARD Bank in Alwar, Rajasthan."
-        image={ofpoExhibitionArtisan}
+        image={grameenStallWall}
         alt="Artisan presenting handcrafted footwear"
         badgeText="Promoted by SPECTRA Organisation & NABARD Bank"
       />
@@ -113,13 +113,17 @@ function Gallery() {
                 aria-label={`View full photograph: ${img.title}`}
                 className="group img-hover-overlay w-full text-left cursor-pointer focus-visible:outline-2 focus-visible:outline-gold rounded-2xl overflow-hidden block border border-gold/25 bg-card/40 shadow-lg hover:border-gold/60 hover:shadow-2xl transition-all duration-300 aspect-[4/3] relative"
               >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading={i < 8 ? "eager" : "lazy"}
-                  decoding="async"
-                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                />
+                <picture className="w-full h-full block">
+                  <source srcSet={img.src.replace(/\.(jpg|jpeg)$/i, ".webp")} type="image/webp" />
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading={i < 3 ? "eager" : "lazy"}
+                    decoding="async"
+                    fetchPriority={i === 0 ? "high" : "auto"}
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  />
+                </picture>
                 <div className="img-hover-text">
                   <span className="eyebrow text-gold text-[0.62rem] font-bold">{img.category}</span>
                   <h3 className="mt-1 font-display text-base sm:text-lg font-bold text-cream">

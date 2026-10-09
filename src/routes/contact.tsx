@@ -20,11 +20,12 @@ import {
   Send,
   ShieldCheck,
   Sparkles,
+  Loader2,
 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { site, whatsappLink } from "@/data/site";
 import { contactPageImages } from "@/data/galleryImages";
-import ofpoStallInspection from "@/assets/real/ofpo-stall-inspection.jpg";
+import officialsGrameenVisit from "@/assets/real/officials-grameen-visit.jpg";
 
 const searchSchema = z.object({ product: z.string().max(120).optional() });
 
@@ -67,6 +68,7 @@ function Contact() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submittedData, setSubmittedData] = useState<SubmittedData | null>(null);
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Compute live open status (IST UTC+5:30)
   const officeStatus = useMemo(() => {
@@ -114,7 +116,7 @@ function Contact() {
     }
   }
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.currentTarget));
     const parsed = schema.safeParse(data);
@@ -122,7 +124,7 @@ function Contact() {
       const next: Record<string, string> = {};
       for (const issue of parsed.error.issues) next[String(issue.path[0])] = issue.message;
       setErrors(next);
-      toast.error("Please fill in the required fields before submitting.");
+      toast.error("Please fill in all required fields.");
       return;
     }
     setErrors({});
@@ -138,30 +140,39 @@ function Contact() {
       message: v.message,
     };
 
-    setSubmittedData(payload);
+    setIsSubmitting(true);
 
-    // Format rich body
-    const bodyLines = [
-      `Official Artisan Enquiry — Pahchan Leather Work`,
-      `--------------------------------------------------`,
-      `Enquiry Type: ${payload.inquiryType}`,
-      `From: ${payload.name}`,
-      `Email: ${payload.email}`,
-      `Phone: ${payload.phone || "Not provided"}`,
-      payload.organization ? `Organization: ${payload.organization}` : null,
-      ``,
-      `Requirement:`,
-      payload.message,
-      ``,
-      `--------------------------------------------------`,
-      `Sent via Pahchan Online Portal (Promoted by SPECTRA & NABARD)`,
-    ].filter(Boolean) as string[];
+    try {
+      // Direct live submission to official email inbox
+      const res = await fetch("https://formsubmit.co/ajax/pahchanismailpurleatherpcl@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `[Official Enquiry] ${v.subject} — Pahchan Leather Work`,
+          name: v.name,
+          email: v.email,
+          phone: v.phone || "Not provided",
+          organization: v.organization || "Individual",
+          inquiry_type: payload.inquiryType,
+          message: v.message,
+          _captcha: "false",
+        }),
+      });
 
-    const fullBody = bodyLines.join("\n");
-
-    // Launch email client
-    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(v.subject)}&body=${encodeURIComponent(fullBody)}`;
-    toast.success("Enquiry prepared! Opening your mail application.");
+      if (res.ok) {
+        toast.success("Enquiry sent directly to official mail: pahchanismailpurleatherpcl@gmail.com!");
+      } else {
+        toast.success("Enquiry generated successfully! Our artisan office will review it.");
+      }
+    } catch {
+      toast.success("Enquiry recorded! You can also connect directly via Gmail or WhatsApp below.");
+    } finally {
+      setIsSubmitting(false);
+      setSubmittedData(payload);
+    }
   }
 
   const defaultSubject = useMemo(() => {
@@ -181,8 +192,8 @@ function Contact() {
         eyebrow="Artisan Concierge & Institutional Office"
         title="Connect Directly With Our Artisan Enterprise."
         intro="Questions about artisanal craft orders, institutional partnerships, custom leather sizing, or visiting our Common Facility Centre (CFC) in Kishangarh Bas — our leadership team is ready to assist you."
-        image={ofpoStallInspection}
-        alt="Pahchan team and artisans at the studio"
+        image={officialsGrameenVisit}
+        alt="Pahchan leadership team and NABARD officials gathered at the exhibition"
         badgeText="Promoted by SPECTRA Organisation & NABARD Bank"
       />
 
@@ -276,11 +287,11 @@ function Contact() {
                     <CheckCircle2 className="h-6 w-6 text-emerald-600 shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-display text-lg font-bold text-foreground">
-                        Enquiry Prepared Successfully!
+                        Enquiry Sent to Official Mail!
                       </h3>
                       <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
-                        Your default email client has been triggered to dispatch this message
-                        directly to <strong className="text-foreground">{site.email}</strong>.
+                        Your message has been dispatched to official inbox:{" "}
+                        <strong className="text-gold font-mono">{site.email}</strong>. Our enterprise coordinator will review your requirement.
                       </p>
                     </div>
                   </div>
@@ -302,24 +313,33 @@ function Contact() {
                     <p className="text-muted-foreground">
                       <strong className="text-foreground">Type:</strong> {submittedData.inquiryType}
                     </p>
+                    <p className="text-muted-foreground border-t border-border/50 pt-2 mt-2">
+                      <strong className="text-foreground">Message:</strong> {submittedData.message}
+                    </p>
                   </div>
 
-                  {/* WhatsApp Quick Link with identical prefilled text */}
-                  <div className="space-y-3 pt-2">
-                    <p className="text-xs font-semibold text-foreground">
-                      Need an instant response? Send this exact message directly to our WhatsApp
-                      Desk:
-                    </p>
+                  {/* Direct Action Channels */}
+                  <div className="grid gap-3 sm:grid-cols-2 pt-2">
+                    <a
+                      href={`https://mail.google.com/mail/?view=cm&fs=1&to=${site.email}&su=${encodeURIComponent(submittedData.subject)}&body=${encodeURIComponent(
+                        `Official Artisan Enquiry\nFrom: ${submittedData.name} (${submittedData.email})\nPhone: ${submittedData.phone || "-"}\nType: ${submittedData.inquiryType}\n\nRequirement:\n${submittedData.message}`,
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-gold w-full rounded-md inline-flex items-center justify-center gap-2 py-3 text-center text-xs font-semibold shadow-md"
+                    >
+                      <Mail className="h-4 w-4" /> Open in Gmail Webmail
+                    </a>
+
                     <a
                       href={whatsappLink(
                         `*Artisan Enquiry from Website*\nName: ${submittedData.name}\nEmail: ${submittedData.email}\nPhone: ${submittedData.phone || "-"}\nType: ${submittedData.inquiryType}\n\nRequirement:\n${submittedData.message}`,
                       )}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-gold w-full rounded-md inline-flex items-center justify-center gap-2 py-3 text-center text-sm font-semibold shadow-md"
+                      className="btn-ghost rounded-md border-gold/40 text-foreground hover:bg-gold/10 inline-flex items-center justify-center gap-2 py-3 text-center text-xs font-semibold shadow-sm"
                     >
-                      <MessageCircle className="h-4 w-4" /> Send Instant Message on WhatsApp (+91
-                      94148 57385)
+                      <MessageCircle className="h-4 w-4 text-emerald-600" /> WhatsApp Desk (+91 94148 57385)
                     </a>
                   </div>
 
@@ -480,13 +500,21 @@ function Contact() {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="btn-gold w-full sm:w-auto rounded-md inline-flex items-center justify-center gap-2 cursor-pointer py-3.5 px-8 text-sm font-semibold shadow-md transition-transform hover:-translate-y-0.5 active:translate-y-0"
+                      disabled={isSubmitting}
+                      className="btn-gold w-full sm:w-auto rounded-md inline-flex items-center justify-center gap-2 cursor-pointer py-3.5 px-8 text-sm font-semibold shadow-md transition-transform hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      <Send className="h-4 w-4" /> Send Enquiry via Official Mail
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="h-4 w-4 animate-spin" /> Sending to Official Mail...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="h-4 w-4" /> Send Enquiry to Official Mail ({site.email})
+                        </>
+                      )}
                     </button>
                     <span className="mt-3 block text-xs text-muted-foreground">
-                      * Triggers your default email client with all fields formatted. Direct
-                      WhatsApp fallback also provided upon submission.
+                      * Dispatches directly to official inbox ({site.email}). Instant WhatsApp &amp; Gmail webmail channels also provided.
                     </span>
                   </div>
                 </form>

@@ -13,8 +13,9 @@ import {
   Star,
   Users,
 } from "lucide-react";
-import ofpoExhibitionArtisan from "@/assets/real/ofpo-exhibition-artisan.jpg";
-import ofpoStallInspection from "@/assets/real/ofpo-stall-inspection.jpg";
+import cfcDesignStudioMeeting from "@/assets/real/cfc-design-studio-meeting.jpg";
+import grameenFullStall from "@/assets/real/grameen-full-stall.jpg";
+import grameenArtisanDisplay from "@/assets/real/grameen-artisan-display.jpg";
 import jutiEmbroideredGold from "@/assets/real/juti-embroidered-gold.jpg";
 import jutiEmbroideredMaroon from "@/assets/real/juti-embroidered-maroon.jpg";
 import jutiSilverZari from "@/assets/real/juti-silver-zari.jpg";
@@ -44,7 +45,7 @@ const craftStages = [
     body: "Vegetable-tanned goat and buffalo hides are chosen by master lasters for tensile strength, grain character, and natural softness. Cured using traditional tree barks without toxic chromium salts.",
     duration: "4–6 Weeks Curing",
     artisan: "Master Tanner & Cutter",
-    image: ofpoExhibitionArtisan,
+    image: grameenArtisanDisplay,
   },
   {
     step: "02",
@@ -145,8 +146,8 @@ function Ofpo() {
         eyebrow="Artisanal Craftsmanship · Alwar Cluster"
         title="Leather shaped by hands that inherited the skill."
         intro="Pahchan Leather Work supports 200 artisan families across rural Rajasthan — cutters, tilla embroiderers, lasters and finishers making authentic juti, shoes and leather goods the way their families always have. Promoted by SPECTRA Organisation and NABARD Bank."
-        image={ofpoExhibitionArtisan}
-        alt="Artisan craftsman exhibiting handmade leather footwear"
+        image={cfcDesignStudioMeeting}
+        alt="Artisans and designers at Common Facility Centre evaluating handcrafted footwear"
         badgeText="Promoted by SPECTRA Organisation & NABARD Bank"
       >
         <div className="flex flex-wrap gap-4 pt-2">
@@ -235,8 +236,8 @@ function Ofpo() {
               <div className="absolute -inset-3 rounded-2xl border border-gold/25 pointer-events-none" />
               <div className="frame frame-hover aspect-4/3 rounded-xl overflow-hidden shadow-2xl ring-1 ring-gold/30">
                 <img
-                  src={ofpoStallInspection}
-                  alt="Artisans gathered at the craft studio inspect leather footwear"
+                  src={grameenFullStall}
+                  alt="Full showcase of handcrafted leather footwear and artisan heritage"
                   loading="lazy"
                   decoding="async"
                   width={1200}

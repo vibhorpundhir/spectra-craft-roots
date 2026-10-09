@@ -12,6 +12,7 @@ export default defineConfig({
   build: {
     outDir: "dist",
     sourcemap: false,
+    cssCodeSplit: true,
     // Optimise chunk splitting for better caching on shared hosting
     rollupOptions: {
       output: {
@@ -24,6 +25,12 @@ export default defineConfig({
           }
           if (id.includes("lucide-react") || id.includes("motion")) {
             return "ui";
+          }
+          if (id.includes("src/data/galleryImages") || id.includes("src/data/gallery")) {
+            return "gallery-data";
+          }
+          if (id.includes("src/data/products")) {
+            return "products-data";
           }
         },
       },
