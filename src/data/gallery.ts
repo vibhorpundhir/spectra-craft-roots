@@ -4,11 +4,11 @@ import jutiClassicBrown from "@/assets/real/juti-classic-brown.jpg";
 import jutiTanPunched from "@/assets/real/juti-tan-punched.jpg";
 import jutiBlackStitched from "@/assets/real/juti-black-stitched.jpg";
 import jutiTanPlain from "@/assets/real/juti-tan-plain.jpg";
-import womenShgPledge from "@/assets/real/women-shg-pledge.jpg";
-import womenAwardCertificate from "@/assets/real/women-award-certificate.jpg";
-import ofpoExhibitionArtisan from "@/assets/real/ofpo-exhibition-artisan.jpg";
-import ofpoStallInspection from "@/assets/real/ofpo-stall-inspection.jpg";
-import ofpoExhibitionStall from "@/assets/real/ofpo-exhibition-stall.jpg";
+import grameenArtisanDisplay from "@/assets/real/grameen-artisan-display.jpg";
+import officialsInspectingJuti from "@/assets/real/officials-inspecting-juti.jpg";
+import grameenFullStall from "@/assets/real/grameen-full-stall.jpg";
+import pahchanIsmailpurOfficeCommunity from "@/assets/real/pahchan-ismailpur-office-community.jpg";
+import cfcDesignStudioMeeting from "@/assets/real/cfc-design-studio-meeting.jpg";
 import spectraStakeholderMeeting from "@/assets/real/spectra-stakeholder-meeting.jpg";
 
 // New uploaded craft images
@@ -290,11 +290,11 @@ export const galleryItems: GalleryItem[] = [
     isOrderable: true,
   },
 
-  // 16. Artisans at Work — Exhibition Artisan
+  // 16. Artisans at Work — Grameen Mahotsav Artisan Display
   {
     id: "artisan-exhibition-representative",
-    src: ofpoExhibitionArtisan,
-    alt: "Artisan member representing SPECTRA at NABARD sponsored leather craft exhibition",
+    src: grameenArtisanDisplay,
+    alt: "Pahchan artisan representing rural footwear craft at Grameen Bharat Mahotsav",
     title: "Artisan Leader at National Craft Pavilion",
     category: "Artisans at Work",
     artisanGroup: "Pahchan Producer Company Member Artisans",
@@ -306,67 +306,67 @@ export const galleryItems: GalleryItem[] = [
     isOrderable: false,
   },
 
-  // 17. Workshops — Stall Inspection
+  // 17. Workshops — Officials Inspection Review
   {
     id: "stall-inspection-quality",
-    src: ofpoStallInspection,
-    alt: "Handmade leather juti and craft products on display for institutional visitors and partners",
-    title: "NABARD & OFPO Quality Inspection Review",
+    src: officialsInspectingJuti,
+    alt: "NABARD and institutional officials inspecting handmade leather juti at Grameen Bharat Mahotsav",
+    title: "NABARD & Institutional Quality Review",
     category: "Workshops",
     artisanGroup: "SPECTRA Facilitators & NABARD Officials",
     story:
-      "Senior officials reviewing standardized product ranges at the Common Facility Centre. Quality parameters including stitch consistency, leather thickness, and insole resilience are checked against FDDI standards.",
+      "Senior officials reviewing standardized product ranges at the exhibition stall. Quality parameters including stitch consistency, leather thickness, and insole resilience are checked against FDDI standards.",
     materials: "Production batch samples, FDDI standardization charts",
     craftTechnique: "Quality benchmarking, FDDI Noida design standards",
     cluster: "Common Facility Centre, Kishangarh Bas",
     isOrderable: false,
   },
 
-  // 18. Workshops — National Exhibition Stall
+  // 18. Workshops — Full Exhibition Stall Display
   {
     id: "exhibition-stall-showcase",
-    src: ofpoExhibitionStall,
-    alt: "National level exhibition stall showcasing SPECTRA rural artisan handcrafts and leather goods",
-    title: "SPECTRA National Artisan Exhibition Pavilion",
+    src: grameenFullStall,
+    alt: "Grand Grameen Bharat Mahotsav pavilion showcasing Pahchan rural artisan handcrafts and leather goods",
+    title: "Pahchan National Artisan Exhibition Pavilion",
     category: "Workshops",
     artisanGroup: "Pahchan Producer Company Collective",
     story:
       "Full pavilion showcasing traditional mojari, leather folios, and modern accessories. The stall serves as a commercial springboard connecting rural creators with institutional buyers across India.",
     materials: "Authentic mojari, accessories, descriptive craft panels",
     craftTechnique: "Collective marketing, institutional procurement display",
-    cluster: "New Delhi / Jaipur Craft Expos",
+    cluster: "Grameen Bharat Mahotsav Pavilion",
     isOrderable: false,
   },
 
-  // 19. Community — Women SHG Pledge
+  // 19. Community — Pahchan Registered Enterprise & Women Collective
   {
-    id: "women-shg-pledge-solidarity",
-    src: womenShgPledge,
-    alt: "Women SHG leaders taking a solidarity and self-reliance pledge at the annual community meeting",
-    title: "Women SHG Solidarity & Enterprise Pledge",
+    id: "pahchan-office-community-solidarity",
+    src: pahchanIsmailpurOfficeCommunity,
+    alt: "Pahchan artisan shareholders and women members outside the registered company office in Ismailpur",
+    title: "Pahchan Registered Enterprise & Artisan Collective",
     category: "Community",
-    artisanGroup: "92 Women Leather Artisans of Ismailpur",
+    artisanGroup: "92 Women Leather Artisans & Shareholders of Ismailpur",
     story:
-      "Women artisan leaders taking a pledge of economic self-reliance, mutual aid, and craft preservation. 46% of Pahchan's 200 artisans are women who manage their own bank accounts and cooperative savings.",
-    materials: "Community registry, SHG passbooks, enterprise charter",
-    craftTechnique: "Self-Help Group governance, financial empowerment, collective bargaining",
-    cluster: "Ismailpur Community Centre",
+      "Artisan shareholders and women craftswomen at the registered company office in Ismailpur. 46% of Pahchan's 200 artisans are women who manage their own bank accounts, equity shares, and cooperative savings.",
+    materials: "Community registry, shareholder passbooks, enterprise charter",
+    craftTechnique: "Producer Company governance, financial empowerment, collective enterprise",
+    cluster: "Ismailpur Registered Office",
     isOrderable: false,
   },
 
-  // 20. Community — Women Award Certificate
+  // 20. Community — CFC Design Studio Collaboration
   {
-    id: "women-award-felicitation",
-    src: womenAwardCertificate,
-    alt: "Recognition and certificate distribution to women leaders by SPECTRA and Mahila Shakti Kendra",
-    title: "Master Craftswoman Recognition & Award",
+    id: "cfc-design-studio-forum",
+    src: cfcDesignStudioMeeting,
+    alt: "Master craftspeople, women embroiderers, and SPECTRA leadership collaborating at the Common Facility Centre",
+    title: "Common Facility Centre Design & Innovation Forum",
     category: "Community",
-    artisanGroup: "Women Artisan Leaders & SPECTRA Directors",
+    artisanGroup: "Women Master Artisans & Design Facilitators",
     story:
-      "Honoring exemplary craftswomen with certificates of master craftsmanship following advanced footwear design training by FDDI Noida, sponsored by NABARD.",
-    materials: "Master certification, honour roll, community memento",
-    craftTechnique: "Skill recognition, institutional capacity building",
-    cluster: "Alwar District Centre",
+      "Master craftspeople, women embroiderers, and SPECTRA leadership collaborating at the Common Facility Centre & Design Studio in Kishangarh Bas to innovate traditional Rajasthani footwear.",
+    materials: "Handcrafted prototypes, embroidery patterns, wooden lasts",
+    craftTechnique: "Skill enhancement, collaborative design innovation",
+    cluster: "CFC & Design Studio, Kishangarh Bas",
     isOrderable: false,
   },
 

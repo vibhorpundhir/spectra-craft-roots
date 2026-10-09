@@ -21,9 +21,11 @@ import {
 } from "lucide-react";
 
 import leather from "@/assets/hero-leather.jpg";
-import ofpoExhibitionArtisan from "@/assets/real/ofpo-exhibition-artisan.jpg";
-import ofpoStallInspection from "@/assets/real/ofpo-stall-inspection.jpg";
-import womenShgPledge from "@/assets/real/women-shg-pledge.jpg";
+import grameenArtisanDisplay from "@/assets/real/grameen-artisan-display.jpg";
+import grameenStallArtisan from "@/assets/real/grameen-stall-artisan.jpg";
+import pahchanIsmailpurOfficeCommunity from "@/assets/real/pahchan-ismailpur-office-community.jpg";
+import cfcDesignStudioMeeting from "@/assets/real/cfc-design-studio-meeting.jpg";
+import grameenFullStall from "@/assets/real/grameen-full-stall.jpg";
 import jutiSilverZari from "@/assets/real/juti-silver-zari.jpg";
 import jutiGoldenBrocade from "@/assets/real/juti-golden-brocade.jpg";
 import jutiMaroonBeadwork from "@/assets/real/juti-maroon-beadwork.jpg";
@@ -33,8 +35,6 @@ import jutiGoldZari from "@/assets/real/juti-gold-zari.jpg";
 import jutiEmbroideredMaroon from "@/assets/real/juti-embroidered-maroon.jpg";
 import jutiClassicBrown from "@/assets/real/juti-classic-brown.jpg";
 import jutiCreamPearl from "@/assets/real/juti-cream-pearl.jpg";
-import womenAwardCertificate from "@/assets/real/women-award-certificate.jpg";
-import ofpoExhibitionStall from "@/assets/real/ofpo-exhibition-stall.jpg";
 import pahchanLogo from "@/assets/pahchan-logo.jpg";
 import { Reveal } from "@/components/Reveal";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
@@ -61,7 +61,7 @@ const craftSteps = [
     step: "01",
     title: "Selecting the Hide",
     body: "Vegetable-tanned goat and buffalo hides are inspected by hand for grain, thickness and evenness.",
-    image: ofpoExhibitionArtisan,
+    image: grameenFullStall,
   },
   {
     icon: Scissors,
@@ -98,7 +98,7 @@ const artisanVoices = [
   {
     name: "Zarina Bano",
     title: "4th Generation Master Embroiderer",
-    image: womenShgPledge,
+    image: pahchanIsmailpurOfficeCommunity,
     quote:
       "My grandmother taught me that every stitch carries the weight of our ancestors. When I embroider a juti, I am not just making a shoe — I am keeping a promise.",
     metric: "12 hours per pair",
@@ -107,7 +107,7 @@ const artisanVoices = [
   {
     name: "Ramu Ram",
     title: "Master Cutter & Pattern Maker",
-    image: ofpoExhibitionArtisan,
+    image: grameenArtisanDisplay,
     quote:
       "A good cutter wastes nothing. The hide tells you where to place the pattern — you just have to listen with your hands.",
     metric: "30 years of experience",
@@ -116,7 +116,7 @@ const artisanVoices = [
   {
     name: "Kishan Lal",
     title: "Master Laster & Finisher",
-    image: ofpoStallInspection,
+    image: grameenStallArtisan,
     quote:
       "The last my father carved is the same one I use today. The foot has not changed, and neither has our craft.",
     metric: "40 pairs finished per month",
@@ -1093,7 +1093,7 @@ function Home() {
 
                 <div className="corner-brackets relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-gold/30">
                   <img
-                    src={ofpoExhibitionStall}
+                    src={cfcDesignStudioMeeting}
                     alt="Pahchan Common Facility Centre exhibition and workshop"
                     loading="lazy"
                     decoding="async"

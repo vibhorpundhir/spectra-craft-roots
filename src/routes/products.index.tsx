@@ -5,7 +5,7 @@ import { PageHero } from "@/components/PageHero";
 import { FilterChips } from "@/components/FilterChips";
 import { ProductCard } from "@/components/ProductCard";
 import { products, categories } from "@/data/products";
-import ofpoExhibitionStall from "@/assets/real/ofpo-exhibition-stall.jpg";
+import grameenFullStall from "@/assets/real/grameen-full-stall.jpg";
 
 export const Route = createFileRoute("/products/")({
   component: Products,
@@ -26,8 +26,8 @@ function Products() {
         eyebrow="Curated Heritage · Pure Handcraft"
         title="Not Products. Living Proof of Ancestral Mastery."
         intro="Each piece here is the visible outcome of days of patient effort by rural artisan households in Alwar. There are no corporate cart buttons or price tags — only authentic stories, dignified livelihoods, and timeless craftsmanship. Promoted by SPECTRA Organisation and NABARD Bank."
-        image={ofpoExhibitionStall}
-        alt="Exhibition stall displaying artisanal leather goods"
+        image={grameenFullStall}
+        alt="Pahchan exhibition stall displaying artisanal leather goods and handcrafted juti"
         badgeText="Promoted by SPECTRA Organisation & NABARD Bank"
       />
 
